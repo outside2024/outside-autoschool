@@ -1,0 +1,12 @@
+.git
+.gitignore
+.results
+scripts
+*Dockerfile*
+*Dockerfile.dev*
+node_modules
+.env
+
+cypress/videos/*
+cypress/screenshots/*
+cypress/logs/*
