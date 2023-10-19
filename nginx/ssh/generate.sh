@@ -1,0 +1,1 @@
+sudo openssl req -x509 -nodes -days 365 -subj "/C=UK/ST=DN/O=Roxers, Inc./CN=localhost" -addext "subjectAltName=DNS:localhost" -newkey rsa:2048 -keyout ./nginx.key -out ./nginx.crt;
