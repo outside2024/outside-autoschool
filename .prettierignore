@@ -4,7 +4,7 @@ prettierrc.js
 .stylelintrc.json
 package-lock.json
 package.json
-/public
+# /public
 README.md
 /coverage
 jest.config.json
