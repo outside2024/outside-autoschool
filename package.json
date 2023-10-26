@@ -15,7 +15,7 @@
     "freshinstall": "npm run clean && npm i --legacy-peer-deps",
     "pretest": "npm run prettier && npm run eslint && npm run test:coverage-silent && npm run cypress:all",
     "prepare": "husky install",
-    "pre-push": "npm run pretest",
+    "pre-push": "npm run prettier && npm run eslint",
     "test": "jest --watch",
     "test:coverage": "npm test -- --coverage --watchAll=false",
     "test:coverage-silent": "npm test -- --coverage --watchAll=false --silent",

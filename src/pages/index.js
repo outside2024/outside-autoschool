@@ -1,9 +1,9 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import RootLayout from '@/layouts/RootLayout';
 import { useRouter } from 'next/router';
+import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 
-export default function Home() {
+const Home = () => {
   const { locale } = useRouter();
   console.log(locale);
 
@@ -12,7 +12,9 @@ export default function Home() {
       <Hero />
     </RootLayout>
   );
-}
+};
+
+export default Home;
 
 export async function getStaticProps({ locale }) {
   return {

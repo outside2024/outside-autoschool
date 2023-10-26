@@ -4,14 +4,12 @@ import PropTypes from 'prop-types';
 import GlobalStyle from '@/styles/global';
 import { theme } from '@/styles/theme';
 
-const App = ({ Component }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Component />
-    </ThemeProvider>
-  );
-};
+const App = ({ Component }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Component />
+  </ThemeProvider>
+);
 
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,

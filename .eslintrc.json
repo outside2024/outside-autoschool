@@ -15,6 +15,7 @@
     "jest": true
   },
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-useless-catch": "off",
     "no-unused-vars": 1,
     "no-param-reassign": "off",
