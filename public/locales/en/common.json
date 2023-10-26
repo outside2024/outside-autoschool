@@ -1,0 +1,44 @@
+{
+  "cities": {
+    "dnipro": "Дніпроen",
+    "hvardiyske": "Гвардійське",
+    "pavlohrad": "Павлоград",
+    "obuhivka": "Обухівка",
+    "novomoskovsk": "Новомосковськ",
+    "pidgorne": "Підгорне",
+    "nikopol": "Нікополь",
+    "ilarionove": "Іларіонове",
+    "pereschepune": "Перещепине",
+    "chumaku": "Чумаки",
+    "zaporizhzhia": "Запоріжжя",
+    "kryvyirih": "Кривий Ріг",
+    "kharkiv": "Харків"
+  },
+  "cityBranches": {
+    "dnipro": {
+      "kasiora": "Касіора",
+      "center": "Центр",
+      "berezinka": "Березинка",
+      "12kvartal": "12 Квартал",
+      "communar": "Комунар",
+      "prudniprovsk": "Придніпровск",
+      "peremoga": "Перемога",
+      "topol": "Тополь",
+      "titova": "Титова",
+      "sovhozna": "Совхозна"
+    }
+  },
+  "header": {
+    "online": "Онлайн",
+    "branches": "Філії",
+    "tests": "Тести",
+    "about": "Про нас",
+    "blog": "Блог",
+    "choooseCity": "Оберіть місто"
+  },
+  "hero": {
+    "title": "\"АУТСАЙД\" - найкраща автошкола Дніпра",
+    "description": "Запис до автошколи проводитиметься цілодобово, залишивши свою заявку у вікні. Наш менеджер зв'яжеться з Вами обов'язково.",
+    "btn": "Записатись"
+  }
+}
