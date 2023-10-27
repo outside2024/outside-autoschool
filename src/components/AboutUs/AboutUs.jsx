@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import StyledAboutUs from '@/components/AboutUs/AboutUs.styles';
 import { aboutUsPhotoSlider } from '@/components/AboutUs/data';
-import SliderNavBar from '@/components/SliderNavBar';
+import SliderNavBarStyles from '@/components/AboutUs/SliderNavBar.styled';
 
 const AboutUs = () => {
   const { t } = useTranslation();
@@ -49,7 +49,31 @@ const AboutUs = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <SliderNavBar activeIndex={activeIndex} swiper={swiper} />
+          <SliderNavBarStyles
+            activeindex={activeIndex}
+            slidesnumber={swiper?.slides?.length || 0}
+            slidesperview={swiper?.params?.slidesPerView || 0}
+          >
+            <div className="progressBar" />
+            <div className="buttonsContainer">
+              <div
+                className="button prev"
+                onClick={() => {
+                  swiper.slidePrev();
+                }}
+              >
+                <i className="icon-angle-down iconLeft" />
+              </div>
+              <div
+                className="button next"
+                onClick={() => {
+                  swiper.slideNext();
+                }}
+              >
+                <i className="icon-angle-down iconRight" />
+              </div>
+            </div>
+          </SliderNavBarStyles>
         </div>
       </div>
     </StyledAboutUs>
