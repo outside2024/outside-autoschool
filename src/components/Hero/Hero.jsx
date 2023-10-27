@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="contentContainer">
         <div className="contentWrapper">
           <h2 className="typoColorWhite">{t('hero.title')}</h2>
-          <i className="icon-facebook"></i>
+          <i className="icon-facebook" />
         </div>
       </div>
     </HeroStyles>
