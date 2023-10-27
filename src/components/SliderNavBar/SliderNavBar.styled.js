@@ -25,6 +25,17 @@ const SliderNavBarStyles = styled(`div`)`
       border-radius: 5px;
     }
   }
+
+  
+  .icon {
+    font-size: 16px;
+    &Left{
+      transform: rotate(90deg);
+    }
+    &Right {
+      transform: rotate(270deg);
+    }
+  }
   
   .buttonsContainer {
     display: flex;
@@ -38,11 +49,18 @@ const SliderNavBarStyles = styled(`div`)`
       height: 32px;
       border: ${({ theme }) => theme.colors.primary} 1px solid;
       border-radius: 5px;
+      cursor: pointer;
 
       display: flex;
       align-items: center;
       justify-content: center;
+      
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.primary};
+      }
     }
+    
+    
   }
 `;
 

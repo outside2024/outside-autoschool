@@ -3,10 +3,14 @@ import {text14Bold, text14Semibold, text20Bold} from "@/styles/textStyles";
 
 export const StyledAboutUs = styled('div')`
   padding-top: 40px;
+  padding-bottom: 40px;
 
   @media only screen and (max-width: 720px) {
     padding-top: 24px;
+    padding-bottom: 24px;
   }
+  
+ 
 
   .swiperContainer {
     padding-top: 24px;
