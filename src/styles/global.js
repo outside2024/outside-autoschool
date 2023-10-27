@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
+import { text32Semibold, text60Bold } from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -39,8 +40,8 @@ const GlobalStyle = createGlobalStyle`${css`
     &Wrapper {
       width: 100%;
       max-width: 1920px;
-      padding-left: 150px;
-      padding-right: 150px;
+      padding-left: 100px;
+      padding-right: 100px;
 
       @media screen and (max-width: 1080px) {
         padding-left: 64px;
@@ -48,11 +49,6 @@ const GlobalStyle = createGlobalStyle`${css`
       }
 
       @media screen and (max-width: 720px) {
-        padding-left: 32px;
-        padding-right: 32px;
-      }
-
-      @media screen and (max-width: 560px) {
         padding-left: 16px;
         padding-right: 16px;
       }
@@ -77,9 +73,9 @@ const GlobalStyle = createGlobalStyle`${css`
     }
     //! example of class for text
     &TitlePrimary {
+      ${text60Bold}
       @media screen and (max-width: 720px) {
-        font-size: 32px;
-        line-height: 48px;
+        ${text32Semibold}
       }
     }
   }
