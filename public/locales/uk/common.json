@@ -43,7 +43,21 @@
   },
   "aboutUs": {
     "title": "Про нас",
-    "subtitle": "Інструктори та викладачі"
-
+    "subtitle": "Інструктори та викладачі",
+    "position": {
+      "teacher": "викладач",
+      "instructor": "інструктор"
+    },
+    "teachersName": {
+      "Andrii": "Андрій",
+      "Dmytro": "Дмитро",
+      "Georgiy": "Геогргій",
+      "Iryna": "Ірина",
+      "Mykhailo": "Михайло",
+      "Oleg": "Олег",
+      "Phillip": "Філіп",
+      "Sergii": "Сергій",
+      "Volodymyr": "Володимир"
+    }
   }
 }
