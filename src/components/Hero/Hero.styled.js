@@ -12,6 +12,11 @@ const HeroStyles = styled(`div`)`
   .heroTitle {
     color: ${({ theme }) => theme.colors.typo.white};
   }
+
+  .icon-facebook {
+    color: ${({ theme }) => theme.colors.typo.white};
+    font-size: 24px;
+  }
 `;
 
 export default HeroStyles;

@@ -3,6 +3,7 @@ import { appWithTranslation } from 'next-i18next';
 import PropTypes from 'prop-types';
 import GlobalStyle from '@/styles/global';
 import { theme } from '@/styles/theme';
+import '@/styles/style.css';
 
 const App = ({ Component }) => (
   <ThemeProvider theme={theme}>

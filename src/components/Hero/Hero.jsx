@@ -5,9 +5,10 @@ const Hero = () => {
   const { t } = useTranslation();
   return (
     <HeroStyles>
-      <div className="contentWrapper">
+      <div className="contentContainer">
         <div className="contentWrapper">
           <h2 className="typoColorWhite">{t('hero.title')}</h2>
+          <i className="icon-facebook"></i>
         </div>
       </div>
     </HeroStyles>
