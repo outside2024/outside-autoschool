@@ -7,43 +7,45 @@ const SliderNavBarStyles = styled(`div`)`
   max-width: 808px;
   margin-left: auto;
   padding-top: 24px;
-  
+
   .progressBar {
     width: 100%;
     height: 5px;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.bg.black};
     position: relative;
-    
+
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       height: 100%;
-      width: calc(100% * ${(props) => (props.activeindex + 1) / (props.slidesnumber - (props.slidesperview - 1))});
+      width: calc(
+        100% *
+          ${(props) => (props.activeindex + 1) / (props.slidesnumber - (props.slidesperview - 1))}
+      );
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 5px;
     }
   }
 
-  
   .icon {
     font-size: 16px;
-    &Left{
+    &Left {
       transform: rotate(90deg);
     }
     &Right {
       transform: rotate(270deg);
     }
   }
-  
+
   .buttonsContainer {
     display: flex;
     gap: 16px;
-    @media only screen and (max-width: 720px){
+    @media only screen and (max-width: 720px) {
       display: none;
     }
-    
+
     .button {
       width: 40px;
       height: 32px;
@@ -54,13 +56,11 @@ const SliderNavBarStyles = styled(`div`)`
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       &:hover {
         background-color: ${({ theme }) => theme.colors.primary};
       }
     }
-    
-    
   }
 `;
 

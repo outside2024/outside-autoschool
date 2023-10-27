@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import SliderNavBarStyles from "@/components/SliderNavBar/SliderNavBar.styled";
+import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 
-const SliderNavBar = ({activeIndex = 0, swiper}) => (
+const SliderNavBar = ({ activeIndex = 0, swiper }) => (
   <SliderNavBarStyles
     activeindex={activeIndex}
     slidesnumber={swiper?.slides?.length || 0}
     slidesperview={swiper?.params?.slidesPerView || 0}
   >
-    <div className="progressBar"/>
+    <div className="progressBar" />
     <div className="buttonsContainer">
       <div
         className="button prev"
@@ -15,7 +15,7 @@ const SliderNavBar = ({activeIndex = 0, swiper}) => (
           swiper.slidePrev();
         }}
       >
-        <i className="icon-angle-down iconLeft"/>
+        <i className="icon-angle-down iconLeft" />
       </div>
       <div
         className="button next"
@@ -23,7 +23,7 @@ const SliderNavBar = ({activeIndex = 0, swiper}) => (
           swiper.slideNext();
         }}
       >
-        <i className="icon-angle-down iconRight"/>
+        <i className="icon-angle-down iconRight" />
       </div>
     </div>
   </SliderNavBarStyles>
@@ -34,9 +34,9 @@ export default SliderNavBar;
 SliderNavBar.propTypes = {
   activeIndex: PropTypes.number,
   swiper: PropTypes.shape({}),
-}
+};
 
 SliderNavBar.defaultProps = {
   activeIndex: 0,
-  swiper: {}
-}
+  swiper: {},
+};

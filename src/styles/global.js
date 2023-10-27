@@ -1,6 +1,13 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
-import {text12Semibold, text20Semibold, text24Bold, text32Semibold, text40Bold, text60Bold} from './textStyles';
+import {
+  text12Semibold,
+  text20Semibold,
+  text24Bold,
+  text32Semibold,
+  text40Bold,
+  text60Bold,
+} from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,

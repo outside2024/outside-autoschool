@@ -1,15 +1,14 @@
-import {useTranslation} from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import {useState} from "react";
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import StyledAboutUs from "@/components/AboutUs/AboutUs.styles";
-import {aboutUsPhotoSlider} from "@/components/AboutUs/data";
-import SliderNavBar from "@/components/SliderNavBar";
-
+import StyledAboutUs from '@/components/AboutUs/AboutUs.styles';
+import { aboutUsPhotoSlider } from '@/components/AboutUs/data';
+import SliderNavBar from '@/components/SliderNavBar';
 
 const AboutUs = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [swiper, setSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -23,9 +22,9 @@ const AboutUs = () => {
             slidesPerView="auto"
             spaceBetween={24}
             breakpoints={{
-              0: {slidesPerView: 2, spaceBetween: 16},
-              1000: {slidesPerView: 3, spaceBetween: 24},
-              1440: {slidesPerView: 5, spaceBetween: 24},
+              0: { slidesPerView: 2, spaceBetween: 16 },
+              1000: { slidesPerView: 3, spaceBetween: 24 },
+              1440: { slidesPerView: 5, spaceBetween: 24 },
             }}
             onSwiper={setSwiper}
             onSlideChange={(_swiper) => {
@@ -50,10 +49,7 @@ const AboutUs = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <SliderNavBar
-            activeIndex={activeIndex}
-            swiper={swiper}
-          />
+          <SliderNavBar activeIndex={activeIndex} swiper={swiper} />
         </div>
       </div>
     </StyledAboutUs>
