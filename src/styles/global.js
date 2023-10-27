@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
-import { text32Semibold, text60Bold } from './textStyles';
+import {text12Semibold, text20Semibold, text24Bold, text32Semibold, text40Bold, text60Bold} from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -71,14 +71,31 @@ const GlobalStyle = createGlobalStyle`${css`
         color: ${theme.colors.typo.grey};
       }
     }
+
     //! example of class for text
     &TitlePrimary {
-      ${text60Bold}
+      ${text60Bold};
       @media screen and (max-width: 720px) {
         ${text32Semibold}
       }
     }
+
+    &TitleSecondary {
+      ${text40Bold};
+      @media only screen and (max-width: 720px) {
+        ${text24Bold};
+      }
+    }
+
+    &Subtitle {
+      ${text20Semibold};
+      @media only screen and (max-width: 720px) {
+        ${text12Semibold};
+      }
+    }
   }
+
+}
 `}
 `;
 
