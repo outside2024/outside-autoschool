@@ -62,7 +62,7 @@ export const text24BoldRedHat = css`
   ${text24Bold}
 `;
 
-const text20 = css`
+export const text20 = css`
   ${redHatFontFamily}
   font-size: 20px;
   font-style: normal;
@@ -103,7 +103,7 @@ export const text14Semibold = css`
   font-weight: 500;
 `;
 
-const text12 = css`
+export const text12 = css`
   ${redHatFontFamily}
   font-size: 12px;
   font-style: normal;
