@@ -25,6 +25,7 @@ export const StyledAboutUs = styled('div')`
 
   .about {
     &Image {
+      object-fit: cover;
       @media only screen and (max-width: 720px) {
         width: 136px;
         height: 188px;
