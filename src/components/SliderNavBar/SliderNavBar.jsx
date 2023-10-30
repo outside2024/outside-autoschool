@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 
-const SliderNavBar = ({ activeIndex = 0, swiper }) => {
+const SliderNavBar = ({ activeIndex, swiper }) => {
   const slidesNumber = swiper?.slides?.length || 0;
   const slidesPerView = swiper?.params?.slidesPerView || 0;
 

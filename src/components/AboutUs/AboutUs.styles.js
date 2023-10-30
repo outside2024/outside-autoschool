@@ -5,14 +5,13 @@ export const StyledAboutUs = styled('div')`
   padding-top: 40px;
   padding-bottom: 40px;
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 800px) {
     padding-top: 24px;
     padding-bottom: 24px;
   }
 
   .swiperContainer {
     padding-top: 24px;
-    max-width: 1240px;
   }
 
   .swiperSlide {
@@ -26,7 +25,7 @@ export const StyledAboutUs = styled('div')`
   .about {
     &Image {
       object-fit: cover;
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: 800px) {
         width: 136px;
         height: 188px;
       }
@@ -38,7 +37,7 @@ export const StyledAboutUs = styled('div')`
       padding-top: 18px;
       padding-bottom: 12px;
 
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: 800px) {
         ${text14Bold};
         padding-top: 4px;
         padding-bottom: 4px;

@@ -23,8 +23,10 @@ const AboutUs = () => {
             spaceBetween={24}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: 16 },
-              1000: { slidesPerView: 3, spaceBetween: 24 },
+              500: { slidesPerView: 3, spaceBetween: 16 },
+              1150: { slidesPerView: 4, spaceBetween: 16 },
               1440: { slidesPerView: 5, spaceBetween: 24 },
+              1980: {slidesPerView: 7, spaceBetween: 24}
             }}
             onSwiper={setSwiper}
             onSlideChange={(_swiper) => {
