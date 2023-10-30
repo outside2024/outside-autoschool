@@ -13,8 +13,7 @@ const AboutUs = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <StyledAboutUs>
-      <div className="contentContainer">
+    <StyledAboutUs className="contentContainer">
         <div className="contentWrapper">
           <h2 className="typoColorBlack typoTitleSecondary">{t('aboutUs.title')}</h2>
           <h3 className="typoColorBlack typoSubtitle">{t('aboutUs.subtitle')}</h3>
@@ -54,7 +53,6 @@ const AboutUs = () => {
             <SliderNavBar activeIndex={activeIndex} swiper={swiper} />
           </div>
         </div>
-      </div>
     </StyledAboutUs>
   );
 };
