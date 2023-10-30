@@ -100,6 +100,19 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text12Semibold};
       }
     }
+
+    &ButtonPrimary {
+      ${text20Bold}
+      @media screen and (max-width: 720px) {
+        ${text12Bold}
+      }
+    }
+    &ButtonSecondary {
+      ${text14Semibold}
+      @media screen and (max-width: 720px) {
+        ${text11Semibold}
+      }
+    }
   }
 
 }
