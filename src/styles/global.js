@@ -1,6 +1,18 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
-import { text32Semibold, text60Bold, text40Bold, text24Bold, text20, text12 } from './textStyles';
+
+import {
+  text11Semibold,
+  text12Bold,
+  text14Semibold,
+  text20Bold,
+  text32Semibold,
+  text60Bold,
+  text40Bold,
+  text24Bold,
+  text20,
+  text12,
+} from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -88,6 +100,17 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text20}
       @media screen and (max-width: 1080px) {
         ${text12}
+
+    &ButtonPrimary {
+      ${text20Bold}
+      @media screen and (max-width: 720px) {
+        ${text12Bold}
+      }
+    }
+    &ButtonSecondary {
+      ${text14Semibold}
+      @media screen and (max-width: 720px) {
+        ${text11Semibold}
       }
     }
   }
