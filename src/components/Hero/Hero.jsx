@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import HeroStyles from '@/components/Hero/Hero.styled';
+import HeroStyles from '@/components/Hero/Hero.styles';
 
 const Hero = () => {
   const { t } = useTranslation();

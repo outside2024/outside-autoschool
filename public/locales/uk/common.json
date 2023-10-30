@@ -43,5 +43,24 @@
   },
   "branches": {
     "title": "Філії"
+  },
+  "aboutUs": {
+    "title": "Про нас",
+    "subtitle": "Інструктори та викладачі",
+    "position": {
+      "teacher": "викладач",
+      "instructor": "інструктор"
+    },
+    "teachersName": {
+      "Andrii": "Андрій",
+      "Dmytro": "Дмитро",
+      "Georgiy": "Георгій",
+      "Iryna": "Ірина",
+      "Mykhailo": "Михайло",
+      "Oleg": "Олег",
+      "Phillip": "Філіпп",
+      "Sergii": "Сергій",
+      "Volodymyr": "Володимир"
+    }
   }
 }
