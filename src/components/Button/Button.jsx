@@ -35,11 +35,11 @@ const Button = ({
   iconAngle,
 }) => (
   <ButtonStyles
-    type={type}
-    btnWidth={btnWidth}
-    btnHeight={GetButtonHeight(btnType, contentType)}
-    borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
-    iconAngle={iconAngle}
+    $type={type}
+    $btnWidth={btnWidth}
+    $btnHeight={GetButtonHeight(btnType, contentType)}
+    $borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
+    $iconAngle={iconAngle}
     onClick={onBtnClick}
     className={`${btnType} ${
       btnType === ButtonTypes.SECONDARY ? 'typoButtonSecondary' : 'typoButtonPrimary'
