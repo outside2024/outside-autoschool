@@ -10,6 +10,7 @@ const ButtonStyles = styled(`button`)`
   align-items: center;
   align-content: center;
   justify-content: center;
+  cursor: pointer;
 
   &.primary {
     background-color: ${({ theme }) => theme.colors.button.green};
