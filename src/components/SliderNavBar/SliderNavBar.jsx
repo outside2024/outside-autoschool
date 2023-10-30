@@ -8,8 +8,8 @@ const SliderNavBar = ({ activeIndex = 0, swiper }) => {
 
   return (
     <SliderNavBarStyles
-      width={100 / (slidesNumber - (slidesPerView - 1))}
-      left={(100 * activeIndex) / (slidesNumber - (slidesPerView - 1))}
+      $width={100 / (slidesNumber - (slidesPerView - 1))}
+      $left={(100 * activeIndex) / (slidesNumber - (slidesPerView - 1))}
     >
       <div className="progressBar" />
       <div className="buttonsContainer">
