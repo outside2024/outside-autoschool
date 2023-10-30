@@ -26,7 +26,7 @@ const AboutUs = () => {
               500: { slidesPerView: 3, spaceBetween: 16 },
               1150: { slidesPerView: 4, spaceBetween: 16 },
               1440: { slidesPerView: 5, spaceBetween: 24 },
-              1980: {slidesPerView: 7, spaceBetween: 24}
+              1980: { slidesPerView: 7, spaceBetween: 24 },
             }}
             onSwiper={setSwiper}
             onSlideChange={(_swiper) => {

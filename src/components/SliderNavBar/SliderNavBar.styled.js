@@ -21,6 +21,7 @@ const SliderNavBarStyles = styled(`div`)`
       position: absolute;
       height: 100%;
       width: ${(props) => props.width}%;
+      left: ${(props) => props.left}%;
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 5px;
     }

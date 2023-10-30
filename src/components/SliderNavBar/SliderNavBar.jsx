@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
-import Button from "@/components/Button";
+import Button from '@/components/Button';
 
 const SliderNavBar = ({ activeIndex = 0, swiper }) => {
   const slidesNumber = swiper?.slides?.length || 0;
   const slidesPerView = swiper?.params?.slidesPerView || 0;
 
   return (
-    <SliderNavBarStyles width={(100 * (activeIndex + 1)) / (slidesNumber - (slidesPerView - 1))}>
+    <SliderNavBarStyles
+      width={100 / (slidesNumber - (slidesPerView - 1))}
+      left={(100 * activeIndex) / (slidesNumber - (slidesPerView - 1))}
+    >
       <div className="progressBar" />
       <div className="buttonsContainer">
         <Button
@@ -30,7 +33,6 @@ const SliderNavBar = ({ activeIndex = 0, swiper }) => {
           }}
           iconAngle={270}
         />
-
       </div>
     </SliderNavBarStyles>
   );

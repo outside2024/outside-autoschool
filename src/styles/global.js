@@ -3,7 +3,9 @@ import theme from './theme';
 import {
   text11Semibold,
   text12Bold,
-  text12Semibold, text14Semibold, text20Bold,
+  text12Semibold,
+  text14Semibold,
+  text20Bold,
   text20Semibold,
   text24Bold,
   text32Semibold,
