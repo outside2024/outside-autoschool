@@ -11,6 +11,7 @@ const ButtonStyles = styled(`button`)`
   align-content: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.3s;
 
   &.primary {
     background-color: ${({ theme }) => theme.colors.button.green};

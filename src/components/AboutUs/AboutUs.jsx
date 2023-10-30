@@ -28,6 +28,7 @@ const AboutUs = () => {
               1440: { slidesPerView: 5, spaceBetween: 24 },
               1980: { slidesPerView: 7, spaceBetween: 24 },
             }}
+            speed={400}
             onSwiper={setSwiper}
             onSlideChange={(_swiper) => {
               setActiveIndex(_swiper.activeIndex);
