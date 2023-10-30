@@ -13,7 +13,6 @@ export const StyledAboutUs = styled('div')`
   .swiperContainer {
     padding-top: 24px;
     max-width: 1240px;
-    margin: 0 auto;
   }
 
   .swiperSlide {

@@ -20,10 +20,7 @@ const SliderNavBarStyles = styled(`div`)`
       display: block;
       position: absolute;
       height: 100%;
-      width: calc(
-        100% *
-          ${(props) => (props.activeindex + 1) / (props.slidesnumber - (props.slidesperview - 1))}
-      );
+      width: ${(props) => props.width}%;
       background-color: ${({ theme }) => theme.colors.primary};
       border-radius: 5px;
     }
