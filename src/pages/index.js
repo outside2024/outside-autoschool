@@ -2,8 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
-import Map from '../components/Map/GoogleMap';
-import GoogleMap from "../components/Map/GoogleMap";
+import GoogleMap from "@/components/GoogleMap/GoogleMap";
 
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero />
-      {/* <Map/> */}
       <GoogleMap/>
     </RootLayout>
   );
