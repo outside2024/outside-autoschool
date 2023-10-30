@@ -49,7 +49,7 @@ const ButtonStyles = styled(`button`)`
     &.dark {
       color: ${({ theme }) => theme.colors.typo.black};
       font-size: 18px;
-      transform: rotate(270deg);
+      transform: ${({ iconAngle }) => `rotate(${iconAngle}deg)`};
     }
     &.light {
       color: ${({ theme }) => theme.colors.typo.white};
