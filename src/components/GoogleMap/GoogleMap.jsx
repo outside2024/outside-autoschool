@@ -70,5 +70,6 @@ const GoogleMap = () => {
 
 
 export default GoogleApiWrapper({
-  apiKey: "REPLACED-API-KEY"
+  apiKey: process.env.NEXT_PUBLIC_API_MAP_KEY
 })(GoogleMap);
+//export default GoogleMap;

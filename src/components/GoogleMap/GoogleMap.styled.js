@@ -2,13 +2,8 @@ import styled from 'styled-components';
 import theme from "@/styles/theme";
 import {text14Semibold, text16bold, text20Semibold} from "@/styles/textStyles";
 
-
-
 const GoogleMapStyled = styled(`div`)`
   padding-top: 36px;
-
-
-
   
   .branches{
     &Title{
