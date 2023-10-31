@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import { v4 as uuidv4 } from 'uuid';
 import HowToGetStartedStyles from './HowToGetStarted.styled';
 import { data } from './constants';
 
@@ -10,13 +11,13 @@ const HowToGetStarted = () => {
         <div className="contentWrapper">
           <h2 className="typoColorBlack typoTitleSecondary">{t('howToGetStarted.title')}</h2>
           <div className="flexContainer">
-            <ol className="list">
+            <ul className="list">
               {data.map((item) => (
-                <li className="typoTextPrimary" key={item}>
+                <li className="typoTextPrimary" key={uuidv4()}>
                   {t(item)}
                 </li>
               ))}
-            </ol>
+            </ul>
             <div className="flex-container-column">
               <iframe
                 className="video"

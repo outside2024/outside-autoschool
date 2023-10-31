@@ -12,6 +12,8 @@ import {
   text24Bold,
   text20,
   text12,
+  text12Semibold,
+  text20Semibold,
 } from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
@@ -97,9 +99,9 @@ const GlobalStyle = createGlobalStyle`${css`
       }
     }
     &TextPrimary {
-      ${text20}
+      ${text20Semibold}
       @media screen and (max-width: 1080px) {
-        ${text12}
+        ${text12Semibold}
 
     &ButtonPrimary {
       ${text20Bold}

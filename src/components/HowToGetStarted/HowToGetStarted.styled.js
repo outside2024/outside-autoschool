@@ -24,11 +24,11 @@ const HowToGetStartedStyles = styled.div`
   }
 
   .list {
+    list-style: none;
     margin-top: 36px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-left: 20px;
     width: 50%;
 
     @media screen and (min-width: 721px) and (max-width: 1080px) {
