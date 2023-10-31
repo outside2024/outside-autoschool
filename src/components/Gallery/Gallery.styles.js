@@ -6,7 +6,7 @@ const GalleryStyles = styled.div`
 
   .gallery {
     list-style: none;
-    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     gap: 8px;
@@ -14,8 +14,6 @@ const GalleryStyles = styled.div`
 
     @media screen and (min-width: 744px) and (max-width: 1439px) {
       gap: 8px;
-      max-width: 100%;
-      width: 100%;
       margin-bottom: 4px;
     }
 
@@ -37,14 +35,27 @@ const GalleryStyles = styled.div`
     object-fit: cover;
     height: 100px;
 
-    @media screen and (min-width: 744px) and (max-width: 1439px) {
+    @media screen and (min-width: 460px) and (max-width: 590px) {
+      height: 130px;
+    }
+
+    @media screen and (min-width: 591px) and (max-width: 719px) {
+      height: 160px;
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 1023px) {
+      height: 210px;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px) {
       height: 316px;
     }
 
     @media screen and (min-width: 1440px) {
-      height: 300px;
+      height: 380px;
     }
   }
+
   .gallery-img1,
   .gallery-img2 {
     width: 30%;
