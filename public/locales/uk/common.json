@@ -42,7 +42,46 @@
     "btn": "Записатись"
   },
   "branches": {
-    "title": "Філії"
+    "title": "Філії",
+    "addresses": {
+      "city": "Дніпро",
+      "kosiora": {
+        "branch_name": "Косіора",
+        "address": "вул.Батумська"
+      },
+      "berezynka": {
+        "branch_name": "Березинка",
+        "address": "вул.Березинська, 26"
+      },
+      "12kvartal": {
+        "branch_name": "12 Квартал",
+        "address": "пр. Богдана Хмельницького, 118-д"
+      },
+      "communar": {
+        "branch_name": "Коммунар",
+        "address": "вул. Велика Діївська, 131"
+      },
+      "prydniprovsk": {
+        "branch_name": "Придніпровськ",
+        "address": "вул. 20-річчя Перемоги, 10"
+      },
+      "peremoga": {
+        "branch_name": "Перемога",
+        "address": "пр. Героїв, 14"
+      },
+      "tytova": {
+        "branch_name": "Титова",
+        "address": "вул. Богдана Хмельницького, 26А"
+      },
+      "sovhozna": {
+        "branch_name": "Совхозна",
+        "address": "вул. В.Сухомлинського, 48а"
+      },
+      "center": {
+        "branch_name": "Центр",
+        "address": "вул. Володимира Мономаха, 7"
+      }
+    }
   },
   "aboutUs": {
     "title": "Про нас",
