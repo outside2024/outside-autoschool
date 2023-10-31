@@ -17,6 +17,7 @@ const SliderNavBar = ({ activeIndex = 0, swiper }) => {
           btnType="secondary"
           contentType="icon"
           btnWidth={40}
+          btnHeight={32}
           content="icon-angle-down"
           onBtnClick={() => {
             swiper.slidePrev();
@@ -27,6 +28,7 @@ const SliderNavBar = ({ activeIndex = 0, swiper }) => {
           btnType="secondary"
           contentType="icon"
           btnWidth={40}
+          btnHeight={32}
           content="icon-angle-down"
           onBtnClick={() => {
             swiper.slideNext();

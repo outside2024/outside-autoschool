@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <RootLayout>
-      <Hero />
+      <Hero heroType="primary" />
       <HowToGetStarted />
       <AboutUs />
     </RootLayout>
