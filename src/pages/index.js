@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import Gallery from '@/components/Gallery/Gallery';
 
 const Home = () => {
   const { locale } = useRouter();
@@ -12,6 +13,7 @@ const Home = () => {
     <RootLayout>
       <Hero />
       <AboutUs />
+      <Gallery />
     </RootLayout>
   );
 };
