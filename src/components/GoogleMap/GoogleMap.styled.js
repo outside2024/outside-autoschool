@@ -4,6 +4,7 @@ import { text14Semibold, text16bold, text20Semibold } from '@/styles/textStyles'
 
 const GoogleMapStyled = styled(`div`)`
   padding-top: 36px;
+  position: relative;
 
   .branches {
     &Title {
@@ -12,15 +13,19 @@ const GoogleMapStyled = styled(`div`)`
     &Address {
       width: 366px;
       height: 718px;
+      bottom: 0;
       background-color: ${theme.colors.bg.white};
       position: absolute;
       z-index: 10;
       right: 93px;
-      padding-top: 29px;
-      padding-left: 40px;
+      padding: 29px 40px 0 40px;
 
       @media only screen and (max-width: 720px) {
-        display: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        position: unset;
       }
     }
   }
@@ -41,6 +46,11 @@ const GoogleMapStyled = styled(`div`)`
     flex-direction: column;
     gap: 16px;
     padding-top: 29px;
+
+    @media only screen and (max-width: 720px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .branch {
