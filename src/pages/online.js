@@ -6,18 +6,19 @@ import HowToGetStarted from '@/components/HowToGetStarted';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import { HeroTypes } from '@/components/Hero/Hero';
 
-const Home = () => {
+const Online = () => {
   const { locale } = useRouter();
   console.log(locale);
 
   return (
     <RootLayout>
-      <Hero heroType={HeroTypes.PRIMARY} />
+      <Hero heroType={HeroTypes.SECONDARY} />
+      <HowToGetStarted />
     </RootLayout>
   );
 };
 
-export default Home;
+export default Online;
 
 export async function getStaticProps({ locale }) {
   return {

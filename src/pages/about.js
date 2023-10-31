@@ -1,23 +1,17 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
-import HowToGetStarted from '@/components/HowToGetStarted';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import { HeroTypes } from '@/components/Hero/Hero';
 
-const Home = () => {
-  const { locale } = useRouter();
-  console.log(locale);
+const About = () => (
+  <RootLayout>
+    <Hero heroType={HeroTypes.TERTIARY} />
+    <AboutUs />
+  </RootLayout>
+);
 
-  return (
-    <RootLayout>
-      <Hero heroType={HeroTypes.PRIMARY} />
-    </RootLayout>
-  );
-};
-
-export default Home;
+export default About;
 
 export async function getStaticProps({ locale }) {
   return {

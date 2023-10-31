@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import HeroStyles from '@/components/Hero/Hero.styles';
 import Button, { ButtonContentTypes, ButtonTypes } from '../Button/Button';
 
-const HeroTypes = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  TERTIARY: 'tertiary',
+export const HeroTypes = {
+  PRIMARY: 'homePageHero',
+  SECONDARY: 'onlinePageHero',
+  TERTIARY: 'aboutPageHero',
 };
 
 const Hero = ({ heroType }) => {
@@ -15,16 +15,23 @@ const Hero = ({ heroType }) => {
     <HeroStyles className="contentContainer">
       <div className={`contentWrapper content ${heroType}`}>
         <div className="heroTextBlock">
-          <h2 className="typoColorWhite typoTitleTertiary">{t('hero.title')}</h2>
-          <p className="typoColorWhite typoTextPrimary heroDescription">{t('hero.description')}</p>
+          <h2 className="typoColorWhite typoTitleTertiary">{t(`${heroType}.title`)}</h2>
+
+          {heroType !== HeroTypes.TERTIARY && (
+            <p className="typoColorWhite typoTextPrimary heroDescription">
+              {t(`${heroType}.description`)}
+            </p>
+          )}
         </div>
-        <div className="heroBtnWrapper">
-          <Button
-            btnType={ButtonTypes.PRIMARY}
-            contentType={ButtonContentTypes.TEXT}
-            content={t('hero.btn')}
-          />
-        </div>
+        {heroType === HeroTypes.PRIMARY && (
+          <div className="heroBtnWrapper">
+            <Button
+              btnType={ButtonTypes.PRIMARY}
+              contentType={ButtonContentTypes.TEXT}
+              content={t(`${heroType}.btn`)}
+            />
+          </div>
+        )}
       </div>
     </HeroStyles>
   );
