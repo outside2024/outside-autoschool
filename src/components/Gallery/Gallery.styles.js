@@ -5,7 +5,6 @@ const GalleryStyles = styled.div`
   padding: 40px 0;
 
   .gallery {
-    margin: 36px 0;
     list-style: none;
     width: fit-content;
     margin: 0 auto;
