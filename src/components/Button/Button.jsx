@@ -24,12 +24,22 @@ const GetButtonHeight = (btnType, contentType) => {
   return null;
 };
 
-const Button = ({ type, btnType, contentType, content, btnWidth, onBtnClick, iconColor }) => (
+const Button = ({
+  type,
+  btnType,
+  contentType,
+  content,
+  btnWidth,
+  onBtnClick,
+  iconColor,
+  iconAngle,
+}) => (
   <ButtonStyles
-    type={type}
-    btnWidth={btnWidth}
-    btnHeight={GetButtonHeight(btnType, contentType)}
-    borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
+    $type={type}
+    $btnWidth={btnWidth}
+    $btnHeight={GetButtonHeight(btnType, contentType)}
+    $borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
+    $iconAngle={iconAngle}
     onClick={onBtnClick}
     className={`${btnType} ${
       btnType === ButtonTypes.SECONDARY ? 'typoButtonSecondary' : 'typoButtonPrimary'
@@ -53,6 +63,7 @@ Button.propTypes = {
   btnWidth: PropTypes.number,
   onBtnClick: PropTypes.func,
   iconColor: PropTypes.oneOf([IconColors.DARK, IconColors.LIGHT]),
+  iconAngle: PropTypes.number,
 };
 
 Button.defaultProps = {
@@ -60,4 +71,5 @@ Button.defaultProps = {
   btnWidth: null,
   onBtnClick: () => {},
   iconColor: IconColors.DARK,
+  iconAngle: 0,
 };

@@ -4,16 +4,14 @@ import theme from './theme';
 import {
   text11Semibold,
   text12Bold,
+  text12Semibold,
   text14Semibold,
   text20Bold,
-  text32Semibold,
-  text60Bold,
-  text40Bold,
-  text24Bold,
-  text20,
-  text12,
-  text12Semibold,
   text20Semibold,
+  text24Bold,
+  text32Semibold,
+  text40Bold,
+  text60Bold,
 } from './textStyles';
 
 const GlobalStyle = createGlobalStyle`${css`
@@ -85,9 +83,10 @@ const GlobalStyle = createGlobalStyle`${css`
         color: ${theme.colors.typo.grey};
       }
     }
+
     //! example of class for text
     &TitlePrimary {
-      ${text60Bold}
+      ${text60Bold};
       @media screen and (max-width: 720px) {
         ${text32Semibold}
       }
@@ -103,19 +102,35 @@ const GlobalStyle = createGlobalStyle`${css`
       @media screen and (max-width: 1080px) {
         ${text12Semibold}
 
+    &TitleSecondary {
+      ${text40Bold};
+      @media only screen and (max-width: 720px) {
+        ${text24Bold};
+      }
+    }
+
+    &Subtitle {
+      ${text20Semibold};
+      @media only screen and (max-width: 720px) {
+        ${text12Semibold};
+      }
+    }
+
     &ButtonPrimary {
-      ${text20Bold}
+      ${text20Bold};
       @media screen and (max-width: 720px) {
-        ${text12Bold}
+        ${text12Bold};
       }
     }
     &ButtonSecondary {
-      ${text14Semibold}
+      ${text14Semibold};
       @media screen and (max-width: 720px) {
-        ${text11Semibold}
+        ${text11Semibold};
       }
     }
   }
+
+}
 `}
 `;
 
