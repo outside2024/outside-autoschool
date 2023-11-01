@@ -34,20 +34,38 @@ export const text40Bold = css`
   line-height: 48px;
 `;
 
-export const text36Regular = css`
-  ${redHatFontFamily}
+const text36 = css`
   font-size: 36px;
   font-style: normal;
+  line-height: 44px;
+`;
+
+export const text36Regular = css`
+  ${redHatFontFamily}
+  ${text36}
   font-weight: 400;
+`;
+
+export const text36Bold = css`
+  ${text36}
+  font-weight: 700;
+`;
+
+const text32 = css`
+  font-size: 32px;
+  font-style: normal;
   line-height: 44px;
 `;
 
 export const text32Semibold = css`
   ${redHatFontFamily}
-  font-size: 32px;
-  font-style: normal;
+  ${text32}
   font-weight: 600;
-  line-height: 44px;
+`;
+
+export const text32Bold = css`
+  ${text32}
+  font-weight: 700;
 `;
 
 export const text24Bold = css`

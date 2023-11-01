@@ -9,8 +9,11 @@ import {
   text20Bold,
   text20Semibold,
   text24Bold,
+  text32Bold,
   text32Semibold,
+  text36Bold,
   text40Bold,
+  text54Bold,
   text60Bold,
 } from './textStyles';
 
@@ -91,21 +94,28 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text32Semibold}
       }
     }
-    &TitleSecondary {
-      ${text40Bold}
-      @media screen and (max-width: 1080px) {
-        ${text24Bold}
-      }
-    }
-    &TextPrimary {
-      ${text20Semibold}
-      @media screen and (max-width: 1080px) {
-        ${text12Semibold}
 
     &TitleSecondary {
       ${text40Bold};
       @media only screen and (max-width: 720px) {
         ${text24Bold};
+      }
+    }
+
+    &TitleTertiary {
+      ${text54Bold}
+      @media screen and (max-width: 720px) {
+        ${text36Bold}
+      }
+      @media screen and (max-width: 480px) {
+        ${text32Bold}
+      }
+    }
+
+    &TextPrimary {
+      ${text20Semibold}
+      @media screen and (max-width: 1080px) {
+        ${text12Semibold}
       }
     }
 
@@ -122,6 +132,7 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text12Bold};
       }
     }
+
     &ButtonSecondary {
       ${text14Semibold};
       @media screen and (max-width: 720px) {
@@ -129,8 +140,6 @@ const GlobalStyle = createGlobalStyle`${css`
       }
     }
   }
-
-}
 `}
 `;
 
