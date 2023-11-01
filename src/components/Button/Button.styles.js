@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const ButtonStyles = styled(`button`)`
   width: ${({ $btnWidth }) => ($btnWidth ? `${$btnWidth}px` : '100%')};
-  height: ${({ $btnHeight }) => `${$btnHeight}px`};
   border: none;
   border-radius: 5px;
   display: flex;
@@ -15,6 +14,7 @@ const ButtonStyles = styled(`button`)`
 
   &.primary {
     background-color: ${({ theme }) => theme.colors.button.green};
+    height: 56px;
     &:hover,
     &:focus {
       background-color: ${({ theme }) => theme.colors.button.green30};
@@ -22,9 +22,13 @@ const ButtonStyles = styled(`button`)`
     &:active {
       background-color: ${({ theme }) => theme.colors.button.green70};
     }
+    @media screen and (max-width: 720px) {
+      height: 28px;
+    }
   }
   &.secondary {
     background-color: ${({ theme }) => theme.colors.button.transparent};
+    height: ${({ $btnHeight }) => ($btnHeight ? `${$btnHeight}px` : '36px')};
     border: 1px solid ${({ theme }) => theme.colors.button.green};
     &:hover,
     &:focus {
@@ -32,6 +36,9 @@ const ButtonStyles = styled(`button`)`
     }
     &:active {
       background-color: ${({ theme }) => theme.colors.button.green70};
+    }
+    @media screen and (max-width: 720px) {
+      height: ${({ $btnHeight }) => ($btnHeight ? `${$btnHeight}px` : '32px')};
     }
   }
   &.tertiary {

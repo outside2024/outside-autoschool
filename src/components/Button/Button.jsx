@@ -1,27 +1,20 @@
 import PropTypes from 'prop-types';
 import ButtonStyles from '@/components/Button/Button.styles';
 
-const ButtonTypes = {
+export const ButtonTypes = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
   TERTIARY: 'tertiary',
 };
 
-const ButtonContentTypes = {
+export const ButtonContentTypes = {
   ICON: 'icon',
   TEXT: 'text',
 };
 
-const IconColors = {
+export const IconColors = {
   DARK: 'dark',
   LIGHT: 'light',
-};
-
-const GetButtonHeight = (btnType, contentType) => {
-  if (btnType === ButtonTypes.PRIMARY) return 56;
-  if (btnType === ButtonTypes.SECONDARY) return 36;
-  if (btnType === ButtonTypes.TERTIARY) return contentType === ButtonContentTypes.ICON ? 32 : 48;
-  return null;
 };
 
 const Button = ({
@@ -33,11 +26,12 @@ const Button = ({
   onBtnClick,
   iconColor,
   iconAngle,
+  btnHeight,
 }) => (
   <ButtonStyles
-    $type={type}
+    type={type}
     $btnWidth={btnWidth}
-    $btnHeight={GetButtonHeight(btnType, contentType)}
+    $btnHeight={btnHeight}
     $borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
     $iconAngle={iconAngle}
     onClick={onBtnClick}
@@ -61,6 +55,7 @@ Button.propTypes = {
   contentType: PropTypes.oneOf([ButtonContentTypes.ICON, ButtonContentTypes.TEXT]).isRequired,
   content: PropTypes.string.isRequired,
   btnWidth: PropTypes.number,
+  btnHeight: PropTypes.number,
   onBtnClick: PropTypes.func,
   iconColor: PropTypes.oneOf([IconColors.DARK, IconColors.LIGHT]),
   iconAngle: PropTypes.number,
@@ -69,6 +64,7 @@ Button.propTypes = {
 Button.defaultProps = {
   type: 'button',
   btnWidth: null,
+  btnHeight: null,
   onBtnClick: () => {},
   iconColor: IconColors.DARK,
   iconAngle: 0,
