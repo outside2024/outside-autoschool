@@ -1,7 +1,8 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
-import { branches, data } from '@/components/GoogleMap/data';
+import { v4 as uuidv4 } from 'uuid';
+import {citiesData, branchesData} from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
 import useWindowSize from '@/hooks/useWindowSize';
 
@@ -15,8 +16,21 @@ const mobileMapStyles = {
   height: '288px',
 };
 
+const activeBranch = "dnipro";
+
 const GoogleMapComponent = () => {
   const { t } = useTranslation();
+
+  const [center, setCenter] = useState({ lat: 0, lng: 0 });
+  const [zoom, setZoom] = useState(12);
+  const [branches, setBranches] = useState([]);
+
+  useEffect(() => {
+    setCenter(citiesData[activeBranch]);
+    setBranches(branchesData[activeBranch]);
+    setZoom(12);
+  }, [activeBranch]);
+
 
   const widowSize = useWindowSize();
   const { isLoaded } = useJsApiLoader({
@@ -36,26 +50,40 @@ const GoogleMapComponent = () => {
       {isLoaded ? (
         <GoogleMap
           mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
-          center={{ lat: 48.4647, lng: 35.0462 }}
-          zoom={12}
+          center={center}
+          zoom={zoom}
           onUnmount={() => setMap(null)}
+          options={{
+            streetViewControl: false,
+            fullscreenControl: false,
+            zoomControl: false,
+            mapTypeControl: false,
+          }}
         >
-          {data.map((marker) => (
-            <MarkerF key={marker.id} position={marker.position} />
+          {branches.map((marker) => (
+            <MarkerF key={marker.id} position={marker.coordinates}/>
           ))}
         </GoogleMap>
       ) : (
         <div />
       )}
       <div className="branchesAddress">
-        <h2 className="typoColorBlack typoTitleSecondar">{t('branches.addresses.city')}</h2>
+        <h2 className="typoColorBlack typoTitleSecondar">{t(`branches.${activeBranch}.city`)}</h2>
         <div className="mobileContainer">
-          <div className="mobileNumber">+38 (098)055-59-99</div>
-          <div className="mobileNumber">+38 (067)609-75-24</div>
+          {citiesData[activeBranch].phoneNumbers.map((number, index) => (
+            <div key={uuidv4()} className="mobileNumber">{number}</div>
+          ))}
         </div>
         <div className="addressesContainer">
           {branches.map((branch) => (
-            <div key={branch.id} className="branch">
+            <div
+              key={branch.id}
+              onClick={() => {
+                setCenter(branch.coordinates);
+                setZoom(15);
+              }}
+              className="branch"
+            >
               <i className="icon-map-pin iconPin" />
               <div>
                 <div className="branchName">{t(`${branch.name}`)}</div>

@@ -25,6 +25,7 @@ const GoogleMapStyled = styled(`div`)`
       z-index: 10;
       right: 93px;
       padding: 29px 40px 0 40px;
+      overflow-y: auto;
 
       @media only screen and (max-width: 720px) {
         display: block;
@@ -64,6 +65,7 @@ const GoogleMapStyled = styled(`div`)`
     display: flex;
     gap: 11px;
     align-items: center;
+    cursor: pointer;
 
     &Name {
       ${text16bold};
