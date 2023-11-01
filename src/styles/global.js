@@ -90,6 +90,16 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text32Semibold}
       }
     }
+    &TitleSecondary {
+      ${text40Bold}
+      @media screen and (max-width: 1080px) {
+        ${text24Bold}
+      }
+    }
+    &TextPrimary {
+      ${text20Semibold}
+      @media screen and (max-width: 1080px) {
+        ${text12Semibold}
 
     &TitleSecondary {
       ${text40Bold};

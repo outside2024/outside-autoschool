@@ -4,12 +4,14 @@ import { text14Semibold, text16bold, text20Semibold } from '@/styles/textStyles'
 
 const GoogleMapStyled = styled(`div`)`
   padding-top: 36px;
+  margin-bottom: 36px;
   position: relative;
 
   .branches {
     &Title {
       padding-bottom: 36px;
     }
+
     &Address {
       width: 366px;
       height: 718px;
@@ -61,6 +63,7 @@ const GoogleMapStyled = styled(`div`)`
     &Name {
       ${text16bold};
     }
+
     &Address {
       ${text14Semibold};
       line-height: 21px;

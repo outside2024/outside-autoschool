@@ -4,6 +4,7 @@ import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import GoogleMap from '@/components/GoogleMap/GoogleMap';
+import HowToGetStarted from '@/components/HowToGetStarted';
 
 const Home = () => {
   const { locale } = useRouter();
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero />
+      <HowToGetStarted />
       <AboutUs />
       <GoogleMap />
     </RootLayout>
