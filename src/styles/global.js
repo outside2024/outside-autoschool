@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
+
 import {
   text11Semibold,
   text12Bold,
