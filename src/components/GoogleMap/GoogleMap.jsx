@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { branches, data } from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -41,7 +41,7 @@ const GoogleMapComponent = () => {
           onUnmount={() => setMap(null)}
         >
           {data.map((marker) => (
-            <Marker key={marker.id} position={marker.position} />
+            <MarkerF key={marker.id} position={marker.position} />
           ))}
         </GoogleMap>
       ) : (
