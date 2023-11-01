@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { useState } from 'react';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { branches, data } from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -14,20 +15,16 @@ const mobileMapStyles = {
   height: '288px',
 };
 
-const desktopContainerStyles = {
-  position: 'relative',
-  height: '718px',
-};
-
-const mobileContainerStyles = {
-  position: 'relative',
-  height: '288px',
-};
-
-const GoogleMap = () => {
+const GoogleMapComponent = () => {
   const { t } = useTranslation();
 
   const widowSize = useWindowSize();
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_API_MAP_KEY.toString(),
+  });
+
+  const [, setMap] = useState(null);
 
   return (
     <GoogleMapStyled>
@@ -36,20 +33,20 @@ const GoogleMap = () => {
           <h2 className="typoColorBlack typoTitleSecondar branchesTitle">{t('branches.title')}</h2>
         </div>
       </div>
-      <Map
-        google={window.google}
-        zoom={12}
-        style={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
-        initialCenter={{
-          lat: 48.4647,
-          lng: 35.0462,
-        }}
-        containerStyle={widowSize.width >= 720 ? desktopContainerStyles : mobileContainerStyles}
-      >
-        {data.map((marker) => (
-          <Marker key={marker.id} position={marker.position} />
-        ))}
-      </Map>
+      {isLoaded ? (
+        <GoogleMap
+          mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
+          center={{ lat: 48.4647, lng: 35.0462 }}
+          zoom={12}
+          onUnmount={() => setMap(null)}
+        >
+          {data.map((marker) => (
+            <Marker key={marker.id} position={marker.position} />
+          ))}
+        </GoogleMap>
+      ) : (
+        <div />
+      )}
       <div className="branchesAddress">
         <h2 className="typoColorBlack typoTitleSecondar">{t('branches.addresses.city')}</h2>
         <div className="mobileContainer">
@@ -72,6 +69,4 @@ const GoogleMap = () => {
   );
 };
 
-export default GoogleApiWrapper({
-  apiKey: process.env.NEXT_PUBLIC_API_MAP_KEY,
-})(GoogleMap);
+export default GoogleMapComponent;

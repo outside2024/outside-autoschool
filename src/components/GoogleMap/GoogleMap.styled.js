@@ -7,6 +7,10 @@ const GoogleMapStyled = styled(`div`)`
   margin-bottom: 36px;
   position: relative;
 
+  .mapContainer {
+    height: 718px;
+  }
+
   .branches {
     &Title {
       padding-bottom: 36px;
@@ -28,6 +32,7 @@ const GoogleMapStyled = styled(`div`)`
         height: auto;
         padding: 16px;
         position: unset;
+        word-break: break-all;
       }
     }
   }
