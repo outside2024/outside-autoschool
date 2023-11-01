@@ -17,13 +17,6 @@ export const IconColors = {
   LIGHT: 'light',
 };
 
-const GetButtonHeight = (btnType, contentType) => {
-  if (btnType === ButtonTypes.PRIMARY) return 56;
-  if (btnType === ButtonTypes.SECONDARY) return 36;
-  if (btnType === ButtonTypes.TERTIARY) return contentType === ButtonContentTypes.ICON ? 32 : 48;
-  return null;
-};
-
 const Button = ({
   type,
   btnType,

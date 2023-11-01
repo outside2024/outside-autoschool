@@ -44,10 +44,22 @@ export default SliderNavBar;
 
 SliderNavBar.propTypes = {
   activeIndex: PropTypes.number,
-  swiper: PropTypes.shape({}),
+  swiper: PropTypes.shape({
+    params: PropTypes.shape({ slidesPerView: PropTypes.number }),
+    spaceBetween: PropTypes.number,
+    slidePrev: PropTypes.func,
+    slideNext: PropTypes.func,
+    slides: PropTypes.arrayOf({}),
+  }),
 };
 
 SliderNavBar.defaultProps = {
   activeIndex: 0,
-  swiper: {},
+  swiper: PropTypes.shape({
+    params: { slidesPerView: 0 },
+    spaceBetween: 0,
+    slidePrev: () => {},
+    slideNext: () => {},
+    slides: [],
+  }),
 };
