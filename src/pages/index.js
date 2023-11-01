@@ -4,6 +4,7 @@ import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import FAQ from "@/components/FAQ";
 
 const Home = () => {
   const { locale } = useRouter();
@@ -14,6 +15,7 @@ const Home = () => {
       <Hero />
       <HowToGetStarted />
       <AboutUs />
+      <FAQ/>
     </RootLayout>
   );
 };
