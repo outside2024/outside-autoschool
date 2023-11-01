@@ -49,7 +49,8 @@ SliderNavBar.propTypes = {
     spaceBetween: PropTypes.number,
     slidePrev: PropTypes.func,
     slideNext: PropTypes.func,
-    slides: PropTypes.arrayOf({}),
+    // eslint-disable-next-line react/forbid-prop-types
+    slides: PropTypes.arrayOf(PropTypes.object),
   }),
 };
 
