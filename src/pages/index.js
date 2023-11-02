@@ -4,7 +4,7 @@ import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
 import AboutUs from '@/components/AboutUs/AboutUs';
-import FAQ from "@/components/FAQ";
+import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <Hero heroType={HeroTypes.PRIMARY} />
       <HowToGetStarted />
       <AboutUs />
-      <FAQ/>
+      <FAQ />
     </RootLayout>
   );
 };
