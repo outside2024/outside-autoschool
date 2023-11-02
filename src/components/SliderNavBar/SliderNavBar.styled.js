@@ -1,5 +1,5 @@
-import { mobileBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 const SliderNavBarStyles = styled(`div`)`
   display: flex;

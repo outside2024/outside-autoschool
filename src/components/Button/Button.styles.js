@@ -1,5 +1,5 @@
-import { tabletBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
+import { tabletBreakpoint } from '@/global/constants/contants';
 
 const ButtonStyles = styled(`button`)`
   width: ${({ $btnWidth }) => ($btnWidth ? `${$btnWidth}px` : '100%')};

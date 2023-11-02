@@ -1,5 +1,5 @@
-import { mobileBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 const HeroStyles = styled(`div`)`
   background-color: ${({ theme }) => theme.colors.bg.black};

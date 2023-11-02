@@ -1,9 +1,9 @@
+import styled from 'styled-components';
 import {
   mobileBreakpoint,
   tabletBreakpoint,
   tabletStartBreakpoint,
 } from '@/global/constants/contants';
-import styled from 'styled-components';
 
 const HowToGetStartedStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};

@@ -1,5 +1,5 @@
-import { desctopBreakpoint, mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
+import { desctopBreakpoint, mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 
 const GalleryStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
