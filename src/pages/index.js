@@ -3,6 +3,10 @@ import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import { HeroTypes } from '@/components/Hero/Hero';
+import AboutUs from "@/components/AboutUs/AboutUs";
+import FormComponent from "@/components/FormComponent/FormComponent";
+
+
 
 const Home = () => {
   const { locale } = useRouter();
@@ -11,6 +15,9 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero heroType={HeroTypes.PRIMARY} />
+      <AboutUs/>
+      <FormComponent />
+
     </RootLayout>
   );
 };
