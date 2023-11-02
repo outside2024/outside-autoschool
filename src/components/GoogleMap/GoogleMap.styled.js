@@ -8,8 +8,20 @@ const GoogleMapStyled = styled(`div`)`
   margin-bottom: 36px;
 
   .map {
-    margin-right: -100px;
-    margin-left: -100px;
+    @media screen and (max-width: 1440px) {
+      margin-right: -100px;
+      margin-left: -100px;
+    }
+
+    @media screen and (max-width: 1080px) {
+      margin-left: -64px;
+      margin-right: -64px;
+    }
+
+    @media screen and (max-width: 720px) {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
   }
 
   .mapContainer {
@@ -32,6 +44,10 @@ const GoogleMapStyled = styled(`div`)`
       padding: 29px 40px 0 40px;
       overflow-y: auto;
 
+      @media only screen and (min-width: 1441px) {
+        right: 193px;
+      }
+      
       @media only screen and (max-width: 720px) {
         display: block;
         width: 100%;
