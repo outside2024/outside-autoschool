@@ -28,7 +28,7 @@ export const AccordionStyles = styled('div')`
     }
 
     &Answer {
-      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      transition: all 0.3s ease;
       max-height: 0;
       overflow-y: hidden;
       opacity: 0;
@@ -50,6 +50,7 @@ export const AccordionStyles = styled('div')`
     padding-top: 10px;
     max-height: 300px;
     opacity: 1;
+    transition: all 0.5s ease;
   }
 `;
 
