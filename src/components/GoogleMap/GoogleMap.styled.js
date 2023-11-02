@@ -52,7 +52,7 @@ const GoogleMapStyled = styled(`div`)`
         display: block;
         width: 100%;
         height: auto;
-        padding: 16px;
+        padding: 16px 0;
         position: unset;
         word-break: break-all;
       }

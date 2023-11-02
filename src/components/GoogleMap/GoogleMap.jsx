@@ -19,25 +19,24 @@ const mobileMapStyles = {
 
 const GoogleMapComponent = ({ activeBranch }) => {
   const { t } = useTranslation();
+  const widowSize = useWindowSize();
 
-  const [center, setCenter] = useState({ lat: 0, lng: 0 });
-  const [zoom, setZoom] = useState(12);
   const [branches, setBranches] = useState([]);
   const [activeAddress, setActiveAddress] = useState(-1);
 
-  useEffect(() => {
-    setCenter(citiesData[activeBranch]);
-    setBranches(branchesData[activeBranch]);
-    setZoom(12);
-  }, [activeBranch]);
+  const [map, setMap] = useState(null);
 
-  const widowSize = useWindowSize();
+  useEffect(() => {
+    setBranches(branchesData[activeBranch]);
+    if (!map) return;
+    map.setZoom(widowSize.width >= 720 ? 12 : 10);
+    map.panTo(citiesData[activeBranch]);
+  }, [activeBranch, map, widowSize]);
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.NEXT_PUBLIC_API_MAP_KEY,
   });
-
-  const [, setMap] = useState(null);
 
   return (
     <GoogleMapStyled>
@@ -49,8 +48,8 @@ const GoogleMapComponent = ({ activeBranch }) => {
             {isLoaded && (
               <GoogleMap
                 mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
-                center={center}
-                zoom={zoom}
+                center={citiesData[activeBranch]}
+                onLoad={(_map) => setMap(_map)}
                 onUnmount={() => setMap(null)}
                 options={{
                   streetViewControl: false,
@@ -81,8 +80,8 @@ const GoogleMapComponent = ({ activeBranch }) => {
                 <div
                   key={branch.id}
                   onClick={() => {
-                    setCenter(branch.coordinates);
-                    setZoom(15);
+                    map.setZoom(15);
+                    map.panTo(branch.coordinates);
                     setActiveAddress(index);
                   }}
                   className="branch"
