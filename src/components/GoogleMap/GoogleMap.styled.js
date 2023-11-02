@@ -4,8 +4,9 @@ import { text14Semibold, text16bold, text20Semibold } from '@/styles/textStyles'
 
 const GoogleMapStyled = styled(`div`)`
   padding-top: 36px;
-  margin-bottom: 36px;
   position: relative;
+  max-width: 1720px;
+  margin: 0 auto 36px;
 
   .mapContainer {
     height: 718px;
