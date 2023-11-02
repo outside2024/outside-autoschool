@@ -5,6 +5,8 @@ import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import GoogleMap from '@/components/GoogleMap/GoogleMap';
 import HowToGetStarted from '@/components/HowToGetStarted';
+import AboutUs from '@/components/AboutUs/AboutUs';
+import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero heroType={HeroTypes.PRIMARY} />
+      <AboutUs />
+      <FAQ />
       <HowToGetStarted />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
