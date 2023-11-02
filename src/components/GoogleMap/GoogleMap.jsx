@@ -42,55 +42,58 @@ const GoogleMapComponent = ({ activeBranch }) => {
     <GoogleMapStyled>
       <div className="contentContainer">
         <div className="contentWrapper">
-          <h2 className="typoColorBlack typoTitleSecondar branchesTitle">{t('branches.title')}</h2>
-        </div>
-      </div>
-      {isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
-          center={center}
-          zoom={zoom}
-          onUnmount={() => setMap(null)}
-          options={{
-            streetViewControl: false,
-            fullscreenControl: false,
-            zoomControl: false,
-            mapTypeControl: false,
-          }}
-        >
-          {branches.map((marker) => (
-            <MarkerF key={marker.id} position={marker.coordinates} />
-          ))}
-        </GoogleMap>
-      ) : (
-        <div />
-      )}
-      <div className="branchesAddress">
-        <h2 className="typoColorBlack typoTitleSecondar">{t(`branches.${activeBranch}.city`)}</h2>
-        <div className="mobileContainer">
-          {citiesData[activeBranch].phoneNumbers.map((number) => (
-            <div key={uuidv4()} className="mobileNumber">
-              {number}
+          <h2 className="typoColorBlack typoTitleSecondary branchesTitle">{t('branches.title')}</h2>
+
+          <div className="map">
+            {isLoaded && (
+              <GoogleMap
+                mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
+                center={center}
+                zoom={zoom}
+                onUnmount={() => setMap(null)}
+                options={{
+                  streetViewControl: false,
+                  fullscreenControl: false,
+                  zoomControl: false,
+                  mapTypeControl: false,
+                }}
+              >
+                {branches.map((marker) => (
+                  <MarkerF key={marker.id} position={marker.coordinates} />
+                ))}
+              </GoogleMap>
+            )}
+          </div>
+          <div className="branchesAddress">
+            <h2 className="typoColorBlack typoTitleSecondary">
+              {t(`branches.${activeBranch}.city`)}
+            </h2>
+            <div className="mobileContainer">
+              {citiesData[activeBranch].phoneNumbers.map((number) => (
+                <div key={uuidv4()} className="mobileNumber">
+                  {number}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="addressesContainer">
-          {branches.map((branch) => (
-            <div
-              key={branch.id}
-              onClick={() => {
-                setCenter(branch.coordinates);
-                setZoom(15);
-              }}
-              className="branch"
-            >
-              <i className="icon-map-pin iconPin" />
-              <div>
-                <div className="branchName">{t(`${branch.name}`)}</div>
-                <div className="branchAddress">{t(`${branch.address}`)}</div>
-              </div>
+            <div className="addressesContainer">
+              {branches.map((branch) => (
+                <div
+                  key={branch.id}
+                  onClick={() => {
+                    setCenter(branch.coordinates);
+                    setZoom(15);
+                  }}
+                  className="branch"
+                >
+                  <i className="icon-map-pin iconPin" />
+                  <div>
+                    <div className="branchName">{t(`${branch.name}`)}</div>
+                    <div className="branchAddress">{t(`${branch.address}`)}</div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </GoogleMapStyled>
