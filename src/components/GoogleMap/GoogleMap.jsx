@@ -23,6 +23,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
   const [zoom, setZoom] = useState(12);
   const [branches, setBranches] = useState([]);
+  const [activeAddress, setActiveAddress] = useState(-1);
 
   useEffect(() => {
     setCenter(citiesData[activeBranch]);
@@ -76,18 +77,25 @@ const GoogleMapComponent = ({ activeBranch }) => {
               ))}
             </div>
             <div className="addressesContainer">
-              {branches.map((branch) => (
+              {branches.map((branch, index) => (
                 <div
                   key={branch.id}
                   onClick={() => {
                     setCenter(branch.coordinates);
                     setZoom(15);
+                    setActiveAddress(index);
                   }}
                   className="branch"
                 >
-                  <i className="icon-map-pin iconPin" />
+                  <i
+                    className={
+                      activeAddress === index ? 'icon-map-pin-fill iconPin' : 'icon-map-pin iconPin'
+                    }
+                  />
                   <div>
-                    <div className="branchName">{t(`${branch.name}`)}</div>
+                    <div className={activeAddress === index ? 'branchNameActive' : 'branchName'}>
+                      {t(`${branch.name}`)}
+                    </div>
                     <div className="branchAddress">{t(`${branch.address}`)}</div>
                   </div>
                 </div>

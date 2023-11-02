@@ -47,7 +47,7 @@ const GoogleMapStyled = styled(`div`)`
       @media only screen and (min-width: 1441px) {
         right: 193px;
       }
-      
+
       @media only screen and (max-width: 720px) {
         display: block;
         width: 100%;
@@ -90,6 +90,14 @@ const GoogleMapStyled = styled(`div`)`
 
     &Name {
       ${text16bold};
+      &:hover {
+        color: ${theme.colors.primary};
+        opacity: 0.7;
+      }
+      &Active {
+        ${text16bold};
+        color: ${theme.colors.primary};
+      }
     }
 
     &Address {
