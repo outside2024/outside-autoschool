@@ -81,5 +81,18 @@
   },
   "gallery": {
     "title": "Ми з Вами"
+  },
+  "form": {
+    "title": "Подати заяву на навчання",
+    "field": {
+      "name": "Ім'я",
+      "name_placeholder": "Введіть ім'я",
+      "last_name": "Прізвище",
+      "last_name_placeholder": "Введіть прізвище",
+      "phone": "Введіть номер телефону",
+      "branch": "Філія",
+      "category": "Категорія"
+    }
+
   }
 }
