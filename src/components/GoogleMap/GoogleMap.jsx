@@ -34,7 +34,7 @@ const GoogleMapComponent = () => {
   const widowSize = useWindowSize();
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_API_MAP_KEY
+    googleMapsApiKey: process.env.NEXT_PUBLIC_API_MAP_KEY,
   });
 
   const [, setMap] = useState(null);
