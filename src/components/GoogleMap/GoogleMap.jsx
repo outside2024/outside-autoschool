@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 import { citiesData, branchesData } from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -16,9 +17,7 @@ const mobileMapStyles = {
   height: '288px',
 };
 
-const activeBranch = 'dnipro';
-
-const GoogleMapComponent = () => {
+const GoogleMapComponent = ({ activeBranch }) => {
   const { t } = useTranslation();
 
   const [center, setCenter] = useState({ lat: 0, lng: 0 });
@@ -96,6 +95,10 @@ const GoogleMapComponent = () => {
       </div>
     </GoogleMapStyled>
   );
+};
+
+GoogleMapComponent.propTypes = {
+  activeBranch: PropTypes.string.isRequired,
 };
 
 export default GoogleMapComponent;

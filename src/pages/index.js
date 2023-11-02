@@ -16,7 +16,7 @@ const Home = () => {
       <Hero heroType={HeroTypes.PRIMARY} />
       <HowToGetStarted />
       <AboutUs />
-      <GoogleMap />
+      <GoogleMap activeBranch="dnipro" />
     </RootLayout>
   );
 };
