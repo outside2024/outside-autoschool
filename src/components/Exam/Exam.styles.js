@@ -4,7 +4,7 @@ const ExamStyles = styled.div`
   background-color: transparent;
   padding-top: 24px;
 
-  @media screen and (min-width: 721px) {
+  @media screen and (min-width: 768px) {
     padding-top: 81px;
   }
 
@@ -12,9 +12,14 @@ const ExamStyles = styled.div`
     width: 136px;
     height: 116px;
 
-    @media screen and (min-width: 721px) and (max-width: 1439px) {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
       width: 170px;
       height: 140px;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+      width: 250px;
+      height: 230px;
     }
 
     @media screen and (min-width: 1440px) {
@@ -29,7 +34,7 @@ const ExamStyles = styled.div`
     gap: 64px;
     width: 100%;
 
-    @media screen and (max-width: 1439px) {
+    @media screen and (max-width: 1023px) {
       margin-top: 16px;
       gap: 16px;
     }
@@ -41,7 +46,7 @@ const ExamStyles = styled.div`
     flex-direction: column;
     gap: 16px;
 
-    @media screen and (max-width: 1439px) {
+    @media screen and (max-width: 1023px) {
       padding-top: 0px;
     }
   }
@@ -52,13 +57,13 @@ const ExamStyles = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    @media screen and (min-width: 721px) and (max-width: 1439px) {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
       flex-direction: column;
       align-items: start;
       width: 170px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 767px) {
       flex-direction: column;
       align-items: start;
       width: 136px;

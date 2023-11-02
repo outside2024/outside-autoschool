@@ -10,6 +10,7 @@ import HeroDescription from '../HeroDescription/HeroDescription';
 const HeroSecondary = () => {
   const city = {
     title: 'Новомосковськ',
+    name: 'Новомосковську',
     src: imgСity,
     phone: '(097) 696-72-72 ',
     address1: '| вул. Гетьманська 40-А',
@@ -23,46 +24,57 @@ const HeroSecondary = () => {
   return (
     <HeroSecondaryStyles>
       <div className="contentContainer">
-        <div className={city ? 'container' : 'background'}>
-          <div className="wrapper">
-            <div className="left-container">
-              <h2 className="typoColorBlack typoTitlePrimary gap">
-                {city ? city.title : t('tests.title')}
-              </h2>
-              {city ? (
-                <>
-                  {city.phone && <p className="typoSubtitle ">{city.phone}</p>}
-                  {city.address1 && <p className="typoSubtitle ">{city.address1}</p>}
-                  {city.address2 && <p className="typoSubtitle gap">{city.address2}</p>}
-                </>
-              ) : (
-                <p className="typoSubtitle gap">{t('tests.description')}</p>
-              )}
-              {city ? (
+        {city ? (
+          <div className="container">
+            <div className="wrapper">
+              <div className="left-container">
+                <h2 className="typoColorBlack typoTitlePrimary gap">{city.title}</h2>
+                {city.phone && <p className="typoSubtitle">{city.phone}</p>}
+                {city.address1 && <p className="typoSubtitle">{city.address1}</p>}
+                {city.address2 && <p className="typoSubtitle gap">{city.address2}</p>}
                 <Link href="/" className="link typoSubtitle">
-                  Сервісний центр МВС
+                  {t('tests.serviceCenter')}
                   <i className="icon-link " />
                 </Link>
-              ) : (
+              </div>
+
+              <Image
+                src={city.src}
+                width={852}
+                height={479}
+                quality={85}
+                alt={city.title}
+                className="heroSecondaryImage"
+                priority
+              />
+            </div>
+            <HeroDescription city={city.name} />
+          </div>
+        ) : (
+          <div className="background">
+            <div className="wrapper">
+              <div className="left-container">
+                <h2 className="typoColorBlack typoTitlePrimary gap">{t('tests.title')}</h2>
+                <p className="typoSubtitle gap">{t('tests.description')}</p>
                 <Link href="/" className="link typoSubtitle">
                   <i className="icon-save " />
-                  Завантажити екзаменаційні питання
+                  {t('tests.downloadQuestions')}
                 </Link>
-              )}
-            </div>
+              </div>
 
-            <Image
-              src={city ? city.src : img}
-              width={852}
-              height={479}
-              quality={85}
-              alt="car"
-              className="heroSecondaryImage"
-              priority
-            />
+              <Image
+                src={img}
+                width={852}
+                height={479}
+                quality={85}
+                alt="car"
+                className="heroSecondaryImage"
+                priority
+              />
+            </div>
+            <Exam />
           </div>
-          {city ? <HeroDescription /> : <Exam />}
-        </div>
+        )}
       </div>
     </HeroSecondaryStyles>
   );

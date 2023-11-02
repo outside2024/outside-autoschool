@@ -124,14 +124,14 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &Subtitle {
       ${text20Semibold};
-      @media only screen and (max-width: 1439px) {
+      @media only screen and (max-width: 1024px) {
         ${text12Semibold};
       }
     }
 
     &ButtonPrimary {
       ${text20Bold};
-      @media screen and (max-width: 1439px) {
+      @media screen and (max-width: 720px) {
         ${text12Bold};
       }
     }

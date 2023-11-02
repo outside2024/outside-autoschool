@@ -31,7 +31,7 @@ i {
 .icon-close:before {
   content: '\e904';
 }
-.icon-save:before {
+.icon-burger:before {
   content: '\e905';
 }
 .icon-map-pin:before {
@@ -54,4 +54,8 @@ i {
 }
 .icon-link:before {
   content: '\e908';
+}
+
+.icon-save:before {
+  content: '\e909';
 }

@@ -4,12 +4,12 @@ const HeroSecondaryStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
   padding-bottom: 24px;
 
-  @media screen and (max-width: 1439px) {
+  @media screen and (max-width: 1023px) {
     padding-top: 16px;
   }
 
   .wrapper-exam {
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       padding-bottom: 81px;
     }
   }
@@ -18,11 +18,11 @@ const HeroSecondaryStyles = styled.div`
     display: flex;
     gap: 30px;
 
-    @media screen and (min-width: 721px) and (max-width: 1079px) {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
       gap: 24px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 767px) {
       flex-direction: column;
       gap: 16px;
     }
@@ -31,12 +31,12 @@ const HeroSecondaryStyles = styled.div`
   .left-container {
     padding: 0 16px;
 
-    @media screen and (min-width: 721px) and (max-width: 1079px) {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
       padding: 0 0 0 64px;
       width: 100%;
     }
 
-    @media screen and (min-width: 1080px) {
+    @media screen and (min-width: 1024px) {
       padding: 54px 100px;
       width: 100%;
     }
@@ -45,7 +45,7 @@ const HeroSecondaryStyles = styled.div`
   .gap {
     margin-bottom: 8px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       margin-bottom: 48px;
     }
   }
@@ -69,7 +69,7 @@ const HeroSecondaryStyles = styled.div`
     font-size: 24px;
     color: ${({ theme }) => theme.colors.primary};
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
       transform: rotate(-45deg);
     }
   }
@@ -95,11 +95,11 @@ const HeroSecondaryStyles = styled.div`
       height: 220px;
     }
 
-    @media screen and (min-width: 801px) and (max-width: 1079px) {
+    @media screen and (min-width: 801px) and (max-width: 1023px) {
       height: 250px;
     }
 
-    @media screen and (min-width: 1080px) and (max-width: 1439px) {
+    @media screen and (min-width: 1024px) and (max-width: 1439px) {
       height: 350px;
     }
 

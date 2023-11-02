@@ -31,11 +31,13 @@ const Exam = () => {
               <p className="typoTextPrimary">{t('exam.password')}</p>
               <p className="typoButtonPrimary">EXM_002197</p>
             </div>
-            <Button
-              btnType={ButtonTypes.PRIMARY}
-              contentType={ButtonContentTypes.TEXT}
-              content={t('exam.button')}
-            />
+            <a href="https://exm.hsc.gov.ua/login/ukr">
+              <Button
+                btnType={ButtonTypes.PRIMARY}
+                contentType={ButtonContentTypes.TEXT}
+                content={t('exam.button')}
+              />
+            </a>
           </div>
         </div>
       </div>

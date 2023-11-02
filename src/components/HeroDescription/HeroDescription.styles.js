@@ -4,11 +4,11 @@ const HeroDescriptionStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
   padding-top: 57px;
 
-  @media screen and (min-width: 721px) and (max-width: 1439px) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
     padding-top: 24px;
   }
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 767px) {
     padding-top: 24px;
   }
 
@@ -16,7 +16,7 @@ const HeroDescriptionStyles = styled.div`
     display: flex;
     gap: 24px;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 767px) {
       flex-direction: column;
     }
   }
