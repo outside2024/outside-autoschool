@@ -1,3 +1,4 @@
+import { mobileBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
 
 const HeroStyles = styled(`div`)`
@@ -25,7 +26,7 @@ const HeroStyles = styled(`div`)`
         margin-bottom: 64px;
         .heroDescription {
           display: inline-block;
-          @media screen and (max-width: 1440px) and (min-width: 720px) {
+          @media screen and (max-width: 1440px) and (min-width: ${mobileBreakpoint}) {
             max-width: 426px;
           }
         }
@@ -38,7 +39,7 @@ const HeroStyles = styled(`div`)`
         background-size: calc(50% + 160px), 45%;
       }
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 48px;
         padding-bottom: 120px;
         gap: 8px;

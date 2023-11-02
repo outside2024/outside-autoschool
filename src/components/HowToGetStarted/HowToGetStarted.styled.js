@@ -1,3 +1,8 @@
+import {
+  mobileBreakpoint,
+  tabletBreakpoint,
+  tabletStartBreakpoint,
+} from '@/global/constants/contants';
 import styled from 'styled-components';
 
 const HowToGetStartedStyles = styled.div`
@@ -5,7 +10,7 @@ const HowToGetStartedStyles = styled.div`
   width: 100%;
   padding: 56px 0;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: ${mobileBreakpoint}) {
     padding: 24px 0;
   }
 
@@ -14,11 +19,11 @@ const HowToGetStartedStyles = styled.div`
     justify-content: space-between;
     gap: 64px;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       flex-direction: column;
     }
 
-    @media screen and (min-width: 721px) and (max-width: 1080px) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       gap: 48px;
     }
   }
@@ -31,11 +36,11 @@ const HowToGetStartedStyles = styled.div`
     gap: 24px;
     width: 50%;
 
-    @media screen and (min-width: 721px) and (max-width: 1080px) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       gap: 16px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       width: 100%;
       margin-top: 24px;
       gap: 16px;
@@ -49,7 +54,7 @@ const HowToGetStartedStyles = styled.div`
     gap: 64px;
     width: 50%;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       gap: 10px;
       width: 100%;
       margin-top: 0;
@@ -60,11 +65,11 @@ const HowToGetStartedStyles = styled.div`
     max-width: 100%;
     border-radius: 10px;
 
-    @media screen and (min-width: 721px) and (max-width: 1080px) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       height: 150px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       width: 100%;
     }
   }

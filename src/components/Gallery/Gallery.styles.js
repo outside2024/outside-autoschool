@@ -1,3 +1,4 @@
+import { desctopBreakpoint, mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 import styled from 'styled-components';
 
 const GalleryStyles = styled.div`
@@ -12,12 +13,12 @@ const GalleryStyles = styled.div`
     gap: 8px;
     margin-bottom: 4px;
 
-    @media screen and (min-width: 744px) and (max-width: 1439px) {
+    @media screen and (min-width: ${mobileBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       gap: 8px;
       margin-bottom: 4px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desctopBreakpoint}) {
       gap: 36px;
       margin-bottom: 32px;
     }
@@ -25,7 +26,7 @@ const GalleryStyles = styled.div`
   .gap {
     margin-bottom: 24px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desctopBreakpoint}) {
       margin-bottom: 36px;
     }
   }
@@ -43,11 +44,11 @@ const GalleryStyles = styled.div`
       height: 160px;
     }
 
-    @media screen and (min-width: 720px) and (max-width: 1023px) {
+    @media screen and (min-width: 720px) and (${tabletBreakpoint}) {
       height: 210px;
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    @media screen and (min-width: ${desctopBreakpoint}) and (max-width: 1439px) {
       height: 316px;
     }
 
