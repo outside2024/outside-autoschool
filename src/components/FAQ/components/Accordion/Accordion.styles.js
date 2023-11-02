@@ -28,7 +28,7 @@ export const AccordionStyles = styled('div')`
     }
 
     &Answer {
-      transition: 0.5s;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
       max-height: 0;
       overflow-y: hidden;
       opacity: 0;
@@ -41,7 +41,6 @@ export const AccordionStyles = styled('div')`
 
     &Close {
       font-size: 24px;
-
       @media only screen and (max-width: 720px) {
         font-size: 16px;
       }
