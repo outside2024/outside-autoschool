@@ -93,6 +93,9 @@ const GlobalStyle = createGlobalStyle`${css`
       @media screen and (max-width: 720px) {
         ${text32Semibold}
       }
+      @media screen and (min-width: 721px) and (max-width: 1439px) {
+        ${text32Semibold}
+      }
     }
 
     &TitleSecondary {
@@ -121,14 +124,14 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &Subtitle {
       ${text20Semibold};
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: 1439px) {
         ${text12Semibold};
       }
     }
 
     &ButtonPrimary {
       ${text20Bold};
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: 1439px) {
         ${text12Bold};
       }
     }

@@ -3,6 +3,9 @@ import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import { HeroTypes } from '@/components/Hero/Hero';
+import HowToGetStarted from '@/components/HowToGetStarted';
+import AboutUs from '@/components/AboutUs/AboutUs';
+import HeroSecondary from '@/components/HeroSecondary';
 
 const Home = () => {
   const { locale } = useRouter();
@@ -11,6 +14,10 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero heroType={HeroTypes.PRIMARY} />
+      <HeroSecondary />
+
+      <HowToGetStarted />
+      <AboutUs />
     </RootLayout>
   );
 };
