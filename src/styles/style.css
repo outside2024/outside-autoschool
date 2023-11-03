@@ -52,3 +52,10 @@ i {
 .icon-instagram:before {
   content: '\e903';
 }
+.icon-link:before {
+  content: '\e908';
+}
+
+.icon-save:before {
+  content: '\e909';
+}
