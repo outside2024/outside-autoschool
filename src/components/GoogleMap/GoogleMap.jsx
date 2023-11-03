@@ -29,7 +29,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
   useEffect(() => {
     setBranches(branchesData[activeBranch]);
     if (!map) return;
-    map.setZoom(widowSize.width >= 720 ? 12 : 10);
+    map.setZoom(widowSize.width >= 767 ? 12 : 10);
     map.panTo(citiesData[activeBranch]);
   }, [activeBranch, map, widowSize]);
 
@@ -47,7 +47,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
           <div className="map">
             {isLoaded && (
               <GoogleMap
-                mapContainerStyle={widowSize.width >= 720 ? desktopMapStyles : mobileMapStyles}
+                mapContainerStyle={widowSize.width >= 767 ? desktopMapStyles : mobileMapStyles}
                 center={citiesData[activeBranch]}
                 onLoad={(_map) => setMap(_map)}
                 onUnmount={() => setMap(null)}

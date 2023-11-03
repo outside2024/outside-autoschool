@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
 import { text14Semibold, text16bold, text20Semibold } from '@/styles/textStyles';
+import {
+  desktopBigBreakpoint,
+  mobileBreakpoint,
+  tabletBreakpoint,
+} from '@/global/constants/contants';
 
 const GoogleMapStyled = styled(`div`)`
   padding-top: 36px;
@@ -8,17 +13,17 @@ const GoogleMapStyled = styled(`div`)`
   margin-bottom: 36px;
 
   .map {
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: ${desktopBigBreakpoint}) {
       margin-right: -100px;
       margin-left: -100px;
     }
 
-    @media screen and (max-width: 1080px) {
-      margin-left: -64px;
-      margin-right: -64px;
+    @media screen and (max-width: ${tabletBreakpoint}) {
+      margin-left: -36px;
+      margin-right: -36px;
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       margin-left: -16px;
       margin-right: -16px;
     }
@@ -48,7 +53,7 @@ const GoogleMapStyled = styled(`div`)`
         right: 193px;
       }
 
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: ${mobileBreakpoint}) {
         display: block;
         width: 100%;
         height: auto;
@@ -76,7 +81,7 @@ const GoogleMapStyled = styled(`div`)`
     gap: 16px;
     padding-top: 29px;
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: ${mobileBreakpoint}) {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
