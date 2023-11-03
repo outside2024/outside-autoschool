@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
+import { desktopBigBreakpoint } from '../../global/constants/contants';
 
 const GalleryStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
@@ -12,12 +14,12 @@ const GalleryStyles = styled.div`
     gap: 8px;
     margin-bottom: 4px;
 
-    @media screen and (min-width: 744px) and (max-width: 1439px) {
+    @media screen and (min-width: ${mobileBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       gap: 8px;
       margin-bottom: 4px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desktopBreakpoint}) {
       gap: 36px;
       margin-bottom: 32px;
     }
@@ -25,7 +27,7 @@ const GalleryStyles = styled.div`
   .gap {
     margin-bottom: 24px;
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desktopBreakpoint}) {
       margin-bottom: 36px;
     }
   }
@@ -43,15 +45,15 @@ const GalleryStyles = styled.div`
       height: 160px;
     }
 
-    @media screen and (min-width: 720px) and (max-width: 1023px) {
+    @media screen and (min-width: 720px) and (${tabletBreakpoint}) {
       height: 210px;
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    @media screen and (min-width: ${desktopBreakpoint}) and (max-width: ${desktopBreakpoint}) {
       height: 316px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desktopBigBreakpoint}) {
       height: 380px;
     }
   }

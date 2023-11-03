@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 const SliderNavBarStyles = styled(`div`)`
   display: flex;
@@ -41,7 +42,7 @@ const SliderNavBarStyles = styled(`div`)`
   .buttonsContainer {
     display: flex;
     gap: 16px;
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: ${mobileBreakpoint}) {
       display: none;
     }
 
