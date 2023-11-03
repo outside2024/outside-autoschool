@@ -40,7 +40,7 @@ const HeroSecondaryStyles = styled.div`
     padding: 0 16px;
 
     @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
-      padding: 0 0 0 64px;
+      padding: 0 0 0 36px;
       width: 100%;
     }
 

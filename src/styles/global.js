@@ -60,8 +60,8 @@ const GlobalStyle = createGlobalStyle`${css`
       padding-right: 100px;
 
       @media screen and (max-width: ${tabletBreakpoint}) {
-        padding-left: 64px;
-        padding-right: 64px;
+        padding-left: 36px;
+        padding-right: 36px;
       }
 
       @media screen and (max-width: ${mobileBreakpoint}) {
