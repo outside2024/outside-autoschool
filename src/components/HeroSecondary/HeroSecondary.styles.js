@@ -1,15 +1,23 @@
 import styled from 'styled-components';
+import {
+  mobileBreakpoint,
+  tabletStartBreakpoint,
+  desktopStartBreakpoint,
+  desktopBreakpoint,
+  desktopBigBreakpoint,
+} from '../../global/constants/contants';
+import { tabletBreakpoint } from '@/global/constants/contants';
 
 const HeroSecondaryStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
   padding-bottom: 24px;
 
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: ${tabletBreakpoint}) {
     padding-top: 16px;
   }
 
   .wrapper-exam {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) {
       padding-bottom: 81px;
     }
   }
@@ -18,11 +26,11 @@ const HeroSecondaryStyles = styled.div`
     display: flex;
     gap: 30px;
 
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       gap: 24px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${mobileBreakpoint}) {
       flex-direction: column;
       gap: 16px;
     }
@@ -31,12 +39,12 @@ const HeroSecondaryStyles = styled.div`
   .left-container {
     padding: 0 16px;
 
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
       padding: 0 0 0 64px;
       width: 100%;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) {
       padding: 54px 100px;
       width: 100%;
     }
@@ -45,7 +53,7 @@ const HeroSecondaryStyles = styled.div`
   .gap {
     margin-bottom: 8px;
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) {
       margin-bottom: 48px;
     }
   }
@@ -69,7 +77,7 @@ const HeroSecondaryStyles = styled.div`
     font-size: 24px;
     color: ${({ theme }) => theme.colors.primary};
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) {
       transform: rotate(-45deg);
     }
   }
@@ -95,15 +103,15 @@ const HeroSecondaryStyles = styled.div`
       height: 220px;
     }
 
-    @media screen and (min-width: 801px) and (max-width: 1023px) {
+    @media screen and (min-width: 801px) and (max-width: ${tabletBreakpoint}) {
       height: 250px;
     }
 
-    @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
       height: 350px;
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: ${desktopBigBreakpoint}) {
       width: 852px;
       height: 479px;
     }
