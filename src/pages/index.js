@@ -2,6 +2,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
+import GoogleMap from '@/components/GoogleMap/GoogleMap';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
@@ -16,6 +17,7 @@ const Home = () => {
       <Hero heroType={HeroTypes.PRIMARY} />
       <HowToGetStarted />
       <AboutUs />
+      <GoogleMap activeBranch="dnipro" />
       <FAQ />
     </RootLayout>
   );

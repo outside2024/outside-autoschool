@@ -76,7 +76,150 @@
       "Oleg": "Олег",
       "Phillip": "Філіпп",
       "Sergii": "Сергій",
-      "Volodymyr": "Володимир"
+      "Volodymyr": "Володимир",
+      "Danylo": "Данило",
+      "Kyrylo": "Кирило",
+      "Maksym": "Максим",
+      "Mykola": "Микола",
+      "Vadym": "Вадим"
+    }
+  },
+  "branches": {
+    "title": "Філії",
+    "dnipro": {
+      "city": "Дніпро",
+      "robocha": {
+        "branch_name": "Робоча",
+        "address": "вул. Робоча 89"
+      },
+      "berezynka": {
+        "branch_name": "Березинка",
+        "address": "вул. М.Лисиченко,21"
+      },
+      "12kvartal": {
+        "branch_name": "12 Квартал",
+        "address": "пр. Богдана Хмельницького, 118-д"
+      },
+      "slobozhanska": {
+        "branch_name": "Слобожанська",
+        "address": "пр. Слобожанський"
+      },
+      "prydniprovsk": {
+        "branch_name": "Придніпровськ",
+        "address": "вул. 20-річчя Перемоги, 10"
+      },
+      "peremoga": {
+        "branch_name": "Перемога",
+        "address": "пр. Героїв, 14"
+      },
+      "tytova": {
+        "branch_name": "Титова",
+        "address": "вул. Богдана Хмельницького, 26А"
+      },
+      "sovhozna": {
+        "branch_name": "Совхозна",
+        "address": "вул. В.Сухомлинського, 48а"
+      },
+      "center": {
+        "branch_name": "Центр",
+        "address": "вул. Володимира Мономаха, 7"
+      }
+    },
+    "gvardiyske": {
+      "city": "смт Гвардійське",
+      "branch1": {
+        "branch_name": "Гвардійське",
+        "address": "смт Гвардійське"
+      }
+    },
+    "pavlograd": {
+      "city": "Павлоград",
+      "branch1": {
+        "branch_name": "Павлоград",
+        "address": "вул. Центральна, 46"
+      }
+    },
+    "obuhivka": {
+      "city": "смт Обухівка (Кіровськ)",
+      "branch1": {
+        "branch_name": "смт Обухівка",
+        "address": "вул Центральна 27"
+      }
+    },
+    "novomoskovsk": {
+      "city": "Новомосковськ",
+      "branch1": {
+        "branch_name": "Новомосковськ",
+        "address": "вул. Гетьманська 40-А"
+      },
+      "branch2": {
+        "branch_name": "",
+        "address": "вул. Українська 9-А"
+      }
+    },
+    "pidhorodne": {
+      "city": "Підгородне",
+      "branch1": {
+        "branch_name": "Підгородне",
+        "address": "вул Центральна 25"
+      }
+    },
+    "nikopol": {
+      "city": "Нікополь",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул. І. Богуна 5"
+      },
+      "branch2": {
+        "branch_name": "",
+        "address": "вул.Патріотів України,167"
+      }
+    },
+    "ilarionove": {
+      "city": "Іларіонове",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул Робоча 12а"
+      }
+    },
+    "preshchepyno": {
+      "city": "Перещепино",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул. Шевченка 58"
+      }
+    },
+    "chumaky": {
+      "city": "Чумаки",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул Шкільна 11а"
+      }
+    },
+    "zaporizhya": {
+      "city": "Запоріжжя",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул Фортечна 4а каб 9, 3 поверх"
+      }
+    },
+    "kryvyi_rig": {
+      "city": "Кривий Ріг",
+      "branch1": {
+        "branch_name": "",
+        "address": "пр. Героїв-підпільників, 1а"
+      },
+      "branch2": {
+        "branch_name": "",
+        "address": "вул. Недєліна, 28 (Інгулець)"
+      }
+    },
+    "kharkiv": {
+      "city": "Харків",
+      "branch1": {
+        "branch_name": "",
+        "address": "вул Шота Руставелі 28/1"
+      }
     }
   },
   "gallery": {
