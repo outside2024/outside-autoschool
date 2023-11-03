@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mobileBreakpoint } from '@/global/constants/contants';
+import { desktopBigBreakpoint } from '../../global/constants/contants';
 
 const HeroStyles = styled(`div`)`
   background-color: ${({ theme }) => theme.colors.bg.black};
@@ -26,7 +27,7 @@ const HeroStyles = styled(`div`)`
         margin-bottom: 64px;
         .heroDescription {
           display: inline-block;
-          @media screen and (max-width: 1440px) and (min-width: ${mobileBreakpoint}) {
+          @media screen and (max-width: ${desktopBigBreakpoint}) and (min-width: ${mobileBreakpoint}) {
             max-width: 426px;
           }
         }
