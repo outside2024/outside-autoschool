@@ -39,12 +39,17 @@ const HeroSecondaryStyles = styled.div`
   .left-container {
     padding: 0 16px;
 
-    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
+    @media screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
       padding: 0 0 0 64px;
       width: 100%;
     }
 
-    @media screen and (min-width: ${desktopStartBreakpoint}) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
+      padding: 54px 0 54px 100px;
+      width: 100%;
+    }
+
+    @media screen and (min-width: ${desktopBigBreakpoint}) {
       padding: 54px 100px;
       width: 100%;
     }
@@ -107,7 +112,11 @@ const HeroSecondaryStyles = styled.div`
       height: 250px;
     }
 
-    @media screen and (min-width: ${desktopStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) and (max-width: 1200px) {
+      height: 280px;
+    }
+
+    @media screen and (min-width: 1201px) and (max-width: ${desktopBreakpoint}) {
       height: 350px;
     }
 

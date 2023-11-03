@@ -60,8 +60,8 @@ const GlobalStyle = createGlobalStyle`${css`
       padding-right: 100px;
 
       @media screen and (max-width: ${tabletBreakpoint}) {
-        padding-left: 36px;
-        padding-right: 36px;
+        padding-left: 64px;
+        padding-right: 64px;
       }
 
       @media screen and (max-width: ${mobileBreakpoint}) {
@@ -92,9 +92,6 @@ const GlobalStyle = createGlobalStyle`${css`
     &TitlePrimary {
       ${text60Bold};
       @media screen and (max-width: ${tabletBreakpoint}) {
-        ${text32Semibold}
-      }
-      @media screen and (min-width: 721px) and (max-width: ${desktopBreakpoint}) {
         ${text32Semibold}
       }
     }
