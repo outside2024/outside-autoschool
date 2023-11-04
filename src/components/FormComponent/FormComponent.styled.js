@@ -1,28 +1,65 @@
 import styled from 'styled-components';
 import theme from "@/styles/theme";
-import {text14Semibold} from "@/styles/textStyles";
+import {text12Semibold, text14Semibold} from "@/styles/textStyles";
+import {mobileBreakpoint, tabletBreakpoint} from "@/global/constants/contants";
 
 
 export const FromComponentStyled = styled('div')`
+  padding-bottom: 66px;
+
+  @media only screen and (max-width: ${mobileBreakpoint}) {
+    padding-bottom: 24px;
+  }
   
-  .formContainer {
-    display: flex;
-    flex-direction: column;
-   gap: 16px;
-   
+
+  .form {
+    &Container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+    
+    &Image {
+      @media only screen and (max-width: ${mobileBreakpoint}){
+        display: none;
+      }
+
+      @media only screen and (max-width: 1234px) {
+        width: 324px;
+        height: 436px;
+        object-fit: cover;
+      
+        
+      }
+    }
+    
+    &Error{
+      color:red;
+      font-size: 14px;
+    }
   }
   .content {
     display: flex;
     gap: 48px;
     padding-top: 48px;
+
+    @media only screen and (max-width: ${mobileBreakpoint}) {
+      padding-top: 24px;
+    }
+
+    @media only screen and (max-width: ${tabletBreakpoint}) {
+      gap: 24px;
+    }
   }
   
   .container {
     display: flex;
     gap: 16px;
-    //padding-bottom: 16px;
-    
-    
+
+    @media only screen and (max-width: ${tabletBreakpoint}){
+      flex-direction: column;
+    }
   }
 
   .field{
@@ -30,6 +67,8 @@ export const FromComponentStyled = styled('div')`
       display: flex;
       flex-direction: column;
       gap: 8px;
+      width: 100%;
+      
    
     }
   }
@@ -39,6 +78,10 @@ export const FromComponentStyled = styled('div')`
       ${text14Semibold};
       line-height: 21px;
       ${theme.colors.black};
+
+      @media only screen and (max-width: ${mobileBreakpoint}){
+        ${text12Semibold};
+      }
     }
   }
   
@@ -46,13 +89,24 @@ export const FromComponentStyled = styled('div')`
     border: 1px solid ${theme.colors.primary};
     border-radius: 6px;
     padding: 13.5px 16px;
-    min-width: 255.5px;
+    
+    @media only screen and (max-width: ${mobileBreakpoint}) {
+      width: 100%;
+    }
   }
   
   .input::placeholder {
     color: ${theme.colors.typo.grey};
     ${text14Semibold};
     line-height: 21px;
+  }
+  
+  .buttonWrapper {
+    padding-top: 40px;
+    
+    @media only screen and (max-width: ${tabletBreakpoint}) {
+      padding-top: 24px;
+    }
   }
   
 `;

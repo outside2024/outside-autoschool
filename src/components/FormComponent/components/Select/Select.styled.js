@@ -11,6 +11,7 @@ export const SelectContainer = styled('div')`
     ${text14Semibold};
     line-height: 21px;
     ${theme.colors.black};
+      padding-bottom: 8px;
   }
 
   .custom {
@@ -47,12 +48,14 @@ export const SelectContainer = styled('div')`
                 background-color: ${theme.colors.primary};
             }
             
+           
+            
         }
         
         &__menu {
             
             &-list{
-                height: 110px;
+                height: 150px;
             }
             
         }

@@ -1,6 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
-
 import {
   text11Semibold,
   text12Bold,
@@ -16,6 +15,8 @@ import {
   text54Bold,
   text60Bold,
 } from './textStyles';
+import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
+import { desktopBreakpoint } from '../global/constants/contants';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -58,12 +59,12 @@ const GlobalStyle = createGlobalStyle`${css`
       padding-left: 100px;
       padding-right: 100px;
 
-      @media screen and (max-width: 1080px) {
-        padding-left: 64px;
-        padding-right: 64px;
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        padding-left: 36px;
+        padding-right: 36px;
       }
 
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${mobileBreakpoint}) {
         padding-left: 16px;
         padding-right: 16px;
       }
@@ -90,52 +91,52 @@ const GlobalStyle = createGlobalStyle`${css`
     //! example of class for text
     &TitlePrimary {
       ${text60Bold};
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${tabletBreakpoint}) {
         ${text32Semibold}
       }
     }
 
     &TitleSecondary {
       ${text40Bold};
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: ${tabletBreakpoint}) {
         ${text24Bold};
       }
     }
 
     &TitleTertiary {
       ${text54Bold}
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${tabletBreakpoint}) {
         ${text36Bold}
       }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: ${mobileBreakpoint}) {
         ${text32Bold}
       }
     }
 
     &TextPrimary {
       ${text20Semibold}
-      @media screen and (max-width: 1080px) {
+      @media screen and (max-width: ${tabletBreakpoint}) {
         ${text12Semibold}
       }
     }
 
     &Subtitle {
       ${text20Semibold};
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: ${tabletBreakpoint}) {
         ${text12Semibold};
       }
     }
 
     &ButtonPrimary {
       ${text20Bold};
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${tabletBreakpoint}) {
         ${text12Bold};
       }
     }
 
     &ButtonSecondary {
       ${text14Semibold};
-      @media screen and (max-width: 720px) {
+      @media screen and (max-width: ${tabletBreakpoint}) {
         ${text11Semibold};
       }
     }

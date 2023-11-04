@@ -2,11 +2,13 @@ import {Formik, Field, Form, ErrorMessage} from "formik";
 import Image from "next/image";
 import helmImage from 'public/images/helm.jpg';
 import {useTranslation} from 'next-i18next';
+import {useState} from "react";
 import {dataFormValidationSchema} from "@/components/FormComponent/validation";
 import FromComponentStyled from "@/components/FormComponent/FormComponent.styled";
 import Button from "@/components/Button";
 import {ButtonContentTypes, ButtonTypes} from "@/components/Button/Button";
 import Select from "@/components/FormComponent/components/Select/Select";
+import {sendForm} from "@/components/FormComponent/telegram";
 
 
 const SubmitStatus = {
@@ -18,6 +20,9 @@ const SubmitStatus = {
 
 const FormComponent = () => {
   const {t} = useTranslation();
+
+  const [submitStatus, setSubmitStatus] = useState(SubmitStatus.Idle);
+
   const initialValues = {
     name: '',
     lastName: '',
@@ -26,11 +31,14 @@ const FormComponent = () => {
     category: ''
   };
 
-  const handleSubmit = (values) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  const handleSubmit = async(values) => {
+    const response  = await sendForm(values);
 
-
-    console.log('FormComponent submitted with values:', values);
+    if (response) {
+      setSubmitStatus(SubmitStatus.Success);
+    } else {
+      setSubmitStatus(SubmitStatus.Error);
+    }
   };
 
   const optionsBranch = [
@@ -50,16 +58,21 @@ const FormComponent = () => {
   ]
 
   const optionsCategory = [
-    {value: t('form.options_category.A'), label:t('form.options_category.A')},
-    {value: t('form.options_category.B'), label:t('form.options_category.B')},
-    {value: t('form.options_category.C'), label:t('form.options_category.C')},
-    {value: t('form.options_category.A_B'), label:t('form.options_category.A_B')},
-    {value: t('form.options_category.B_C'), label:t('form.options_category.B_C')},
-    {value: t('form.options_category.A_B_C'), label:t('form.options_category.A_B_C')},
-    {value: t('form.options_category.D'), label:t('form.options_category.D')},
-    {value: t('form.options_category.CE'), label:t('form.options_category.CE')},
-    {value: t('form.options_category.D_C'), label:t('form.options_category.D_C')},
+    {value: t('form.options_category.A'), label: t('form.options_category.A')},
+    {value: t('form.options_category.B'), label: t('form.options_category.B')},
+    {value: t('form.options_category.C'), label: t('form.options_category.C')},
+    {value: t('form.options_category.A_B'), label: t('form.options_category.A_B')},
+    {value: t('form.options_category.B_C'), label: t('form.options_category.B_C')},
+    {value: t('form.options_category.A_B_C'), label: t('form.options_category.A_B_C')},
+    {value: t('form.options_category.D'), label: t('form.options_category.D')},
+    {value: t('form.options_category.CE'), label: t('form.options_category.CE')},
+    {value: t('form.options_category.D_C'), label: t('form.options_category.D_C')},
   ]
+
+
+  const errorState = (props, name) => props.touched[name] && props.errors[name];
+
+  const errorComponent = (error) => <div className="formError">{error}</div>;
 
 
   return (
@@ -74,63 +87,75 @@ const FormComponent = () => {
             width={665}
             height={351}
             quality={85}
+            className="formImage"
 
           />
-            <Formik
-              initialValues={initialValues}
-              validationSchema={dataFormValidationSchema}
-              onSubmit={handleSubmit}
-            >
-              {() => (
-                <Form className="formContainer">
-                  <div>
-                    <div className="container">
-                      <div className="fieldContainer">
-                        <label htmlFor='name' className="labelText">{t('form.field.name')}</label>
-                        <Field
-                          name="name"
-                          placeholder={t('form.field.name_placeholder')}
-                          className="input"
-                          required
-                        />
-                      </div>
-                      <div className="fieldContainer">
-                        <label htmlFor='lastname' className="labelText">{t('form.field.last_name')}</label>
-                        <Field name="lastname" placeholder={t('form.field.last_name_placeholder')} className="input"
-                               required/>
-                      </div>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={dataFormValidationSchema}
+            onSubmit={handleSubmit}
+          >
+            {(props) => (
+              <Form className="formContainer">
+                <div>
+                  <div className="container">
+                    <div className="fieldContainer">
+                      <label htmlFor='name' className="labelText">{t('form.field.name')}</label>
+                      <Field
+                        name="name"
+                        placeholder={t('form.field.name_placeholder')}
+                       // className="input"
+                        className={`input ${errorState(props, 'name') ? 'error' : ''}`}
+                        required
+                      />
+                      {props.touched.name && props.errors.name && errorComponent(props.errors.name)}
                     </div>
                     <div className="fieldContainer">
-                      <label htmlFor='phone' className="labelText">{t('form.field.phone')}</label>
-                      <Field name="phone" placeholder="+38 (0ХХ) ХХХ-ХХ-ХХ" className="input" required/>
+                      <label htmlFor='lastName' className="labelText">{t('form.field.last_name')}</label>
+                      <Field name="lastName" placeholder={t('form.field.last_name_placeholder')} className="input"
+                             required/>
+                      {props.touched.lastName && props.errors.lastName && errorComponent(props.errors.lastName)}
                     </div>
                   </div>
-                  <div className="container">
-                    <Select
-                      name={t('form.field.branch')}
-                      selectOptions={optionsBranch}
-                      placeholder={t('form.field.branch_placeholder')}
-                      label={t('form.field.branch')}
-                    />
+                </div>
+                <div className="fieldContainer">
+                  <label htmlFor='phone' className="labelText">{t('form.field.phone')}</label>
+                  <Field name="phone" placeholder="+38 (0ХХ) ХХХ-ХХ-ХХ" className="input" required/>
+                  {props.touched.phone && props.errors.phone && errorComponent(props.errors.phone)}
+                </div>
 
-                    <Select
-                      name={t('form.field.category')}
-                      selectOptions={optionsCategory}
-                      placeholder={t('form.field.category_placeholder')}
-                      label={t('form.field.category')}
-                    />
-                  </div>
+                <div className="container">
+                  <Select
+                    name="branch"
+                    selectOptions={optionsBranch}
+                    placeholder={t('form.field.branch_placeholder')}
+                    label={t('form.field.branch')}
+                  />
+                  {props.touched.branch && props.errors.branch && errorComponent(props.errors.branch)}
 
+                  <Select
+                    name="category"
+                    selectOptions={optionsCategory}
+                    placeholder={t('form.field.category_placeholder')}
+                    label={t('form.field.category')}
+                  />
+                  {props.touched.category && props.errors.category && errorComponent(props.errors.category)}
+                </div>
 
-                  {/* <button type="submit">Submit</button> */}
+                <div className="buttonWrapper">
                   <Button
                     btnType={ButtonTypes.PRIMARY}
                     contentType={ButtonContentTypes.TEXT}
                     content={t('form.button')}
+                    onBtnClick={() => {
+                      setSubmitStatus(SubmitStatus.Idle);
+                    }}
+                    type="submit"
                   />
-                </Form>
-              )}
-            </Formik>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
 
       </div>

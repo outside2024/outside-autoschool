@@ -48,7 +48,6 @@ const AboutUs = () => {
                   />
                   <div className="aboutName">{t(`${card.name}`)}</div>
                   <div className="aboutText">{t(`${card.position}`)}</div>
-                  <div className="aboutText">{card.experience}</div>
                 </div>
               </SwiperSlide>
             ))}

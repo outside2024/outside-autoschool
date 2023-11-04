@@ -7,9 +7,8 @@ import { SelectContainer } from './Select.styled';
 const Select = ({ name, selectOptions, error, label, placeholder }) => {
   const formik = useFormikContext();
   const handleSetSelectOption = (option) => {
-    formik.setFieldValue(name, Number(option.id));
+    formik.setFieldValue(name, option.value);
   };
-
 
 
   const getFieldValue = (selectField) => selectOptions?.find((el) => el.id === selectField.value);

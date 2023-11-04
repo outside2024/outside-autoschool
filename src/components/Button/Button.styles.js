@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { tabletBreakpoint } from '@/global/constants/contants';
 
 const ButtonStyles = styled(`button`)`
   width: ${({ $btnWidth }) => ($btnWidth ? `${$btnWidth}px` : '100%')};
@@ -22,7 +23,7 @@ const ButtonStyles = styled(`button`)`
     &:active {
       background-color: ${({ theme }) => theme.colors.button.green70};
     }
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${tabletBreakpoint}) {
       height: 28px;
     }
   }
@@ -37,7 +38,7 @@ const ButtonStyles = styled(`button`)`
     &:active {
       background-color: ${({ theme }) => theme.colors.button.green70};
     }
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: ${tabletBreakpoint}) {
       height: ${({ $btnHeight }) => ($btnHeight ? `${$btnHeight}px` : '32px')};
     }
   }
