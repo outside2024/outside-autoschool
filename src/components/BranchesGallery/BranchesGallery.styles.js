@@ -80,7 +80,7 @@ const BranchesGalleryStyles = styled.div`
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #cccccc;
+    background: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
