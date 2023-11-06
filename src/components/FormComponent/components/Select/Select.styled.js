@@ -1,7 +1,6 @@
-import styled from "styled-components";
-import {text14Semibold} from "@/styles/textStyles";
-import theme from "@/styles/theme";
-import {mobileBreakpoint} from "@/global/constants/contants";
+import styled from 'styled-components';
+import { text14Semibold } from '@/styles/textStyles';
+import theme from '@/styles/theme';
 
 export const SelectContainer = styled('div')`
   display: flex;
@@ -12,7 +11,7 @@ export const SelectContainer = styled('div')`
     ${text14Semibold};
     line-height: 21px;
     ${theme.colors.black};
-      padding-bottom: 8px;
+    padding-bottom: 8px;
   }
 
   .custom {
@@ -21,49 +20,38 @@ export const SelectContainer = styled('div')`
         display: none;
       }
 
-        &__control{
-            outline: none !important;
-            background-color: transparent;
-            color: ${theme.colors.primary};
-            box-shadow: none;
-            border-color: ${theme.colors.primary};
+      &__control {
+        outline: none !important;
+        background-color: transparent;
+        color: ${theme.colors.primary};
+        box-shadow: none;
+        border-color: ${theme.colors.primary};
 
+        &--is-focused {
+          border-color: ${theme.colors.primary};
+        }
+      }
 
-            &--is-focused {
-                border-color: ${theme.colors.primary}; 
-            } 
-        }
-        
-        &__control:hover {
-            border-color: ${theme.colors.primary};
-        }
-        
-        &__option{
-         
-            &--is-focused {
-                background-color: ${theme.colors.button.green30};
-                cursor: pointer;
-            }
+      &__control:hover {
+        border-color: ${theme.colors.primary};
+      }
 
-            &--is-selected {
-                background-color: ${theme.colors.primary};
-            }
-            
-           
-            
-        }
-        
-        &__menu {
-            
-            &-list{
-                height: 150px;
-            }
-            
+      &__option {
+        &--is-focused {
+          background-color: ${theme.colors.button.green30};
+          cursor: pointer;
         }
 
+        &--is-selected {
+          background-color: ${theme.colors.primary};
+        }
+      }
+
+      &__menu {
+        &-list {
+          height: 150px;
+        }
+      }
     }
-
-
   }
-
 `;

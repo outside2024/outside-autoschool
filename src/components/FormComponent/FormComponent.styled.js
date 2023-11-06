@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import theme from "@/styles/theme";
-import {text12Semibold, text14Bold, text14Semibold, text40Bold} from "@/styles/textStyles";
-import {mobileBreakpoint, tabletBreakpoint} from "@/global/constants/contants";
-
+import theme from '@/styles/theme';
+import { text12Semibold, text14Bold, text14Semibold, text40Bold } from '@/styles/textStyles';
+import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 
 export const FromComponentStyled = styled('div')`
   padding-bottom: 66px;
@@ -10,7 +9,6 @@ export const FromComponentStyled = styled('div')`
   @media only screen and (max-width: ${mobileBreakpoint}) {
     padding-bottom: 24px;
   }
-
 
   .form {
     &Container {
@@ -29,8 +27,6 @@ export const FromComponentStyled = styled('div')`
         width: 324px;
         height: 436px;
         object-fit: cover;
-
-
       }
     }
 
@@ -69,8 +65,6 @@ export const FromComponentStyled = styled('div')`
       flex-direction: column;
       gap: 8px;
       width: 100%;
-
-
     }
   }
 
@@ -109,8 +103,8 @@ export const FromComponentStyled = styled('div')`
       padding-top: 8px;
     }
   }
-  
-  .formStatus{
+
+  .formStatus {
     &Container {
       display: flex;
       flex-direction: column;
@@ -122,30 +116,26 @@ export const FromComponentStyled = styled('div')`
       justify-content: center;
       align-items: center;
       padding-top: 35px;
-      
+
       @media only screen and (max-width: ${mobileBreakpoint}) {
         font-size: 20px;
         ${text14Bold};
-     }
-      
+      }
     }
-    
-    &CloseIcon{
+
+    &CloseIcon {
       font-size: 36px;
       align-self: end;
       cursor: pointer;
       border: 1px solid ${theme.colors.primary};
       border-radius: 5px;
-      
     }
-    
-    &CheckIcon{
+
+    &CheckIcon {
       align-self: center;
       margin-top: 30px;
     }
-   
   }
-
 `;
 
 export default FromComponentStyled;

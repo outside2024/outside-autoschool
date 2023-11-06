@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const sendForm = async (data) => {
   const message =
     `<b>Ім'я:</b> ${data.name}\n` +
@@ -11,7 +10,7 @@ export const sendForm = async (data) => {
     `<b>Повідомлення відправлено:</b> ${new Date().toLocaleString('en-US')}\n`;
 
   try {
-    await axios.post('/api/send', { message});
+    await axios.post('/api/send', { message });
     return true;
   } catch (_) {
     return false;
