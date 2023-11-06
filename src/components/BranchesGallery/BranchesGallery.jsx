@@ -8,6 +8,7 @@ import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
 import BranchesGalleryStyles from '@/components/BranchesGallery/BranchesGallery.styles';
@@ -21,49 +22,7 @@ function getSize(width) {
   return 8;
 }
 
-const data = [
-  {
-    photo: '/images/branches/img1.jpeg',
-    name: 'img1',
-  },
-  {
-    photo: '/images/branches/img2.jpeg',
-    name: 'img2',
-  },
-  {
-    photo: '/images/branches/img3.jpeg',
-    name: 'img3',
-  },
-  {
-    photo: '/images/branches/img4.jpeg',
-    name: 'img4',
-  },
-  {
-    photo: '/images/branches/img5.jpeg',
-    name: 'img5',
-  },
-  {
-    photo: '/images/branches/img6.jpeg',
-    name: 'img6',
-  },
-  {
-    photo: '/images/branches/img7.jpeg',
-    name: 'img7',
-  },
-  {
-    photo: '/images/branches/img8.jpeg',
-    name: 'img8',
-  },
-  {
-    photo: '/images/branches/img9.jpeg',
-    name: 'img9',
-  },
-  {
-    photo: '/images/branches/img10.jpeg',
-    name: 'img10',
-  },
-];
-const BranchesGallery = () => {
+const BranchesGallery = ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [swiperRef, setSwiperRef] = useState(null);
   const { t } = useTranslation();
@@ -154,3 +113,12 @@ const BranchesGallery = () => {
 };
 
 export default BranchesGallery;
+
+BranchesGallery.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      photo: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
