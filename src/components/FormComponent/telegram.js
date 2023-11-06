@@ -8,7 +8,7 @@ export const sendForm = async (data) => {
     `<b>Телефон:</b> ${data.phone}\n` +
     `<b>Філія:</b> ${data.branch}\n` +
     `<b>Категорія:</b> ${data.category}\n` +
-    `<b>Message was sent:</b> ${new Date().toLocaleString('en-US')}\n`;
+    `<b>Повідомлення відправлено:</b> ${new Date().toLocaleString('en-US')}\n`;
 
   try {
     await axios.post('/api/send', { message});

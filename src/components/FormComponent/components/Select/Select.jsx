@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 import { SelectContainer } from './Select.styled';
 
-const Select = ({ name, selectOptions, error, label, placeholder }) => {
+const Select = ({ name, selectOptions, label, placeholder }) => {
   const formik = useFormikContext();
   const handleSetSelectOption = (option) => {
     formik.setFieldValue(name, option.value);
@@ -31,7 +31,6 @@ const Select = ({ name, selectOptions, error, label, placeholder }) => {
           />
         )}
       </Field>
-      {/* {error && <div className="input-error-content">{error}</div>} */}
     </SelectContainer>
   );
 };
@@ -44,13 +43,11 @@ Select.propTypes = {
       value: PropTypes.string,
     }),
   ).isRequired,
-  error: PropTypes.oneOfType([PropTypes.oneOf([null]), PropTypes.string]),
   label: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
 Select.defaultProps = {
-  error: null,
   label: '',
   placeholder: '',
 };

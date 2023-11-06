@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {text14Semibold} from "@/styles/textStyles";
 import theme from "@/styles/theme";
+import {mobileBreakpoint} from "@/global/constants/contants";
 
 export const SelectContainer = styled('div')`
   display: flex;

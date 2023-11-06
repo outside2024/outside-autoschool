@@ -1,4 +1,4 @@
-import {Formik, Field, Form, ErrorMessage} from "formik";
+import {Formik, Field, Form} from "formik";
 import Image from "next/image";
 import helmImage from 'public/images/helm.jpg';
 import {useTranslation} from 'next-i18next';
@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import {ButtonContentTypes, ButtonTypes} from "@/components/Button/Button";
 import Select from "@/components/FormComponent/components/Select/Select";
 import {sendForm} from "@/components/FormComponent/telegram";
+import iconCheck from '../../../public/icon-check.svg';
 
 
 const SubmitStatus = {
@@ -27,11 +28,11 @@ const FormComponent = () => {
     name: '',
     lastName: '',
     phone: '',
-    branch: '',
-    category: ''
+    branch: null,
+    category: null,
   };
 
-  const handleSubmit = async(values) => {
+  const handleSubmit = async(values, {resetForm}) => {
     const response  = await sendForm(values);
 
     if (response) {
@@ -39,6 +40,8 @@ const FormComponent = () => {
     } else {
       setSubmitStatus(SubmitStatus.Error);
     }
+    resetForm();
+
   };
 
   const optionsBranch = [
@@ -90,6 +93,7 @@ const FormComponent = () => {
             className="formImage"
 
           />
+          {submitStatus === SubmitStatus.Idle && (
           <Formik
             initialValues={initialValues}
             validationSchema={dataFormValidationSchema}
@@ -104,16 +108,17 @@ const FormComponent = () => {
                       <Field
                         name="name"
                         placeholder={t('form.field.name_placeholder')}
-                       // className="input"
                         className={`input ${errorState(props, 'name') ? 'error' : ''}`}
                         required
                       />
+                      {/* eslint-disable-next-line react/prop-types */}
                       {props.touched.name && props.errors.name && errorComponent(props.errors.name)}
                     </div>
                     <div className="fieldContainer">
                       <label htmlFor='lastName' className="labelText">{t('form.field.last_name')}</label>
                       <Field name="lastName" placeholder={t('form.field.last_name_placeholder')} className="input"
                              required/>
+                      {/* eslint-disable-next-line react/prop-types */}
                       {props.touched.lastName && props.errors.lastName && errorComponent(props.errors.lastName)}
                     </div>
                   </div>
@@ -121,6 +126,7 @@ const FormComponent = () => {
                 <div className="fieldContainer">
                   <label htmlFor='phone' className="labelText">{t('form.field.phone')}</label>
                   <Field name="phone" placeholder="+38 (0ХХ) ХХХ-ХХ-ХХ" className="input" required/>
+                  {/* eslint-disable-next-line react/prop-types */}
                   {props.touched.phone && props.errors.phone && errorComponent(props.errors.phone)}
                 </div>
 
@@ -131,6 +137,7 @@ const FormComponent = () => {
                     placeholder={t('form.field.branch_placeholder')}
                     label={t('form.field.branch')}
                   />
+                  {/* eslint-disable-next-line react/prop-types */}
                   {props.touched.branch && props.errors.branch && errorComponent(props.errors.branch)}
 
                   <Select
@@ -139,6 +146,7 @@ const FormComponent = () => {
                     placeholder={t('form.field.category_placeholder')}
                     label={t('form.field.category')}
                   />
+                  {/* eslint-disable-next-line react/prop-types */}
                   {props.touched.category && props.errors.category && errorComponent(props.errors.category)}
                 </div>
 
@@ -154,8 +162,21 @@ const FormComponent = () => {
                   />
                 </div>
               </Form>
+
             )}
           </Formik>
+          ) || submitStatus === SubmitStatus.Success && (
+            <div className="formStatusContainer">
+              <i className="icon-close formStatusCloseIcon" onClick={()=>{setSubmitStatus(SubmitStatus.Idle)}}/>
+             <Image src={iconCheck} width={56} height={56} alt="iconCheck" className="formStatusCheckIcon"/>
+              <div className="formStatusMessage">{t('form.success_message')}</div>
+            </div>
+          ) || submitStatus === SubmitStatus.Error && (
+            <div className="formStatusContainer">
+              <i className="icon-close formStatusCloseIcon" onClick={()=>{setSubmitStatus(SubmitStatus.Idle)}}/>
+              <div className="formStatusMessage">{t('form.error_message')}</div>
+            </div>
+          ) }
         </div>
 
       </div>

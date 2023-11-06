@@ -59,3 +59,7 @@ i {
 .icon-save:before {
   content: '\e909';
 }
+
+.icon-check:before {
+  content: '\e910';
+}
