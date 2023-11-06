@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import BranchesGalleryStyles from '@/components/BranchesGallery/BranchesGallery.styles';
 import useWindowSize from '@/hooks/useWindowSize';
+import Button from '../Button';
 
 function getSize(width) {
   if (width < 1025) return 5;
@@ -126,10 +127,26 @@ const BranchesGallery = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <button type="button" onClick={() => swiperRef.slidePrev()}></button>
-          <button type="button" onClick={() => swiperRef.slideNext()}>
-            right
-          </button>
+          <div className="button-flex-container">
+            <Button
+              btnType="secondary"
+              contentType="icon"
+              btnWidth={40}
+              btnHeight={32}
+              content="icon-angle-down"
+              onBtnClick={() => swiperRef.slidePrev()}
+              iconAngle={90}
+            />
+            <Button
+              btnType="secondary"
+              contentType="icon"
+              btnWidth={40}
+              btnHeight={32}
+              content="icon-angle-down"
+              onBtnClick={() => swiperRef.slideNext()}
+              iconAngle={270}
+            />
+          </div>
         </div>
       </div>
     </BranchesGalleryStyles>

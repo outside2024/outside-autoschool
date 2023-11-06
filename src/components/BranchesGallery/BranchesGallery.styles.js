@@ -47,6 +47,15 @@ const BranchesGalleryStyles = styled.div`
     }
   }
 
+  .button-flex-container {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (min-width: ${tabletStartBreakpoint}) {
+      gap: 16px;
+      justify-content: start;
+    }
+  }
+
   .branches-images-small {
     width: 100%;
     object-fit: cover;
