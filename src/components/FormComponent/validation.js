@@ -5,7 +5,7 @@ export const dataFormValidationSchema = Yup.object().shape({
   lastName: Yup.string().max(40, 'Too long').required("Обов'язкове поле"),
   phone: Yup.string()
     .matches(
-      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+      /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
       'Неправильний номер телефону',
     )
     .required('This field is required'),

@@ -109,7 +109,9 @@ const FormComponent = () => {
                         />
                         {/* eslint-disable-next-line react/prop-types */}
                         {props.touched.name &&
+                          // eslint-disable-next-line react/prop-types
                           props.errors.name &&
+                          // eslint-disable-next-line react/prop-types
                           errorComponent(props.errors.name)}
                       </div>
                       <div className="fieldContainer">
@@ -124,7 +126,9 @@ const FormComponent = () => {
                         />
                         {/* eslint-disable-next-line react/prop-types */}
                         {props.touched.lastName &&
+                          // eslint-disable-next-line react/prop-types
                           props.errors.lastName &&
+                          // eslint-disable-next-line react/prop-types
                           errorComponent(props.errors.lastName)}
                       </div>
                     </div>
@@ -141,7 +145,9 @@ const FormComponent = () => {
                     />
                     {/* eslint-disable-next-line react/prop-types */}
                     {props.touched.phone &&
+                      // eslint-disable-next-line react/prop-types
                       props.errors.phone &&
+                      // eslint-disable-next-line react/prop-types
                       errorComponent(props.errors.phone)}
                   </div>
 
@@ -155,7 +161,9 @@ const FormComponent = () => {
                     />
                     {/* eslint-disable-next-line react/prop-types */}
                     {props.touched.branch &&
+                      // eslint-disable-next-line react/prop-types
                       props.errors.branch &&
+                      // eslint-disable-next-line react/prop-types
                       errorComponent(props.errors.branch)}
 
                     <Select
@@ -167,7 +175,9 @@ const FormComponent = () => {
                     />
                     {/* eslint-disable-next-line react/prop-types */}
                     {props.touched.category &&
+                      // eslint-disable-next-line react/prop-types
                       props.errors.category &&
+                      // eslint-disable-next-line react/prop-types
                       errorComponent(props.errors.category)}
                   </div>
 
