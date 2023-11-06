@@ -7,6 +7,7 @@ import AboutUs from '@/components/AboutUs/AboutUs';
 import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
+import Footer from "@/components/Footer";
 
 const Home = () => {
   const { locale } = useRouter();
@@ -19,6 +20,7 @@ const Home = () => {
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
       <FAQ />
+      <Footer/>
     </RootLayout>
   );
 };

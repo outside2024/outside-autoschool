@@ -267,5 +267,39 @@
       "where to get medical reference": "Існують спеціалізовані медичні комісії для водіїв, які знаходяться в медичних установах Вашого міста ",
       "practice on weekend": "Так, автошкола працює для Вашого комфорту."
     }
+  },
+  "footer": {
+    "socials": "Слідкуйте за нашими соцмережами:",
+    "menu": {
+      "online": "Онлайн",
+      "about_us": "Про нас",
+      "blog": "Блог",
+      "tests": "Тести"
+    },
+    "branches": {
+      "title": "Філії",
+      "kharkiv": "Харків",
+      "pavlograd": "Павлоград",
+      "kryvyi_rig": "Кривий Ріг",
+      "chumaky": "Чумаки",
+      "ilarionove": "Іларіонове",
+      "gvardiyske": "Гвардійське",
+      "pidhorodne": "Підгородне",
+      "nikopol": "Нікополь",
+      "novomoskovsk": "Новомосковськ",
+      "zaporizhya": "Запоріжжя",
+      "pereshchepyno": "Перещепине"
+    },
+    "autoschools_dnipro": {
+      "title": "Автошколи в Дніпрі",
+      "12kvartal": "12 Квартал",
+      "sloboshanska": "Слобожанська",
+      "robocha": "Робоча",
+      "peremoga": "Перемога",
+      "prydniprovske": "Приднепровске",
+      "berezynka": "Березинка",
+      "tytova": "Титова",
+      "center": "Центр"
+    }
   }
 }
