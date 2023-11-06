@@ -5,7 +5,7 @@ import HeroSecondaryStyles from '@/components/HeroSecondary/HeroSecondary.styles
 import img from '../../../public/images/tests/hero.jpeg';
 import imgСity from '../../../public/images/cities/img.jpeg';
 import Exam from '../Exam';
-import HeroDescription from '../HeroDescription/HeroDescription';
+import HeroDescription from '../HeroDescription';
 
 const HeroSecondary = () => {
   const city = {

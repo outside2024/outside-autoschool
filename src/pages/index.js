@@ -7,6 +7,7 @@ import AboutUs from '@/components/AboutUs/AboutUs';
 import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
+import Documents from '@/components/Documents';
 
 const Home = () => {
   const { locale } = useRouter();
@@ -15,6 +16,7 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero heroType={HeroTypes.PRIMARY} />
+      <Documents />
       <HowToGetStarted />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />

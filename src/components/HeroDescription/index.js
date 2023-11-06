@@ -1,3 +1,3 @@
-import Exam from '@/components/Exam/Exam';
+import HeroDescription from '@/components/HeroDescription/HeroDescription';
 
-export default Exam;
+export default HeroDescription;
