@@ -3,7 +3,7 @@ import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import { HeroTypes } from '@/components/Hero/Hero';
-import Gallery from '@/components/Gallery/Gallery';
+import Gallery from '@/components/Gallery';
 
 const About = () => (
   <RootLayout>
