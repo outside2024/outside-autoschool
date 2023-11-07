@@ -22,7 +22,7 @@ const routes = [
   { name: 'blog', url: '/blog' },
 ];
 
-//! TODO: mobile & tablet header, menu anomations and proptypes
+//! TODO: mobile & tablet header, menu anomations,city detector, choosen city provider
 
 const Header = ({ headerType }) => {
   const { t } = useTranslation();
