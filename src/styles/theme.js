@@ -11,6 +11,7 @@ export const theme = {
       green70: 'rgba(118, 192, 69, 0.7)',
       transparent: 'transparent',
     },
+    error: '#e77171',
   },
   gradients: {},
 };
