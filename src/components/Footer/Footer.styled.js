@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import theme from "@/styles/theme";
-import {text14Semibold, text20Bold, text20Semibold} from "@/styles/textStyles";
+import {text14Semibold, text16bold, text20Bold, text20Semibold} from "@/styles/textStyles";
 
 export const StyledFooter = styled('div')`
-  //min-height: 368px;
+  // min-height: 368px;
   background-color: ${theme.colors.black};
   padding-top: 56px;
   
@@ -25,7 +25,6 @@ export const StyledFooter = styled('div')`
       gap: 16px;
       padding-top: 20px;
       padding-bottom: 36px;
-
     }
 
     &SocialsText {
@@ -41,31 +40,43 @@ export const StyledFooter = styled('div')`
       padding-left: 243px;
       padding-right: 116px;
       gap: 8px;
+      width: 100%;
     }
 
     &Route {
       color: ${theme.colors.typo.white};
       cursor: pointer;
-      ${text20Bold};
+      ${text16bold};
+      
+      &Nav{
+        color: ${theme.colors.typo.white};
+        cursor: pointer;
+        ${text20Bold};
+        
+      }
     }
 
     &Branches {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 50px;
+      row-gap: 16px;
+      padding-right: 40px;
 
       &Title {
         color: ${theme.colors.primary};
         ${text20Bold};
+        padding-bottom: 16px;
       }
     }
     
     &Rights{
+      width: 100%;
+      border-top: ${theme.colors.typo.white} 1px solid;
       color: ${theme.colors.typo.white};
       align-self: start;
-      padding-left: 156px;
-      margin-bottom: 8px;
-      ${text14Semibold};
-    
+      padding: 11px 0 8px 56px;
+      ${text14Semibold};    
     }
   }
 

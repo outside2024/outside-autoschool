@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import {useTranslation} from "next-i18next";
+import Link from "next/link";
 import StyledFooter from "@/components/Footer/Footer.styled";
 import companyLogo from "../../../public/Logo.png";
-import {routesMenu, routsBranches} from "@/components/Footer/routes";
-import Link from "next/link";
+import {routesMenu, routsBranches, routsDnipro} from "@/components/Footer/routes";
 
 
 const Footer = () => {
@@ -29,31 +29,40 @@ const Footer = () => {
           </div>
           <div className="footerMenu">
             {routesMenu.map(route => (
-              <Link href={route.path} key={route.path} className="footerRoute">
+              <Link href={route.path} key={route.path} className="footerRouteNav">
                 {t(`${route.text}`)}
               </Link>
             ))}
           </div>
-          <div className="footerBranches">
-            <div className="footerBranchesTitle">{t('footer.branches.title')}</div>
+
+          <div className="footerBranchesContainer">
+            <div className="footerBranchesTitle">{t('branches.title')}</div>
             <div className="footerBranches">
-              {routsBranches.slice(0, 6).map(route => (
+              {routsBranches.map(route => (
                 <Link href={route.path} key={route.path} className="footerRoute">
                   {t(`${route.text}`)}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="footerBranches">
-            {routsBranches.slice(6, 11).map(route => (
-              <Link href={route.path} key={route.path} className="footerRoute">
-                {t(`${route.text}`)}
-              </Link>
-            ))}
+          <div>
+            <div className="footerBranchesTitle">{t('footer.schools_dnipro')}</div>
+            <div className="footerBranches">
+              {routsDnipro.map(route => (
+                <Link href={route.path} key={route.path} className="footerRoute">
+                  {t(`${route.text}`)}
+                </Link>
+              ))}
+              </div>
+
           </div>
         </div>
       </div>
-      <div className="footerRights">©2022 Company Name. All rights reserved</div>
+      <div className="contentWrapper">
+        <div className="footerRights">
+          ©{new Date().getFullYear()} Company Name. All rights reserved
+        </div>
+      </div>
 
 </StyledFooter>
 )

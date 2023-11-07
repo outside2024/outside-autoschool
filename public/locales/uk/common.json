@@ -28,7 +28,7 @@
       "sovhozna": "Совхозна"
     }
   },
-  "header": {
+  "navigation": {
     "online": "Онлайн",
     "branches": "Філії",
     "tests": "Тести",
@@ -84,6 +84,7 @@
     }
   },
   "branches": {
+    "title-gallery": "Наші класи та автодори",
     "title": "Філії",
     "dnipro": {
       "city": "Дніпро",
@@ -125,7 +126,7 @@
       }
     },
     "gvardiyske": {
-      "city": "смт Гвардійське",
+      "city": "Гвардійське",
       "branch1": {
         "branch_name": "Гвардійське",
         "address": "смт Гвардійське"
@@ -139,7 +140,7 @@
       }
     },
     "obuhivka": {
-      "city": "смт Обухівка (Кіровськ)",
+      "city": "Обухівка",
       "branch1": {
         "branch_name": "смт Обухівка",
         "address": "вул Центральна 27"
@@ -301,39 +302,6 @@
   },
   "footer": {
     "socials": "Слідкуйте за нашими соцмережами:",
-    "menu": {
-      "online": "Онлайн",
-      "about_us": "Про нас",
-      "blog": "Блог",
-      "tests": "Тести"
-    },
-    "branches": {
-      "title": "Філії",
-      "kharkiv": "Харків",
-      "pavlograd": "Павлоград",
-      "kryvyi_rig": "Кривий Ріг",
-      "chumaky": "Чумаки",
-      "ilarionove": "Іларіонове",
-      "gvardiyske": "Гвардійське",
-      "pidhorodne": "Підгородне",
-      "nikopol": "Нікополь",
-      "novomoskovsk": "Новомосковськ",
-      "zaporizhya": "Запоріжжя",
-      "pereshchepyno": "Перещепине"
-    },
-    "autoschools_dnipro": {
-      "title": "Автошколи в Дніпрі",
-      "12kvartal": "12 Квартал",
-      "sloboshanska": "Слобожанська",
-      "robocha": "Робоча",
-      "peremoga": "Перемога",
-      "prydniprovske": "Приднепровске",
-      "berezynka": "Березинка",
-      "tytova": "Титова",
-      "center": "Центр"
-    }
-  },
-  "branches": {
-    "title": "Наші класи та автодром"
+    "schools_dnipro": "Автошколи в Дніпрі"
   }
 }

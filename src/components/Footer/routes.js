@@ -1,101 +1,105 @@
 export const routesMenu = [
   {
     path: '/online',
-    text: 'footer.menu.online',
+    text: 'navigation.online',
   },
   {
     path: '/about',
-    text: 'footer.menu.about_us',
+    text: 'navigation.about',
   },
   {
     path: '/blog',
-    text: 'footer.menu.blog',
+    text: 'navigation.blog',
   },
   {
     path: '/tests',
-    text: 'footer.menu.tests',
+    text: 'navigation.tests',
   },
 ];
 
 export const routsBranches = [
   {
     path: '/kharkiv',
-    text: 'footer.branches.kharkiv',
+    text: 'branches.kharkiv.city',
   },
   {
     path: '/pavlograd',
-    text: 'footer.branches.pavlograd',
+    text: 'branches.pavlograd.city',
   },
   {
     path: '/kryvyi_rig',
-    text: 'footer.branches.kryvyi_rig',
+    text: 'branches.kryvyi_rig.city',
   },
   {
     path: '/chumaky',
-    text: 'footer.branches.chumaky',
+    text: 'branches.chumaky.city',
   },
   {
     path: '/ilarionove',
-    text: 'footer.branches.ilarionove',
+    text: 'branches.ilarionove.city',
   },
   {
     path: '/gvardiyske',
-    text: 'footer.branches.gvardiyske',
+    text: 'branches.gvardiyske.city',
   },
   {
     path: '/pidhorodne',
-    text: 'footer.branches.pidhorodne',
+    text: 'branches.pidhorodne.city',
   },
   {
     path: '/nikopol',
-    text: 'footer.branches.nikopol',
+    text: 'branches.nikopol.city',
   },
   {
     path: '/novomoskovsk',
-    text: 'footer.branches.novomoskovsk',
+    text: 'branches.novomoskovsk.city',
   },
   {
     path: '/zaporizhya',
-    text: 'footer.branches.zaporizhya',
+    text: 'branches.zaporizhya.city',
   },
   {
     path: '/pereshchepyno',
-    text: 'footer.branches.pereshchepyno',
+    text: 'branches.preshchepyno.city',
+  },
+  {
+    path: '/obuhivka',
+    text: 'branches.obuhivka.city',
   },
 ];
 
 export const routsDnipro = [
   {
-    path: '/12kvartal',
-    text: 'footer.autoschools_dnipro.12kvartal',
+    path: '/dnipro/12kvartal',
+    text: 'branches.dnipro.12kvartal.branch_name',
   },
   {
-    path: '/sloboshanska',
-    text: 'footer.autoschools_dnipro.sloboshanska',
+    path: '/dnipro/sloboshanska',
+    text: 'branches.dnipro.slobozhanska.branch_name',
   },
   {
-    path: '/robocha',
-    text: 'footer.autoschools_dnipro.robocha',
+    path: '/dnipro/robocha',
+    text: 'branches.dnipro.robocha.branch_name',
   },
   {
-    path: '/peremoga',
-    text: 'footer.autoschools_dnipro.peremoga',
+    path: '/dnipro/peremoga',
+    text: 'branches.dnipro.peremoga.branch_name',
   },
   {
-    path: '/prydniprovske',
-    text: 'footer.autoschools_dnipro.prydniprovske',
+    path: '/dnipro/prydniprovske',
+    text: 'branches.dnipro.prydniprovsk.branch_name',
   },
   {
-    path: '/berezynka',
-    text: 'footer.autoschools_dnipro.berezynka',
+    path: '/dnipro/berezynka',
+    text: 'branches.dnipro.berezynka.branch_name',
   },
   {
-    path: '/tytova',
-    text: 'footer.autoschools_dnipro.tytova',
+    path: '/dnipro/tytova',
+    text: 'branches.dnipro.tytova.branch_name',
   },
   {
-    path: '/center',
-    text: 'footer.autoschools_dnipro.center',
+    path: '/dnipro/center',
+    text: 'branches.dnipro.center.branch_name',
   },
 ]
 
