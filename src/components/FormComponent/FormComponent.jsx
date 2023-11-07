@@ -1,4 +1,4 @@
-import { Formik, Field, Form } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Image from 'next/image';
 import helmImage from 'public/images/helm.jpg';
 import { useTranslation } from 'next-i18next';
@@ -35,10 +35,10 @@ const FormComponent = () => {
 
     if (response) {
       setSubmitStatus(SubmitStatus.Success);
+      resetForm();
     } else {
       setSubmitStatus(SubmitStatus.Error);
     }
-    resetForm();
   };
 
   const optionsBranch = [
@@ -69,10 +69,6 @@ const FormComponent = () => {
     { value: t('form.options_category.D_C'), label: t('form.options_category.D_C') },
   ];
 
-  const errorState = (props, name) => props.touched[name] && props.errors[name];
-
-  const errorComponent = (error) => <div className="formError">{error}</div>;
-
   return (
     <FromComponentStyled className="contentContainer">
       <div className="contentWrapper">
@@ -93,7 +89,7 @@ const FormComponent = () => {
               validationSchema={dataFormValidationSchema}
               onSubmit={handleSubmit}
             >
-              {(props) => (
+              {(errors, touched) => (
                 <Form className="formContainer">
                   <div>
                     <div className="container">
@@ -104,15 +100,15 @@ const FormComponent = () => {
                         <Field
                           name="name"
                           placeholder={t('form.field.name_placeholder')}
-                          className={`input ${errorState(props, 'name') ? 'error' : ''}`}
+                          className="input"
+                          errors={errors}
+                          touched={touched}
                           required
                         />
-                        {/* eslint-disable-next-line react/prop-types */}
-                        {props.touched.name &&
-                          // eslint-disable-next-line react/prop-types
-                          props.errors.name &&
-                          // eslint-disable-next-line react/prop-types
-                          errorComponent(props.errors.name)}
+                        <ErrorMessage
+                          name="name"
+                          render={(msg) => <div className="formError">{t(msg)}</div>}
+                        />
                       </div>
                       <div className="fieldContainer">
                         <label htmlFor="lastName" className="labelText">
@@ -124,12 +120,10 @@ const FormComponent = () => {
                           className="input"
                           required
                         />
-                        {/* eslint-disable-next-line react/prop-types */}
-                        {props.touched.lastName &&
-                          // eslint-disable-next-line react/prop-types
-                          props.errors.lastName &&
-                          // eslint-disable-next-line react/prop-types
-                          errorComponent(props.errors.lastName)}
+                        <ErrorMessage
+                          name="lastName"
+                          render={(msg) => <div className="formError">{t(msg)}</div>}
+                        />
                       </div>
                     </div>
                   </div>
@@ -143,42 +137,39 @@ const FormComponent = () => {
                       className="input"
                       required
                     />
-                    {/* eslint-disable-next-line react/prop-types */}
-                    {props.touched.phone &&
-                      // eslint-disable-next-line react/prop-types
-                      props.errors.phone &&
-                      // eslint-disable-next-line react/prop-types
-                      errorComponent(props.errors.phone)}
+                    <ErrorMessage
+                      name="phone"
+                      render={(msg) => <div className="formError">{t(msg)}</div>}
+                    />
                   </div>
 
                   <div className="container">
-                    <Select
-                      name="branch"
-                      selectOptions={optionsBranch}
-                      placeholder={t('form.field.branch_placeholder')}
-                      label={t('form.field.branch')}
-                      instanceId="branch"
-                    />
-                    {/* eslint-disable-next-line react/prop-types */}
-                    {props.touched.branch &&
-                      // eslint-disable-next-line react/prop-types
-                      props.errors.branch &&
-                      // eslint-disable-next-line react/prop-types
-                      errorComponent(props.errors.branch)}
-
-                    <Select
-                      name="category"
-                      selectOptions={optionsCategory}
-                      placeholder={t('form.field.category_placeholder')}
-                      label={t('form.field.category')}
-                      instanceId="category"
-                    />
-                    {/* eslint-disable-next-line react/prop-types */}
-                    {props.touched.category &&
-                      // eslint-disable-next-line react/prop-types
-                      props.errors.category &&
-                      // eslint-disable-next-line react/prop-types
-                      errorComponent(props.errors.category)}
+                    <div className="formErrorContainer">
+                      <Select
+                        name="branch"
+                        selectOptions={optionsBranch}
+                        placeholder={t('form.field.branch_placeholder')}
+                        label={t('form.field.branch')}
+                        instanceId="branch"
+                      />
+                      <ErrorMessage
+                        name="branch"
+                        render={(msg) => <div className="formError">{t(msg)}</div>}
+                      />
+                    </div>
+                    <div className="formErrorContainer">
+                      <Select
+                        name="category"
+                        selectOptions={optionsCategory}
+                        placeholder={t('form.field.category_placeholder')}
+                        label={t('form.field.category')}
+                        instanceId="category"
+                      />
+                      <ErrorMessage
+                        name="category"
+                        render={(msg) => <div className="formError">{t(msg)}</div>}
+                      />
+                    </div>
                   </div>
 
                   <div className="buttonWrapper">

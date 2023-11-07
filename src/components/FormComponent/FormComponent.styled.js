@@ -34,6 +34,12 @@ export const FromComponentStyled = styled('div')`
       color: ${theme.colors.error};
       font-size: 14px;
     }
+
+    &ErrorContainer {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
   }
 
   .content {
