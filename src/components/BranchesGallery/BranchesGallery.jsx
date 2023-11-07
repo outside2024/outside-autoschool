@@ -36,7 +36,7 @@ const BranchesGallery = ({ data }) => {
     <BranchesGalleryStyles>
       <div className="contentContainer">
         <div className="contentWrapper">
-          <h2 className="typoColorBlack gap typoTitleSecondary">{t('branches.title')}</h2>
+          <h2 className="typoColorBlack gap typoTitleSecondary">{t('branches.title-gallery')}</h2>
 
           <Swiper
             onSwiper={setSwiperRef}
