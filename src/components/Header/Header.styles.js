@@ -115,7 +115,7 @@ export const StyledHeader = styled('div')`
     padding-bottom: 36px;
   }
   .branchesWrapper {
-    width: ${({ brancheswidth }) => (brancheswidth ? brancheswidth : '100%')};
+    width: ${({ brancheswidth }) => brancheswidth || '100%'};
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));
     .icon-right {

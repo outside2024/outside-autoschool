@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
-import StyledHeader from './Header.styles';
 import Image from 'next/image';
-import { citiesData } from '../GoogleMap/data';
 import { useTranslation } from 'next-i18next';
-import CitySelect from './components/CitySelect';
 import { useRouter } from 'next/router';
 import { v4 as uuidv4 } from 'uuid';
-import useWindowSize from '@/hooks/useWindowSize';
+import StyledHeader from './Header.styles';
+import { citiesData } from '../GoogleMap/data';
+import CitySelect from './components/CitySelect';
+// import useWindowSize from '@/hooks/useWindowSize';
 import { LSGet, LSSet } from '@/global/helpers/helpers';
 import { routsBranches, routsDnipro, socialLinksData } from '@/global/constants/contants';
 
@@ -21,11 +22,11 @@ const routes = [
   { name: 'blog', url: '/blog' },
 ];
 
-//! TODO: mobile & tablet header, menu anomations
+//! TODO: mobile & tablet header, menu anomations and proptypes
 
 const Header = ({ headerType }) => {
   const { t } = useTranslation();
-  const widowSize = useWindowSize();
+  // const widowSize = useWindowSize();
   const { locale, asPath } = useRouter();
   const citiesOptions = [
     {
@@ -94,6 +95,8 @@ const Header = ({ headerType }) => {
     } else {
       setCurrentCity(citiesOptions[0].value);
     }
+
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -226,3 +229,11 @@ const Header = ({ headerType }) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  headerType: PropTypes.oneOf([HeaderTypes.LIGHT, HeaderTypes.DARK]),
+};
+
+Header.defaultProps = {
+  headerType: HeaderTypes.DARK,
+};

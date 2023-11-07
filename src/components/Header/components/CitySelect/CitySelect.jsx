@@ -13,22 +13,24 @@ const CitySelect = ({ selectOptions, selectedOption, light, handleChange }) => (
     />
   </CitySelectContainer>
 );
-// Select.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   selectOptions: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       label: PropTypes.string,
-//       value: PropTypes.string,
-//     }),
-//   ).isRequired,
-//   label: PropTypes.string,
-//   placeholder: PropTypes.string,
-//   instanceId: PropTypes.string.isRequired,
-// };
 
-// Select.defaultProps = {
-//   label: '',
-//   placeholder: '',
-// };
+CitySelect.propTypes = {
+  selectOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    }),
+  ).isRequired,
+  selectedOption: PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  }).isRequired,
+  light: PropTypes.bool,
+  handleChange: PropTypes.func.isRequired,
+};
+
+CitySelect.defaultProps = {
+  light: false,
+};
 
 export default CitySelect;

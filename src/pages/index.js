@@ -11,8 +11,8 @@ import FormComponent from '@/components/FormComponent/FormComponent';
 import { HeaderTypes } from '@/components/Header/Header';
 
 const Home = () => {
-  // const { locale } = useRouter();
-  // console.log(locale);
+  const { locale } = useRouter();
+  console.log(locale);
 
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
