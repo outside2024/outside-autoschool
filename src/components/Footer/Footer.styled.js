@@ -3,7 +3,7 @@ import theme from "@/styles/theme";
 import {text11Semibold, text14Bold, text14Semibold, text16bold, text20Bold, text20Semibold} from "@/styles/textStyles";
 import {mobileBreakpoint} from "@/global/constants/contants";
 
-
+export const footerTabletBreakpoint = '1225px';
 export const StyledFooter = styled('div')`
   background-color: ${theme.colors.black};
   padding-top: 56px;
@@ -23,6 +23,10 @@ export const StyledFooter = styled('div')`
     display: flex;
     justify-content: end;
     gap: 40px;
+
+    @media only screen and (max-width: ${footerTabletBreakpoint}) {
+      gap: 20px;
+    }
 
     @media only screen and (max-width: ${mobileBreakpoint}) {
       max-width: 500px;
@@ -81,6 +85,7 @@ export const StyledFooter = styled('div')`
       padding-top: 40px;
       width: 210px;
 
+      
       @media only screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 0;
         ${text14Bold};
@@ -92,9 +97,12 @@ export const StyledFooter = styled('div')`
       flex-direction: column;
       gap: 8px;
       padding-right: 116px;
+
+      @media only screen and (max-width: ${footerTabletBreakpoint}) {
+        padding-right: 0;
+      }
       
       @media only screen and (max-width: ${mobileBreakpoint}){
-        padding-right: 0;
         padding-top: 16px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -108,6 +116,11 @@ export const StyledFooter = styled('div')`
       cursor: pointer;
       ${text16bold};
 
+      @media only screen and (max-width: ${footerTabletBreakpoint}) {
+        ${text11Semibold};
+        
+      }
+
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text14Bold};
       }
@@ -117,7 +130,7 @@ export const StyledFooter = styled('div')`
         cursor: pointer;
         ${text20Bold};
 
-        @media only screen and (max-width: ${mobileBreakpoint}) {
+        @media only screen and (max-width: ${footerTabletBreakpoint}) {
           ${text14Bold};
         }
         
