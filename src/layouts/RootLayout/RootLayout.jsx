@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Header from '@/components/Header';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const structuredDataLogo = {
   '@context': 'https://schema.org',
@@ -9,7 +10,7 @@ const structuredDataLogo = {
   logo: 'https://outside.dp.ua/logo.png',
 };
 
-const RootLayout = ({ children, meta }) => (
+const RootLayout = ({ children, meta, headerType }) => (
   <>
     <Head>
       <title>{meta.title}</title>
@@ -22,7 +23,7 @@ const RootLayout = ({ children, meta }) => (
       />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       <meta property="og:title" content="АУТСАЙД" />
-      <meta property="og:description" content="Самая лучшая автошкола в Днепре." />
+      <meta property="og:description" content="Найкраща автошкола в Днепрі." />
       <meta property="og:image" content="%PUBLIC_URL%/website_preview.png" />
       {!meta.noindex && <meta name="robots" content="noindex" />}
       <script
@@ -32,7 +33,7 @@ const RootLayout = ({ children, meta }) => (
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataLogo) }}
       />
     </Head>
-    <Header />
+    <Header headerType={headerType} />
     <main>{children}</main>
   </>
 );
@@ -46,6 +47,7 @@ RootLayout.propTypes = {
     keywords: PropTypes.string,
     noindex: PropTypes.bool,
   }),
+  headerType: PropTypes.oneOf([HeaderTypes.LIGHT, HeaderTypes.DARK]),
 };
 
 RootLayout.defaultProps = {
@@ -55,4 +57,5 @@ RootLayout.defaultProps = {
     keywords: '',
     noindex: true,
   },
+  headerType: HeaderTypes.DARK,
 };

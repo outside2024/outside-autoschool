@@ -5,6 +5,7 @@ import {
   text12Bold,
   text12Semibold,
   text14Semibold,
+  text16bold,
   text20Bold,
   text20Semibold,
   text24Bold,
@@ -31,6 +32,11 @@ const GlobalStyle = createGlobalStyle`${css`
     &.overflow-hidden {
       overflow: hidden;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   .content {
@@ -137,6 +143,19 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text14Semibold};
       @media screen and (max-width: ${tabletBreakpoint}) {
         ${text11Semibold};
+      }
+    }
+    &HeaderLink {
+      ${text16bold};
+    }
+
+    &HeaderBranchLink {
+      ${text16bold};
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        ${text11Semibold};
+      }
+      @media screen and (max-width: ${mobileBreakpoint}) {
+        ${text16bold};
       }
     }
   }
