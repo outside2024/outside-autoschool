@@ -3,33 +3,23 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import StyledFooter from '@/components/Footer/Footer.styled';
 import companyLogo from '../../../public/Logo.png';
-import { routesMenu, routsBranches, routsDnipro } from '@/components/Footer/routes';
+import { routesMenu, routsBranches, routsDnipro } from '@/global/constants/routes';
+import { socialLinksData } from '@/components/Footer/data';
 
 const socialIcons = (title) => (
   <>
     <div className="footerSocialsText">{title}</div>
     <div className="footerIcons">
-      <Link
-        href={process.env.NEXT_PUBLIC_FACEBOOK}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        <i className="icon-facebook footerIcon" />
-      </Link>
-      <Link
-        href={process.env.NEXT_PUBLIC_INSTAGRAM}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        <i className="icon-instagram footerIcon" />
-      </Link>
-      <Link
-        href={process.env.NEXT_PUBLIC_TIKTOK}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        <i className="icon-tiktok footerIcon" />
-      </Link>
+      {socialLinksData.map((social) => (
+        <Link
+          key={social.icon}
+          href={social.path}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <i className={`${social.icon} footerIcon`} />
+        </Link>
+      ))}
     </div>
   </>
 );

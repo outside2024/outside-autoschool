@@ -13,6 +13,7 @@ const GoogleMapStyled = styled(`div`)`
   margin-bottom: 36px;
 
   .map {
+    position: relative;
     @media screen and (max-width: ${desktopBigBreakpoint}) {
       margin-right: -100px;
       margin-left: -100px;
@@ -49,18 +50,11 @@ const GoogleMapStyled = styled(`div`)`
       padding: 29px 40px 0 40px;
       overflow-y: auto;
 
-      @media only screen and (min-width: 1441px) {
-        right: 193px;
-      }
-      @media only screen and (min-width: 2000px) {
-        right: 450px;
-      }
-
       @media only screen and (max-width: ${mobileBreakpoint}) {
         display: block;
         width: 100%;
         height: auto;
-        padding: 16px 0;
+        padding: 16px;
         position: unset;
         word-break: break-all;
       }

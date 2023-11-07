@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
 import {
-  text11Semibold,
-  text14Bold,
-  text14Semibold,
-  text16bold,
+  text14Semibold11Semibold,
+  text16bold11Semibold14Bold,
   text20Bold,
-  text20Semibold,
+  text20Bold14Bold,
+  text20Semibold14Bold,
 } from '@/styles/textStyles';
-import { mobileBreakpoint } from '@/global/constants/contants';
+import { footerTabletBreakpoint, mobileBreakpoint } from '@/global/constants/contants';
 
-export const footerTabletBreakpoint = '1225px';
 export const StyledFooter = styled('div')`
   background-color: ${theme.colors.black};
   padding-top: 56px;
@@ -86,13 +84,12 @@ export const StyledFooter = styled('div')`
 
     &SocialsText {
       color: ${theme.colors.typo.white};
-      ${text20Semibold};
+      ${text20Semibold14Bold};
       padding-top: 40px;
       width: 210px;
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 0;
-        ${text14Bold};
       }
     }
 
@@ -117,24 +114,12 @@ export const StyledFooter = styled('div')`
     &Route {
       color: ${theme.colors.typo.white};
       cursor: pointer;
-      ${text16bold};
-
-      @media only screen and (max-width: ${footerTabletBreakpoint}) {
-        ${text11Semibold};
-      }
-
-      @media only screen and (max-width: ${mobileBreakpoint}) {
-        ${text14Bold};
-      }
+      ${text16bold11Semibold14Bold};
 
       &Nav {
         color: ${theme.colors.typo.white};
         cursor: pointer;
-        ${text20Bold};
-
-        @media only screen and (max-width: ${footerTabletBreakpoint}) {
-          ${text14Bold};
-        }
+        ${text20Bold14Bold};
       }
     }
 
@@ -156,10 +141,9 @@ export const StyledFooter = styled('div')`
       border-top: ${theme.colors.typo.white} 1px solid;
       color: ${theme.colors.typo.white};
       padding: 11px 0 8px 56px;
-      ${text14Semibold};
+      ${text14Semibold11Semibold};
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
-        ${text11Semibold};
         padding: 8px 0 24px 0;
         text-align: center;
       }

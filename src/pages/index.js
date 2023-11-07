@@ -6,7 +6,6 @@ import GoogleMap from '@/components/GoogleMap/GoogleMap';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
-import Footer from '@/components/Footer';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
 
@@ -22,7 +21,6 @@ const Home = () => {
       <GoogleMap activeBranch="dnipro" />
       <FAQ />
       <FormComponent />
-      <Footer />
     </RootLayout>
   );
 };

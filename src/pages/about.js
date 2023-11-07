@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import { HeroTypes } from '@/components/Hero/Hero';
 import Gallery from '@/components/Gallery/Gallery';
-import Footer from '@/components/Footer';
 import FormComponent from '@/components/FormComponent/FormComponent';
 
 const About = () => (
@@ -13,7 +12,6 @@ const About = () => (
     <AboutUs />
     <Gallery />
     <FormComponent />
-    <Footer />
   </RootLayout>
 );
 
