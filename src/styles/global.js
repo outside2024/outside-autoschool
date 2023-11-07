@@ -16,7 +16,6 @@ import {
   text60Bold,
 } from './textStyles';
 import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
-import { desktopBreakpoint } from '../global/constants/contants';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,

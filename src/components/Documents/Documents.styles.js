@@ -109,6 +109,7 @@ const DocumentsStyles = styled.div`
   .card-images {
     margin-left: auto;
     height: 100%;
+    object-fit: cover;
   }
 `;
 

@@ -84,6 +84,7 @@
     }
   },
   "branches": {
+    "title-gallery": "Наші класи та автодром",
     "title": "Філії",
     "dnipro": {
       "city": "Дніпро",
