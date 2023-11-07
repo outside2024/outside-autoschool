@@ -1,7 +1,14 @@
 import styled from 'styled-components';
-import theme from "@/styles/theme";
-import {text11Semibold, text14Bold, text14Semibold, text16bold, text20Bold, text20Semibold} from "@/styles/textStyles";
-import {mobileBreakpoint} from "@/global/constants/contants";
+import theme from '@/styles/theme';
+import {
+  text11Semibold,
+  text14Bold,
+  text14Semibold,
+  text16bold,
+  text20Bold,
+  text20Semibold,
+} from '@/styles/textStyles';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 export const footerTabletBreakpoint = '1225px';
 export const StyledFooter = styled('div')`
@@ -11,14 +18,14 @@ export const StyledFooter = styled('div')`
   @media only screen and (max-width: ${mobileBreakpoint}) {
     padding-top: 24px;
   }
-  
+
   .mobileSocials {
-    @media only screen and (min-width: ${mobileBreakpoint}){
+    @media only screen and (min-width: ${mobileBreakpoint}) {
       display: none;
     }
   }
-  
-  .wrapper{
+
+  .wrapper {
     width: 100%;
     display: flex;
     justify-content: end;
@@ -35,30 +42,30 @@ export const StyledFooter = styled('div')`
       margin: 0 auto;
     }
   }
-  
-  .firstColumn{
+
+  .firstColumn {
     margin-right: auto;
 
     @media only screen and (max-width: ${mobileBreakpoint}) {
-     margin: 0 auto;
+      margin: 0 auto;
     }
   }
 
   .footer {
     display: flex;
-    
+
     &Logo {
-      @media only screen and (max-width: ${mobileBreakpoint}){
+      @media only screen and (max-width: ${mobileBreakpoint}) {
         margin: 0 auto;
       }
     }
-    
-    &SocialsContainer{
-      @media only screen and (max-width: ${mobileBreakpoint}){
+
+    &SocialsContainer {
+      @media only screen and (max-width: ${mobileBreakpoint}) {
         display: none;
       }
     }
-    
+
     &Icon {
       color: ${theme.colors.white};
       font-size: 36px;
@@ -75,8 +82,6 @@ export const StyledFooter = styled('div')`
         padding-top: 16px;
         padding-bottom: 16px;
       }
-
-
     }
 
     &SocialsText {
@@ -85,7 +90,6 @@ export const StyledFooter = styled('div')`
       padding-top: 40px;
       width: 210px;
 
-      
       @media only screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 0;
         ${text14Bold};
@@ -101,14 +105,13 @@ export const StyledFooter = styled('div')`
       @media only screen and (max-width: ${footerTabletBreakpoint}) {
         padding-right: 0;
       }
-      
-      @media only screen and (max-width: ${mobileBreakpoint}){
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 16px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 50px;
       }
-      
     }
 
     &Route {
@@ -118,14 +121,13 @@ export const StyledFooter = styled('div')`
 
       @media only screen and (max-width: ${footerTabletBreakpoint}) {
         ${text11Semibold};
-        
       }
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text14Bold};
       }
-      
-      &Nav{
+
+      &Nav {
         color: ${theme.colors.typo.white};
         cursor: pointer;
         ${text20Bold};
@@ -133,7 +135,6 @@ export const StyledFooter = styled('div')`
         @media only screen and (max-width: ${footerTabletBreakpoint}) {
           ${text14Bold};
         }
-        
       }
     }
 
@@ -149,14 +150,14 @@ export const StyledFooter = styled('div')`
         padding-bottom: 16px;
       }
     }
-    
-    &Rights{
+
+    &Rights {
       width: 100%;
       border-top: ${theme.colors.typo.white} 1px solid;
       color: ${theme.colors.typo.white};
       padding: 11px 0 8px 56px;
       ${text14Semibold};
-      
+
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text11Semibold};
         padding: 8px 0 24px 0;
@@ -164,10 +165,6 @@ export const StyledFooter = styled('div')`
       }
     }
   }
-
-
-
-
 `;
 
 export default StyledFooter;

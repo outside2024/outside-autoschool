@@ -4,16 +4,16 @@ import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import { HeroTypes } from '@/components/Hero/Hero';
 import Gallery from '@/components/Gallery/Gallery';
-import Footer from "@/components/Footer";
-import FormComponent from "@/components/FormComponent/FormComponent";
+import Footer from '@/components/Footer';
+import FormComponent from '@/components/FormComponent/FormComponent';
 
 const About = () => (
   <RootLayout>
     <Hero heroType={HeroTypes.TERTIARY} />
     <AboutUs />
     <Gallery />
-    <FormComponent/>
-    <Footer/>
+    <FormComponent />
+    <Footer />
   </RootLayout>
 );
 
