@@ -6,7 +6,7 @@ import GoogleMap from '@/components/GoogleMap/GoogleMap';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
-import HowToGetStarted from '@/components/HowToGetStarted';
+import FormComponent from '@/components/FormComponent/FormComponent';
 
 const Home = () => {
   const { locale } = useRouter();
@@ -15,10 +15,10 @@ const Home = () => {
   return (
     <RootLayout>
       <Hero heroType={HeroTypes.PRIMARY} />
-      <HowToGetStarted />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
       <FAQ />
+      <FormComponent />
     </RootLayout>
   );
 };
