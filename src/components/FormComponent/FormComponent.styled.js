@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
-import { text12Semibold, text14Bold, text14Semibold, text40Bold } from '@/styles/textStyles';
+import { text12Semibold, text14Semibold } from '@/styles/textStyles';
 import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 
 export const FromComponentStyled = styled('div')`
@@ -116,17 +116,10 @@ export const FromComponentStyled = styled('div')`
       flex-direction: column;
     }
     &Message {
-      ${text40Bold};
-      font-weight: 500;
       text-align: center;
       justify-content: center;
       align-items: center;
       padding-top: 35px;
-
-      @media only screen and (max-width: ${mobileBreakpoint}) {
-        font-size: 20px;
-        ${text14Bold};
-      }
     }
 
     &CloseIcon {

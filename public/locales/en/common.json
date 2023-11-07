@@ -239,21 +239,6 @@
       "category_placeholder": "Оберіть категорію"
     },
     "button": "Записатись",
-    "options_branch": {
-      "dnipro": "Дніпро",
-      "gvardiyske": "смт Гвардійське",
-      "pavlograd": "Павлоград",
-      "obuhivka": "смт Обухівка",
-      "novomoskovsk": "Новомосковськ",
-      "pidhorodne": "Підгородне",
-      "nikopol": "Нікополь",
-      "ilarionove": "Іларіонове",
-      "preshchepyno": "Перещепино",
-      "chumaky": "смт Чумаки",
-      "zaporizhya": "Запоріжжя",
-      "kryvyi_rih": "Кривий Ріг",
-      "kharkiv": "Харків"
-    },
     "options_category": {
       "A": "Категорія A",
       "B": "Категорія B",

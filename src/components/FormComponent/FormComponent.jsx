@@ -42,19 +42,19 @@ const FormComponent = () => {
   };
 
   const optionsBranch = [
-    { value: t('form.options_branch.dnipro'), label: t('form.options_branch.dnipro') },
-    { value: t('form.options_branch.gvardiyske'), label: t('form.options_branch.gvardiyske') },
-    { value: t('form.options_branch.pavlograd'), label: t('form.options_branch.pavlograd') },
-    { value: t('form.options_branch.obuhivka'), label: t('form.options_branch.obuhivka') },
-    { value: t('form.options_branch.novomoskovsk'), label: t('form.options_branch.novomoskovsk') },
-    { value: t('form.options_branch.pidhorodne'), label: t('form.options_branch.pidhorodne') },
-    { value: t('form.options_branch.nikopol'), label: t('form.options_branch.nikopol') },
-    { value: t('form.options_branch.ilarionove'), label: t('form.options_branch.ilarionove') },
-    { value: t('form.options_branch.preshchepyno'), label: t('form.options_branch.preshchepyno') },
-    { value: t('form.options_branch.chumaky'), label: t('form.options_branch.chumaky') },
-    { value: t('form.options_branch.zaporizhya'), label: t('form.options_branch.zaporizhya') },
-    { value: t('form.options_branch.kryvyi_rih'), label: t('form.options_branch.kryvyi_rih') },
-    { value: t('form.options_branch.kharkiv'), label: t('form.options_branch.kharkiv') },
+    { value: t('branches.dnipro.city'), label: t('branches.dnipro.city') },
+    { value: t('branches.gvardiyske.city'), label: t('branches.gvardiyske.city') },
+    { value: t('branches.pavlograd.city'), label: t('branches.pavlograd.city') },
+    { value: t('branches.obuhivka.city'), label: t('branches.obuhivka.city') },
+    { value: t('branches.novomoskovsk.city'), label: t('branches.novomoskovsk.city') },
+    { value: t('branches.pidhorodne.city'), label: t('branches.pidhorodne.city') },
+    { value: t('branches.nikopol.city'), label: t('branches.nikopol.city') },
+    { value: t('branches.ilarionove.city'), label: t('branches.ilarionove.city') },
+    { value: t('branches.preshchepyno.city'), label: t('branches.preshchepyno.city') },
+    { value: t('branches.chumaky.city'), label: t('branches.chumaky.city') },
+    { value: t('branches.zaporizhya.city'), label: t('branches.zaporizhya.city') },
+    { value: t('branches.kryvyi_rig.city'), label: t('branches.kryvyi_rig.city') },
+    { value: t('branches.kharkiv.city'), label: t('branches.kharkiv.city') },
   ];
 
   const optionsCategory = [
@@ -213,7 +213,9 @@ const FormComponent = () => {
                     setSubmitStatus(SubmitStatus.Idle);
                   }}
                 />
-                <div className="formStatusMessage">{t('form.error_message')}</div>
+                <div className="formStatusMessage typoTitleSecondary">
+                  {t('form.error_message')}
+                </div>
               </div>
             ))}
         </div>
