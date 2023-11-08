@@ -22,6 +22,7 @@ export const StyledAwards = styled('div')`
       gap: 24px;
       @media only screen and (max-width: ${mobileBreakpoint}) {
         padding-top: 24px;
+        justify-content: space-evenly;
       }
 
       @media only screen and (min-width: 1600px) {
