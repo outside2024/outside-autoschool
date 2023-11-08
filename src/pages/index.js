@@ -8,13 +8,14 @@ import FAQ from '@/components/FAQ';
 import { HeroTypes } from '@/components/Hero/Hero';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Home = () => {
   const { locale } = useRouter();
   console.log(locale);
 
   return (
-    <RootLayout>
+    <RootLayout headerType={HeaderTypes.DARK}>
       <Hero heroType={HeroTypes.PRIMARY} />
       <Documents />
       <AboutUs />
