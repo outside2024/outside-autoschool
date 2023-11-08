@@ -63,42 +63,44 @@ const GoogleMapComponent = ({ activeBranch }) => {
                 ))}
               </GoogleMap>
             )}
-          </div>
-          <div className="branchesAddress">
-            <h2 className="typoColorBlack typoTitleSecondary">
-              {t(`branches.${activeBranch}.city`)}
-            </h2>
-            <div className="mobileContainer">
-              {citiesData[activeBranch].phoneNumbers.map((number) => (
-                <div key={uuidv4()} className="mobileNumber">
-                  {number}
-                </div>
-              ))}
-            </div>
-            <div className="addressesContainer">
-              {branches.map((branch, index) => (
-                <div
-                  key={branch.id}
-                  onClick={() => {
-                    map.setZoom(15);
-                    map.panTo(branch.coordinates);
-                    setActiveAddress(index);
-                  }}
-                  className="branch"
-                >
-                  <i
-                    className={
-                      activeAddress === index ? 'icon-map-pin-fill iconPin' : 'icon-map-pin iconPin'
-                    }
-                  />
-                  <div>
-                    <div className={activeAddress === index ? 'branchNameActive' : 'branchName'}>
-                      {t(`${branch.name}`)}
-                    </div>
-                    <div className="branchAddress">{t(`${branch.address}`)}</div>
+            <div className="branchesAddress">
+              <h2 className="typoColorBlack typoTitleSecondary">
+                {t(`branches.${activeBranch}.city`)}
+              </h2>
+              <div className="mobileContainer">
+                {citiesData[activeBranch].phoneNumbers.map((number) => (
+                  <div key={uuidv4()} className="mobileNumber">
+                    {number}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="addressesContainer">
+                {branches.map((branch, index) => (
+                  <div
+                    key={branch.id}
+                    onClick={() => {
+                      map.setZoom(15);
+                      map.panTo(branch.coordinates);
+                      setActiveAddress(index);
+                    }}
+                    className="branch"
+                  >
+                    <i
+                      className={
+                        activeAddress === index
+                          ? 'icon-map-pin-fill iconPin'
+                          : 'icon-map-pin iconPin'
+                      }
+                    />
+                    <div>
+                      <div className={activeAddress === index ? 'branchNameActive' : 'branchName'}>
+                        {t(`${branch.name}`)}
+                      </div>
+                      <div className="branchAddress">{t(`${branch.address}`)}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
