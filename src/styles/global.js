@@ -15,7 +15,7 @@ import {
   text36Bold,
   text40Bold,
   text54Bold,
-  text60Bold,
+  text60Bold, text8Semibold,
 } from './textStyles';
 import {
   footerTabletBreakpoint,
@@ -176,7 +176,20 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text14Bold};
       }
     }
-  }
+    
+    &ArticleBtnText {
+      ${text14Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Bold};
+      }
+    }
+    
+    &ButtonTitle {
+      ${text20Bold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text8Semibold};
+      }
+    }
 }
 `}
 `;

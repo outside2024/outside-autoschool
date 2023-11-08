@@ -1,3 +1,87 @@
 import styled from "styled-components";
+import theme from "@/styles/theme";
+import {mobileBreakpoint} from "@/global/constants/contants";
 
-export const StyledArticle = styled('div')``;
+export const StyledArticle = styled('div')`
+  padding-top: 56px;
+  padding-bottom: 82px;
+
+  .article{
+    
+    &Img {
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        height: 213px;
+        max-width:320px;
+      }
+    }
+    &Container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    &Content{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &Title {
+      padding-top: 10px;
+      max-width: 654px;
+    }
+    
+    &Date {
+      font-weight: 700;
+      padding-top: 10px;
+    }
+    
+    &BottomContainer {
+      padding-top: 56px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  .button{
+    display: flex;
+    gap: 16px;
+    &Container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &Title {
+      max-width: 227px;
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        max-width: 90px;
+      }
+      
+    }
+    
+    &NextTitle {
+      font-weight: 700;
+      max-width: 227px;
+      text-align: right;
+    }
+    
+    &Wrapper {
+      width: 100px;
+      height: 32px;
+      border: 1px solid ${theme.colors.primary};
+      border-radius: 5px;
+    }
+    &Icon {
+      
+    }
+    
+    &TextPrev {
+      text-align: right;
+      padding-bottom: 6px;
+    }
+    
+    &TextNext {
+      padding-bottom: 6px;
+    }
+  }
+
+`;
