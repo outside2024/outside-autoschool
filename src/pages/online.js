@@ -3,11 +3,13 @@ import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
 import { HeroTypes } from '@/components/Hero/Hero';
+import FormComponent from '@/components/FormComponent';
 
 const Online = () => (
   <RootLayout>
     <Hero heroType={HeroTypes.SECONDARY} />
     <HowToGetStarted />
+    <FormComponent />
   </RootLayout>
 );
 export default Online;

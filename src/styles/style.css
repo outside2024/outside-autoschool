@@ -28,6 +28,10 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+}
+
 .icon-close:before {
   content: '\e904';
 }

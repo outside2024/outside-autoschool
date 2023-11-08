@@ -4,3 +4,4 @@ export const tabletBreakpoint = '1024px';
 export const desktopStartBreakpoint = '1025px';
 export const desktopBreakpoint = '1439px';
 export const desktopBigBreakpoint = '1440px';
+export const footerTabletBreakpoint = '1225px';
