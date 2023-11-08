@@ -39,6 +39,11 @@ const GlobalStyle = createGlobalStyle`${css`
     }
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .content {
     &Container {
       width: 100%;
@@ -110,8 +115,8 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &TitleTertiary {
       ${text54Bold} @media screen and(max-width: ${tabletBreakpoint}) {
-      ${text36Bold}
-    }
+        ${text36Bold}
+      }
       @media screen and (max-width: ${mobileBreakpoint}) {
         ${text32Bold}
       }
@@ -119,8 +124,8 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &TextPrimary {
       ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
-      ${text12Semibold}
-    }
+        ${text12Semibold}
+      }
     }
 
     &Subtitle {
@@ -141,6 +146,19 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text14Semibold};
       @media screen and (max-width: ${tabletBreakpoint}) {
         ${text11Semibold};
+      }
+    }
+    &HeaderLink {
+      ${text16bold};
+    }
+
+    &HeaderBranchLink {
+      ${text16bold};
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        ${text11Semibold};
+      }
+      @media screen and (max-width: ${mobileBreakpoint}) {
+        ${text16bold};
       }
     }
 
@@ -191,6 +209,7 @@ const GlobalStyle = createGlobalStyle`${css`
       }
     }
 }
+  }
 `}
 `;
 

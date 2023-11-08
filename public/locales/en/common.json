@@ -28,13 +28,13 @@
       "sovhozna": "Совхозна"
     }
   },
-  "header": {
+  "navigation": {
     "online": "Онлайн",
     "branches": "Філії",
     "tests": "Тести",
     "about": "Про нас",
     "blog": "Блог",
-    "choooseCity": "Оберіть місто"
+    "chooseCity": "Оберіть місто:"
   },
   "homePageHero": {
     "title": "Автошкола АУТСАЙД - 15 років досвіду та надійності!",
