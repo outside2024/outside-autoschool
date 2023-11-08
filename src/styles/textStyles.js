@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { footerTabletBreakpoint, mobileBreakpoint } from '@/global/constants/contants';
 
 const redHatFontFamily = css`
   font-family: 'Red Hat Display', sans-serif;
@@ -153,41 +152,4 @@ export const text10Semibold = css`
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
-`;
-
-export const text16bold11Semibold14Bold = css`
-  ${redHatFontFamily};
-  ${text16bold};
-
-  @media only screen and (max-width: ${footerTabletBreakpoint}) {
-    ${text11Semibold};
-  }
-
-  @media only screen and (max-width: ${mobileBreakpoint}) {
-    ${text14Bold};
-  }
-`;
-
-export const text20Semibold14Bold = css`
-  ${text20Semibold};
-
-  @media only screen and (max-width: ${mobileBreakpoint}) {
-    ${text14Bold};
-  }
-`;
-
-export const text20Bold14Bold = css`
-  ${text20Bold};
-
-  @media only screen and (max-width: ${footerTabletBreakpoint}) {
-    ${text14Bold};
-  }
-`;
-
-export const text14Semibold11Semibold = css`
-  ${text14Semibold};
-
-  @media only screen and (max-width: ${mobileBreakpoint}) {
-    ${text11Semibold};
-  }
 `;

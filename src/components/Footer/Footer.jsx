@@ -4,11 +4,11 @@ import Link from 'next/link';
 import StyledFooter from '@/components/Footer/Footer.styled';
 import companyLogo from '../../../public/Logo.png';
 import { routesMenu, routsBranches, routsDnipro } from '@/global/constants/routes';
-import { socialLinksData } from '@/components/Footer/data';
+import { socialLinksData } from '@/global/constants/dataSocialLinks';
 
 const socialIcons = (title) => (
   <>
-    <div className="footerSocialsText">{title}</div>
+    <div className="footerSocialsText typoFooterSocialsText">{title}</div>
     <div className="footerIcons">
       {socialLinksData.map((social) => (
         <Link
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
           <div className="footerMenu">
             {routesMenu.map((route) => (
-              <Link href={route.path} key={route.path} className="footerRouteNav">
+              <Link href={route.path} key={route.path} className="footerRouteNav typoFooterNav">
                 {t(`${route.text}`)}
               </Link>
             ))}
@@ -54,7 +54,11 @@ const Footer = () => {
             <div className="footerBranchesTitle">{t('branches.title')}</div>
             <div className="footerBranches">
               {routsBranches.map((route) => (
-                <Link href={route.path} key={route.path} className="footerRoute">
+                <Link
+                  href={route.path}
+                  key={route.path}
+                  className="footerRoute typoFooterRouteLinks"
+                >
                   {t(`${route.text}`)}
                 </Link>
               ))}
@@ -64,7 +68,11 @@ const Footer = () => {
             <div className="footerBranchesTitle">{t('footer.schools_dnipro')}</div>
             <div className="footerBranches">
               {routsDnipro.map((route) => (
-                <Link href={route.path} key={route.path} className="footerRoute">
+                <Link
+                  href={route.path}
+                  key={route.path}
+                  className="footerRoute typoFooterRouteLinks"
+                >
                   {t(`${route.text}`)}
                 </Link>
               ))}
@@ -74,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="contentWrapper">
-        <div className="footerRights">
+        <div className="footerRights typoFooterRights">
           ©{new Date().getFullYear()} Company Name. All rights reserved
         </div>
       </div>

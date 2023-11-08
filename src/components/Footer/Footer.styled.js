@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
-import {
-  text14Semibold11Semibold,
-  text16bold11Semibold14Bold,
-  text20Bold,
-  text20Bold14Bold,
-  text20Semibold14Bold,
-} from '@/styles/textStyles';
+import { text20Bold } from '@/styles/textStyles';
 import { footerTabletBreakpoint, mobileBreakpoint } from '@/global/constants/contants';
 
 export const StyledFooter = styled('div')`
@@ -84,7 +78,6 @@ export const StyledFooter = styled('div')`
 
     &SocialsText {
       color: ${theme.colors.typo.white};
-      ${text20Semibold14Bold};
       padding-top: 40px;
       width: 210px;
 
@@ -114,12 +107,10 @@ export const StyledFooter = styled('div')`
     &Route {
       color: ${theme.colors.typo.white};
       cursor: pointer;
-      ${text16bold11Semibold14Bold};
 
       &Nav {
         color: ${theme.colors.typo.white};
         cursor: pointer;
-        ${text20Bold14Bold};
       }
     }
 
@@ -141,7 +132,6 @@ export const StyledFooter = styled('div')`
       border-top: ${theme.colors.typo.white} 1px solid;
       color: ${theme.colors.typo.white};
       padding: 11px 0 8px 56px;
-      ${text14Semibold11Semibold};
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
         padding: 8px 0 24px 0;
