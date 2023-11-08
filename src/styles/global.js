@@ -4,6 +4,7 @@ import {
   text11Semibold,
   text12Bold,
   text12Semibold,
+  text14Bold,
   text14Semibold,
   text16bold,
   text20Bold,
@@ -16,7 +17,11 @@ import {
   text54Bold,
   text60Bold,
 } from './textStyles';
-import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
+import {
+  footerTabletBreakpoint,
+  mobileBreakpoint,
+  tabletBreakpoint,
+} from '@/global/constants/contants';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -109,8 +114,7 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &TitleTertiary {
-      ${text54Bold}
-      @media screen and (max-width: ${tabletBreakpoint}) {
+      ${text54Bold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text36Bold}
       }
       @media screen and (max-width: ${mobileBreakpoint}) {
@@ -119,8 +123,7 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &TextPrimary {
-      ${text20Semibold}
-      @media screen and (max-width: ${tabletBreakpoint}) {
+      ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text12Semibold}
       }
     }
@@ -156,6 +159,39 @@ const GlobalStyle = createGlobalStyle`${css`
       }
       @media screen and (max-width: ${mobileBreakpoint}) {
         ${text16bold};
+      }
+    }
+
+    &FooterRouteLinks {
+      ${text16bold};
+      @media screen and (max-width: ${footerTabletBreakpoint}) {
+        ${text11Semibold};
+      }
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+
+    &FooterNav {
+      ${text20Bold};
+      @media only screen and (max-width: ${footerTabletBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+
+    &FooterRights {
+      ${text14Semibold};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text11Semibold};
+      }
+    }
+
+    &FooterSocialsText {
+      ${text20Semibold};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
       }
     }
   }

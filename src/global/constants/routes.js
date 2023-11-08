@@ -1,11 +1,3 @@
-export const mobileBreakpoint = '767px';
-export const tabletStartBreakpoint = '768px';
-export const tabletBreakpoint = '1024px';
-export const desktopStartBreakpoint = '1025px';
-export const desktopBreakpoint = '1439px';
-export const desktopBigBreakpoint = '1440px';
-export const footerTabletBreakpoint = '1225px';
-
 export const routesMenu = [
   {
     path: '/online',
@@ -26,9 +18,6 @@ export const routesMenu = [
 ];
 
 export const routsBranches = [
-  {
-    text: 'branches.dnipro.city',
-  },
   {
     path: '/kharkiv',
     text: 'branches.kharkiv.city',
@@ -111,20 +100,5 @@ export const routsDnipro = [
   {
     path: '/dnipro/center',
     text: 'branches.dnipro.center.branch_name',
-  },
-];
-
-export const socialLinksData = [
-  {
-    path: process.env.NEXT_PUBLIC_FACEBOOK,
-    icon: 'icon-facebook',
-  },
-  {
-    path: process.env.NEXT_PUBLIC_INSTAGRAM,
-    icon: 'icon-instagram',
-  },
-  {
-    path: process.env.NEXT_PUBLIC_TIKTOK,
-    icon: 'icon-tiktok',
   },
 ];

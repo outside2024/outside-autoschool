@@ -2,6 +2,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Header from '@/components/Header';
 import { HeaderTypes } from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const structuredDataLogo = {
   '@context': 'https://schema.org',
@@ -35,6 +36,7 @@ const RootLayout = ({ children, meta, headerType }) => (
     </Head>
     <Header headerType={headerType} />
     <main>{children}</main>
+    <Footer />
   </>
 );
 export default RootLayout;
