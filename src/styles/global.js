@@ -119,12 +119,8 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text12Semibold}
       }
     }
-
-    &Subtitle {
-      ${text20Semibold};
-      @media only screen and (max-width: ${tabletBreakpoint}) {
-        ${text12Semibold};
-      }
+    &TextSecondary {
+      ${text12Semibold}
     }
 
     &ButtonPrimary {

@@ -59,3 +59,11 @@ i {
 .icon-save:before {
   content: '\e909';
 }
+
+.icon-arrow-accent:before {
+  content: '\e911';
+}
+
+.icon-search:before {
+  content: '\e912';
+}
