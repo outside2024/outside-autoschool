@@ -4,12 +4,13 @@ import Select from 'react-select';
 import { CitySelectContainer } from './CitySelectstyled';
 
 const CitySelect = ({ selectOptions, selectedOption, light, handleChange }) => (
-  <CitySelectContainer light={light}>
+  <CitySelectContainer $light={light}>
     <Select
       onChange={(e) => handleChange(e)}
       options={selectOptions}
       value={selectedOption}
       classNamePrefix="citySelect"
+      instanceId="citySelect"
     />
   </CitySelectContainer>
 );
@@ -20,17 +21,19 @@ CitySelect.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
     }),
-  ).isRequired,
+  ),
   selectedOption: PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string,
-  }).isRequired,
+  }),
   light: PropTypes.bool,
   handleChange: PropTypes.func.isRequired,
 };
 
 CitySelect.defaultProps = {
   light: false,
+  selectOptions: [],
+  selectOption: { value: '', label: '' },
 };
 
 export default CitySelect;

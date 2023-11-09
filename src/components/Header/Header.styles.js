@@ -8,8 +8,8 @@ export const StyledHeader = styled('div')`
   align-items: center;
   align-content: center;
   justify-content: center;
-  background-color: ${({ theme, light }) =>
-    light ? theme.colors.bg.white : theme.colors.bg.black};
+  background-color: ${({ theme, $light }) =>
+    $light ? theme.colors.bg.white : theme.colors.bg.black};
   position: relative;
   .headerWrapper {
     display: flex;
@@ -22,16 +22,22 @@ export const StyledHeader = styled('div')`
     @media screen and (max-width: 1280px) {
       gap: 10px;
     }
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      height: 60px;
+      justify-content: space-evenly;
+    }
 
     .companyLogo {
       display: flex;
       align-items: center;
     }
   }
+
   .linkText {
     padding: 12px 0;
     display: flex;
-    color: ${({ theme, light }) => (light ? theme.colors.typo.black : theme.colors.typo.white)};
+    color: ${({ theme, $light }) => ($light ? theme.colors.typo.black : theme.colors.typo.white)};
     min-width: fit-content;
     gap: 4px;
     @media screen and (max-width: 1280px) {
@@ -46,6 +52,7 @@ export const StyledHeader = styled('div')`
       color: ${({ theme }) => theme.colors.button.green};
     }
   }
+
   .active {
     color: ${({ theme }) => theme.colors.button.green};
     cursor: default;
@@ -55,20 +62,22 @@ export const StyledHeader = styled('div')`
   .disabled {
     pointer-events: none;
   }
+
   .cityLngBlock {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .cityBlock {
     display: flex;
     align-items: center;
-
     gap: 16px;
     @media screen and (max-width: 1280px) {
       gap: 8px;
     }
   }
+
   .socialLngBlock {
     display: flex;
     align-items: center;
@@ -77,6 +86,7 @@ export const StyledHeader = styled('div')`
       gap: 8px;
     }
   }
+
   .socialBlock {
     display: flex;
     align-items: center;
@@ -94,28 +104,45 @@ export const StyledHeader = styled('div')`
       }
     }
   }
+
   .langBlock {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  .branchesBlock {
+
+  .menuWrapper {
     position: absolute;
     top: 60px;
     width: 100%;
     height: fit-content;
     opacity: 1;
     display: flex;
+    flex-direction: column;
     pointer-events: all;
     z-index: 1;
-    background-color: ${({ theme, light }) =>
-      light ? theme.colors.bg.white : theme.colors.bg.black};
+    background-color: ${({ theme, $light }) =>
+      $light ? theme.colors.bg.white : theme.colors.bg.black};
     border-bottom: 5px solid ${({ theme }) => theme.colors.primary};
+    @media screen and (max-width: 1024px) {
+      top: 0px;
+    }
+  }
+
+  .branchesBlock {
+    width: 100%;
+    height: fit-content;
+    opacity: 1;
+    display: flex;
+    pointer-events: all;
     padding-top: 36px;
     padding-bottom: 36px;
+    @media screen and (max-width: 1024px) {
+      padding-top: 12px;
+    }
   }
   .branchesWrapper {
-    width: ${({ brancheswidth }) => brancheswidth || '100%'};
+    width: ${({ $brancheswidth }) => $brancheswidth || '100%'};
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));
     .icon-right {
@@ -133,8 +160,8 @@ export const StyledHeader = styled('div')`
       content: '';
       width: 2px;
       height: 100%;
-      background-color: ${({ theme, light }) =>
-        light ? theme.colors.bg.black : theme.colors.bg.white};
+      background-color: ${({ theme, $light }) =>
+        $light ? theme.colors.bg.black : theme.colors.bg.white};
       left: -36px;
     }
   }
@@ -146,7 +173,34 @@ export const StyledHeader = styled('div')`
     width: 0;
     height: 0;
   }
-  branchText {
+  .iconMenu {
+    font-size: 24px;
+    color: ${({ theme }) => theme.colors.button.green};
+    cursor: pointer;
+    &:hover {
+      color: ${({ theme }) => theme.colors.button.green30};
+    }
+  }
+
+  .tabletHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
+  .tabletlogoIconWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tabletHeaderLine {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
   }
 `;
 
