@@ -9,10 +9,13 @@ import { HeroTypes } from '@/components/Hero/Hero';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import { HeaderTypes } from '@/components/Header/Header';
+import StrAPIService from '@/global/services/strapiService';
 
-const Home = () => {
+const Home = ({ promotions }) => {
   const { locale } = useRouter();
   console.log(locale);
+
+  console.log('promotions', promotions);
 
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
@@ -28,11 +31,10 @@ const Home = () => {
 
 export default Home;
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
+  const { data } = await StrAPIService.getPromotionsContent(locale);
+
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-    revalidate: 60,
+    props: { ...(await serverSideTranslations(locale, ['common'])), promotions: data },
   };
 }

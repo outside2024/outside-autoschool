@@ -5,15 +5,22 @@ import GlobalStyle from '@/styles/global';
 import { theme } from '@/styles/theme';
 import '@/styles/style.css';
 
-const App = ({ Component }) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Component />
-  </ThemeProvider>
-);
+const App = ({ Component, pageProps }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+};
 
 App.propTypes = {
+  pageProps: PropTypes.shape({}),
   Component: PropTypes.elementType.isRequired,
+};
+
+App.defaultProps = {
+  pageProps: {},
 };
 
 export default appWithTranslation(App);
