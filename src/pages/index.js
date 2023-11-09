@@ -9,19 +9,16 @@ import { HeroTypes } from '@/components/Hero/Hero';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import { HeaderTypes } from '@/components/Header/Header';
-import Discount from "@/components/Discount/Discount";
+import Discount from '@/components/Discount/Discount';
 import StrAPIService from '@/global/services/strapiService';
 
 const Home = ({ promotions }) => {
   const { locale } = useRouter();
-  console.log(locale);
-
-  console.log('promotions', promotions);
 
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
       <Hero heroType={HeroTypes.PRIMARY} />
-      <Discount/>
+      <Discount discounts={promotions.attributes.promotion_items.data} />
       <Documents />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />

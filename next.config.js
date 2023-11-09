@@ -17,9 +17,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
-  //TODO delete , this is for mock data
   images: {
-    domains: ['www.shadowsphotography.co'],
+    unoptimized: true,
+    domains: ['127.0.0.1', 'localhost'],
   },
 };
 

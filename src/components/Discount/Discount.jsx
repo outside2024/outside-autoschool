@@ -1,23 +1,18 @@
-import {useEffect, useState} from "react";
+import { useState } from 'react';
 import 'swiper/css';
-import {useTranslation} from "next-i18next";
-import {Swiper, SwiperSlide} from "swiper/react";
-import Image from "next/image";
-import {StyledDiscount} from "@/components/Discount/Discount.styled";
-import getDiscountData from "@/pages/api/getDiscountData";
-import SliderNavBar from "@/components/SliderNavBar";
+import { useTranslation } from 'next-i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
+import { StyledDiscount } from '@/components/Discount/Discount.styled';
+import SliderNavBar from '@/components/SliderNavBar';
+import { withStrapi } from '@/global/helpers/helpers';
 
-
-const Discount = () => {
+const Discount = ({ discounts }) => {
   const { t } = useTranslation();
-  const [discounts, setDiscounts] = useState([]);
 
   const [swiper, setSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    getDiscountData().then(data => setDiscounts(data));
-  }, []);
 
   return (
     <StyledDiscount className="contentContainer">
@@ -47,31 +42,49 @@ const Discount = () => {
               <SwiperSlide key={discount.id} className="swiperSlide">
                 <div>
                   <Image
-                    src={discount.attributes.image.data.attributes.url}
+                    src={withStrapi(discount.attributes.image.data.attributes.url)}
                     width={discount.attributes.image.data.attributes.width}
-                    height={discount.attributes.image.data.attributes.width}
+                    height={discount.attributes.image.data.attributes.height}
                     quality={85}
-                    alt={discount.attributes.image.data.name || "discount"}
+                    alt="discount"
                     className="discountImage"
                     priority
                   />
-                  <div className="discountCardTitle typoDiscountCardTitle">{discount.attributes.title}</div>
-                  <div className="discountCardSubtitle typoDiscountCardSubtitle">{discount.attributes.subtitle}</div>
+                  <div className="discountCardTitle typoDiscountCardTitle">
+                    {discount.attributes.title}
+                  </div>
+                  <div className="discountCardSubtitle typoDiscountCardSubtitle">
+                    {discount.attributes.subtitle}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <SliderNavBar
-            activeIndex={activeIndex}
-            swiper={swiper}
-            slidesNumber={discounts.length}
-          />
+          <SliderNavBar activeIndex={activeIndex} swiper={swiper} slidesNumber={discounts.length} />
         </div>
-
-
       </div>
     </StyledDiscount>
   );
+};
+
+Discount.propTypes = {
+  discounts: PropTypes.arrayOf(
+    PropTypes.shape({
+      attributes: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string.isRequired,
+        image: PropTypes.shape({
+          data: PropTypes.shape({
+            attributes: PropTypes.shape({
+              width: PropTypes.number.isRequired,
+              height: PropTypes.number.isRequired,
+              url: PropTypes.string.isRequired,
+            }),
+          }),
+        }),
+      }),
+    }),
+  ).isRequired,
 };
 
 export default Discount;
