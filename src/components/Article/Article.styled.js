@@ -12,6 +12,8 @@ export const StyledArticle = styled('div')`
       @media only screen and (max-width: ${mobileBreakpoint}) {
         height: 213px;
         max-width:320px;
+        margin-left: -16px;
+        margin-right: -16px;
       }
     }
     &Container {
@@ -53,15 +55,18 @@ export const StyledArticle = styled('div')`
       max-width: 227px;
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
-        max-width: 90px;
+        max-width: 82px;
       }
       
     }
     
     &NextTitle {
-      font-weight: 700;
       max-width: 227px;
       text-align: right;
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        max-width: 82px;
+      }
     }
     
     &Wrapper {

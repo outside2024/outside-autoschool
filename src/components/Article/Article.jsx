@@ -2,10 +2,12 @@ import {useTranslation} from 'next-i18next';
 import Image from 'next/image';
 import {StyledArticle} from "@/components/Article/Article.styled";
 import Button from "@/components/Button";
+import useWindowSize from "@/hooks/useWindowSize";
 
 
 const Article = ({article}) => {
   const { t } = useTranslation();
+  const windowWidth=useWindowSize();
 
   return (
     <StyledArticle className="contentContainer">
@@ -45,8 +47,8 @@ const Article = ({article}) => {
                   <Button
                     btnType="secondary"
                     contentType="icon"
-                    btnWidth={100}
-                    btnHeight={32}
+                    btnWidth={windowWidth.width <= 900 ? 32: 100}
+                    btnHeight={windowWidth.width <= 900 ? 28: 32}
                     content="icon-angle-down"
                     iconAngle={90}
                   />
@@ -60,8 +62,8 @@ const Article = ({article}) => {
                   <Button
                     btnType="secondary"
                     contentType="icon"
-                    btnWidth={100}
-                    btnHeight={32}
+                    btnWidth={windowWidth.width <= 900 ? 32: 100}
+                    btnHeight={windowWidth.width <= 900 ? 28: 32}
                     content="icon-angle-down"
                     iconAngle={270}
                   />

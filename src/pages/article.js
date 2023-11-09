@@ -1,15 +1,15 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RootLayout from '@/layouts/RootLayout';
 import Article from "@/components/Article";
-import {regularArticle} from "@/global/constants/selectedArticle";
+import {regularArticle} from "@/components/Article/selectedArticle";
 
 
-const Online = () => (
+const ArticlePage = () => (
   <RootLayout>
   <Article article={regularArticle}/>
   </RootLayout>
 );
-export default Online;
+export default ArticlePage;
 
 export async function getStaticProps({ locale }) {
   return {
