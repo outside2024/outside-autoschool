@@ -5,7 +5,7 @@ export const languages = {
         short: 'uk',
         long: 'Ukrainian',
       },
-      key: 'uk-UA',
+      key: 'uk',
     },
     {
       name: {
@@ -15,13 +15,13 @@ export const languages = {
       key: 'en',
     },
   ],
-  'uk-UA': [
+  uk: [
     {
       name: {
         short: 'uk',
         long: 'Ukrainian',
       },
-      key: 'uk-UA',
+      key: 'uk',
     },
     {
       name: {

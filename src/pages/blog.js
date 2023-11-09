@@ -1,10 +1,11 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RootLayout from '@/layouts/RootLayout';
 import BlogComponents from '@/components/Blog/Blog';
+import { cards } from '../components/Blog/constants';
 
 const Blog = () => (
   <RootLayout>
-    <BlogComponents />
+    <BlogComponents cards={cards} />
   </RootLayout>
 );
 

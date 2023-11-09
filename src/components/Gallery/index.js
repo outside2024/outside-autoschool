@@ -1,3 +1,3 @@
-import Hero from '@/components/Hero/Hero';
+import Gallery from '@/components/Gallery/Gallery';
 
-export default Hero;
+export default Gallery;

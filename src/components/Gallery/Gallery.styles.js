@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { desktopBreakpoint, mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
-import { desktopBigBreakpoint } from '../../global/constants/contants';
+import { desktopBigBreakpoint, desktopStartBreakpoint } from '../../global/constants/contants';
 
 const GalleryStyles = styled.div`
   background-color: ${({ theme }) => theme.colors.bg.white};
@@ -45,11 +45,11 @@ const GalleryStyles = styled.div`
       height: 160px;
     }
 
-    @media screen and (min-width: 720px) and (${tabletBreakpoint}) {
+    @media screen and (min-width: 720px) and (max-width: ${tabletBreakpoint}) {
       height: 210px;
     }
 
-    @media screen and (min-width: ${desktopBreakpoint}) and (max-width: ${desktopBreakpoint}) {
+    @media screen and (min-width: ${desktopStartBreakpoint}) and (max-width: ${desktopBreakpoint}) {
       height: 316px;
     }
 

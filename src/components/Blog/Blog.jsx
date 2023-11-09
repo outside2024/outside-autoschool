@@ -4,9 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import useWindowSize from '@/hooks/useWindowSize';
 import BlogStyles from '@/components/Blog/Blog.styles';
 import CardBlog from '../CardBlog';
-import { cards } from './constants';
 import PaginationComponent from '../PaginationComponent';
 import Button, { ButtonContentTypes, ButtonTypes } from '../Button/Button';
+import SearchBlog from '../SearchBlog';
+import PropTypes from 'prop-types';
 
 function getSize(width) {
   if (width < 1025) return 4;
@@ -15,24 +16,30 @@ function getSize(width) {
   return 8;
 }
 
-const BlogComponents = () => {
+const BlogComponents = ({ cards }) => {
   const { width: windowWidth } = useWindowSize();
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(9);
-  const [currentCards, setCurrentCards] = useState(cards);
+  const [currentCards, setCurrentCards] = useState(cards.data.attributes.blog_articles.data);
   const { t } = useTranslation();
 
   const size = pageSize * currentPage - pageSize;
 
   function getData(width) {
     if (width < 768) {
-      return setCurrentCards([...cards].slice(0, pageSize * currentPage));
+      return setCurrentCards(
+        [...cards.data.attributes.blog_articles.data].slice(0, pageSize * currentPage),
+      );
     }
     if (width >= 768) {
-      return setCurrentCards([...cards].slice(size, pageSize * currentPage));
+      return setCurrentCards(
+        [...cards.data.attributes.blog_articles.data].slice(size, pageSize * currentPage),
+      );
     }
 
-    return setCurrentCards([...cards].slice(size, pageSize * currentPage));
+    return setCurrentCards(
+      [...cards.data.attributes.blog_articles.data].slice(size, pageSize * currentPage),
+    );
   }
 
   useEffect(() => {
@@ -48,7 +55,12 @@ const BlogComponents = () => {
     <BlogStyles>
       <div className="contentContainer">
         <div className="contentWrapper">
-          <h2 className="typoColorBlack typoTitleSecondary">{t('blog.title')}</h2>
+          <div className="title-container">
+            <h2 className="typoColorBlack typoTitleSecondary">{t('blog.title')}</h2>
+            <div className="tablet-container">
+              <SearchBlog cards={cards.data.attributes.blog_articles.data} />
+            </div>
+          </div>
           <p className="typoTextPrimary">{t('blog.description')}</p>
           <div className="flex-container">
             <div className="list-container">
@@ -58,45 +70,30 @@ const BlogComponents = () => {
                 ))}
               </ul>
             </div>
-
-            <div className="search-container">
-              <div className="search">
-                <label className="label">
-                  <input name="search" type="text" className="input-search" />
-                  <i className="icon-search" />
-                </label>
-              </div>
-              <h2 className="typoColorBlack typoButtonPrimary gap">{t('blog.popular')}</h2>
-              <ul className="popular-list">
-                {cards
-                  .filter((card) => card.popular)
-                  .map((item) => (
-                    <li key={uuidv4()} className="typoTextSecondary">
-                      {item.title}
-                    </li>
-                  ))}
-              </ul>
+            <div className="desktop-container">
+              <SearchBlog cards={cards.data.attributes.blog_articles.data} />
             </div>
           </div>
           {windowWidth < 768 ? (
             <div className="container-button">
-              {cards.length > pageSize && currentCards.length !== cards.length && (
-                <Button
-                  btnType={ButtonTypes.PRIMARY}
-                  contentType={ButtonContentTypes.TEXT}
-                  content="Показати ще"
-                  onBtnClick={() => {
-                    setCurrentPage(currentPage + 1);
-                  }}
-                />
-              )}
+              {cards.data.attributes.blog_articles.data.length > pageSize &&
+                currentCards.length !== cards.data.attributes.blog_articles.data.length && (
+                  <Button
+                    btnType={ButtonTypes.PRIMARY}
+                    contentType={ButtonContentTypes.TEXT}
+                    content="Показати ще"
+                    onBtnClick={() => {
+                      setCurrentPage(currentPage + 1);
+                    }}
+                  />
+                )}
             </div>
           ) : (
             <PaginationComponent
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
               pageSize={pageSize}
-              total={cards.length}
+              total={cards.data.attributes.blog_articles.data.length}
             />
           )}
         </div>
@@ -106,3 +103,19 @@ const BlogComponents = () => {
 };
 
 export default BlogComponents;
+
+BlogComponents.propTypes = {
+  cards: PropTypes.shape({
+    data: PropTypes.shape({
+      attributes: PropTypes.shape({
+        blog_articles: PropTypes.shape({
+          data: PropTypes.arrayOf(
+            PropTypes.shape({
+              attributes: PropTypes.shape({ title: PropTypes.string }),
+            }),
+          ).isRequired,
+        }),
+      }),
+    }),
+  }).isRequired,
+};

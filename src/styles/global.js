@@ -4,7 +4,9 @@ import {
   text11Semibold,
   text12Bold,
   text12Semibold,
+  text14Bold,
   text14Semibold,
+  text16bold,
   text20Bold,
   text20Semibold,
   text24Bold,
@@ -15,8 +17,11 @@ import {
   text54Bold,
   text60Bold,
 } from './textStyles';
-import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
-import { desktopBreakpoint } from '../global/constants/contants';
+import {
+  footerTabletBreakpoint,
+  mobileBreakpoint,
+  tabletBreakpoint,
+} from '@/global/constants/contants';
 
 const GlobalStyle = createGlobalStyle`${css`
   body,
@@ -32,6 +37,11 @@ const GlobalStyle = createGlobalStyle`${css`
     &.overflow-hidden {
       overflow: hidden;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   .content {
@@ -104,8 +114,7 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &TitleTertiary {
-      ${text54Bold}
-      @media screen and (max-width: ${tabletBreakpoint}) {
+      ${text54Bold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text36Bold}
       }
       @media screen and (max-width: ${mobileBreakpoint}) {
@@ -114,13 +123,16 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &TextPrimary {
-      ${text20Semibold}
-      @media screen and (max-width: ${tabletBreakpoint}) {
+      ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text12Semibold}
       }
     }
     &TextSecondary {
       ${text12Semibold}
+    }
+
+    &TextTertiary {
+      ${text14Bold}
     }
 
     &ButtonPrimary {
@@ -134,6 +146,52 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text14Semibold};
       @media screen and (max-width: ${tabletBreakpoint}) {
         ${text11Semibold};
+      }
+    }
+    &HeaderLink {
+      ${text16bold};
+    }
+
+    &HeaderBranchLink {
+      ${text16bold};
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        ${text11Semibold};
+      }
+      @media screen and (max-width: ${mobileBreakpoint}) {
+        ${text16bold};
+      }
+    }
+
+    &FooterRouteLinks {
+      ${text16bold};
+      @media screen and (max-width: ${footerTabletBreakpoint}) {
+        ${text11Semibold};
+      }
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+
+    &FooterNav {
+      ${text20Bold};
+      @media only screen and (max-width: ${footerTabletBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+
+    &FooterRights {
+      ${text14Semibold};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text11Semibold};
+      }
+    }
+
+    &FooterSocialsText {
+      ${text20Semibold};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
       }
     }
   }

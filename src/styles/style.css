@@ -28,6 +28,10 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+}
+
 .icon-close:before {
   content: '\e904';
 }
@@ -66,4 +70,8 @@ i {
 
 .icon-search:before {
   content: '\e912';
+}
+
+.icon-check:before {
+  content: '\e910';
 }
