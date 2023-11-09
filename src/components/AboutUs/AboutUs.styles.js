@@ -19,10 +19,7 @@ export const StyledAboutUs = styled('div')`
     display: flex;
     justify-content: center;
   }
-
-  .swiper-wrapper {
-  }
-
+  
   .about {
     &Image {
       object-fit: cover;

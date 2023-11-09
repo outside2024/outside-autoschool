@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 import Button from '@/components/Button';
 
-const SliderNavBar = ({ activeIndex = 0, swiper }) => {
-  const slidesNumber = swiper?.slides?.length || 0;
-  const slidesPerView = swiper?.params?.slidesPerView || 0;
+const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber }) => {
+  const slidesPerView = swiper?.params?.slidesPerView || 1;
 
   return (
     <SliderNavBarStyles
@@ -44,6 +43,7 @@ export default SliderNavBar;
 
 SliderNavBar.propTypes = {
   activeIndex: PropTypes.number,
+  slidesNumber: PropTypes.number.isRequired,
   swiper: PropTypes.shape({
     params: PropTypes.shape({ slidesPerView: PropTypes.number }),
     spaceBetween: PropTypes.number,

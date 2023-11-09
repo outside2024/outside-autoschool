@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
-import {StyledDiscount} from "@/components/Discount/Discount.styled";
-import getDiscountData from "@/pages/api/getDiscountData";
+import 'swiper/css';
 import {useTranslation} from "next-i18next";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {aboutUsPhotoSlider} from "@/components/AboutUs/data";
 import Image from "next/image";
+import {StyledDiscount} from "@/components/Discount/Discount.styled";
+import getDiscountData from "@/pages/api/getDiscountData";
+import SliderNavBar from "@/components/SliderNavBar";
 
 
 const Discount = () => {
@@ -18,7 +19,6 @@ const Discount = () => {
     getDiscountData().then(data => setDiscounts(data));
   }, []);
 
-  console.log({discounts})
   return (
     <StyledDiscount className="contentContainer">
       <div className="contentWrapper discountContainer">
@@ -28,16 +28,14 @@ const Discount = () => {
             {t('discount.description')}
           </div>
         </div>
-        <div className="swiperContainer">
+        <div>
           <Swiper
-           // slidesPerView="auto"
+            className="swiperContainer"
             spaceBetween={48}
             breakpoints={{
-              // 0: { slidesPerView: 2, spaceBetween: 16 },
-              // 500: { slidesPerView: 3, spaceBetween: 16 },
-              // 1150: { slidesPerView: 4, spaceBetween: 16 },
+              0: { slidesPerView: 1.5, spaceBetween: 16 },
+              500: { slidesPerView: 2, spaceBetween: 16 },
               1440: { slidesPerView: 3, spaceBetween: 48 },
-              1980: { slidesPerView: 7, spaceBetween: 24 },
             }}
             speed={400}
             onSwiper={setSwiper}
@@ -53,7 +51,7 @@ const Discount = () => {
                     width={discount.attributes.image.data.attributes.width}
                     height={discount.attributes.image.data.attributes.width}
                     quality={85}
-                    alt={discount.attributes.image.data.name}
+                    alt={discount.attributes.image.data.name || "discount"}
                     className="discountImage"
                     priority
                   />
@@ -63,7 +61,11 @@ const Discount = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
+          <SliderNavBar
+            activeIndex={activeIndex}
+            swiper={swiper}
+            slidesNumber={discounts.length}
+          />
         </div>
 
 

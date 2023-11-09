@@ -197,8 +197,8 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &DiscountCardTitle {
-      ${text24BoldRedHat};
-
+       ${text20Bold};
+      
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text14Bold};
       }
