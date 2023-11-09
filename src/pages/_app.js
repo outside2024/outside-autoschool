@@ -5,14 +5,12 @@ import GlobalStyle from '@/styles/global';
 import { theme } from '@/styles/theme';
 import '@/styles/style.css';
 
-const App = ({ Component, pageProps }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
-};
+const App = ({ Component, pageProps }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
 
 App.propTypes = {
   pageProps: PropTypes.shape({}),
