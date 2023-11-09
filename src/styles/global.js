@@ -10,7 +10,6 @@ import {
   text20Bold,
   text20Semibold,
   text24Bold,
-  text24BoldRedHat,
   text32Bold,
   text32Semibold,
   text36Bold,

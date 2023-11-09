@@ -13,10 +13,12 @@ export const StyledDiscount = styled('div')`
   .discount {
     &Container {
       display: flex;
-      justify-content: space-between;
+      gap: 69px;
+
 
       @media only screen and (max-width: 1400px) {
         flex-direction: column;
+        gap: 24px;
       }
     }
 
@@ -59,6 +61,7 @@ export const StyledDiscount = styled('div')`
           height: 70px;
         }
       }
+
       &Subtitle {
         max-width: 300px;
         @media only screen and (max-width: ${mobileBreakpoint}) {
@@ -68,8 +71,28 @@ export const StyledDiscount = styled('div')`
     }
   }
 
+  .descriptionContainer {
+    width: 344px;
+    flex-shrink: 0;
+    
+    @media only screen and (max-width: 1400px) {
+      width: 100%;
+    }
+  }
+
+  .swiperWrapper {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    // CSS Grid/Flexbox bug size workaround
+    // @see https://github.com/kenwheeler/slick/issues/982
+    // @see https://github.com/nolimits4web/swiper/issues/3599
+    min-height: 0;
+    min-width: 0;
+  }
+
   .swiperContainer {
-    max-width: 900px;
+    //max-width: 900px;
     padding-bottom: 55px;
     @media only screen and (max-width: 1920px) {
       margin-right: -100px;
@@ -81,10 +104,6 @@ export const StyledDiscount = styled('div')`
     @media only screen and (max-width: ${mobileBreakpoint}) {
       margin-right: -16px;
       padding-bottom: 24px;
-    }
-
-    @media only screen and (max-width: ${tabletBreakpoint}) {
-      padding-top: 24px;
     }
   }
 

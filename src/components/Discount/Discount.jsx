@@ -17,20 +17,22 @@ const Discount = ({ discounts }) => {
   return (
     <StyledDiscount className="contentContainer">
       <div className="contentWrapper discountContainer">
-        <div>
+        <div className="descriptionContainer">
           <h2 className="typoColorBlack typoTitleSecondary discountTitle">{t('discount.title')}</h2>
           <div className="typoColorBlack typoSubtitle discountDescription">
             {t('discount.description')}
           </div>
         </div>
-        <div>
+        <div className="swiperWrapper">
           <Swiper
             className="swiperContainer"
             spaceBetween={48}
             breakpoints={{
               0: { slidesPerView: 1.5, spaceBetween: 16 },
               500: { slidesPerView: 2, spaceBetween: 16 },
-              1440: { slidesPerView: 3, spaceBetween: 48 },
+              1200: { slidesPerView: 3, spaceBetween: 48 },
+              1600: { slidesPerView: 3.5, spaceBetween: 48 },
+              1920: { slidesPerView: 4, spaceBetween: 48 },
             }}
             speed={400}
             onSwiper={setSwiper}
@@ -60,7 +62,12 @@ const Discount = ({ discounts }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <SliderNavBar activeIndex={activeIndex} swiper={swiper} slidesNumber={discounts.length} />
+          <SliderNavBar
+            activeIndex={activeIndex}
+            swiper={swiper}
+            slidesNumber={discounts.length}
+            maxWidth="100%"
+          />
         </div>
       </div>
     </StyledDiscount>

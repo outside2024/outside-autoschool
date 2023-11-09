@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 import Button from '@/components/Button';
 
-const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber }) => {
+const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
   const slidesPerView = swiper?.params?.slidesPerView || 1;
 
   return (
     <SliderNavBarStyles
-      $width={100 / (slidesNumber - (slidesPerView - 1))}
-      $left={(100 * activeIndex) / (slidesNumber - (slidesPerView - 1))}
+      $maxWidth={maxWidth}
+      $width={100 / (slidesNumber - (Math.floor(slidesPerView) - 1))}
+      $left={(100 * activeIndex) / (slidesNumber - (Math.floor(slidesPerView) - 1))}
     >
       <div className="progressBar" />
       <div className="buttonsContainer">
@@ -44,6 +45,7 @@ export default SliderNavBar;
 SliderNavBar.propTypes = {
   activeIndex: PropTypes.number,
   slidesNumber: PropTypes.number.isRequired,
+  maxWidth: PropTypes.string,
   swiper: PropTypes.shape({
     params: PropTypes.shape({ slidesPerView: PropTypes.number }),
     spaceBetween: PropTypes.number,
@@ -56,6 +58,7 @@ SliderNavBar.propTypes = {
 
 SliderNavBar.defaultProps = {
   activeIndex: 0,
+  maxWidth: '808px',
   swiper: PropTypes.shape({
     params: { slidesPerView: 0 },
     spaceBetween: 0,
