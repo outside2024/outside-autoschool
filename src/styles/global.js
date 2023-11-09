@@ -9,7 +9,7 @@ import {
   text16bold,
   text20Bold,
   text20Semibold,
-  text24Bold,
+  text24Bold, text24BoldRedHat,
   text32Bold,
   text32Semibold,
   text36Bold,
@@ -115,8 +115,8 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &TitleTertiary {
       ${text54Bold} @media screen and(max-width: ${tabletBreakpoint}) {
-        ${text36Bold}
-      }
+      ${text36Bold}
+    }
       @media screen and (max-width: ${mobileBreakpoint}) {
         ${text32Bold}
       }
@@ -124,8 +124,8 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &TextPrimary {
       ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
-        ${text12Semibold}
-      }
+      ${text12Semibold}
+    }
     }
 
     &Subtitle {
@@ -148,6 +148,7 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text11Semibold};
       }
     }
+
     &HeaderLink {
       ${text16bold};
     }
@@ -194,6 +195,21 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text14Bold};
       }
     }
+
+    &DiscountCardTitle {
+      ${text24BoldRedHat};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+    &DiscountCardSubtitle {
+      ${text14Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Semibold}
+      }
+    }
+
   }
 `}
 `;

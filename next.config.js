@@ -16,6 +16,11 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+
+  //TODO delete , this is for mock data
+  images: {
+    domains: ['www.shadowsphotography.co'],
+  },
 };
 
 module.exports = nextConfig;

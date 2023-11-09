@@ -9,6 +9,7 @@ import { HeroTypes } from '@/components/Hero/Hero';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import { HeaderTypes } from '@/components/Header/Header';
+import Discount from "@/components/Discount/Discount";
 
 const Home = () => {
   const { locale } = useRouter();
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
       <Hero heroType={HeroTypes.PRIMARY} />
+      <Discount/>
       <Documents />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
