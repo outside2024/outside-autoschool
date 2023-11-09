@@ -1,21 +1,21 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RootLayout from '@/layouts/RootLayout';
 import Article from "@/components/Article";
-import {regularArticle} from "@/components/Article/selectedArticle";
+import StrAPIService from "@/global/services/strapiService";
 
 
-const ArticlePage = () => (
+const ArticlePage = ({article}) => (
+
   <RootLayout>
-  <Article article={regularArticle}/>
+  <Article article={article}/>
   </RootLayout>
 );
 export default ArticlePage;
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale}) {
+  const { data } = await StrAPIService.getArticlesById(locale, 2);
+
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-    revalidate: 60,
+    props: { ...(await serverSideTranslations(locale, ['common'])), article: data },
   };
 }
