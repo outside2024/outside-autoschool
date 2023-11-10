@@ -321,5 +321,9 @@
   "awards": {
     "title": "Awards",
     "description": "Award for 3rd place among schools in Ukraine"
+  },
+  "discount": {
+    "title": "ДІЮТЬ АКЦІЇ!",
+    "description": "Для активації знижки потрібно при записі в автошколу надати відповідні документи"
   }
 }

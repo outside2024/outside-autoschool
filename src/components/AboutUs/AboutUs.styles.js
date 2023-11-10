@@ -20,9 +20,6 @@ export const StyledAboutUs = styled('div')`
     justify-content: center;
   }
 
-  .swiper-wrapper {
-  }
-
   .about {
     &Image {
       object-fit: cover;
