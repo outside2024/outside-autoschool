@@ -148,6 +148,7 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text11Semibold};
       }
     }
+
     &HeaderLink {
       ${text16bold};
     }
@@ -192,6 +193,20 @@ const GlobalStyle = createGlobalStyle`${css`
 
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text14Bold};
+      }
+    }
+
+    &DiscountCardTitle {
+      ${text20Bold};
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text14Bold};
+      }
+    }
+    &DiscountCardSubtitle {
+      ${text14Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Semibold}
       }
     }
   }

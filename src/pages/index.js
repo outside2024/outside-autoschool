@@ -1,5 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import GoogleMap from '@/components/GoogleMap/GoogleMap';
@@ -9,6 +10,7 @@ import { HeroTypes } from '@/components/Hero/Hero';
 import Documents from '@/components/Documents';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import { HeaderTypes } from '@/components/Header/Header';
+import Discount from '@/components/Discount/Discount';
 import StrAPIService from '@/global/services/strapiService';
 
 const Home = ({ promotions }) => {
@@ -17,6 +19,7 @@ const Home = ({ promotions }) => {
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
       <Hero heroType={HeroTypes.PRIMARY} />
+      {promotions && <Discount discounts={promotions.attributes.promotion_items.data} />}
       <Documents />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
@@ -37,3 +40,14 @@ export async function getServerSideProps({ locale }) {
     },
   };
 }
+
+Home.propTypes = {
+  promotions: PropTypes.shape({
+    attributes: PropTypes.shape({
+      promotion_items: PropTypes.shape({
+        // eslint-disable-next-line react/forbid-prop-types
+        data: PropTypes.arrayOf(PropTypes.object),
+      }),
+    }),
+  }).isRequired,
+};
