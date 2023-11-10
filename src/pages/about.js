@@ -6,10 +6,12 @@ import { HeroTypes } from '@/components/Hero/Hero';
 import Gallery from '@/components/Gallery/Gallery';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import Awards from '@/components/Awards/Awards';
+import HeroDescription from '@/components/HeroDescription';
 
 const About = () => (
   <RootLayout>
     <Hero heroType={HeroTypes.TERTIARY} />
+    <HeroDescription />
     <Awards />
     <AboutUs />
     <Gallery />

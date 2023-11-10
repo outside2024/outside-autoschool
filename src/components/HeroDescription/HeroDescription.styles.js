@@ -14,6 +14,12 @@ const HeroDescriptionStyles = styled.div`
     padding-top: 24px;
   }
 
+  .width {
+    @media screen and (min-width: ${tabletStartBreakpoint}) {
+      width: 50%;
+    }
+  }
+
   .flex-container {
     display: flex;
     gap: 24px;
