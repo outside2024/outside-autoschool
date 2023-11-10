@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled('div')`
+  position: sticky;
+  top: 0;
+  z-index: 11;
   width: 100%;
   height: 60px;
   display: flex;
@@ -10,7 +13,6 @@ export const StyledHeader = styled('div')`
   justify-content: center;
   background-color: ${({ theme, $light }) =>
     $light ? theme.colors.bg.white : theme.colors.bg.black};
-  position: relative;
   .headerWrapper {
     display: flex;
     justify-content: space-between;
@@ -145,10 +147,10 @@ export const StyledHeader = styled('div')`
     width: ${({ $brancheswidth }) => $brancheswidth || '100%'};
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));
-    .icon-right {
-      transform: rotate(270deg);
-      font-size: 14px;
-    }
+  }
+  .icon-right {
+    transform: rotate(270deg);
+    font-size: 16px;
   }
   .subBranchesWrapper {
     position: relative;
@@ -244,6 +246,36 @@ export const StyledHeader = styled('div')`
         gap: 8px;
       }
     }
+    .mobileBranchesWrapper {
+      display: grid;
+      grid-template-columns: repeat(2, calc((100% - 16px) / 2));
+      grid-column-gap: 16px;
+    }
+    .mobileBranchesItem {
+      border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+      padding: 24px 0;
+    }
+    .backButton {
+      cursor: pointer;
+      display: flex;
+      padding: 4px;
+      padding-bottom: 24px;
+      width: 20%;
+
+      &:hover {
+        .iconLeft {
+          color: ${({ theme }) => theme.colors.button.green30};
+        }
+      }
+    }
+    .iconLeft {
+      font-size: 24px;
+      color: ${({ theme }) => theme.colors.white};
+      transform: rotate(90deg);
+    }
+  }
+  .menuButton {
+    padding: 4px;
   }
 `;
 

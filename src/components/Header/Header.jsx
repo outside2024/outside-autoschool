@@ -25,7 +25,7 @@ const routes = [
   { name: 'blog', url: '/blog' },
 ];
 
-//! TODO: mobile header, menu anomations, city detector
+//! TODO: menu anomations, city detector
 
 const Header = ({ headerType }) => {
   const { t } = useTranslation();
@@ -86,10 +86,9 @@ const Header = ({ headerType }) => {
     },
   ];
   const { currentCity, setCurrentCity } = useContext(CurrentCityContext);
-  // const [currentCity, setCurrentCity] = useState(null);
   const [showBranchesBlock, setShowBranchesBlock] = useState(false);
   const [showDiproBranchesBlock, setShowDiproBranchesBlock] = useState(false);
-  const [tabletMenuOpen, setTabletMenuOpen] = useState(true);
+  const [tabletMenuOpen, setTabletMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -116,9 +115,9 @@ const Header = ({ headerType }) => {
     };
   }, [menuRef, widowSize]);
 
-  // useEffect(() => {
-  //   setTabletMenuOpen(false);
-  // }, [pathname]);
+  useEffect(() => {
+    setTabletMenuOpen(false);
+  }, [pathname]);
 
   const handleCityChange = (e) => {
     setCurrentCity(e.value);
@@ -208,7 +207,9 @@ const Header = ({ headerType }) => {
           </>
         )}
         {!tabletMenuOpen && widowSize.width < 1025 && (
-          <i className="icon-burger iconMenu" onClick={() => setTabletMenuOpen(true)} />
+          <div className="menuButton" onClick={() => setTabletMenuOpen(true)}>
+            <i className="icon-burger iconMenu" />
+          </div>
         )}
       </div>
       <div
@@ -226,7 +227,9 @@ const Header = ({ headerType }) => {
             <div className="tabletHeaderLine">
               <div className="tabletlogoIconWrapper">
                 {tabletMenuOpen && widowSize.width < 1025 && (
-                  <i className="icon-close iconMenu" onClick={() => setTabletMenuOpen(false)} />
+                  <div className="menuButton" onClick={() => setTabletMenuOpen(false)}>
+                    <i className="icon-close iconMenu" />
+                  </div>
                 )}
                 <Link className="companyLogo" href="/" locale={locale}>
                   <Image
@@ -338,7 +341,9 @@ const Header = ({ headerType }) => {
         {widowSize.width < 768 && (
           <div className="mobileHeader">
             <div className="mobilelogoIconWrapper">
-              <i className="icon-close iconMenu" onClick={() => setTabletMenuOpen(false)} />
+              <div className="menuButton" onClick={() => setTabletMenuOpen(false)}>
+                <i className="icon-close iconMenu" />
+              </div>
               <Link className="companyLogo" href="/" locale={locale}>
                 <Image
                   src={headerType === HeaderTypes.LIGHT ? '/logo-light.png' : '/logo-dark.png'}
@@ -350,64 +355,125 @@ const Header = ({ headerType }) => {
                 />
               </Link>
             </div>
-            <div className="mobileCityBlock">
-              <p className="typoHeaderChooseCity linkText">{t(`navigation.chooseCity`)}</p>
-              <CitySelect
-                light={headerType === HeaderTypes.LIGHT}
-                selectOptions={citiesOptions}
-                selectedOption={getSelectedOption()}
-                handleChange={handleCityChange}
-              />
-            </div>
-            <nav className="mobileNavBlock">
-              {routes.map((route) =>
-                route?.url ? (
-                  <Link key={uuidv4()} href={route.url}>
-                    <p className="typoHeaderLink link linkText mobileNavBlockItem">
-                      {t(`navigation.${route.name}`)}
-                    </p>
-                  </Link>
-                ) : (
-                  <div
-                    key={uuidv4()}
-                    className="typoHeaderLink link linkText mobileNavBlockItem"
-                    onClick={() => {
-                      setShowBranchesBlock(!showBranchesBlock);
-                    }}
-                  >
-                    <p className="">{t(`navigation.${route.name}`)} </p>{' '}
-                    <i className="icon-angle-down icon" />
+            {!showBranchesBlock && !showDiproBranchesBlock && (
+              <>
+                <div className="mobileCityBlock">
+                  <p className="typoHeaderChooseCity linkText">{t(`navigation.chooseCity`)}</p>
+                  <CitySelect
+                    light={headerType === HeaderTypes.LIGHT}
+                    selectOptions={citiesOptions}
+                    selectedOption={getSelectedOption()}
+                    handleChange={handleCityChange}
+                  />
+                </div>
+                <nav className="mobileNavBlock">
+                  {routes.map((route) =>
+                    route?.url ? (
+                      <Link key={uuidv4()} href={route.url}>
+                        <p className="typoHeaderLink link linkText mobileNavBlockItem">
+                          {t(`navigation.${route.name}`)}
+                        </p>
+                      </Link>
+                    ) : (
+                      <div
+                        key={uuidv4()}
+                        className="typoHeaderLink link linkText mobileNavBlockItem"
+                        onClick={() => {
+                          setShowBranchesBlock(!showBranchesBlock);
+                        }}
+                      >
+                        <p className="">{t(`navigation.${route.name}`)} </p>{' '}
+                        <i className="icon-angle-down icon-right" />
+                      </div>
+                    ),
+                  )}
+                </nav>
+                <div className="mobileSocialLngBlock">
+                  <div className="mobileSocialBlock">
+                    {socialLinksData.map((socialLink) => (
+                      <Link
+                        key={uuidv4()}
+                        href={socialLink.path}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                      >
+                        <i className={`${socialLink.icon} iconSocial`} />
+                      </Link>
+                    ))}
                   </div>
-                ),
-              )}
-            </nav>
-            <div className="mobileSocialLngBlock">
-              <div className="mobileSocialBlock">
-                {socialLinksData.map((socialLink) => (
-                  <Link
-                    key={uuidv4()}
-                    href={socialLink.path}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                  >
-                    <i className={`${socialLink.icon} iconSocial`} />
-                  </Link>
-                ))}
-              </div>
-              <div className="langBlock">
-                <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
-                  <p className={`typoHeaderLink link linkText ${locale === 'en' ? 'active' : ''}`}>
-                    en
-                  </p>
-                </Link>
-                <span className="typoHeaderLink  linkText">/</span>
-                <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
-                  <p className={`typoHeaderLink link linkText ${locale === 'uk' ? 'active' : ''}`}>
-                    ua
-                  </p>
-                </Link>
-              </div>
-            </div>
+                  <div className="langBlock">
+                    <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
+                      <p
+                        className={`typoHeaderLink link linkText ${
+                          locale === 'en' ? 'active' : ''
+                        }`}
+                      >
+                        en
+                      </p>
+                    </Link>
+                    <span className="typoHeaderLink  linkText">/</span>
+                    <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
+                      <p
+                        className={`typoHeaderLink link linkText ${
+                          locale === 'uk' ? 'active' : ''
+                        }`}
+                      >
+                        ua
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              </>
+            )}
+            {showBranchesBlock && !showDiproBranchesBlock && (
+              <>
+                {tabletMenuOpen && widowSize.width < 1025 && (
+                  <div className="backButton" onClick={() => setShowBranchesBlock(false)}>
+                    <i className="icon-angle-down iconLeft" />
+                  </div>
+                )}
+                <div className="mobileBranchesWrapper">
+                  {routsBranches.map((branch) =>
+                    branch?.path ? (
+                      <Link key={uuidv4()} href={branch.path}>
+                        <p className="typoHeaderBranchLink link linkText mobileBranchesItem">
+                          {t(branch.text)}
+                        </p>
+                      </Link>
+                    ) : (
+                      <div
+                        key={uuidv4()}
+                        className="typoHeaderBranchLink link linkText mobileBranchesItem"
+                        onClick={() => {
+                          setShowDiproBranchesBlock(!showDiproBranchesBlock);
+                        }}
+                      >
+                        <p className="">{t(branch.text)} </p>{' '}
+                        <i className="icon-angle-down icon-right" />
+                      </div>
+                    ),
+                  )}
+                </div>
+              </>
+            )}
+            {showDiproBranchesBlock && (
+              <>
+                {tabletMenuOpen && widowSize.width < 1025 && (
+                  <div className="backButton" onClick={() => setShowDiproBranchesBlock(false)}>
+                    <i className="icon-angle-down iconLeft" />
+                  </div>
+                )}
+                <div className="mobileNavBlock">
+                  {routsDnipro.map((branch) => (
+                    <Link key={uuidv4()} href={branch.path}>
+                      <p className="typoHeaderBranchLink link linkText mobileNavBlockItem">
+                        {t(branch.text)}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
