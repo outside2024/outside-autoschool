@@ -6,6 +6,7 @@ import {
   text12Semibold,
   text14Bold,
   text14Semibold,
+  text16Semibold,
   text16bold,
   text20Bold,
   text20Semibold,
@@ -18,6 +19,7 @@ import {
   text60Bold,
 } from './textStyles';
 import {
+  desktopStartBreakpoint,
   footerTabletBreakpoint,
   mobileBreakpoint,
   tabletBreakpoint,
@@ -151,6 +153,13 @@ const GlobalStyle = createGlobalStyle`${css`
 
     &HeaderLink {
       ${text16bold};
+    }
+
+    &HeaderChooseCity {
+      ${text16bold};
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        ${text16Semibold};
+      }
     }
 
     &HeaderBranchLink {

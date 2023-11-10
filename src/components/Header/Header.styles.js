@@ -94,14 +94,14 @@ export const StyledHeader = styled('div')`
     @media screen and (max-width: 1280px) {
       gap: 4px;
     }
-    .iconSocial {
-      font-size: 24px;
-      color: ${({ theme }) => theme.colors.typo.white};
-      cursor: pointer;
-      &:hover,
-      &:focus {
-        color: ${({ theme }) => theme.colors.button.green};
-      }
+  }
+  .iconSocial {
+    font-size: 24px;
+    color: ${({ theme }) => theme.colors.typo.white};
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.button.green};
     }
   }
 
@@ -120,7 +120,7 @@ export const StyledHeader = styled('div')`
     display: flex;
     flex-direction: column;
     pointer-events: all;
-    z-index: 1;
+    z-index: 2;
     background-color: ${({ theme, $light }) =>
       $light ? theme.colors.bg.white : theme.colors.bg.black};
     border-bottom: 5px solid ${({ theme }) => theme.colors.primary};
@@ -201,6 +201,49 @@ export const StyledHeader = styled('div')`
     justify-content: space-between;
     align-items: center;
     height: 60px;
+  }
+
+  .mobileHeader {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5px);
+    .mobilelogoIconWrapper {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      margin-bottom: 4px;
+      gap: calc(50% - 41px);
+    }
+    .mobileCityBlock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 46px;
+      margin-bottom: 34px;
+    }
+    .mobileNavBlock {
+      display: flex;
+      flex-direction: column;
+      .mobileNavBlockItem {
+        border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+        padding: 16px 0;
+      }
+    }
+    .mobileSocialLngBlock {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 43px;
+      .mobileSocialBlock {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
   }
 `;
 
