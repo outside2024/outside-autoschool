@@ -7,7 +7,6 @@ const CardBlog = ({ card }) => {
     (res, item) => [...res, ...item.children.map((subItem) => subItem.text)],
     [],
   );
-
   return (
     <CardBlogStyles>
       <Link href={`blog/${card.id}`} target="_blank" rel="noopener noreferrer nofollow">

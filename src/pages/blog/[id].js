@@ -11,8 +11,8 @@ const ArticlePage = ({article, articlesList}) => (
 );
 export default ArticlePage;
 
-export async function getServerSideProps({locale}) {
-  const {data: article} = await StrAPIService.getArticlesById(locale, 13);
+export async function getServerSideProps({locale, params}) {
+  const {data: article} = await StrAPIService.getArticlesById(locale, Number(params.id));
   const {data} = await StrAPIService.getAllArticles(locale);
 
   return {

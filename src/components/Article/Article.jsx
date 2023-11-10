@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from "next/link";
 import {useMemo} from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 import {StyledArticle} from "@/components/Article/Article.styled";
 import Button from "@/components/Button";
 import useWindowSize from "@/hooks/useWindowSize";
+import SearchBlog from "@/components/SearchBlog";
 
 
 export function formatChild(child) {
@@ -13,7 +15,7 @@ export function formatChild(child) {
     case 'list-item':
       return <li>{child.children.map(formatChild)}</li>;
     case 'link':
-      return <Link className="link" href={child.url}>{child.children.map(formatChild)}</Link>;
+      return <Link className="articleLink" href={child.url}>{child.children.map(formatChild)}</Link>;
     case 'text':
       return child.text;
     default:
@@ -26,14 +28,14 @@ export function formatRichText(data) {
     case 'list':
       switch (data.format) {
         case 'unordered':
-          return <ul>{data.children.map(formatChild)}</ul>;
+          return <ul className="typoSubtitle">{data.children.map(formatChild)}</ul>;
         case 'ordered':
           return <ol>{data.children.map(formatChild)}</ol>;
         default:
           return <span style={{color: 'red'}}>{data.children.map(formatChild)}</span>;
       }
     case 'paragraph':
-      return <p className="typoColorBlack typoSubtitle articleParagraph">{data.children.map(formatChild)}</p>;
+      return <p className="typoColorBlack typoSubtitle">{data.children.map(formatChild)}</p>;
     default:
       return <span style={{color: 'red'}}>{data.children.map(formatChild)}</span>;
   }
@@ -48,13 +50,19 @@ const Article = ({article, articlesList}) => {
     nextArticle: articlesList.find(el => el.id === article.id + 1)
   }), [article, articlesList]);
 
+  const date = moment(article.attributes.createdAt).format("YYYY-MM-DD");
+
+
+  console.log({articlesList})
+
+
   return (
     <StyledArticle className="contentContainer">
       <div className="contentWrapper">
         <div className="articleContainer">
           <div className="articleContent">
             <h2 className="typoColorBlack typoTitleSecondary articleTitle">{article.attributes.title}</h2>
-            <div className="typoColorBlack typoSubtitle articleDate">{article.attributes.createdAt}</div>
+            <div className="typoColorBlack typoSubtitle articleDate">{date}</div>
             {article.attributes?.textBlock.length > 0 && article.attributes.textBlock.map(textBlock => <>
               {textBlock.subtitle && <h3 className="typoColorBlack">{textBlock.subtitle}</h3>}
               {textBlock.text.richText.map(formatRichText)}
@@ -105,7 +113,10 @@ const Article = ({article, articlesList}) => {
               </div>
             </div>
           </div>
-          <div>Search</div>
+          <div>
+            {/* eslint-disable-next-line react/prop-types */}
+            <SearchBlog cards={articlesList} />
+          </div>
         </div>
       </div>
     </StyledArticle>

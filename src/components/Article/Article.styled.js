@@ -43,6 +43,10 @@ export const StyledArticle = styled('div')`
       justify-content: space-between;
     }
     
+    &Link{
+      color: ${theme.colors.blue};
+    }
+    
   }
 
   .button {
@@ -92,9 +96,6 @@ export const StyledArticle = styled('div')`
       padding-bottom: 6px;
     }
   }
-
-  .link {
-    color: #1734c2;
-  }
+  
 
 `;
