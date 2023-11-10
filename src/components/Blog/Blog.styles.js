@@ -42,6 +42,7 @@ const BlogStyles = styled.div`
       margin-top: -34px;
     }
   }
+
   .desktop-container {
     display: none;
 
@@ -49,6 +50,7 @@ const BlogStyles = styled.div`
       display: block;
     }
   }
+
   .title-container {
     display: flex;
     justify-content: space-between;

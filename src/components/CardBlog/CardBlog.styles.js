@@ -11,9 +11,11 @@ const CardBlogStyles = styled.li`
   padding: 16px;
   padding-right: 0;
   border-top: solid 1px #76c045;
+  padding-left: 0;
 
   @media only screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
     width: calc(100% / 2);
+    padding-left: 16px;
   }
 
   @media only screen and (min-width: ${desktopStartBreakpoint}) {
@@ -30,6 +32,14 @@ const CardBlogStyles = styled.li`
     border-right: solid 1px #76c045;
     padding-bottom: 24px;
     padding-right: 34px;
+
+    @media only screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
+      min-height: 180px;
+    }
+
+    @media only screen and (min-width: ${desktopStartBreakpoint}) {
+      min-height: 250px;
+    }
   }
 
   .eclipse {

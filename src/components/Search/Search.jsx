@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import SearchStyles from '@/components/Search/Search.styles';
 
-const Search = ({ setFindCards, cards }) => {
-  const [searchValue, setSearchValue] = useState('');
-
+const Search = ({ setFindCards, cards, searchValue, setSearchValue }) => {
   function searchData() {
     const cardsArray = [...cards].filter((card) =>
       card.attributes.title.toLowerCase().includes(searchValue.toLowerCase()),
@@ -15,6 +13,7 @@ const Search = ({ setFindCards, cards }) => {
 
   useEffect(() => {
     setFindCards([]);
+
     const delayDebounceFn = setTimeout(() => {
       if (searchValue?.length >= 3) {
         searchData();
@@ -29,10 +28,6 @@ const Search = ({ setFindCards, cards }) => {
       <div className="search">
         <label className="label">
           <input
-            onBlur={() => {
-              setFindCards([]);
-              setSearchValue('');
-            }}
             name="search"
             type="text"
             className="input-search"
@@ -52,7 +47,14 @@ const Search = ({ setFindCards, cards }) => {
               }
             }}
           />
-          <i className="icon-search" />
+          <i
+            className="icon-search"
+            onClick={() => {
+              if (searchValue.length !== 0) {
+                searchData();
+              }
+            }}
+          />
         </label>
       </div>
     </SearchStyles>
@@ -63,6 +65,8 @@ export default Search;
 
 Search.propTypes = {
   setFindCards: PropTypes.func.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       attributes: PropTypes.shape({ title: PropTypes.string }),
