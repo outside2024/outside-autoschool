@@ -6,14 +6,27 @@ const HeroDescription = ({ city }) => {
   const { t } = useTranslation();
   return (
     <HeroDescriptionStyles>
-      <div className="contentWrapper flex-container">
-        <p className="typoColorBlack typoTextPrimary">
-          {t('heroDescription.description1')}
-          {city}
-          {t('heroDescription.description2')}
-        </p>
-        <p className="typoColorBlack typoTextPrimary">{t('heroDescription.description3')}</p>
-      </div>
+      {city ? (
+        <div className="contentWrapper flex-container">
+          <p className="typoColorBlack typoTextPrimary width">
+            {t('heroDescription.description1')}
+            {city}
+            {t('heroDescription.description2')}
+          </p>
+          <p className="typoColorBlack typoTextPrimary width">
+            {t('heroDescription.description3')}
+          </p>
+        </div>
+      ) : (
+        <div className="contentWrapper flex-container">
+          <p className="typoColorBlack typoTextPrimary width">
+            {t('heroDescription.description4')}
+          </p>
+          <p className="typoColorBlack typoTextPrimary width">
+            {t('heroDescription.description5')}
+          </p>
+        </div>
+      )}
     </HeroDescriptionStyles>
   );
 };

@@ -5,7 +5,7 @@ const SliderNavBarStyles = styled(`div`)`
   display: flex;
   align-items: center;
   gap: 16px;
-  max-width: 808px;
+  max-width: ${(props) => props.$maxWidth};
   margin-left: auto;
   padding-top: 24px;
 

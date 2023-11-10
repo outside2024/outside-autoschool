@@ -64,6 +64,14 @@ a {
   content: '\e909';
 }
 
+.icon-arrow-accent:before {
+  content: '\e911';
+}
+
+.icon-search:before {
+  content: '\e912';
+}
+
 .icon-check:before {
   content: '\e910';
 }

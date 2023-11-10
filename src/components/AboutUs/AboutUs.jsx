@@ -19,7 +19,6 @@ const AboutUs = () => {
         <h3 className="typoColorBlack typoSubtitle">{t('aboutUs.subtitle')}</h3>
         <div className="swiperContainer">
           <Swiper
-            slidesPerView="auto"
             spaceBetween={24}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: 16 },
@@ -52,7 +51,11 @@ const AboutUs = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <SliderNavBar activeIndex={activeIndex} swiper={swiper} />
+          <SliderNavBar
+            activeIndex={activeIndex}
+            swiper={swiper}
+            slidesNumber={aboutUsPhotoSlider.length}
+          />
         </div>
       </div>
     </StyledAboutUs>

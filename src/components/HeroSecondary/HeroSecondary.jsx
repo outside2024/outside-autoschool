@@ -29,10 +29,10 @@ const HeroSecondary = () => {
             <div className="wrapper">
               <div className="left-container">
                 <h2 className="typoColorBlack typoTitlePrimary gap">{city.title}</h2>
-                {city.phone && <p className="typoSubtitle">{city.phone}</p>}
-                {city.address1 && <p className="typoSubtitle">{city.address1}</p>}
-                {city.address2 && <p className="typoSubtitle gap">{city.address2}</p>}
-                <Link href="/" className="link typoSubtitle">
+                {city.phone && <p className="typoTextPrimary">{city.phone}</p>}
+                {city.address1 && <p className="typoTextPrimary">{city.address1}</p>}
+                {city.address2 && <p className="typoTextPrimary gap">{city.address2}</p>}
+                <Link href="/" className="link typoTextPrimary">
                   {t('tests.serviceCenter')}
                   <i className="icon-link " />
                 </Link>
@@ -55,8 +55,8 @@ const HeroSecondary = () => {
             <div className="wrapper">
               <div className="left-container">
                 <h2 className="typoColorBlack typoTitlePrimary gap">{t('tests.title')}</h2>
-                <p className="typoSubtitle gap">{t('tests.description')}</p>
-                <Link href="/" className="link typoSubtitle">
+                <p className="typoTextPrimary gap">{t('tests.description')}</p>
+                <Link href="/" className="link typoTextPrimary">
                   <i className="icon-save " />
                   {t('tests.downloadQuestions')}
                 </Link>
