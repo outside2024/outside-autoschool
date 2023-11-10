@@ -27,11 +27,9 @@ const Discount = ({ discounts }) => {
           <Swiper
             className="swiperContainer"
             spaceBetween={48}
+            slidesPerView="auto"
             breakpoints={{
-              0: { slidesPerView: 1.5, spaceBetween: 16 },
-              500: { slidesPerView: 2, spaceBetween: 16 },
-              1200: { slidesPerView: 3, spaceBetween: 48 },
-              1600: { slidesPerView: 3.5, spaceBetween: 48 },
+              0: { spaceBetween: 16 },
               1920: { slidesPerView: 4, spaceBetween: 48 },
             }}
             speed={400}

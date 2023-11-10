@@ -3,13 +3,18 @@ import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 import Button from '@/components/Button';
 
 const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
-  const slidesPerView = swiper?.params?.slidesPerView || 1;
+  const slidesPerView =
+    swiper?.params?.slidesPerView === 'auto' && swiper && swiper.params
+      ? // eslint-disable-next-line react/prop-types
+        (swiper.width + swiper.params.spaceBetween) /
+        (swiper.slides[0].swiperSlideSize + swiper.params.spaceBetween)
+      : swiper?.params?.slidesPerView || 1;
 
   return (
     <SliderNavBarStyles
       $maxWidth={maxWidth}
-      $width={100 / (slidesNumber - (Math.floor(slidesPerView) - 1))}
-      $left={(100 * activeIndex) / (slidesNumber - (Math.floor(slidesPerView) - 1))}
+      $width={100 / (slidesNumber - (Math.round(slidesPerView) - 1))}
+      $left={(100 * activeIndex) / (slidesNumber - (Math.round(slidesPerView) - 1))}
     >
       <div className="progressBar" />
       <div className="buttonsContainer">
@@ -47,7 +52,9 @@ SliderNavBar.propTypes = {
   slidesNumber: PropTypes.number.isRequired,
   maxWidth: PropTypes.string,
   swiper: PropTypes.shape({
-    params: PropTypes.shape({ slidesPerView: PropTypes.number }),
+    params: PropTypes.shape({
+      slidesPerView: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    }),
     spaceBetween: PropTypes.number,
     slidePrev: PropTypes.func,
     slideNext: PropTypes.func,

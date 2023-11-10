@@ -34,7 +34,7 @@ const RootLayout = ({ children, meta, headerType }) => (
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataLogo) }}
       />
     </Head>
-    {/* <Header headerType={headerType} /> */}
+    <Header headerType={headerType} />
     <main>{children}</main>
     <Footer />
   </>

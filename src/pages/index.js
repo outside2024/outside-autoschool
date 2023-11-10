@@ -1,5 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import RootLayout from '@/layouts/RootLayout';
 import Hero from '@/components/Hero';
 import GoogleMap from '@/components/GoogleMap/GoogleMap';
@@ -37,3 +38,14 @@ export async function getServerSideProps({ locale }) {
     props: { ...(await serverSideTranslations(locale, ['common'])), promotions: data },
   };
 }
+
+Home.propTypes = {
+  promotions: PropTypes.shape({
+    attributes: PropTypes.shape({
+      promotion_items: PropTypes.shape({
+        // eslint-disable-next-line react/forbid-prop-types
+        data: PropTypes.arrayOf(PropTypes.object),
+      }),
+    }),
+  }).isRequired,
+};
