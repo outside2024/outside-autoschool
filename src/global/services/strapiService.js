@@ -22,7 +22,7 @@ class StrApi {
 
   async getAllArticles(locale) {
     const { data } = await this.#axiosClient.get(
-      `blog-page?populate[blog_articles][populate][textBlock][populate]=*&locale=${locale}`,
+      `blog-page?populate[blog_articles][populate][textBlock][populate]=*&locale=${locale} `,
     );
     return data;
   }
