@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 export const StyledDiscount = styled('div')`
   padding-top: 56px;
@@ -89,11 +89,10 @@ export const StyledDiscount = styled('div')`
 
   .swiperContainer {
     padding-bottom: 55px;
-    @media only screen and (max-width: 1920px) {
-      margin-right: -100px;
-    }
-    @media only screen and (max-width: 1400px) {
-      margin: 0 auto;
+    margin-right: -100px;
+
+    @media only screen and (max-width: 1024px) {
+      margin-right: -36px;
     }
 
     @media only screen and (max-width: ${mobileBreakpoint}) {

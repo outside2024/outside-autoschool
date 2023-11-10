@@ -19,7 +19,7 @@ const Home = ({ promotions }) => {
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
       <Hero heroType={HeroTypes.PRIMARY} />
-      <Discount discounts={promotions.attributes.promotion_items.data} />
+      {promotions && <Discount discounts={promotions.attributes.promotion_items.data} />}
       <Documents />
       <AboutUs />
       <GoogleMap activeBranch="dnipro" />
