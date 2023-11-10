@@ -311,5 +311,9 @@
   "awards": {
     "title": "Нагороди",
     "description": "Нагорода за 3 місце серед шкіл України"
+  },
+  "article": {
+    "btn_prev_text": "назад",
+    "btn_next_text": "вперед"
   }
 }
