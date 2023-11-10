@@ -49,6 +49,7 @@ const BlogComponents = ({ cards, locale }) => {
 
   useEffect(() => {
     getData(windowWidth);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, pageSize, size, locale]);
 
   return (
@@ -81,7 +82,7 @@ const BlogComponents = ({ cards, locale }) => {
                   <Button
                     btnType={ButtonTypes.PRIMARY}
                     contentType={ButtonContentTypes.TEXT}
-                    content="Показати ще"
+                    content={t('blog.show_more')}
                     onBtnClick={() => {
                       setCurrentPage(currentPage + 1);
                     }}

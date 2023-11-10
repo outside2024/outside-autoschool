@@ -1,11 +1,9 @@
 import { Pagination } from 'antd';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'next-i18next';
 import PaginationComponentContainer from '@/components/PaginationComponent/PaginationComponent.styled';
 import Button from '../Button';
 
 const PaginationComponent = ({ currentPage, setCurrentPage, pageSize, total }) => {
-  const { t } = useTranslation();
   const itemRender = (_, type, originalElement) => {
     if (type === 'prev') {
       return (

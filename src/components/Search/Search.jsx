@@ -21,6 +21,7 @@ const Search = ({ setFindCards, cards, searchValue, setSearchValue }) => {
     }, 100);
 
     return () => clearTimeout(delayDebounceFn);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchValue]);
 
   return (
