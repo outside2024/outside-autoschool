@@ -10,7 +10,9 @@ import { citiesData } from '../GoogleMap/data';
 import CitySelect from './components/CitySelect';
 import useWindowSize from '@/hooks/useWindowSize';
 import { LSGet, LSSet } from '@/global/helpers/helpers';
-import { routsBranches, routsDnipro, socialLinksData } from '@/global/constants/contants';
+import { routsBranches } from '@/global/constants/contants';
+import { routsDnipro } from '@/global/constants/routes';
+import { socialLinksData } from '@/global/constants/dataSocialLinks';
 import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 
 export const HeaderTypes = { LIGHT: 'light', DARK: 'dark' };

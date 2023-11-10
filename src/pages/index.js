@@ -13,9 +13,6 @@ import StrAPIService from '@/global/services/strapiService';
 
 const Home = ({ promotions }) => {
   const { locale } = useRouter();
-  console.log(locale);
-
-  console.log('promotions', promotions);
 
   return (
     <RootLayout headerType={HeaderTypes.DARK}>
