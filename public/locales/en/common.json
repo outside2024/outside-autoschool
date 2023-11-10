@@ -1,321 +1,325 @@
 {
   "cities": {
-    "dnipro": "Дніпро",
-    "hvardiyske": "Гвардійське",
-    "pavlohrad": "Павлоград",
-    "obuhivka": "Обухівка",
-    "novomoskovsk": "Новомосковськ",
-    "pidgorne": "Підгорне",
-    "nikopol": "Нікополь",
-    "ilarionove": "Іларіонове",
-    "pereschepune": "Перещепине",
-    "chumaku": "Чумаки",
-    "zaporizhzhia": "Запоріжжя",
-    "kryvyirih": "Кривий Ріг",
-    "kharkiv": "Харків"
+    "dnipro": "Dnipro",
+    "hvardiyske": "Hvardiyske",
+    "pavlohrad": "Pavlohrad",
+    "obuhivka": "Obuhivka",
+    "novomoskovsk": "Novomoskovsk",
+    "pidgorne": "Pidgorne",
+    "nikopol": "Nikopol",
+    "ilarionove": "Ilarionove",
+    "pereschepune": "Pereschepine",
+    "chumaku": "Chumaki",
+    "zaporizhzhia": "Zaporizhzhia",
+    "kryvyirih": "Kryvyi Rih",
+    "kharkiv": "Kharkiv"
   },
   "cityBranches": {
     "dnipro": {
-      "kasiora": "Касіора",
-      "center": "Центр",
-      "berezinka": "Березинка",
-      "12kvartal": "12 Квартал",
-      "communar": "Комунар",
-      "prudniprovsk": "Придніпровск",
-      "peremoga": "Перемога",
-      "topol": "Тополь",
-      "titova": "Титова",
-      "sovhozna": "Совхозна"
+      "kasiora": "Kasiora",
+      "center": "Center",
+      "berezinka": "Berezinka",
+      "12kvartal": "12th Quarter",
+      "communar": "Communar",
+      "prudniprovsk": "Pridniprovsk",
+      "peremoga": "Peremoha",
+      "topol": "Topol",
+      "titova": "Titova",
+      "sovhozna": "Sovhozna"
     }
   },
   "navigation": {
-    "online": "Онлайн",
-    "branches": "Філії",
-    "tests": "Тести",
-    "about": "Про нас",
-    "blog": "Блог",
-    "chooseCity": "Оберіть місто:"
+    "online": "Online",
+    "branches": "Branches",
+    "tests": "Tests",
+    "about": "About Us",
+    "blog": "Blog",
+    "chooseCity": "Choose a City:"
   },
   "homePageHero": {
-    "title": "Автошкола АУТСАЙД - 15 років досвіду та надійності!",
-    "description": "Запис до автошколи проводитиметься цілодобово, залишивши свою заявку у вікні. Наш менеджер зв'яжеться з Вами обов'язково.",
-    "btn": "Записатись"
+    "title": "AUTSAID Driving School - 15 years of experience and reliability!",
+    "description": "Registration for the driving school is available 24/7 by leaving your application in the window. Our manager will contact you for sure.",
+    "btn": "Sign Up"
   },
   "onlinePageHero": {
-    "title": "Автошкола онлайн",
-    "description": "Добрий день, шановні курсанти нашої автошколи онлайн. У зв'язку із воєним станом у нашій країні автошкола проводить заняття онлайн. На цій сторінці ми викладаємо посилання для налаштування програми, яка потрібна для проведення онлайн конференції."
+    "title": "Online Driving School",
+    "description": "Good day, dear students of our online driving school. Due to the state of war in our country, the driving school conducts online classes. On this page, we provide links to set up the program required for online conferences."
   },
   "aboutPageHero": {
-    "title": "Про нас"
+    "title": "About Us"
   },
   "howToGetStarted": {
-    "title": "Порядок підключення програми:",
-    "titleVideo1": "Инструкция по работе с Zoom:",
-    "titleVideo2": "Инструкция по подключению 2 Zoom:",
-    "step1": "1. Підписуємося до шкільної групи Viber (для того, щоб перед заняттям отримувати ідентифікатор конференції та пароль)",
-    "step2": "2. Завантажуємо на комп'ютер програму ZOOM (для тих у кого iOs заходимо в App Store у пошуку знаходимо ZOOM і завантажуємо; для тих у кого android заходимо в playMarket знаходимо ZOOM і завантажуємо).",
-    "step3": "3. Відкриваємо ZOOM (на комп'ютері, планшеті чи телефоні), натискаємо кнопку – Увійти до Конференції.",
-    "step4": "4. Вводимо – Ідентифікатор конференції (ви його отримуєте до групи Viber перед заняттям (формату ХХХ-ХХХ-ХХХ)).",
-    "step5": "5. Вводимо – Пароль (ви його отримуєте до групи Viber перед заняттям (формату ХХХХХХ)).",
-    "step6": "6. Натискаємо – Підключитись без відео"
+    "title": "Procedure for connecting the program:",
+    "titleVideo1": "Instructions for using Zoom:",
+    "titleVideo2": "Instructions for connecting to Zoom 2:",
+    "step1": "1. Subscribe to the school's Viber group (to receive the conference ID and password before the session).",
+    "step2": "2. Download the ZOOM program to your computer (for iOS users, go to the App Store, search for ZOOM, and download; for Android users, go to the playMarket, find ZOOM, and download).",
+    "step3": "3. Open ZOOM (on a computer, tablet, or phone), press the - Join the Conference - button.",
+    "step4": "4. Enter the - Conference ID (you receive it before the session in the Viber group (format XXX-XXX-XXX)).",
+    "step5": "5. Enter the - Password (you receive it before the session in the Viber group (format XXXXXXX)).",
+    "step6": "6. Press - Connect without video."
   },
-
   "aboutUs": {
-    "title": "Про нас",
-    "subtitle": "Інструктори та викладачі",
+    "title": "About Us",
+    "subtitle": "Instructors and Teachers",
     "position": {
-      "teacher": "викладач",
-      "instructor": "інструктор"
+      "teacher": "Teacher",
+      "instructor": "Instructor"
     },
     "teachersName": {
-      "Andrii": "Андрій",
-      "Dmytro": "Дмитро",
-      "Georgiy": "Георгій",
-      "Iryna": "Ірина",
-      "Mykhailo": "Михайло",
-      "Oleg": "Олег",
-      "Phillip": "Філіпп",
-      "Sergii": "Сергій",
-      "Volodymyr": "Володимир",
-      "Danylo": "Данило",
-      "Kyrylo": "Кирило",
-      "Maksym": "Максим",
-      "Mykola": "Микола",
-      "Vadym": "Вадим"
+      "Andrii": "Andrii",
+      "Dmytro": "Dmytro",
+      "Georgiy": "Georgiy",
+      "Iryna": "Iryna",
+      "Mykhailo": "Mykhailo",
+      "Oleg": "Oleg",
+      "Phillip": "Phillip",
+      "Sergii": "Sergii",
+      "Volodymyr": "Volodymyr",
+      "Danylo": "Danylo",
+      "Kyrylo": "Kyrylo",
+      "Maksym": "Maksym",
+      "Mykola": "Mykola",
+      "Vadym": "Vadym"
     }
   },
   "branches": {
-    "title-gallery": "Наші класи та автодром",
-    "title": "Філії",
+    "title-gallery": "Our Classes and Racetrack",
+    "title": "Branches",
     "dnipro": {
-      "city": "Дніпро",
+      "city": "Dnipro",
       "robocha": {
-        "branch_name": "Робоча",
-        "address": "вул. Робоча 89"
+        "branch_name": "Robocha",
+        "address": "Robocha St. 89"
       },
       "berezynka": {
-        "branch_name": "Березинка",
-        "address": "вул. М.Лисиченко,21"
+        "branch_name": "Berezynka",
+        "address": "M. Lysychenko St. 21"
       },
       "12kvartal": {
-        "branch_name": "12 Квартал",
-        "address": "пр. Богдана Хмельницького, 118-д"
+        "branch_name": "12th Quarter",
+        "address": "Bogdana Khmelnytskoho Ave. 118-d"
       },
       "slobozhanska": {
-        "branch_name": "Слобожанська",
-        "address": "пр. Слобожанський"
+        "branch_name": "Slobozhanska",
+        "address": "Slobozhansky Ave."
       },
       "prydniprovsk": {
-        "branch_name": "Придніпровськ",
-        "address": "вул. 20-річчя Перемоги, 10"
+        "branch_name": "Prydniprovsk",
+        "address": "20-richchia Peremohy St. 10"
       },
       "peremoga": {
-        "branch_name": "Перемога",
-        "address": "пр. Героїв, 14"
+        "branch_name": "Peremoga",
+        "address": "Heroiv Ave. 14"
       },
       "tytova": {
-        "branch_name": "Титова",
-        "address": "вул. Богдана Хмельницького, 26А"
+        "branch_name": "Tytova",
+        "address": "Bogdana Khmelnytskoho St. 26A"
       },
       "sovhozna": {
-        "branch_name": "Совхозна",
-        "address": "вул. В.Сухомлинського, 48а"
+        "branch_name": "Sovhozna",
+        "address": "V. Sukhomlynskoho St. 48a"
       },
       "center": {
-        "branch_name": "Центр",
-        "address": "вул. Володимира Мономаха, 7"
+        "branch_name": "Center",
+        "address": "Volodymyra Monomakha St. 7"
       }
     },
     "gvardiyske": {
-      "city": "Гвардійське",
+      "city": "Hvardiyske",
       "branch1": {
-        "branch_name": "Гвардійське",
-        "address": "смт Гвардійське"
+        "branch_name": "Hvardiyske",
+        "address": "smt Hvardiyske"
       }
     },
     "pavlograd": {
-      "city": "Павлоград",
+      "city": "Pavlograd",
       "branch1": {
-        "branch_name": "Павлоград",
-        "address": "вул. Центральна, 46"
+        "branch_name": "Pavlograd",
+        "address": "Centralna St. 46"
       }
     },
     "obuhivka": {
-      "city": "Обухівка",
+      "city": "Obuhivka",
       "branch1": {
-        "branch_name": "смт Обухівка",
-        "address": "вул Центральна 27"
+        "branch_name": "Obuhivka",
+        "address": "smt Obuhivka, Centralna St. 27"
       }
     },
     "novomoskovsk": {
-      "city": "Новомосковськ",
+      "city": "Novomoskovsk",
       "branch1": {
-        "branch_name": "Новомосковськ",
-        "address": "вул. Гетьманська 40-А"
+        "branch_name": "Novomoskovsk",
+        "address": "Hetmanska St. 40-A"
       },
       "branch2": {
         "branch_name": "",
-        "address": "вул. Українська 9-А"
+        "address": "Ukrainska St. 9-A"
       }
     },
     "pidhorodne": {
-      "city": "Підгородне",
+      "city": "Pidhorodne",
       "branch1": {
-        "branch_name": "Підгородне",
-        "address": "вул Центральна 25"
+        "branch_name": "Pidhorodne",
+        "address": "Centralna St. 25"
       }
     },
     "nikopol": {
-      "city": "Нікополь",
+      "city": "Nikopol",
       "branch1": {
         "branch_name": "",
-        "address": "вул. І. Богуна 5"
+        "address": "I. Bohuna St. 5"
       },
       "branch2": {
         "branch_name": "",
-        "address": "вул.Патріотів України,167"
+        "address": "Patriotiv Ukrainy St. 167"
       }
     },
     "ilarionove": {
-      "city": "Іларіонове",
+      "city": "Ilarionove",
       "branch1": {
         "branch_name": "",
-        "address": "вул Робоча 12а"
+        "address": "Robocha St. 12a"
       }
     },
     "preshchepyno": {
-      "city": "Перещепино",
+      "city": "Pereschepyno",
       "branch1": {
         "branch_name": "",
-        "address": "вул. Шевченка 58"
+        "address": "Shevchenka St. 58"
       }
     },
     "chumaky": {
-      "city": "Чумаки",
+      "city": "Chumaky",
       "branch1": {
         "branch_name": "",
-        "address": "вул Шкільна 11а"
+        "address": "Shkilna St. 11a"
       }
     },
     "zaporizhya": {
-      "city": "Запоріжжя",
+      "city": "Zaporizhzhia",
       "branch1": {
         "branch_name": "",
-        "address": "вул Фортечна 4а каб 9, 3 поверх"
+        "address": "Fortechna St. 4a, office 9, 3rd floor"
       }
     },
     "kryvyi_rig": {
-      "city": "Кривий Ріг",
+      "city": "Kryvyi Rih",
       "branch1": {
         "branch_name": "",
-        "address": "пр. Героїв-підпільників, 1а"
+        "address": "Heroiv-pidpilnykiv Ave. 1a"
       },
       "branch2": {
         "branch_name": "",
-        "address": "вул. Недєліна, 28 (Інгулець)"
+        "address": "Nedelina St. 28 (Inhulets)"
       }
     },
     "kharkiv": {
-      "city": "Харків",
+      "city": "Kharkiv",
       "branch1": {
         "branch_name": "",
-        "address": "вул Шота Руставелі 28/1"
+        "address": "Shota Rustaveli St. 28/1"
       }
     }
   },
   "gallery": {
-    "title": "Ми з Вами"
+    "title": "Our Gallery"
   },
   "form": {
-    "title": "Подати заяву на навчання",
+    "title": "Apply for Training",
     "field": {
-      "name": "Ім'я",
-      "name_placeholder": "Введіть ім'я",
-      "last_name": "Прізвище",
-      "last_name_placeholder": "Введіть прізвище",
-      "phone": "Введіть номер телефону",
-      "branch": "Філія",
-      "branch_placeholder": "Виберіть філію",
-      "category": "Категорія",
-      "category_placeholder": "Оберіть категорію"
+      "name": "Name",
+      "name_placeholder": "Enter your name",
+      "last_name": "Last Name",
+      "last_name_placeholder": "Enter your last name",
+      "phone": "Enter your phone number",
+      "branch": "Branch",
+      "branch_placeholder": "Choose a branch",
+      "category": "Category",
+      "category_placeholder": "Choose a category"
     },
-    "button": "Записатись",
+    "button": "Sign Up",
     "options_category": {
-      "A": "Категорія A",
-      "B": "Категорія B",
-      "C": "Категорія C",
-      "A_B": "Категорія A+B",
-      "B_C": "Категорія В+С",
-      "A_B_C": "Категорія А+В+С",
-      "D": "Категорія D",
-      "CE": "Категорія СЕ",
-      "D_C": "Категорія D+C"
+      "A": "Category A",
+      "B": "Category B",
+      "C": "Category C",
+      "A_B": "Category A+B",
+      "B_C": "Category B+C",
+      "A_B_C": "Category A+B+C",
+      "D": "Category D",
+      "CE": "Category CE",
+      "D_C": "Category D+C"
     },
-    "success_message": "Вітаємо! Ваша заявка на навчання успішно відправлена, очікуйте дзвінка від нашого менеджера.",
-    "error_message": "Виникла помилка.Форма не була відправлена",
-    "error_too_long": "Забагато символів",
-    "error_required": "Обов'язкове поле",
-    "error_phone": "Неправильний формат"
+    "success_message": "Congratulations! Your training application has been successfully submitted. Expect a call from our manager.",
+    "error_message": "An error occurred. The form was not submitted.",
+    "error_too_long": "Too many characters",
+    "error_required": "This field is required",
+    "error_phone": "Invalid format"
   },
   "tests": {
-    "downloadQuestions": "Завантажити екзаменаційні питання",
-    "serviceCenter": " Сервісний центр МВС",
-    "title": "Тести",
-    "description": "Доброго дня шановні гості та курсанти нашої автошколи. У вас є можливість пройти езаменаційні тести, та самостійно придбати і вивчити правила дорожнього руху, використовуючи інструкцію та посилання нижче."
+    "downloadQuestions": "Download Exam Questions",
+    "serviceCenter": "MIA Service Center",
+    "title": "Tests",
+    "description": "Hello dear guests and students of our driving school. You have the opportunity to take exams, and independently purchase and study traffic rules using the instructions and links below."
   },
   "exam": {
-    "title": "Іспит ГСЦ МВС",
-    "user": "Користувач:",
-    "password": "Пароль:",
-    "button": "Розпочати тест"
+    "title": "MIA State Exam",
+    "user": "User:",
+    "password": "Password:",
+    "button": "Start Test"
   },
   "heroDescription": {
-    "description1": "Вітаємо у автошколі в м. ",
-    "description2": ", ми чекаємо на Вас. Заняття проводяться у чудовій динамічній формі, де Ви дізнаєтесь багато нового. Ми маємо зручне розташування, затишні класи та професійну команду. Наші викладачі навчать Вас не тільки правилам дорожнього руху і будові автомобіля, а й розкриють питання щодо надання першої медичної допомоги, страхування, реєстрації транспортного засобу та багато інших питань, які можуть виникнути у майбутнього водія.",
-    "description3": "Наші іструктори професійно та якісно підберуть індивідуальну програму для кожного курсанта, з урахуванням особистих навичок та вмінь. Адміністратори автошколи Аутсайд завжди Вас проконсультують по телефону щодо вибору категорії для навчання, дати початку навчання, з питання щодо подачі відповідних документів, акцій та з інших питань які цікаві Вам. Навчання в автошколі Аутсайд дозволить Вам швидко опанувати справу водія, впевненно тримати кермо та відчувати транспортниз засіб. Автошкола Аутсайд чикає на Вас та бажає приємного навчання."
+    "description1": "Welcome to the driving school in ",
+    "description2": ", we are waiting for you. Lessons are conducted in a dynamic and interesting form, where you will learn a lot of new things. We have a convenient location, cozy classrooms, and a professional team. Our teachers will teach you not only the rules of the road and the structure of the car but also address issues related to providing first aid, insurance, vehicle registration, and many other topics that may arise for a future driver.",
+    "description3": "Our instructors will professionally and qualitatively tailor an individual program for each student, taking into account personal skills and abilities. The administrators of the AUTSAID driving school are always ready to advise you by phone on choosing a training category, the start date of training, submitting the necessary documents, promotions, and other questions that may interest you. Training at the AUTSAID driving school will allow you to quickly master the skills of driving, confidently hold the steering wheel, and feel the vehicle. AUTSAID driving school is waiting for you and wishes you pleasant learning."
   },
   "faq": {
-    "title": "Поширені запитання",
+    "title": "Frequently Asked Questions",
     "questions": {
-      "how many lessons": "Скільки мені потрібно занять, щоб навчитися їздити?",
-      "is fuel included": "Чи входить паливо в ціну практичного заняття?",
-      "additional practice": "Маю водійське посвідчення, чи можно взяти додаткові заняття з практики?",
-      "installment payment": "Чи можлива розстрочка при оплаті навчання в автошколі?",
-      "not included fee": "Що не входить в ціну навчання?",
-      "theoretical course online": "Чи можливе онлайн навчання з теоретичного курсу?",
-      "study from abroad": "Чи можливо закінчити автошколу перебуваючи за кордоном?",
-      "medical reference": "Яка має бути медична довідка?",
-      "where to get medical reference": "Де можливо отримати медичну довідку ф 083/о?",
-      "practice on weekend": "Чи можливе навчання з практики в вихідний день?"
+      "how many lessons": "How many lessons do I need to learn to drive?",
+      "is fuel included": "Is fuel included in the practical lesson price?",
+      "additional practice": "I already have a driver's license, can I take additional practice sessions?",
+      "installment payment": "Is installment payment possible for training at the driving school?",
+      "not included fee": "What is not included in the training fee?",
+      "theoretical course online": "Is online training possible for the theoretical course?",
+      "study from abroad": "Can I finish the driving school while being abroad?",
+      "medical reference": "What should be in the medical reference?",
+      "where to get medical reference": "Where can I get medical reference form 083/o?",
+      "practice on weekend": "Is it possible to practice driving on weekends?"
     },
     "answers": {
-      "how many lessons": "Унікальність практичних занять в автошколі Дніпра «Аутсайд» полягає у тому що інструктор підберає індивідідуальну програму навчання керуванню з урахуванням початкових навиків та здібностей кожного курсанта. Це дає змогу ефективніше проходити програму навчання!\nНаші рекомендації – щонайменше 20 занять! Результат – Ви керуєте автомобілем БЕЗПЕЧНО! Економія зараз на заняттях з водіння може Вам дорого коштувати потім! Адже ціною може стати життя людини.",
-      "is fuel included": "Так, в ціну практичного навчання входить ціна палива.",
-      "additional practice": "Для водіїв які бажають вдосконалити водіння автомобілем можливе додаткові практичні заняття. Так, можливо.",
-      "installment payment": "Автошкола може надати таку послугу як сплата частками за навчання. Кожен випадок индивідуальний, можливо обговорити з адміністратором автошколи.",
-      "not included fee": "Додатковими витратами для студентів автошколи буде придбання посібника з правил дорожнього руху.",
-      "theoretical course online": "Так, враховуючи обставини сьогодення, можливо.",
-      "study from abroad": "Ні, ви маєте бути присутніми на заняттях, як теоретичних (офлайн або онлайн) так і з практичних.",
-      "medical reference": "До переліку документів, які ви подаєте до автошколи, входить медична довідка форми 083/о",
-      "where to get medical reference": "Існують спеціалізовані медичні комісії для водіїв, які знаходяться в медичних установах Вашого міста ",
-      "practice on weekend": "Так, автошкола працює для Вашого комфорту."
+      "how many lessons": "The uniqueness of practical training at the AUTSAID driving school in Dnipro lies in the fact that the instructor develops an individual training program for driving, taking into account the initial skills and abilities of each student. This allows more effective completion of the training program! Our recommendation is at least 20 lessons! The result is that you can drive a car safely! Saving money on driving lessons now can cost you dearly later! After all, the price may be human life.",
+      "is fuel included": "Yes, the price of fuel is included in the price of practical training.",
+      "additional practice": "For drivers who want to improve their driving skills, additional practical sessions are possible. Yes, it is possible.",
+      "installment payment": "The driving school can provide a service such as installment payment for training. Each case is individual and can be discussed with the driving school administrator.",
+      "not included fee": "Additional expenses for driving school students will be the purchase of a traffic rules manual.",
+      "theoretical course online": "Yes, considering the current circumstances, it is possible.",
+      "study from abroad": "No, you must be present at both theoretical (offline or online) and practical classes.",
+      "medical reference": "The list of documents you submit to the driving school includes a medical reference form 083/o.",
+      "where to get medical reference": "There are specialized medical commissions for drivers located in medical institutions in your city.",
+      "practice on weekend": "Yes, the driving school operates on weekends for your convenience."
     }
   },
 
   "blog": {
-    "title": "Блог",
-    "description": "Все що стосується навчання на категорії А, В, С, Д, Е. Статті корисні для учнів найкращої автошколи.",
-    "popular": "Популярні записи"
+    "title": "Blog",
+    "description": "Everything related to training for categories A, B, C, D, E. Articles useful for students of the best driving school.",
+    "popular": "Popular Posts",
+    "show_more": "Show more"
+  },
+  "footer": {
+    "socials": "Слідкуйте за нашими соцмережами:",
+    "schools_dnipro": "Автошколи в Дніпрі"
   },
   "documents": {
-    "title": "Необхідні документи",
-    "text1": "Копія паспорта України",
-    "text2": "Копія ідентифікаційного коду",
-    "text3": "2 фотографії 3,5 х 4,5",
-    "text4": "Медична довідка"
+    "title": "Required Documents",
+    "text1": "Copy of Ukrainian passport",
+    "text2": "Copy of identification code",
+    "text3": "2 photos 3.5 x 4.5",
+    "text4": "Medical reference"
   },
   "awards": {
-    "title": "Нагороди",
-    "description": "Нагорода за 3 місце серед шкіл України"
+    "title": "Awards",
+    "description": "Award for 3rd place among schools in Ukraine"
   }
 }
