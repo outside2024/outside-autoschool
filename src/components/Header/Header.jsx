@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ import CitySelect from './components/CitySelect';
 import useWindowSize from '@/hooks/useWindowSize';
 import { LSGet, LSSet } from '@/global/helpers/helpers';
 import { routsBranches, routsDnipro, socialLinksData } from '@/global/constants/contants';
+import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 
 export const HeaderTypes = { LIGHT: 'light', DARK: 'dark' };
 
@@ -82,8 +83,8 @@ const Header = ({ headerType }) => {
       label: t('branches.kharkiv.city'),
     },
   ];
-
-  const [currentCity, setCurrentCity] = useState(null);
+  const { currentCity, setCurrentCity } = useContext(CurrentCityContext);
+  // const [currentCity, setCurrentCity] = useState(null);
   const [showBranchesBlock, setShowBranchesBlock] = useState(false);
   const [showDiproBranchesBlock, setShowDiproBranchesBlock] = useState(false);
   const [tabletMenuOpen, setTabletMenuOpen] = useState(true);

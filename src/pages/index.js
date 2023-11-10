@@ -32,9 +32,11 @@ const Home = ({ promotions }) => {
 export default Home;
 
 export async function getServerSideProps({ locale }) {
-  const { data } = await StrAPIService.getPromotions(locale);
-
+  const data = await StrAPIService.getPromotions(locale);
   return {
-    props: { ...(await serverSideTranslations(locale, ['common'])), promotions: data },
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      promotions: data,
+    },
   };
 }
