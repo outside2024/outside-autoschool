@@ -13,6 +13,10 @@ const SearchBlogStyles = styled.div`
     }
   }
 
+  .gap-top {
+    padding-top: 24px;
+  }
+
   .desktop-container {
     display: none;
     @media only screen and (min-width: ${desktopStartBreakpoint}) {
@@ -30,6 +34,9 @@ const SearchBlogStyles = styled.div`
   }
 
   .popular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     width: 186px;
     margin-left: 16px;
   }
@@ -38,14 +45,18 @@ const SearchBlogStyles = styled.div`
     position: absolute;
     top: 22px;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     padding: 16px;
     list-style: none;
     box-sizing: border-box;
     width: 304px;
     height: auto;
-    min-height: 100px;
     background-color: ${({ theme }) => theme.colors.bg.white};
-    border: 1px solid #76c045;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid ${({ theme }) => theme.colors.primary};
 
     @media only screen and (max-width: ${tabletStartBreakpoint}) {
       width: 95%;

@@ -7,7 +7,7 @@ const SearchStyles = styled.div`
   }
 
   .search {
-    border-bottom: 1px solid #76c045;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
   }
 
   .icon-search {

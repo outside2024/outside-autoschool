@@ -10,6 +10,7 @@ import Search from '../Search';
 const SearchBlog = ({ cards }) => {
   const { t } = useTranslation();
   const [findCards, setFindCards] = useState([]);
+  const [searchActive, setSearchActive] = useState(false);
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -20,9 +21,10 @@ const SearchBlog = ({ cards }) => {
           cards={cards}
           setSearchValue={setSearchValue}
           searchValue={searchValue}
+          setSearchActive={setSearchActive}
         />
         <div className="desktop-container">
-          <h2 className="typoColorBlack typoButtonPrimary gap">{t('blog.popular')}</h2>
+          <h2 className="typoColorBlack typoButtonPrimary gap gap-top">{t('blog.popular')}</h2>
           <ul className="popular-list">
             {cards
               .filter((card) => card.attributes.popular)
@@ -33,7 +35,7 @@ const SearchBlog = ({ cards }) => {
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
-                  <li className="typoTextSecondary">{item.attributes.title}</li>
+                  <li className="typoTextFifth">{item.attributes.title}</li>
                 </Link>
               ))}
           </ul>
@@ -45,6 +47,7 @@ const SearchBlog = ({ cards }) => {
               className="backdrop"
               onClick={() => {
                 setSearchValue('');
+                setSearchActive(false);
               }}
             />
             <ul className="block-article">
@@ -63,6 +66,22 @@ const SearchBlog = ({ cards }) => {
                   </li>
                 </Link>
               ))}
+            </ul>
+          </>
+        )}
+        {searchActive && findCards.length === 0 && (
+          <>
+            <div
+              className="backdrop"
+              onClick={() => {
+                setSearchValue('');
+                setSearchActive(false);
+              }}
+            />
+            <ul className="block-article">
+              <li key={uuidv4()} className="typoColorBlack typoTextTertiary eclipse">
+                {t('blog.nothing_was_found')}
+              </li>
             </ul>
           </>
         )}

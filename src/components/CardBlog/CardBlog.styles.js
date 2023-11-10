@@ -8,10 +8,9 @@ import {
 const CardBlogStyles = styled.li`
   background-color: ${({ theme }) => theme.colors.bg.white};
   width: 100%;
-  padding: 16px;
-  padding-right: 0;
+  padding: 16px 0;
+
   border-top: solid 1px #76c045;
-  padding-left: 0;
 
   @media only screen and (min-width: ${tabletStartBreakpoint}) and (max-width: ${tabletBreakpoint}) {
     width: calc(100% / 2);
@@ -20,8 +19,7 @@ const CardBlogStyles = styled.li`
 
   @media only screen and (min-width: ${desktopStartBreakpoint}) {
     width: calc(100% / 3);
-    padding: 34px;
-    padding-left: 0;
+    padding: 34px 34px 34px 0;
   }
 
   .gap-card {

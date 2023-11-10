@@ -41,7 +41,7 @@ Blog.propTypes = {
             ),
           }),
         }),
-      ).isRequired,
+      ),
       title: PropTypes.string,
       createdAt: PropTypes.string,
       blog_articles: PropTypes.shape({

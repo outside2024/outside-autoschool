@@ -5,7 +5,7 @@ import Button from '../Button';
 
 const PaginationComponent = ({ currentPage, setCurrentPage, pageSize, total }) => {
   const itemRender = (_, type, originalElement) => {
-    if (type === 'prev') {
+    if (type === 'prev' && currentPage !== 1) {
       return (
         <Button
           btnType="secondary"
@@ -17,7 +17,7 @@ const PaginationComponent = ({ currentPage, setCurrentPage, pageSize, total }) =
         />
       );
     }
-    if (type === 'next') {
+    if (type === 'next' && Math.ceil(total / pageSize) !== currentPage) {
       return (
         <Button
           btnType="secondary"

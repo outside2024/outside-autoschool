@@ -135,6 +135,10 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text14Bold}
     }
 
+    &TextFifth {
+      ${text14Semibold}
+    }
+
     &ButtonPrimary {
       ${text20Bold};
       @media screen and (max-width: ${tabletBreakpoint}) {

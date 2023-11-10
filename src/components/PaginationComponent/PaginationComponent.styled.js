@@ -12,6 +12,10 @@ const PaginationComponentContainer = styled('div')`
       display: none;
     }
 
+    .ant-pagination-item-link {
+      display: none;
+    }
+
     .ant-pagination-item {
       height: 50px;
       ${text20Semibold}
@@ -21,12 +25,12 @@ const PaginationComponentContainer = styled('div')`
         background-color: ${({ theme }) => theme.colors.button.green30};
       }
       & a {
-        color: #231e20;
+        color: ${({ theme }) => theme.colors.black};
       }
 
       &-active {
         ${text20Semibold}
-        border: 2px solid #76c045;
+        border: 2px solid ${({ theme }) => theme.colors.primary};
       }
     }
   }

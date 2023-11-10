@@ -305,7 +305,8 @@
     "title": "Blog",
     "description": "Everything related to training for categories A, B, C, D, E. Articles useful for students of the best driving school.",
     "popular": "Popular Posts",
-    "show_more": "Show more"
+    "show_more": "Show more",
+    "nothing_was_found": "Nothing was found"
   },
   "footer": {
     "socials": "Слідкуйте за нашими соцмережами:",
@@ -325,5 +326,6 @@
   "discount": {
     "title": "ДІЮТЬ АКЦІЇ!",
     "description": "Для активації знижки потрібно при записі в автошколу надати відповідні документи"
-  }
+  },
+  "search": { "title": "Serch" }
 }
