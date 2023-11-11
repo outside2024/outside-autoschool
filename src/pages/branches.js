@@ -1,13 +1,15 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RootLayout from '@/layouts/RootLayout';
 import BranchesGallery from '@/components/BranchesGallery/BranchesGallery';
-import { data } from '../components/BranchesGallery/constants';
+import { cities } from '../components/BranchesGallery/constants';
 import FormComponent from '@/components/FormComponent';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import HeroSecondary from '@/components/HeroSecondary';
 
 const Branches = () => (
   <RootLayout>
-    <BranchesGallery data={data} />
+    <HeroSecondary city={cities.pavlograd} />
+    <BranchesGallery data={cities.pavlograd} />
     <AboutUs />
     <FormComponent />
   </RootLayout>

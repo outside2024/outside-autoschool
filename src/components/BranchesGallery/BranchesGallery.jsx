@@ -49,7 +49,7 @@ const BranchesGallery = ({ data }) => {
             modules={[FreeMode, Thumbs]}
             className="mySwiper2"
           >
-            {data.map((card) => (
+            {data.imageGallery.map((card) => (
               <SwiperSlide key={uuidv4()}>
                 <Image
                   src={card.photo}
@@ -72,7 +72,7 @@ const BranchesGallery = ({ data }) => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper"
           >
-            {data.map((card) => (
+            {data.imageGallery.map((card) => (
               <SwiperSlide key={uuidv4()}>
                 <Image
                   src={card.photo}
@@ -115,10 +115,12 @@ const BranchesGallery = ({ data }) => {
 export default BranchesGallery;
 
 BranchesGallery.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      photo: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  data: PropTypes.shape({
+    imageGallery: PropTypes.arrayOf(
+      PropTypes.shape({
+        photo: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ),
+  }).isRequired,
 };

@@ -1,22 +1,13 @@
 import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroSecondaryStyles from '@/components/HeroSecondary/HeroSecondary.styles';
 import img from '../../../public/images/tests/hero.jpeg';
-import imgСity from '../../../public/images/cities/img.jpeg';
 import Exam from '../Exam';
 import HeroDescription from '../HeroDescription';
 
-const HeroSecondary = () => {
-  const city = {
-    title: 'Новомосковськ',
-    name: 'Новомосковську',
-    src: imgСity,
-    phone: '(097) 696-72-72 ',
-    address1: '| вул. Гетьманська 40-А',
-    address2: '| вул. Українська 9-А',
-  };
-
+const HeroSecondary = ({ city }) => {
   // const city = false;
 
   const { t } = useTranslation();
@@ -39,11 +30,11 @@ const HeroSecondary = () => {
               </div>
 
               <Image
-                src={city.src}
+                src={city.src.photo}
                 width={852}
                 height={479}
                 quality={85}
-                alt={city.title}
+                alt={city.src.name}
                 className="heroSecondaryImage"
                 priority
               />
@@ -81,3 +72,15 @@ const HeroSecondary = () => {
 };
 
 export default HeroSecondary;
+
+HeroSecondary.propTypes = {
+  city: PropTypes.shape({
+    name: PropTypes.string,
+    title: PropTypes.string,
+    phone: PropTypes.string,
+    address1: PropTypes.string,
+    address2: PropTypes.string,
+    cities: PropTypes.string,
+    src: PropTypes.shape({ photo: PropTypes.string, name: PropTypes.string }),
+  }).isRequired,
+};
