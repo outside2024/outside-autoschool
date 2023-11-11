@@ -46,8 +46,12 @@ Home.propTypes = {
     attributes: PropTypes.shape({
       promotion_items: PropTypes.shape({
         // eslint-disable-next-line react/forbid-prop-types
-        data: PropTypes.arrayOf(PropTypes.object),
+        data: Discount.propTypes,
       }),
     }),
-  }).isRequired,
+  }),
+};
+
+Home.defaultProps = {
+  promotions: null,
 };

@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Header from '@/components/Header';
@@ -39,7 +39,15 @@ const RootLayout = ({ children, meta, headerType }) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataLogo) }}
         />
       </Head>
-      <CurrentCityContext.Provider value={{ currentCity, setCurrentCity }}>
+      <CurrentCityContext.Provider
+        value={useMemo(
+          () => ({
+            currentCity,
+            setCurrentCity,
+          }),
+          [currentCity],
+        )}
+      >
         <Header headerType={headerType} currentCity={currentCity} setCurrentCity={setCurrentCity} />
         <main>{children}</main>
         <Footer />
