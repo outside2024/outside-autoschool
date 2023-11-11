@@ -1,9 +1,9 @@
+import { createContext, useState } from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Header from '@/components/Header';
 import { HeaderTypes } from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
-import { createContext, useState } from 'react';
 
 const structuredDataLogo = {
   '@context': 'https://schema.org',

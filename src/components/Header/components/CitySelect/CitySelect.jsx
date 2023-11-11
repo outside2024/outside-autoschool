@@ -33,7 +33,7 @@ CitySelect.propTypes = {
 CitySelect.defaultProps = {
   light: false,
   selectOptions: [],
-  selectOption: { value: '', label: '' },
+  selectedOption: { value: '', label: '' },
 };
 
 export default CitySelect;

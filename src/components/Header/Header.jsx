@@ -105,7 +105,11 @@ const Header = ({ headerType }) => {
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        widowSize.width < 1025 ? setTabletMenuOpen(false) : setShowBranchesBlock(false);
+        if (widowSize.width < 1025) {
+          setTabletMenuOpen(false);
+        } else {
+          setShowBranchesBlock(false);
+        }
       }
     }
 

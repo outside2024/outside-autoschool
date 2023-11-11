@@ -19,7 +19,6 @@ import {
   text60Bold,
 } from './textStyles';
 import {
-  desktopStartBreakpoint,
   footerTabletBreakpoint,
   mobileBreakpoint,
   tabletBreakpoint,
