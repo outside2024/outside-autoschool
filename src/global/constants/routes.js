@@ -101,4 +101,8 @@ export const routsDnipro = [
     path: '/dnipro/center',
     text: 'branches.dnipro.center.branch_name',
   },
+  {
+    path: '/dnipro/sovhozna',
+    text: 'branches.dnipro.sovhozna.branch_name',
+  },
 ];

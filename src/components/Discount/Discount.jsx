@@ -27,6 +27,8 @@ const Discount = ({ discounts }) => {
           <Swiper
             className="swiperContainer"
             slidesPerView="auto"
+            updateOnWindowResize
+            observer
             breakpoints={{
               0: { spaceBetween: 16 },
               1025: { spaceBetween: 48 },

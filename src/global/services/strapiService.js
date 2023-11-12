@@ -14,36 +14,54 @@ class StrApi {
   }
 
   async getPromotions(locale) {
-    const { data } = await this.#axiosClient.get(
-      `promotion-block?populate[promotion_items][populate]=*&locale=${locale}`,
-    );
-    return data;
+    try {
+      const res = await this.#axiosClient.get(
+        `promotion-block?populate[promotion_items][populate]=*&locale=${locale}`,
+      );
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
   }
 
   async getAllArticles(locale) {
-    const { data } = await this.#axiosClient.get(
-      `blog-page?populate[blog_articles][populate][textBlock][populate]=*&locale=${locale} `,
-    );
-    return data;
+    try {
+      const res = await this.#axiosClient.get(
+        `blog-page?populate[blog_articles][populate][textBlock][populate]=*&locale=${locale}`,
+      );
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
   }
 
   async getArticlesById(locale, id) {
-    const { data } = await this.#axiosClient.get(
-      `blog-articles/${id}?populate[textBlock][populate]=*&locale=${locale}`,
-    );
-    return data;
+    try {
+      const res = await this.#axiosClient.get(
+        `blog-articles/${id}?populate[textBlock][populate]=*&locale=${locale}`,
+      );
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
   }
 
   async getCityPrices(city) {
-    const { data } = await this.#axiosClient.get(
-      `city-prices?filters[city][$eq]=${city}&populate=*`,
-    );
-    return data;
+    try {
+      const res = await this.#axiosClient.get(`city-prices?filters[city][$eq]=${city}&populate=*`);
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
   }
 
   async getAllCitiesPrices() {
-    const { data } = await this.#axiosClient.get('city-prices?populate=*');
-    return data;
+    try {
+      const res = await this.#axiosClient.get('city-prices?populate=*');
+      return res.data.data;
+    } catch (error) {
+      return null;
+    }
   }
 
   async postStudyRequest(reqBody) {
