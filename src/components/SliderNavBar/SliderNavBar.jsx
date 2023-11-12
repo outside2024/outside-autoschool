@@ -68,7 +68,7 @@ SliderNavBar.defaultProps = {
   activeIndex: 0,
   maxWidth: '808px',
   swiper: PropTypes.shape({
-    params: { slidesPerView: 0, paceBetween: PropTypes.number },
+    params: { slidesPerView: 0, spaceBetween: PropTypes.number },
     spaceBetween: 0,
     slidePrev: () => {},
     slideNext: () => {},
