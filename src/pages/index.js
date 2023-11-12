@@ -46,7 +46,7 @@ Home.propTypes = {
     attributes: PropTypes.shape({
       promotion_items: PropTypes.shape({
         // eslint-disable-next-line react/forbid-prop-types
-        data: Discount.propTypes,
+        data: Discount.propTypes.discounts,
       }),
     }),
   }),

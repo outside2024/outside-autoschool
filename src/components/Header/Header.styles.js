@@ -125,16 +125,17 @@ export const StyledHeader = styled('div')`
     z-index: 2;
     background-color: ${({ theme, $light }) =>
       $light ? theme.colors.bg.white : theme.colors.bg.black};
-    border-bottom: 5px solid ${({ theme }) => theme.colors.primary};
     @media screen and (max-width: 1024px) {
       top: 0px;
     }
   }
 
+  .borderBottom {
+    border-bottom: 5px solid ${({ theme }) => theme.colors.primary};
+  }
   .branchesBlock {
     width: 100%;
     height: fit-content;
-    opacity: 1;
     display: flex;
     pointer-events: all;
     padding-top: 36px;
@@ -144,7 +145,7 @@ export const StyledHeader = styled('div')`
     }
   }
   .branchesWrapper {
-    width: ${({ $brancheswidth }) => $brancheswidth || '100%'};
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));
   }
@@ -154,9 +155,10 @@ export const StyledHeader = styled('div')`
   }
   .subBranchesWrapper {
     position: relative;
-    width: 40%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(2, calc(100% / 2));
+    padding-left: 36px;
     &::before {
       position: absolute;
       content: '';
@@ -164,9 +166,9 @@ export const StyledHeader = styled('div')`
       height: 100%;
       background-color: ${({ theme, $light }) =>
         $light ? theme.colors.bg.black : theme.colors.bg.white};
-      left: -36px;
     }
   }
+
   .hidden {
     display: none;
     opacity: 0;
@@ -276,6 +278,93 @@ export const StyledHeader = styled('div')`
   }
   .menuButton {
     padding: 4px;
+  }
+
+  .slideDownAnimation-enter {
+    opacity: 0;
+    transform: scaleY(0.1);
+    transform-origin: top center;
+  }
+  .slideDownAnimation-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+
+    transition:
+      opacity 500ms,
+      transform 500ms;
+  }
+  .slideDownAnimation-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .slideDownAnimation-exit-active {
+    opacity: 0;
+    transform-origin: top center;
+    transform: scaleY(0.1);
+
+    transition:
+      opacity 300ms,
+      transform 500ms;
+  }
+
+  .slideRightAnimation-enter {
+    transform: translateX(+100%);
+  }
+  .slideRightAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideRightAnimation-exit-active {
+    transform: translateX(+100%);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightFastAnimation-enter {
+    transform: translateX(+100%);
+  }
+  .slideRightFastAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightFastAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideRightFastAnimation-exit-active {
+    transform: translateX(-100%);
+    transition:
+      opacity 1ms,
+      transform 1ms;
+  }
+
+  .slideLeftFastAnimation-enter {
+    transform: translateX(-100%);
+  }
+  .slideLeftFastAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideLeftFastAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideLeftFastAnimation-exit-active {
+    transform: translateX(-100%);
+    transition:
+      opacity 1ms,
+      transform 1ms;
   }
 `;
 
