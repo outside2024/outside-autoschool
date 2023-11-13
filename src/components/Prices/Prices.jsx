@@ -325,6 +325,7 @@ export default Prices;
 
 Prices.propTypes = {
   city: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
   prices: PropTypes.any,
   // {
   //   dnipro: PropTypes.arrayOf(
