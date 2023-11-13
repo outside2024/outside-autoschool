@@ -2,12 +2,14 @@ import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import moment from 'moment';
 import { v4 as uuidv4 } from 'uuid';
 import { StyledArticle } from '@/components/Article/Article.styled';
 import Button from '@/components/Button';
 import useWindowSize from '@/hooks/useWindowSize';
 import SearchBlog from '@/components/SearchBlog';
+import { withStrapi } from '@/global/helpers/helpers';
 
 export function formatChild(child) {
   switch (child.type) {
@@ -71,6 +73,17 @@ const Article = ({ article, articlesList }) => {
       <div className="contentWrapper">
         <div className="articleContainer">
           <div className="articleContent">
+            {article?.attributes?.image?.data?.attributes?.url && (
+              <Image
+                src={withStrapi(article.attributes.image.data.attributes.url)}
+                width={948}
+                height={331}
+                alt="article main image"
+                quality={85}
+                priority
+                className="articleImg"
+              />
+            )}
             <h2 className="typoColorBlack typoTitleSecondary articleTitle">
               {article.attributes.title}
             </h2>
@@ -82,17 +95,6 @@ const Article = ({ article, articlesList }) => {
                   {textBlock.text.richText.map(formatRichText)}
                 </div>
               ))}
-            {/* //TODO add image when it will be added to strapi */}
-            {/* {article.image && */}
-            {/*   <Image */}
-            {/*     src={article.image} */}
-            {/*     width={948} */}
-            {/*     height={331} */}
-            {/*     alt="article main image" */}
-            {/*     quality={85} */}
-            {/*     priority */}
-            {/*     className="articleImg" */}
-            {/*   />} */}
 
             <div className="articleBottomContainer">
               <div className="button">
@@ -102,7 +104,7 @@ const Article = ({ article, articlesList }) => {
                       <div className="buttonTextPrev typoColorBlack typoArticleBtnText">
                         {t('article.btn_prev_text')}
                       </div>
-                      <Link href={`/blog/${prevArticle.id}`}>
+                      <Link href={`/blog/${prevArticle.attributes.slug}`}>
                         <Button
                           btnType="secondary"
                           contentType="icon"
@@ -129,7 +131,7 @@ const Article = ({ article, articlesList }) => {
                       <div className="buttonTextNext typoColorBlack typoArticleBtnText">
                         {t('article.btn_next_text')}
                       </div>
-                      <Link href={`/blog/${nextArticle.id}`}>
+                      <Link href={`/blog/${nextArticle.attributes.slug}`}>
                         <Button
                           btnType="secondary"
                           contentType="icon"
@@ -158,6 +160,13 @@ Article.propTypes = {
   article: PropTypes.shape({
     id: PropTypes.number.isRequired,
     attributes: PropTypes.shape({
+      image: PropTypes.shape({
+        data: PropTypes.shape({
+          attributes: PropTypes.shape({
+            url: PropTypes.string,
+          }),
+        }),
+      }),
       title: PropTypes.string.isRequired,
       text: PropTypes.string,
       createdAt: PropTypes.string.isRequired,

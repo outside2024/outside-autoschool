@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
-import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
+import { mobileBreakpoint } from '@/global/constants/contants';
 
 export const StyledArticle = styled('div')`
   padding-top: 56px;
@@ -19,7 +19,7 @@ export const StyledArticle = styled('div')`
     &Container {
       display: flex;
       justify-content: space-between;
-      @media only screen and (max-width: ${tabletBreakpoint}) {
+      @media only screen and (max-width: 1388px) {
         flex-direction: column-reverse;
         gap: 16px;
       }

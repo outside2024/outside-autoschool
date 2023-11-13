@@ -12,7 +12,7 @@ export default ArticlePage;
 
 export async function getServerSideProps({ locale, params }) {
   const [article, data] = await Promise.all([
-    StrAPIService.getArticlesById(locale, Number(params.id)),
+    StrAPIService.getArticlesBySlug(locale, params.slug),
     StrAPIService.getAllArticles(locale),
   ]);
 

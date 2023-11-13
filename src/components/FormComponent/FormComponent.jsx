@@ -10,7 +10,7 @@ import { ButtonContentTypes, ButtonTypes } from '@/components/Button/Button';
 import Select from '@/components/FormComponent/components/Select/Select';
 import { sendForm } from '@/components/FormComponent/telegram';
 import iconCheck from '../../../public/icon-check.svg';
-import strapiService from "@/global/services/strapiService";
+import strapiService from '@/global/services/strapiService';
 
 const SubmitStatus = {
   Idle: 'Idle',
@@ -34,17 +34,16 @@ const FormComponent = () => {
   const handleSubmit = async (values, { resetForm }) => {
     const response = await sendForm(values);
 
-   await strapiService.postStudyRequest( {
-        "data": {
-          "name": values.name,
-          "surname": values.lastName,
-          "phone": values.phone,
-          "branch": values.branch,
-          "category": values.category,
-          "sendedAt": new Date().toLocaleString('en-US')
-        }
-      }
-    )
+    await strapiService.postStudyRequest({
+      data: {
+        name: values.name,
+        surname: values.lastName,
+        phone: values.phone,
+        branch: values.branch,
+        category: values.category,
+        sendedAt: new Date().toLocaleString('en-US'),
+      },
+    });
 
     if (response) {
       setSubmitStatus(SubmitStatus.Success);
