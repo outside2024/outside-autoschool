@@ -22,6 +22,7 @@ import {
   text54Bold,
   text60Bold,
   text8Semibold,
+  text50Bold,
 } from './textStyles';
 import {
   footerTabletBreakpoint,
@@ -107,6 +108,13 @@ const GlobalStyle = createGlobalStyle`${css`
     //! example of class for text
     &TitlePrimary {
       ${text60Bold};
+      @media screen and (max-width: ${tabletBreakpoint}) {
+        ${text32Semibold}
+      }
+    }
+
+    &TitlePrimary2 {
+      ${text50Bold};
       @media screen and (max-width: ${tabletBreakpoint}) {
         ${text32Semibold}
       }

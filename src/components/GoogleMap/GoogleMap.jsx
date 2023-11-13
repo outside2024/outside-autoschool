@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 import { citiesData, branchesData } from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
@@ -17,10 +18,22 @@ const mobileMapStyles = {
   height: '288px',
 };
 
-const GoogleMapComponent = () => {
+const GoogleMapComponent = ({ activeBranch }) => {
   const { t } = useTranslation();
   const widowSize = useWindowSize();
-  const { currentCity } = useContext(CurrentCityContext);
+
+  let currentCity;
+
+  if (!activeBranch) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const contextData = useContext(CurrentCityContext);
+    if (contextData) {
+      currentCity = contextData.currentCity;
+    }
+  } else {
+    currentCity = activeBranch;
+  }
+
   const [branches, setBranches] = useState([]);
   const [activeAddress, setActiveAddress] = useState(-1);
 
@@ -109,6 +122,14 @@ const GoogleMapComponent = () => {
       </div>
     </GoogleMapStyled>
   );
+};
+
+GoogleMapComponent.propTypes = {
+  activeBranch: PropTypes.string,
+};
+
+GoogleMapComponent.defaultProps = {
+  activeBranch: undefined,
 };
 
 export default GoogleMapComponent;

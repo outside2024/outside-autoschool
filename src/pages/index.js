@@ -49,6 +49,7 @@ Home.propTypes = {
       }),
     }),
   }),
+  // eslint-disable-next-line react/forbid-prop-types
   prices: PropTypes.any,
 };
 
