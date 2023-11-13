@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import theme from "@/styles/theme";
-import {mobileBreakpoint} from "@/global/constants/contants";
+import styled from 'styled-components';
+import theme from '@/styles/theme';
+import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 
 export const StyledArticle = styled('div')`
   padding-top: 56px;
@@ -19,6 +19,10 @@ export const StyledArticle = styled('div')`
     &Container {
       display: flex;
       justify-content: space-between;
+      @media only screen and (max-width: ${tabletBreakpoint}) {
+        flex-direction: column-reverse;
+        gap: 16px;
+      }
     }
 
     &Content {
@@ -42,11 +46,10 @@ export const StyledArticle = styled('div')`
       display: flex;
       justify-content: space-between;
     }
-    
-    &Link{
+
+    &Link {
       color: ${theme.colors.blue};
     }
-    
   }
 
   .button {
@@ -64,7 +67,6 @@ export const StyledArticle = styled('div')`
       @media only screen and (max-width: ${mobileBreakpoint}) {
         max-width: 82px;
       }
-
     }
 
     &NextTitle {
@@ -83,10 +85,6 @@ export const StyledArticle = styled('div')`
       border-radius: 5px;
     }
 
-    &Icon {
-
-    }
-
     &TextPrev {
       text-align: right;
       padding-bottom: 6px;
@@ -96,6 +94,4 @@ export const StyledArticle = styled('div')`
       padding-bottom: 6px;
     }
   }
-  
-
 `;

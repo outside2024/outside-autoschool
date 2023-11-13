@@ -171,4 +171,3 @@ export const text8Semibold = css`
   font-weight: 500;
   line-height: 16px;
 `;
-

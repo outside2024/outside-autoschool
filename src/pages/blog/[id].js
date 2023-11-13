@@ -1,25 +1,26 @@
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import RootLayout from '@/layouts/RootLayout';
-import Article from "@/components/Article";
-import StrAPIService from "@/global/services/strapiService";
+import Article from '@/components/Article';
+import StrAPIService from '@/global/services/strapiService';
 
-
-const ArticlePage = ({article, articlesList}) => (
-  <RootLayout>
-    <Article article={article} articlesList={articlesList}/>
+const ArticlePage = ({ article, articlesList }) => (
+  <RootLayout headerType="light">
+    {article && <Article article={article} articlesList={articlesList} />}
   </RootLayout>
 );
 export default ArticlePage;
 
-export async function getServerSideProps({locale, params}) {
-  const {data: article} = await StrAPIService.getArticlesById(locale, Number(params.id));
-  const {data} = await StrAPIService.getAllArticles(locale);
+export async function getServerSideProps({ locale, params }) {
+  const [article, data] = await Promise.all([
+    StrAPIService.getArticlesById(locale, Number(params.id)),
+    StrAPIService.getAllArticles(locale),
+  ]);
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
       article,
-      articlesList: data.attributes.blog_articles.data
+      articlesList: data.attributes.blog_articles.data,
     },
   };
 }

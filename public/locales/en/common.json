@@ -322,15 +322,13 @@
     "text4": "Medical reference"
   },
   "awards": {
-    "title": "Нагороди",
-    "description": "Нагорода за 3 місце серед шкіл України"
+    "title": "Awards",
+    "description": "Award for 3rd place among schools in Ukraine"
   },
   "article": {
     "btn_prev_text": "назад",
     "btn_next_text": "вперед"
   },
-    "title": "Awards",
-    "description": "Award for 3rd place among schools in Ukraine"
 
   "discount": {
     "title": "ДІЮТЬ АКЦІЇ!",
