@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import RootLayout from '@/layouts/RootLayout';
 import BlogComponents from '@/components/Blog/Blog';
 import StrAPIService from '@/global/services/strapiService';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Blog = ({ allArticles }) => {
   const { locale } = useRouter();
