@@ -380,7 +380,7 @@ export const cities = {
     phone: '(098) 385-78-23',
     address1: '',
   },
-  prydniprovsk: {
+  prydniprovske: {
     city: 'dnipro',
     title: 'Автошкола в Придніпровську',
     name: 'Дніпро',
@@ -471,7 +471,7 @@ export const cities = {
     phone: '(098)0-555-999',
     address1: '| пр. Героїв, 14',
   },
-  kvartal: {
+  "12kvartal": {
     city: 'dnipro',
     title: 'Автошкола на 12 Кварталі',
     name: 'Дніпро',
@@ -538,9 +538,9 @@ export const cities = {
     phone: '(098)0-555-999',
     address1: '| вул. Володимира Мономаха, 7',
   },
-  slobozhanska: {
+  sloboshanska: {
     city: 'dnipro',
-    title: 'Автошкола в Центрі',
+    title: 'Автошкола на Слобожанському',
     name: 'Дніпро',
     src: {
       photo: '/images/branches/slobozhanska/hero.jpg',
@@ -561,7 +561,7 @@ export const cities = {
   },
   berezynka: {
     city: 'dnipro',
-    title: 'Автошкола на  тц "БЕРЕЗИНСЬКИЙ"',
+    title: 'Автошкола на тц "Березинський"',
     name: 'Дніпро',
     src: {
       photo: '/images/branches/berezynka/hero.jpg',
