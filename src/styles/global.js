@@ -22,7 +22,6 @@ import {
   text54Bold,
   text60Bold,
   text8Semibold,
-  text50Bold,
 } from './textStyles';
 import {
   footerTabletBreakpoint,
