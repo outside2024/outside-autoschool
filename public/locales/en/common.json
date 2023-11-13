@@ -334,5 +334,28 @@
     "title": "ДІЮТЬ АКЦІЇ!",
     "description": "Для активації знижки потрібно при записі в автошколу надати відповідні документи"
   },
-  "search": { "title": "Serch" }
+  "search": { "title": "Serch" },
+  "prices": {
+    "title": "The cost of education",
+    "subtitle": "Choose for yourself convenient ONLINE training or training in classes with certified teachers.",
+    "description": "Also, our clients have the opportunity to choose complex courses for several categories at once",
+    "knowMore": "Learn more",
+    "categoryCard": {
+      "btn": "Subscribe",
+      "hour": "hour",
+      "min": "min",
+      "category": "Category ",
+      "theoryPart": "Theory Part",
+      "practicalPart": "Practical Part",
+      "theoryTerm": "- term of theoretical training (months) ",
+      "practiceTerm": "- term of theoretical training (months) ",
+      "baseCourse": "- Basic theoretical training course for 64 academic hours",
+      "medicalCourse": "- Medical training",
+      "insuranceCourse": "- Insurance Lecture",
+      "videoCourse": "- Additional theoretical training video course of 20 academic hours",
+      "registration": "- Registration in the study group in the NAIS database of the Ministry of Internal Affairs of Ukraine",
+      "documentsPreparing": "- Preparation of documents for registration and submission to the TSC exam",
+      "support": "- Accompanying to the exam, reservation of the exam ticket for the group"
+    }
+  }
 }
