@@ -19,10 +19,11 @@ const HeroSecondary = ({ city }) => {
           <div className="container">
             <div className="wrapper">
               <div className="left-container">
-                <h2 className="typoColorBlack typoTitlePrimary gap">{city.title}</h2>
+                <h2 className="typoColorBlack typoTitlePrimary gap">{t(city.title)}</h2>
                 {city.phone && <p className="typoTextPrimary">{city.phone}</p>}
-                {city.address1 && <p className="typoTextPrimary">{city.address1}</p>}
-                {city.address2 && <p className="typoTextPrimary gap">{city.address2}</p>}
+                {city.phone2 && <p className="typoTextPrimary">{city.phone2}</p>}
+                {city.address1 && <p className="typoTextPrimary">{t(city.address1)}</p>}
+                {city.address2 && <p className="typoTextPrimary gap">{t(city.address2)}</p>}
                 <Link href="/" className="link typoTextPrimary">
                   {t('tests.serviceCenter')}
                   <i className="icon-link " />
@@ -38,7 +39,7 @@ const HeroSecondary = ({ city }) => {
                 className="heroSecondaryImage"
               />
             </div>
-            <HeroDescription city={city.name} />
+            <HeroDescription city={t(city.name)} />
           </div>
         ) : (
           <div className="background">
@@ -76,6 +77,7 @@ HeroSecondary.propTypes = {
     name: PropTypes.string,
     title: PropTypes.string,
     phone: PropTypes.string,
+    phone2: PropTypes.string,
     address1: PropTypes.string,
     address2: PropTypes.string,
     cities: PropTypes.string,

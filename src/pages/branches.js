@@ -8,8 +8,8 @@ import HeroSecondary from '@/components/HeroSecondary';
 
 const Branches = () => (
   <RootLayout>
-    <HeroSecondary city={cities.pavlograd} />
-    <BranchesGallery data={cities.pavlograd} />
+    <HeroSecondary city={cities.sovhozna} />
+    <BranchesGallery data={cities.sovhozna} />
     <AboutUs />
     <FormComponent />
   </RootLayout>
