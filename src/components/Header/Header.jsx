@@ -149,7 +149,12 @@ const Header = ({ headerType }) => {
         {/* !desctop header */}
         {widowSize.width > 1024 && (
           <>
-            <Link className="companyLogo" href="/" locale={locale}>
+            <Link
+              onClick={() => setTabletMenuOpen(false)}
+              className="companyLogo"
+              href="/"
+              locale={locale}
+            >
               <Image
                 src={headerType === HeaderTypes.LIGHT ? '/logo-light.png' : '/logo-dark.png'}
                 width={42}
@@ -162,7 +167,7 @@ const Header = ({ headerType }) => {
             <nav className="navBlock">
               {routes.map((route) =>
                 route?.url ? (
-                  <Link key={uuidv4()} href={route.url}>
+                  <Link onClick={() => setTabletMenuOpen(false)} key={uuidv4()} href={route.url}>
                     <p className="typoHeaderLink link linkText">{t(`navigation.${route.name}`)}</p>
                   </Link>
                 ) : (
@@ -193,6 +198,7 @@ const Header = ({ headerType }) => {
               <div className="socialBlock">
                 {socialLinksData.map((socialLink) => (
                   <Link
+                    onClick={() => setTabletMenuOpen(false)}
                     key={uuidv4()}
                     href={socialLink.path}
                     target="_blank"
@@ -203,13 +209,23 @@ const Header = ({ headerType }) => {
                 ))}
               </div>
               <div className="langBlock">
-                <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
+                <Link
+                  onClick={() => setTabletMenuOpen(false)}
+                  className={locale === 'en' ? 'disabled' : ''}
+                  href={asPath}
+                  locale="en"
+                >
                   <p className={`typoHeaderLink link linkText ${locale === 'en' ? 'active' : ''}`}>
                     en
                   </p>
                 </Link>
                 <span className="typoHeaderLink  linkText">/</span>
-                <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
+                <Link
+                  onClick={() => setTabletMenuOpen(false)}
+                  className={locale === 'uk' ? 'disabled' : ''}
+                  href={asPath}
+                  locale="uk"
+                >
                   <p className={`typoHeaderLink link linkText ${locale === 'uk' ? 'active' : ''}`}>
                     ua
                   </p>
@@ -252,7 +268,12 @@ const Header = ({ headerType }) => {
                       <i className="icon-close iconMenu" />
                     </div>
                   )}
-                  <Link className="companyLogo" href="/" locale={locale}>
+                  <Link
+                    onClick={() => setTabletMenuOpen(false)}
+                    className="companyLogo"
+                    href="/"
+                    locale={locale}
+                  >
                     <Image
                       src={headerType === HeaderTypes.LIGHT ? '/logo-light.png' : '/logo-dark.png'}
                       width={42}
@@ -275,6 +296,7 @@ const Header = ({ headerType }) => {
                   <div className="socialBlock">
                     {socialLinksData.map((socialLink) => (
                       <Link
+                        onClick={() => setTabletMenuOpen(false)}
                         key={uuidv4()}
                         href={socialLink.path}
                         target="_blank"
@@ -285,7 +307,12 @@ const Header = ({ headerType }) => {
                     ))}
                   </div>
                   <div className="langBlock">
-                    <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
+                    <Link
+                      onClick={() => setTabletMenuOpen(false)}
+                      className={locale === 'en' ? 'disabled' : ''}
+                      href={asPath}
+                      locale="en"
+                    >
                       <p
                         className={`typoHeaderLink link linkText ${
                           locale === 'en' ? 'active' : ''
@@ -295,7 +322,12 @@ const Header = ({ headerType }) => {
                       </p>
                     </Link>
                     <span className="typoHeaderLink  linkText">/</span>
-                    <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
+                    <Link
+                      onClick={() => setTabletMenuOpen(false)}
+                      className={locale === 'uk' ? 'disabled' : ''}
+                      href={asPath}
+                      locale="uk"
+                    >
                       <p
                         className={`typoHeaderLink link linkText ${
                           locale === 'uk' ? 'active' : ''
@@ -310,7 +342,7 @@ const Header = ({ headerType }) => {
               <nav className="navBlock">
                 {routes.map((route) =>
                   route?.url ? (
-                    <Link key={uuidv4()} href={route.url}>
+                    <Link onClick={() => setTabletMenuOpen(false)} key={uuidv4()} href={route.url}>
                       <p className="typoHeaderLink link linkText">
                         {t(`navigation.${route.name}`)}
                       </p>
@@ -344,7 +376,11 @@ const Header = ({ headerType }) => {
               <div className="branchesWrapper">
                 {routsBranches.map((branch) =>
                   branch?.path ? (
-                    <Link key={uuidv4()} href={branch.path}>
+                    <Link
+                      onClick={() => setTabletMenuOpen(false)}
+                      key={uuidv4()}
+                      href={branch.path}
+                    >
                       <p className="typoHeaderBranchLink link linkText">{t(branch.text)}</p>
                     </Link>
                   ) : (
@@ -370,7 +406,11 @@ const Header = ({ headerType }) => {
               >
                 <div ref={subBranchesRef} className="subBranchesWrapper">
                   {routsDnipro.map((branch) => (
-                    <Link key={uuidv4()} href={branch.path}>
+                    <Link
+                      onClick={() => setTabletMenuOpen(false)}
+                      key={uuidv4()}
+                      href={branch.path}
+                    >
                       <p className="typoHeaderBranchLink link linkText">{t(branch.text)}</p>
                     </Link>
                   ))}
@@ -385,7 +425,12 @@ const Header = ({ headerType }) => {
                 <div className="menuButton" onClick={() => setTabletMenuOpen(false)}>
                   <i className="icon-close iconMenu" />
                 </div>
-                <Link className="companyLogo" href="/" locale={locale}>
+                <Link
+                  onClick={() => setTabletMenuOpen(false)}
+                  className="companyLogo"
+                  href="/"
+                  locale={locale}
+                >
                   <Image
                     src={headerType === HeaderTypes.LIGHT ? '/logo-light.png' : '/logo-dark.png'}
                     width={42}
@@ -425,7 +470,11 @@ const Header = ({ headerType }) => {
                         <nav className="mobileNavBlock">
                           {routes.map((route) =>
                             route?.url ? (
-                              <Link key={uuidv4()} href={route.url}>
+                              <Link
+                                onClick={() => setTabletMenuOpen(false)}
+                                key={uuidv4()}
+                                href={route.url}
+                              >
                                 <p className="typoHeaderLink link linkText mobileNavBlockItem">
                                   {t(`navigation.${route.name}`)}
                                 </p>
@@ -449,6 +498,7 @@ const Header = ({ headerType }) => {
                           <div className="mobileSocialBlock">
                             {socialLinksData.map((socialLink) => (
                               <Link
+                                onClick={() => setTabletMenuOpen(false)}
                                 key={uuidv4()}
                                 href={socialLink.path}
                                 target="_blank"
@@ -460,6 +510,7 @@ const Header = ({ headerType }) => {
                           </div>
                           <div className="langBlock">
                             <Link
+                              onClick={() => setTabletMenuOpen(false)}
                               className={locale === 'en' ? 'disabled' : ''}
                               href={asPath}
                               locale="en"
@@ -474,6 +525,7 @@ const Header = ({ headerType }) => {
                             </Link>
                             <span className="typoHeaderLink  linkText">/</span>
                             <Link
+                              onClick={() => setTabletMenuOpen(false)}
                               className={locale === 'uk' ? 'disabled' : ''}
                               href={asPath}
                               locale="uk"
@@ -505,7 +557,11 @@ const Header = ({ headerType }) => {
                         <div className="mobileBranchesWrapper">
                           {routsBranches.map((branch) =>
                             branch?.path ? (
-                              <Link key={uuidv4()} href={branch.path}>
+                              <Link
+                                onClick={() => setTabletMenuOpen(false)}
+                                key={uuidv4()}
+                                href={branch.path}
+                              >
                                 <p className="typoHeaderBranchLink link linkText mobileBranchesItem">
                                   {t(branch.text)}
                                 </p>
@@ -541,7 +597,11 @@ const Header = ({ headerType }) => {
 
                         <div className="mobileNavBlock">
                           {routsDnipro.map((branch) => (
-                            <Link key={uuidv4()} href={branch.path}>
+                            <Link
+                              onClick={() => setTabletMenuOpen(false)}
+                              key={uuidv4()}
+                              href={branch.path}
+                            >
                               <p className="typoHeaderBranchLink link linkText mobileNavBlockItem">
                                 {t(branch.text)}
                               </p>

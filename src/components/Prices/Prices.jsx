@@ -16,7 +16,7 @@ const Prices = ({ prices, city }) => {
   const widowSize = useWindowSize();
   const [isOpenSlider, setIsOpenSlider] = useState(false);
   const [firstSlides, setFirstSlides] = useState([]);
-  const [isData, setIsData] = useState([]);
+  // const [isData, setIsData] = useState([]);
   const { currentCity } = useContext(CurrentCityContext);
   const [swiper, setSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,20 +24,20 @@ const Prices = ({ prices, city }) => {
   useEffect(() => {
     if (prices && city && prices[city]) {
       setFirstSlides([...prices[city]].slice(0, 3));
-      setIsData(true);
+      // setIsData(true);
     } else if (prices && currentCity && prices[currentCity]) {
       setFirstSlides([...prices[currentCity]].slice(0, 3));
-      setIsData(true);
+      // setIsData(true);
     } else {
       setFirstSlides([]);
-      setIsData(false);
+      // setIsData(false);
     }
   }, [prices, city, currentCity]);
 
   return (
     // eslint-disable-next-line
     <>
-      {isData && (
+      {((city && prices[city]) || prices[currentCity]) && (
         <StyledPrices className="contentContainer">
           <div className="contentWrapper pricesContent">
             <div className="titleWrapper">
@@ -98,11 +98,13 @@ const Prices = ({ prices, city }) => {
                         <p className="typoDiscountCardSubtitle typoColorBlack">
                           {t('prices.categoryCard.practicalPart')}
                         </p>
-                        <p className="typoPricesCardPerHour typoColorBlack">
-                          {el.pricePerHour
-                            .replace('/', `${String.fromCharCode(8372)}/`)
-                            .replace('h', t('prices.categoryCard.hour'))
-                            .replace('min', t('prices.categoryCard.min'))}
+                        <p className="typoPricesCardPerHour typoColorBlack pricePerHour">
+                          {el?.pricePerHour
+                            ? el?.pricePerHour
+                                .replace('/', `${String.fromCharCode(8372)}/`)
+                                .replace('h', t('prices.categoryCard.hour'))
+                                .replace('min', t('prices.categoryCard.min'))
+                            : ''}
                         </p>
                       </div>
                       <div className="notesWrapper">
@@ -236,7 +238,7 @@ const Prices = ({ prices, city }) => {
                     setActiveIndex(_swiper.activeIndex);
                   }}
                 >
-                  {prices?.[city || currentCity].map((el) => (
+                  {prices?.[city || currentCity]?.map((el) => (
                     <SwiperSlide key={uuidv4()} className="swiperSlide">
                       <div className="categoryCard">
                         <div>
@@ -327,120 +329,6 @@ Prices.propTypes = {
   city: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   prices: PropTypes.any,
-  // {
-  //   dnipro: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   pereshchepyno: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   novomoskovsk: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   zaporizhya: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   kharkiv: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   kryvyi_rig: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   pavlograd: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   nikopol: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   gvardiyske: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   obuhivka: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   pidhorodne: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   ilarionove: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   preshchepyno: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  //   chumaky: PropTypes.arrayOf(
-  //     PropTypes.shape({
-  //       id: PropTypes.number,
-  //       categoryType: PropTypes.string,
-  //       categoryPrice: PropTypes.string,
-  //       pricePerHour: PropTypes.string,
-  //     }),
-  //   ),
-  // },
 };
 
 Prices.defaultProps = {
