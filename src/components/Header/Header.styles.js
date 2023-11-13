@@ -272,7 +272,7 @@ export const StyledHeader = styled('div')`
     }
     .iconLeft {
       font-size: 24px;
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme, $light }) => ($light ? theme.colors.typo.black : theme.colors.typo.white)};
       transform: rotate(90deg);
     }
   }
