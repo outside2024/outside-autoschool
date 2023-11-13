@@ -4,9 +4,10 @@ import Hero from '@/components/Hero';
 import HowToGetStarted from '@/components/HowToGetStarted';
 import { HeroTypes } from '@/components/Hero/Hero';
 import FormComponent from '@/components/FormComponent';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Online = () => (
-  <RootLayout>
+  <RootLayout headerType={HeaderTypes.DARK}>
     <Hero heroType={HeroTypes.SECONDARY} />
     <HowToGetStarted />
     <FormComponent />

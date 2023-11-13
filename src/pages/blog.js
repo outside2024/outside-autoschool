@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import RootLayout from '@/layouts/RootLayout';
 import BlogComponents from '@/components/Blog/Blog';
 import StrAPIService from '@/global/services/strapiService';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Blog = ({ allArticles }) => {
   const { locale } = useRouter();
   return (
-    <RootLayout>
+    <RootLayout headerType={HeaderTypes.LIGHT}>
       <BlogComponents cards={allArticles} locale={locale} />
     </RootLayout>
   );

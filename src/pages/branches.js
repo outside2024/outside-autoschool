@@ -5,9 +5,10 @@ import { cities } from '../components/BranchesGallery/constants';
 import FormComponent from '@/components/FormComponent';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import HeroSecondary from '@/components/HeroSecondary';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Branches = () => (
-  <RootLayout>
+  <RootLayout headerType={HeaderTypes.LIGHT}>
     <HeroSecondary city={cities.sovhozna} />
     <BranchesGallery data={cities.sovhozna} />
     <AboutUs />
