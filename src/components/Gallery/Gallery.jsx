@@ -22,7 +22,6 @@ const Gallery = () => {
                   quality={85}
                   alt={item.alt}
                   className="gallery-images"
-                  priority
                 />
               </li>
             ))}
@@ -38,7 +37,6 @@ const Gallery = () => {
                   quality={85}
                   alt={item.alt}
                   className="gallery-images"
-                  priority
                 />
               </li>
             ))}
@@ -54,7 +52,6 @@ const Gallery = () => {
                   quality={85}
                   alt={item.alt}
                   className="gallery-images"
-                  priority
                 />
               </li>
             ))}

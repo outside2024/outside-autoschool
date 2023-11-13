@@ -1,8 +1,8 @@
+import { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { useEffect, useState } from 'react';
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
 import { v4 as uuidv4 } from 'uuid';
-import PropTypes from 'prop-types';
+import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 import { citiesData, branchesData } from '@/components/GoogleMap/data';
 import GoogleMapStyled from '@/components/GoogleMap/GoogleMap.styled';
 import useWindowSize from '@/hooks/useWindowSize';
@@ -17,21 +17,23 @@ const mobileMapStyles = {
   height: '288px',
 };
 
-const GoogleMapComponent = ({ activeBranch }) => {
+const GoogleMapComponent = () => {
   const { t } = useTranslation();
   const widowSize = useWindowSize();
-
+  const { currentCity } = useContext(CurrentCityContext);
   const [branches, setBranches] = useState([]);
   const [activeAddress, setActiveAddress] = useState(-1);
 
   const [map, setMap] = useState(null);
 
   useEffect(() => {
-    setBranches(branchesData[activeBranch]);
-    if (!map) return;
-    map.setZoom(widowSize.width >= 767 ? 12 : 10);
-    map.panTo(citiesData[activeBranch]);
-  }, [activeBranch, map, widowSize]);
+    if (currentCity) {
+      setBranches(branchesData[currentCity]);
+      if (!map) return;
+      map.setZoom(widowSize.width >= 767 ? 12 : 10);
+      map.panTo(citiesData[currentCity]);
+    }
+  }, [currentCity, map, widowSize]);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -48,7 +50,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
             {isLoaded && (
               <GoogleMap
                 mapContainerStyle={widowSize.width >= 767 ? desktopMapStyles : mobileMapStyles}
-                center={citiesData[activeBranch]}
+                center={citiesData[currentCity]}
                 onLoad={(_map) => setMap(_map)}
                 onUnmount={() => setMap(null)}
                 options={{
@@ -65,17 +67,17 @@ const GoogleMapComponent = ({ activeBranch }) => {
             )}
             <div className="branchesAddress">
               <h2 className="typoColorBlack typoTitleSecondary">
-                {t(`branches.${activeBranch}.city`)}
+                {t(`branches.${currentCity}.city`)}
               </h2>
               <div className="mobileContainer">
-                {citiesData[activeBranch].phoneNumbers.map((number) => (
+                {citiesData[currentCity]?.phoneNumbers?.map((number) => (
                   <div key={uuidv4()} className="mobileNumber">
                     {number}
                   </div>
                 ))}
               </div>
               <div className="addressesContainer">
-                {branches.map((branch, index) => (
+                {branches?.map((branch, index) => (
                   <div
                     key={branch.id}
                     onClick={() => {
@@ -107,10 +109,6 @@ const GoogleMapComponent = ({ activeBranch }) => {
       </div>
     </GoogleMapStyled>
   );
-};
-
-GoogleMapComponent.propTypes = {
-  activeBranch: PropTypes.string.isRequired,
 };
 
 export default GoogleMapComponent;

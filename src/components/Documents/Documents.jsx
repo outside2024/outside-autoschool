@@ -24,7 +24,6 @@ const Documents = () => {
                   quality={85}
                   alt={card.alt}
                   className="card-images"
-                  priority
                 />
               </li>
             ))}

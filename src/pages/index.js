@@ -32,10 +32,12 @@ const Home = ({ promotions }) => {
 export default Home;
 
 export async function getServerSideProps({ locale }) {
-  const { data } = await StrAPIService.getPromotions(locale);
-
+  const data = await StrAPIService.getPromotions(locale);
   return {
-    props: { ...(await serverSideTranslations(locale, ['common'])), promotions: data },
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      promotions: data,
+    },
   };
 }
 
@@ -44,8 +46,12 @@ Home.propTypes = {
     attributes: PropTypes.shape({
       promotion_items: PropTypes.shape({
         // eslint-disable-next-line react/forbid-prop-types
-        data: PropTypes.arrayOf(PropTypes.object),
+        data: Discount.propTypes.discounts,
       }),
     }),
-  }).isRequired,
+  }),
+};
+
+Home.defaultProps = {
+  promotions: null,
 };

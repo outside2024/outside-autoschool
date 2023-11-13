@@ -97,11 +97,21 @@ export const text20Bold = css`
   font-weight: 700;
 `;
 
-export const text16bold = css`
+const text16 = css`
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
   line-height: 19px;
+`;
+
+export const text16bold = css`
+  ${text16}
+  font-weight: 700;
+`;
+
+export const text16Semibold = css`
+  ${redHatFontFamily}
+  ${text16}
+  font-weight: 500;
 `;
 
 const text14 = css`

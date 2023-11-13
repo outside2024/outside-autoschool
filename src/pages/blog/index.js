@@ -17,7 +17,7 @@ const Index = ({ allArticles }) => {
 export default Index;
 
 export async function getServerSideProps({ locale }) {
-  const { data } = await StrAPIService.getAllArticles(locale);
+  const data = await StrAPIService.getAllArticles(locale);
 
   return {
     props: { ...(await serverSideTranslations(locale, ['common'])), allArticles: data },

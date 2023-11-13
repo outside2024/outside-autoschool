@@ -43,7 +43,6 @@ const AboutUs = () => {
                     quality={85}
                     alt="teacher photo"
                     className="aboutImage"
-                    priority
                   />
                   <div className="aboutName">{t(`${card.name}`)}</div>
                   <div className="aboutText">{t(`${card.position}`)}</div>
