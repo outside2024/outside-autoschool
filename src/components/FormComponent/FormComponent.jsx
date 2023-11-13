@@ -77,7 +77,6 @@ const FormComponent = () => {
           <Image
             src={helmImage}
             alt="helm"
-            priority
             width={665}
             height={351}
             quality={85}

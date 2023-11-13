@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled('div')`
+  position: sticky;
+  top: 0;
+  z-index: 11;
   width: 100%;
   height: 60px;
   display: flex;
@@ -8,9 +11,8 @@ export const StyledHeader = styled('div')`
   align-items: center;
   align-content: center;
   justify-content: center;
-  background-color: ${({ theme, light }) =>
-    light ? theme.colors.bg.white : theme.colors.bg.black};
-  position: relative;
+  background-color: ${({ theme, $light }) =>
+    $light ? theme.colors.bg.white : theme.colors.bg.black};
   .headerWrapper {
     display: flex;
     justify-content: space-between;
@@ -22,16 +24,22 @@ export const StyledHeader = styled('div')`
     @media screen and (max-width: 1280px) {
       gap: 10px;
     }
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      height: 60px;
+      justify-content: space-evenly;
+    }
 
     .companyLogo {
       display: flex;
       align-items: center;
     }
   }
+
   .linkText {
     padding: 12px 0;
     display: flex;
-    color: ${({ theme, light }) => (light ? theme.colors.typo.black : theme.colors.typo.white)};
+    color: ${({ theme, $light }) => ($light ? theme.colors.typo.black : theme.colors.typo.white)};
     min-width: fit-content;
     gap: 4px;
     @media screen and (max-width: 1280px) {
@@ -46,6 +54,7 @@ export const StyledHeader = styled('div')`
       color: ${({ theme }) => theme.colors.button.green};
     }
   }
+
   .active {
     color: ${({ theme }) => theme.colors.button.green};
     cursor: default;
@@ -55,20 +64,22 @@ export const StyledHeader = styled('div')`
   .disabled {
     pointer-events: none;
   }
+
   .cityLngBlock {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .cityBlock {
     display: flex;
     align-items: center;
-
     gap: 16px;
     @media screen and (max-width: 1280px) {
       gap: 8px;
     }
   }
+
   .socialLngBlock {
     display: flex;
     align-items: center;
@@ -77,6 +88,7 @@ export const StyledHeader = styled('div')`
       gap: 8px;
     }
   }
+
   .socialBlock {
     display: flex;
     align-items: center;
@@ -84,60 +96,79 @@ export const StyledHeader = styled('div')`
     @media screen and (max-width: 1280px) {
       gap: 4px;
     }
-    .iconSocial {
-      font-size: 24px;
-      color: ${({ theme }) => theme.colors.typo.white};
-      cursor: pointer;
-      &:hover,
-      &:focus {
-        color: ${({ theme }) => theme.colors.button.green};
-      }
+  }
+  .iconSocial {
+    font-size: 24px;
+    color: ${({ theme }) => theme.colors.typo.white};
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.button.green};
     }
   }
+
   .langBlock {
     display: flex;
     align-items: center;
     gap: 4px;
   }
-  .branchesBlock {
+
+  .menuWrapper {
     position: absolute;
     top: 60px;
     width: 100%;
     height: fit-content;
     opacity: 1;
     display: flex;
+    flex-direction: column;
     pointer-events: all;
-    z-index: 1;
-    background-color: ${({ theme, light }) =>
-      light ? theme.colors.bg.white : theme.colors.bg.black};
+    z-index: 2;
+    background-color: ${({ theme, $light }) =>
+      $light ? theme.colors.bg.white : theme.colors.bg.black};
+    @media screen and (max-width: 1024px) {
+      top: 0px;
+    }
+  }
+
+  .borderBottom {
     border-bottom: 5px solid ${({ theme }) => theme.colors.primary};
+  }
+  .branchesBlock {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    pointer-events: all;
     padding-top: 36px;
     padding-bottom: 36px;
+    @media screen and (max-width: 1024px) {
+      padding-top: 12px;
+    }
   }
   .branchesWrapper {
-    width: ${({ brancheswidth }) => brancheswidth || '100%'};
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));
-    .icon-right {
-      transform: rotate(270deg);
-      font-size: 14px;
-    }
+  }
+  .icon-right {
+    transform: rotate(270deg);
+    font-size: 16px;
   }
   .subBranchesWrapper {
     position: relative;
-    width: 40%;
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(2, calc(100% / 2));
+    padding-left: 36px;
     &::before {
       position: absolute;
       content: '';
       width: 2px;
       height: 100%;
-      background-color: ${({ theme, light }) =>
-        light ? theme.colors.bg.black : theme.colors.bg.white};
-      left: -36px;
+      background-color: ${({ theme, $light }) =>
+        $light ? theme.colors.bg.black : theme.colors.bg.white};
     }
   }
+
   .hidden {
     display: none;
     opacity: 0;
@@ -146,7 +177,194 @@ export const StyledHeader = styled('div')`
     width: 0;
     height: 0;
   }
-  branchText {
+  .iconMenu {
+    font-size: 24px;
+    color: ${({ theme }) => theme.colors.button.green};
+    cursor: pointer;
+    &:hover {
+      color: ${({ theme }) => theme.colors.button.green30};
+    }
+  }
+
+  .tabletHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
+  .tabletlogoIconWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tabletHeaderLine {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  .mobileHeader {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 5px);
+    .mobilelogoIconWrapper {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      margin-bottom: 4px;
+      gap: calc(50% - 41px);
+    }
+    .mobileCityBlock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 46px;
+      margin-bottom: 34px;
+    }
+    .mobileNavBlock {
+      display: flex;
+      flex-direction: column;
+      .mobileNavBlockItem {
+        border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+        padding: 16px 0;
+      }
+    }
+    .mobileSocialLngBlock {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 43px;
+      .mobileSocialBlock {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    .mobileBranchesWrapper {
+      display: grid;
+      grid-template-columns: repeat(2, calc((100% - 16px) / 2));
+      grid-column-gap: 16px;
+    }
+    .mobileBranchesItem {
+      border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+      padding: 24px 0;
+    }
+    .backButton {
+      cursor: pointer;
+      display: flex;
+      padding: 4px;
+      padding-bottom: 24px;
+      width: 20%;
+
+      &:hover {
+        .iconLeft {
+          color: ${({ theme }) => theme.colors.button.green30};
+        }
+      }
+    }
+    .iconLeft {
+      font-size: 24px;
+      color: ${({ theme }) => theme.colors.white};
+      transform: rotate(90deg);
+    }
+  }
+  .menuButton {
+    padding: 4px;
+  }
+
+  .slideDownAnimation-enter {
+    opacity: 0;
+    transform: scaleY(0.1);
+    transform-origin: top center;
+  }
+  .slideDownAnimation-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+
+    transition:
+      opacity 500ms,
+      transform 500ms;
+  }
+  .slideDownAnimation-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .slideDownAnimation-exit-active {
+    opacity: 0;
+    transform-origin: top center;
+    transform: scaleY(0.1);
+
+    transition:
+      opacity 300ms,
+      transform 500ms;
+  }
+
+  .slideRightAnimation-enter {
+    transform: translateX(+100%);
+  }
+  .slideRightAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideRightAnimation-exit-active {
+    transform: translateX(+100%);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightFastAnimation-enter {
+    transform: translateX(+100%);
+  }
+  .slideRightFastAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideRightFastAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideRightFastAnimation-exit-active {
+    transform: translateX(-100%);
+    transition:
+      opacity 1ms,
+      transform 1ms;
+  }
+
+  .slideLeftFastAnimation-enter {
+    transform: translateX(-100%);
+  }
+  .slideLeftFastAnimation-enter-active {
+    transform: translateX(0);
+    transition:
+      opacity 500ms,
+      transform 300ms;
+  }
+
+  .slideLeftFastAnimation-exit {
+    transform: translateX(0);
+  }
+  .slideLeftFastAnimation-exit-active {
+    transform: translateX(-100%);
+    transition:
+      opacity 1ms,
+      transform 1ms;
   }
 `;
 

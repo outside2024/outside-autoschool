@@ -27,6 +27,8 @@ const Discount = ({ discounts }) => {
           <Swiper
             className="swiperContainer"
             slidesPerView="auto"
+            updateOnWindowResize
+            observer
             breakpoints={{
               0: { spaceBetween: 16 },
               1025: { spaceBetween: 48 },
@@ -48,7 +50,6 @@ const Discount = ({ discounts }) => {
                     quality={85}
                     alt="discount"
                     className="discountImage"
-                    priority
                   />
                   <div className="discountCardTitle typoDiscountCardTitle">
                     {discount.attributes.title}

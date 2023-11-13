@@ -58,7 +58,6 @@ const BranchesGallery = ({ data }) => {
                   quality={85}
                   alt={card.name}
                   className="branches-images"
-                  priority
                 />
               </SwiperSlide>
             ))}
@@ -81,7 +80,6 @@ const BranchesGallery = ({ data }) => {
                   quality={85}
                   alt={card.name}
                   className="branches-images-small"
-                  priority
                 />
               </SwiperSlide>
             ))}

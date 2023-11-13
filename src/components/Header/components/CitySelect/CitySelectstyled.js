@@ -9,7 +9,7 @@ export const CitySelectContainer = styled('div')`
   .inputLabel {
     ${text14Semibold};
     line-height: 21px;
-    color: ${({ theme, light }) => (light ? theme.colors.typo.white : theme.colors.typo.black)};
+    color: ${({ theme, $light }) => ($light ? theme.colors.typo.white : theme.colors.typo.black)};
     padding-bottom: 8px;
   }
 
@@ -17,7 +17,8 @@ export const CitySelectContainer = styled('div')`
     &Select {
       &__single-value {
         ${text14Semibold};
-        color: ${({ theme, light }) => (light ? theme.colors.typo.black : theme.colors.typo.white)};
+        color: ${({ theme, $light }) =>
+          $light ? theme.colors.typo.black : theme.colors.typo.white};
       }
       &__indicator-separator {
         display: none;
@@ -53,12 +54,12 @@ export const CitySelectContainer = styled('div')`
 
       &__menu {
         width: 220px;
-        background-color: ${({ theme, light }) =>
-          light ? theme.colors.bg.white : theme.colors.typo.black};
+        background-color: ${({ theme, $light }) =>
+          $light ? theme.colors.bg.white : theme.colors.typo.black};
         border: 1px solid ${({ theme }) => theme.colors.primary};
         &-list {
-          color: ${({ theme, light }) =>
-            light ? theme.colors.typo.black : theme.colors.typo.white};
+          color: ${({ theme, $light }) =>
+            $light ? theme.colors.typo.black : theme.colors.typo.white};
           max-height: fit-content;
         }
       }
