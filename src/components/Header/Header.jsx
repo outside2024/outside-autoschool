@@ -331,7 +331,7 @@ const Header = ({ headerType }) => {
               </nav>
             </div>
           )}
-          {/* !tablet & desktop branches */}
+          {/* !tablet & desktop [branch] */}
 
           <CSSTransition
             nodeRef={branchesRef}
