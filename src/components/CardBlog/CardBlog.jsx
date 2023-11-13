@@ -3,14 +3,18 @@ import PropTypes from 'prop-types';
 import CardBlogStyles from '@/components/CardBlog/CardBlog.styles';
 
 const CardBlog = ({ card }) => {
+  console.log(card);
   const description = card.attributes.textBlock[0]?.text.richText.reduce(
     (res, item) => [...res, ...item.children.map((subItem) => subItem.text)],
     [],
   );
-
   return (
     <CardBlogStyles>
-      <Link href={`blog/${card.id}`} target="_blank" rel="noopener noreferrer nofollow">
+      <Link
+        href={`blog/${card.attributes.slug}`}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
         <div className="border">
           <p className="typoTextSecondary gap-card">{card.attributes.date}</p>
           <h2 className="typoColorBlack typoButtonPrimary eclipse gap-card">
@@ -26,7 +30,7 @@ export default CardBlog;
 
 CardBlog.propTypes = {
   card: PropTypes.shape({
-    id: PropTypes.number,
+    slug: PropTypes.string,
     attributes: PropTypes.shape({
       textBlock: PropTypes.arrayOf(
         PropTypes.shape({

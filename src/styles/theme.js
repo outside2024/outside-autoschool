@@ -5,6 +5,7 @@ export const theme = {
     black: '#231E20',
     primary: '#76C045',
     white: '#FFFFFF',
+    blue: '#1734c2',
     button: {
       green: '#76C045',
       green30: 'rgba(118, 192, 69, 0.3)',
