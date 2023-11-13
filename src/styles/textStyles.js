@@ -170,9 +170,9 @@ export const text10Semibold = css`
 `;
 
 export const text8Semibold = css`
-  ${redHatFontFamily}
+  ${redHatFontFamily};
   font-size: 8px;
   font-style: normal;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 16px;
 `;

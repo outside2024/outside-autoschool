@@ -36,12 +36,12 @@ class StrApi {
     }
   }
 
-  async getArticlesById(locale, id) {
+  async getArticlesBySlug(locale, slug) {
     try {
       const res = await this.#axiosClient.get(
-        `blog-articles/${id}?populate[textBlock][populate]=*&locale=${locale}`,
+        `blog-articles?populate[textBlock][populate]=*&populate[image][populate]=*&locale=${locale}&filters[slug][$eq]=${slug}`,
       );
-      return res.data.data;
+      return res.data.data[0];
     } catch (error) {
       return null;
     }

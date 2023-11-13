@@ -129,6 +129,13 @@ const GlobalStyle = createGlobalStyle`${css`
       }
     }
 
+    &Subtitle {
+      ${text20Semibold};
+      @media only screen and (max-width: ${tabletBreakpoint}) {
+        ${text12Semibold};
+      }
+    }
+
     &TextPrimary {
       ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text12Semibold}
@@ -159,7 +166,6 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text11Semibold};
       }
     }
-
     &HeaderLink {
       ${text16bold};
     }
@@ -265,6 +271,20 @@ const GlobalStyle = createGlobalStyle`${css`
       ${text50Bold};
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text36Bold}
+      }
+    }
+
+    &ArticleBtnText {
+      ${text14Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Bold};
+      }
+    }
+
+    &ButtonTitle {
+      ${text20Bold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text8Semibold};
       }
     }
   }

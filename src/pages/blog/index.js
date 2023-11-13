@@ -6,7 +6,7 @@ import BlogComponents from '@/components/Blog/Blog';
 import StrAPIService from '@/global/services/strapiService';
 import { HeaderTypes } from '@/components/Header/Header';
 
-const Blog = ({ allArticles }) => {
+const Index = ({ allArticles }) => {
   const { locale } = useRouter();
   return (
     <RootLayout headerType={HeaderTypes.LIGHT}>
@@ -15,7 +15,7 @@ const Blog = ({ allArticles }) => {
   );
 };
 
-export default Blog;
+export default Index;
 
 export async function getServerSideProps({ locale }) {
   const data = await StrAPIService.getAllArticles(locale);
@@ -25,7 +25,7 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-Blog.propTypes = {
+Index.propTypes = {
   allArticles: PropTypes.shape({
     attributes: PropTypes.shape({
       textBlock: PropTypes.arrayOf(
