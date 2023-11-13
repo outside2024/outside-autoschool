@@ -39,6 +39,11 @@ export const StyledArticle = styled('div')`
     &Date {
       font-weight: 700;
       padding-top: 10px;
+      padding-bottom: 35px;
+
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        padding-bottom: 16px;
+      }
     }
 
     &BottomContainer {
