@@ -50,7 +50,6 @@ const Discount = ({ discounts }) => {
                     quality={85}
                     alt="discount"
                     className="discountImage"
-                    priority
                   />
                   <div className="discountCardTitle typoDiscountCardTitle">
                     {discount.attributes.title}

@@ -18,7 +18,6 @@ const Exam = () => {
             quality={85}
             alt="logo"
             className="exam-images"
-            priority
           />
 
           <div className="container-data">

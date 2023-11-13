@@ -45,7 +45,6 @@ const HeroSecondary = () => {
                 quality={85}
                 alt={city.title}
                 className="heroSecondaryImage"
-                priority
               />
             </div>
             <HeroDescription city={city.name} />
@@ -69,7 +68,6 @@ const HeroSecondary = () => {
                 quality={85}
                 alt="car"
                 className="heroSecondaryImage"
-                priority
               />
             </div>
             <Exam />

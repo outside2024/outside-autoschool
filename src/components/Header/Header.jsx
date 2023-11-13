@@ -156,7 +156,6 @@ const Header = ({ headerType }) => {
                 height={42}
                 quality={100}
                 alt="company logo"
-                priority
               />
             </Link>
 
@@ -260,7 +259,6 @@ const Header = ({ headerType }) => {
                       height={42}
                       quality={100}
                       alt="company logo"
-                      priority
                     />
                   </Link>
                 </div>
@@ -394,7 +392,6 @@ const Header = ({ headerType }) => {
                     height={42}
                     quality={100}
                     alt="company logo"
-                    priority
                   />
                 </Link>
               </div>

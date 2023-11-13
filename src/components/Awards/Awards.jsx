@@ -22,7 +22,6 @@ const Awards = () => {
             height={456}
             alt="award"
             quality={85}
-            priority
             className="awardImg"
           />
           <Image
@@ -31,7 +30,6 @@ const Awards = () => {
             height={456}
             alt="award"
             quality={85}
-            priority
             className="awardImg"
           />
         </div>
