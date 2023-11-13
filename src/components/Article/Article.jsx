@@ -83,14 +83,16 @@ const Article = ({article, articlesList}) => {
                 {prevArticle && <>
                   <div className="buttonContainer">
                     <div className="buttonTextPrev typoColorBlack typoArticleBtnText">{t('article.btn_prev_text')}</div>
-                    <Button
-                      btnType="secondary"
-                      contentType="icon"
-                      btnWidth={windowWidth.width <= 900 ? 32 : 100}
-                      btnHeight={windowWidth.width <= 900 ? 28 : 32}
-                      content="icon-angle-down"
-                      iconAngle={90}
-                    />
+                    <Link href={`/blog/${prevArticle.id}`}>
+                      <Button
+                        btnType="secondary"
+                        contentType="icon"
+                        btnWidth={windowWidth.width <= 900 ? 32 : 100}
+                        btnHeight={windowWidth.width <= 900 ? 28 : 32}
+                        content="icon-angle-down"
+                        iconAngle={90}
+                      />
+                    </Link>
                   </div>
                   <div className="buttonTitle typoButtonTitle">{prevArticle.attributes.title}</div>
                 </>}
@@ -100,14 +102,16 @@ const Article = ({article, articlesList}) => {
                   <div className="buttonNextTitle typoButtonTitle">{nextArticle.attributes.title}</div>
                   <div className="buttonContainer">
                     <div className="buttonTextNext typoColorBlack typoArticleBtnText">{t('article.btn_next_text')}</div>
-                    <Button
-                      btnType="secondary"
-                      contentType="icon"
-                      btnWidth={windowWidth.width <= 900 ? 32 : 100}
-                      btnHeight={windowWidth.width <= 900 ? 28 : 32}
-                      content="icon-angle-down"
-                      iconAngle={270}
-                    />
+                    <Link href={`/blog/${nextArticle.id}`}>
+                      <Button
+                        btnType="secondary"
+                        contentType="icon"
+                        btnWidth={windowWidth.width <= 900 ? 32 : 100}
+                        btnHeight={windowWidth.width <= 900 ? 28 : 32}
+                        content="icon-angle-down"
+                        iconAngle={270}
+                      />
+                    </Link>
                   </div>
                 </>}
               </div>
@@ -115,7 +119,7 @@ const Article = ({article, articlesList}) => {
           </div>
           <div>
             {/* eslint-disable-next-line react/prop-types */}
-            <SearchBlog cards={articlesList} />
+            <SearchBlog cards={articlesList}/>
           </div>
         </div>
       </div>
