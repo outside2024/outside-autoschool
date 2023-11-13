@@ -17,6 +17,7 @@ import {
   text40Bold,
   text54Bold,
   text60Bold,
+  text8Semibold,
 } from './textStyles';
 import {
   footerTabletBreakpoint,
@@ -123,6 +124,13 @@ const GlobalStyle = createGlobalStyle`${css`
       }
     }
 
+    &Subtitle {
+      ${text20Semibold};
+      @media only screen and (max-width: ${tabletBreakpoint}) {
+        ${text12Semibold};
+      }
+    }
+
     &TextPrimary {
       ${text20Semibold} @media screen and(max-width: ${tabletBreakpoint}) {
         ${text12Semibold}
@@ -153,7 +161,6 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text11Semibold};
       }
     }
-
     &HeaderLink {
       ${text16bold};
     }
@@ -221,6 +228,21 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text12Semibold}
       }
     }
+    
+    &ArticleBtnText {
+      ${text14Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Bold};
+      }
+    }
+    
+    &ButtonTitle {
+      ${text20Bold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text8Semibold};
+      }
+    }
+}
   }
 `}
 `;

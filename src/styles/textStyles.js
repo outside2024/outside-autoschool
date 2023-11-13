@@ -163,3 +163,11 @@ export const text10Semibold = css`
   font-weight: 500;
   line-height: 120%;
 `;
+
+export const text8Semibold = css`
+  ${redHatFontFamily};
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+`;
