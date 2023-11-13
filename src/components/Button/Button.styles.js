@@ -62,7 +62,8 @@ const ButtonStyles = styled(`button`)`
     }
     &.light {
       color: ${({ theme }) => theme.colors.typo.white};
-      font-size: 30px;
+      font-size: ${({ $iconSize }) => ($iconSize ? `${$iconSize}px` : '30px')};
+      transform: ${({ $iconAngle }) => `rotate(${$iconAngle}deg)`};
     }
   }
 `;

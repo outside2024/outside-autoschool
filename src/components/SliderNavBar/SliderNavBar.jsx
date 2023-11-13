@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import SliderNavBarStyles from '@/components/SliderNavBar/SliderNavBar.styled';
 import Button from '@/components/Button';
+import { IconColors } from '../Button/Button';
 
-const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
+const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth, isLight }) => {
   const slidesPerView =
     swiper?.params?.slidesPerView === 'auto' && swiper && swiper.params
       ? // eslint-disable-next-line react/prop-types
@@ -12,6 +13,7 @@ const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
 
   return (
     <SliderNavBarStyles
+      $isLight={isLight}
       $maxWidth={maxWidth}
       $width={100 / (slidesNumber - (Math.round(slidesPerView) - 1))}
       $left={(100 * activeIndex) / (slidesNumber - (Math.round(slidesPerView) - 1))}
@@ -28,6 +30,8 @@ const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
             swiper.slidePrev();
           }}
           iconAngle={90}
+          iconSize={18}
+          iconColor={isLight ? IconColors.LIGHT : IconColors.DARK}
         />
         <Button
           btnType="secondary"
@@ -39,6 +43,8 @@ const SliderNavBar = ({ activeIndex = 0, swiper, slidesNumber, maxWidth }) => {
             swiper.slideNext();
           }}
           iconAngle={270}
+          iconSize={18}
+          iconColor={isLight ? IconColors.LIGHT : IconColors.DARK}
         />
       </div>
     </SliderNavBarStyles>
@@ -62,6 +68,7 @@ SliderNavBar.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     slides: PropTypes.arrayOf(PropTypes.object),
   }),
+  isLight: PropTypes.bool,
 };
 
 SliderNavBar.defaultProps = {
@@ -74,4 +81,5 @@ SliderNavBar.defaultProps = {
     slideNext: () => {},
     slides: [],
   }),
+  isLight: false,
 };

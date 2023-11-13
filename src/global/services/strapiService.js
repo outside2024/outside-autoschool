@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { transformPrices } from '../helpers/helpers';
 
 class StrApi {
   #axiosClient;
@@ -58,7 +59,8 @@ class StrApi {
   async getAllCitiesPrices() {
     try {
       const res = await this.#axiosClient.get('city-prices?populate=*');
-      return res.data.data;
+      const result = transformPrices(res.data.data);
+      return result;
     } catch (error) {
       return null;
     }
