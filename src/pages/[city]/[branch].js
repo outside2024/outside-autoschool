@@ -6,12 +6,12 @@ import FormComponent from '@/components/FormComponent';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import HeroSecondary from '@/components/HeroSecondary';
 import { HeaderTypes } from '@/components/Header/Header';
-import GoogleMap from "@/components/GoogleMap/GoogleMap";
+import GoogleMap from '@/components/GoogleMap/GoogleMap';
 
 const Branch = ({ cityData }) => (
   <RootLayout headerType={HeaderTypes.LIGHT}>
     <HeroSecondary city={cityData} />
-    <GoogleMap activeBranch={cityData}/>
+    <GoogleMap activeBranch={cityData.city} />
     <BranchesGallery data={cityData} />
     <AboutUs />
     <FormComponent />

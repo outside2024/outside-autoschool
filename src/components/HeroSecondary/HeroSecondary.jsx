@@ -19,7 +19,7 @@ const HeroSecondary = ({ city }) => {
           <div className="container">
             <div className="wrapper">
               <div className="left-container">
-                <h2 className="typoColorBlack typoTitlePrimary gap">{t(city.title)}</h2>
+                <h2 className="typoColorBlack typoTitlePrimary2 gap">{t(city.title)}</h2>
                 {city.phone && <p className="typoTextPrimary">{city.phone}</p>}
                 {city.phone2 && <p className="typoTextPrimary">{city.phone2}</p>}
                 {city.address1 && <p className="typoTextPrimary">{t(city.address1)}</p>}
@@ -37,6 +37,7 @@ const HeroSecondary = ({ city }) => {
                 quality={85}
                 alt={city.src.name}
                 className="heroSecondaryImage"
+                priority
               />
             </div>
             <HeroDescription city={t(city.name)} />

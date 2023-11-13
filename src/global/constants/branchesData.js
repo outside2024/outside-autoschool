@@ -24,6 +24,52 @@ export const cities = {
     phone: '(096) 551-97-86',
     address1: '| вул. Центральна, 46',
   },
+  novomoskovsk: {
+    city: 'novomoskovsk',
+    title: 'Новомосковськ',
+    name: 'Новомосковськ',
+    src: {
+      photo: '/images/branches/novomoskovsk/hero.jpg',
+      name: 'novomoskovsk',
+    },
+    imageGallery: [
+      {
+        photo: '/images/branches/novomoskovsk/gallery/1.jpg',
+        name: 'img1',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/2.jpg',
+        name: 'img2',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/3.jpg',
+        name: 'img3',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/4.jpg',
+        name: 'img4',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/5.jpg',
+        name: 'img5',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/6.jpg',
+        name: 'img6',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/7.jpg',
+        name: 'img7',
+      },
+      {
+        photo: '/images/branches/novomoskovsk/gallery/8.jpg',
+        name: 'img8',
+      },
+    ],
+    phone: '(097) 696-72-72',
+    address1: '| вул. Гетьманська 40-А',
+    address2: '| вул. Українська 9-А',
+  },
   nikopol: {
     city: 'nikopol',
     title: 'Нікополь',
@@ -471,7 +517,7 @@ export const cities = {
     phone: '(098)0-555-999',
     address1: '| пр. Героїв, 14',
   },
-  "12kvartal": {
+  '12kvartal': {
     city: 'dnipro',
     title: 'Автошкола на 12 Кварталі',
     name: 'Дніпро',

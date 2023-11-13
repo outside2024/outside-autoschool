@@ -22,7 +22,7 @@ const Home = ({ promotions }) => {
       {promotions && <Discount discounts={promotions.attributes.promotion_items.data} />}
       <Documents />
       <AboutUs />
-      <GoogleMap activeBranch="dnipro" />
+      <GoogleMap />
       <FAQ />
       <FormComponent />
     </RootLayout>
