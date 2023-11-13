@@ -4,9 +4,10 @@ import BranchesGallery from '@/components/BranchesGallery/BranchesGallery';
 import { data } from '../components/BranchesGallery/constants';
 import FormComponent from '@/components/FormComponent';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const Branches = () => (
-  <RootLayout>
+  <RootLayout headerType={HeaderTypes.LIGHT}>
     <BranchesGallery data={data} />
     <AboutUs />
     <FormComponent />

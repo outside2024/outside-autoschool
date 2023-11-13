@@ -8,7 +8,7 @@ import StrAPIService from '@/global/services/strapiService';
 const Blog = ({ allArticles }) => {
   const { locale } = useRouter();
   return (
-    <RootLayout>
+    <RootLayout headerType={HeaderTypes.LIGHT}>
       <BlogComponents cards={allArticles} locale={locale} />
     </RootLayout>
   );

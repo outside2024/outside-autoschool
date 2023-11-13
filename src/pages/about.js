@@ -7,9 +7,10 @@ import Gallery from '@/components/Gallery/Gallery';
 import FormComponent from '@/components/FormComponent/FormComponent';
 import Awards from '@/components/Awards/Awards';
 import HeroDescription from '@/components/HeroDescription';
+import { HeaderTypes } from '@/components/Header/Header';
 
 const About = () => (
-  <RootLayout>
+  <RootLayout headerType={HeaderTypes.DARK}>
     <Hero heroType={HeroTypes.TERTIARY} />
     <HeroDescription />
     <Awards />
