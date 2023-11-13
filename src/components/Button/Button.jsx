@@ -26,10 +26,12 @@ const Button = ({
   onBtnClick,
   iconColor,
   iconAngle,
+  iconSize,
   btnHeight,
 }) => (
   <ButtonStyles
     type={type}
+    $iconSize={iconSize}
     $btnWidth={btnWidth}
     $btnHeight={btnHeight}
     $borderWidth={contentType === ButtonContentTypes.ICON ? '1px' : '2px'}
@@ -40,7 +42,9 @@ const Button = ({
     }`}
   >
     {contentType === ButtonContentTypes.TEXT ? (
-      <p className="typoColorBlack">{content}</p>
+      <p className={btnType === ButtonTypes.SECONDARY ? 'typoColorWhite' : 'typoColorBlack'}>
+        {content}
+      </p>
     ) : (
       <i className={`icon ${iconColor} ${content}`} />
     )}
@@ -59,6 +63,7 @@ Button.propTypes = {
   onBtnClick: PropTypes.func,
   iconColor: PropTypes.oneOf([IconColors.DARK, IconColors.LIGHT]),
   iconAngle: PropTypes.number,
+  iconSize: PropTypes.number,
 };
 
 Button.defaultProps = {
@@ -68,4 +73,5 @@ Button.defaultProps = {
   onBtnClick: () => {},
   iconColor: IconColors.DARK,
   iconAngle: 0,
+  iconSize: null,
 };

@@ -1,6 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 import theme from './theme';
 import {
+  text10Semibold,
   text11Semibold,
   text12Bold,
   text12Semibold,
@@ -9,16 +10,18 @@ import {
   text16Semibold,
   text16bold,
   text20Bold,
+  text20BoldRedHat,
   text20Semibold,
   text24Bold,
+  text24BoldRedHat,
   text32Bold,
   text32Semibold,
   text36Bold,
   text40Bold,
+  text50Bold,
   text54Bold,
   text60Bold,
   text8Semibold,
-  text50Bold,
 } from './textStyles';
 import {
   footerTabletBreakpoint,
@@ -124,7 +127,8 @@ const GlobalStyle = createGlobalStyle`${css`
     }
 
     &TitleTertiary {
-      ${text54Bold} @media screen and(max-width: ${tabletBreakpoint}) {
+      ${text54Bold}
+      @media screen and(max-width: ${tabletBreakpoint}) {
         ${text36Bold}
       }
       @media screen and (max-width: ${mobileBreakpoint}) {
@@ -236,21 +240,60 @@ const GlobalStyle = createGlobalStyle`${css`
         ${text12Semibold}
       }
     }
-    
+
+    &PricesSubtitle {
+      ${text20Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text12Semibold}
+      }
+    }
+
+    &PricesDescription {
+      ${text20Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text11Semibold}
+      }
+    }
+    &PricesCardTitle {
+      ${text24Bold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text20Bold}
+      }
+    }
+
+    &PricesCardPerHour {
+      ${text24BoldRedHat};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text20BoldRedHat}
+      }
+    }
+    &PricesCardNotes {
+      ${text10Semibold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text8Semibold}
+      }
+    }
+
+    &PricesCardPrice {
+      ${text50Bold};
+      @media only screen and (max-width: ${mobileBreakpoint}) {
+        ${text36Bold}
+      }
+    }
+
     &ArticleBtnText {
       ${text14Semibold};
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text12Bold};
       }
     }
-    
+
     &ButtonTitle {
       ${text20Bold};
       @media only screen and (max-width: ${mobileBreakpoint}) {
         ${text8Semibold};
       }
     }
-}
   }
 `}
 `;

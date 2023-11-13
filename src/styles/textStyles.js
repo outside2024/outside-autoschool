@@ -96,6 +96,11 @@ export const text20Bold = css`
   ${text20}
   font-weight: 700;
 `;
+export const text20BoldRedHat = css`
+  ${redHatFontFamily}
+  ${text20}
+  font-weight: 700;
+`;
 
 const text16 = css`
   font-size: 16px;
