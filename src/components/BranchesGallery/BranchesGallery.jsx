@@ -28,6 +28,8 @@ const BranchesGallery = ({ data }) => {
   const { t } = useTranslation();
   const { width: windowWidth } = useWindowSize();
 
+
+
   useEffect(() => {
     getSize(windowWidth);
   }, [windowWidth]);

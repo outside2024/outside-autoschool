@@ -54,19 +54,19 @@ const FormComponent = () => {
   };
 
   const optionsBranch = [
-    { value: t('branches.dnipro.city'), label: t('branches.dnipro.city') },
-    { value: t('branches.gvardiyske.city'), label: t('branches.gvardiyske.city') },
-    { value: t('branches.pavlograd.city'), label: t('branches.pavlograd.city') },
-    { value: t('branches.obuhivka.city'), label: t('branches.obuhivka.city') },
-    { value: t('branches.novomoskovsk.city'), label: t('branches.novomoskovsk.city') },
-    { value: t('branches.pidhorodne.city'), label: t('branches.pidhorodne.city') },
-    { value: t('branches.nikopol.city'), label: t('branches.nikopol.city') },
-    { value: t('branches.ilarionove.city'), label: t('branches.ilarionove.city') },
-    { value: t('branches.preshchepyno.city'), label: t('branches.preshchepyno.city') },
-    { value: t('branches.chumaky.city'), label: t('branches.chumaky.city') },
-    { value: t('branches.zaporizhya.city'), label: t('branches.zaporizhya.city') },
-    { value: t('branches.kryvyi_rig.city'), label: t('branches.kryvyi_rig.city') },
-    { value: t('branches.kharkiv.city'), label: t('branches.kharkiv.city') },
+    { value: t('[branch].dnipro.city'), label: t('[branch].dnipro.city') },
+    { value: t('[branch].gvardiyske.city'), label: t('[branch].gvardiyske.city') },
+    { value: t('[branch].pavlograd.city'), label: t('[branch].pavlograd.city') },
+    { value: t('[branch].obuhivka.city'), label: t('[branch].obuhivka.city') },
+    { value: t('[branch].novomoskovsk.city'), label: t('[branch].novomoskovsk.city') },
+    { value: t('[branch].pidhorodne.city'), label: t('[branch].pidhorodne.city') },
+    { value: t('[branch].nikopol.city'), label: t('[branch].nikopol.city') },
+    { value: t('[branch].ilarionove.city'), label: t('[branch].ilarionove.city') },
+    { value: t('[branch].preshchepyno.city'), label: t('[branch].preshchepyno.city') },
+    { value: t('[branch].chumaky.city'), label: t('[branch].chumaky.city') },
+    { value: t('[branch].zaporizhya.city'), label: t('[branch].zaporizhya.city') },
+    { value: t('[branch].kryvyi_rig.city'), label: t('[branch].kryvyi_rig.city') },
+    { value: t('[branch].kharkiv.city'), label: t('[branch].kharkiv.city') },
   ];
 
   const optionsCategory = [

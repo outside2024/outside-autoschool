@@ -24,7 +24,6 @@ export const cities = {
     phone: '(096) 551-97-86',
     address1: '| вул. Центральна, 46',
   },
-
   nikopol: {
     city: 'nikopol',
     title: 'Нікополь',
@@ -63,7 +62,7 @@ export const cities = {
     address1: '| вул. І. Богуна 5',
     address2: '| вул. Патріотів України 167',
   },
-  preshchepyno: {
+  pereshchepyno: {
     city: 'preshchepyno',
     title: 'Перещепине',
     name: 'Перещепине',
@@ -96,7 +95,6 @@ export const cities = {
     phone: '(098) 203-63-32',
     address1: '| вул. Шевченка 58',
   },
-
   kharkiv: {
     city: 'kharkiv',
     title: 'Харків',
@@ -142,10 +140,10 @@ export const cities = {
     phone: '(097) 585-95-95',
     address1: '| вул Шота Руставелі 28/1',
   },
-  kryvyiRig: {
+  kryvyi_rig: {
     city: 'kryvyi_rig',
-    title: 'Харків',
-    name: 'Харків',
+    title: 'Кривий Ріг',
+    name: 'Кривий Ріг',
     src: {
       photo: '/images/branches/kryvyi_rig/hero.jpg',
       name: 'kryvyi_rig',
@@ -180,8 +178,9 @@ export const cities = {
         name: 'img7',
       },
     ],
-    phone: '(097) 585-95-95',
-    address1: '| вул Шота Руставелі 28/1',
+    phone: '(067) 4-999-601',
+    address1: '| пр. Героїв-підпільників, 1а ',
+    address2: '| вул. Недєліна, 28 (Інгулець) ',
   },
   zaporizhya: {
     city: 'zaporizhya',
@@ -233,7 +232,7 @@ export const cities = {
     title: 'смт Чумаки',
     name: 'смт Чумаки',
     src: {
-      photo: '/images/branches/chumaky/hero.jpg',
+      photo: '/images/branches/chumaky//gallery/3.jpg',
       name: 'chumaky',
     },
     imageGallery: [
@@ -259,8 +258,8 @@ export const cities = {
   },
   ilarionove: {
     city: 'ilarionove',
-    title: 'смт Чумаки',
-    name: 'смт Чумаки',
+    title: 'Іларіонове',
+    name: 'Іларіонове',
     src: {
       photo: '/images/branches/ilarionove/hero.jpg',
       name: 'ilarionove',
@@ -379,7 +378,7 @@ export const cities = {
       },
     ],
     phone: '(098) 385-78-23',
-    address1: '| вул Центральна 27',
+    address1: '',
   },
   prydniprovsk: {
     city: 'dnipro',
