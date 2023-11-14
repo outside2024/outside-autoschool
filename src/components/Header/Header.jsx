@@ -208,13 +208,13 @@ const Header = ({ headerType }) => {
                 ))}
               </div>
               <div className="langBlock">
-                <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
+                <Link className={locale === 'en' ? 'disabled' : ''} href={asPath || ''} locale="en">
                   <p className={`typoHeaderLink link linkText ${locale === 'en' ? 'active' : ''}`}>
                     en
                   </p>
                 </Link>
                 <span className="typoHeaderLink  linkText">/</span>
-                <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
+                <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath || ''} locale="uk">
                   <p className={`typoHeaderLink link linkText ${locale === 'uk' ? 'active' : ''}`}>
                     ua
                   </p>
@@ -290,7 +290,11 @@ const Header = ({ headerType }) => {
                     ))}
                   </div>
                   <div className="langBlock">
-                    <Link className={locale === 'en' ? 'disabled' : ''} href={asPath} locale="en">
+                    <Link
+                      className={locale === 'en' ? 'disabled' : ''}
+                      href={asPath || ''}
+                      locale="en"
+                    >
                       <p
                         className={`typoHeaderLink link linkText ${
                           locale === 'en' ? 'active' : ''
@@ -300,7 +304,11 @@ const Header = ({ headerType }) => {
                       </p>
                     </Link>
                     <span className="typoHeaderLink  linkText">/</span>
-                    <Link className={locale === 'uk' ? 'disabled' : ''} href={asPath} locale="uk">
+                    <Link
+                      className={locale === 'uk' ? 'disabled' : ''}
+                      href={asPath || ''}
+                      locale="uk"
+                    >
                       <p
                         className={`typoHeaderLink link linkText ${
                           locale === 'uk' ? 'active' : ''
@@ -466,7 +474,7 @@ const Header = ({ headerType }) => {
                           <div className="langBlock">
                             <Link
                               className={locale === 'en' ? 'disabled' : ''}
-                              href={asPath}
+                              href={asPath || ''}
                               locale="en"
                             >
                               <p
@@ -480,7 +488,7 @@ const Header = ({ headerType }) => {
                             <span className="typoHeaderLink  linkText">/</span>
                             <Link
                               className={locale === 'uk' ? 'disabled' : ''}
-                              href={asPath}
+                              href={asPath || ''}
                               locale="uk"
                             >
                               <p
