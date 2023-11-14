@@ -19,7 +19,7 @@ const nextConfig = {
 
   images: {
     unoptimized: true,
-    domains: ['127.0.0.1', 'localhost'],
+    domains: ['127.0.0.1', 'localhost', '185.235.218.53:1337'],
   },
 };
 
