@@ -10,6 +10,7 @@ import { HeaderTypes } from '@/components/Header/Header';
 import GoogleMap from '@/components/GoogleMap/GoogleMap';
 import StrAPIService from '@/global/services/strapiService';
 import Prices from '@/components/Prices';
+import { routsDnipro } from '@/global/constants/routes';
 
 const Branch = ({ cityData, city, prices }) => (
   <RootLayout headerType={HeaderTypes.LIGHT}>
@@ -24,16 +25,31 @@ const Branch = ({ cityData, city, prices }) => (
 
 export default Branch;
 
-export async function getServerSideProps({ locale, params }) {
-  const priceData = await StrAPIService.getAllCitiesPrices();
+export async function getStaticPaths() {
   return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      cityData: cities[params.branch],
-      prices: priceData,
-      city: params.city,
-    },
+    paths: routsDnipro.map((page) => `${page.path}`) || [],
+    fallback: false,
   };
+}
+
+export async function getStaticProps({ locale, params }) {
+  try {
+    const priceData = await StrAPIService.getAllCitiesPrices();
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ['common'])),
+        cityData: cities[params.branch],
+        prices: priceData,
+        city: params.city,
+      },
+    };
+  } catch (err) {
+    return {
+      props: { ...(await serverSideTranslations(locale, ['common'])) },
+      notFound: true,
+      revalidate: 30,
+    };
+  }
 }
 
 Branch.propTypes = {

@@ -34,5 +34,9 @@ const HeroDescription = ({ city }) => {
 export default HeroDescription;
 
 HeroDescription.propTypes = {
-  city: PropTypes.string.isRequired,
+  city: PropTypes.string,
+};
+
+HeroDescription.defaultProps = {
+  city: null,
 };
