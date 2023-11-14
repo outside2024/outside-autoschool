@@ -34,7 +34,7 @@ const Exam = () => {
             </div>
             <Link
               key={uuidv4()}
-              href={'https://exm.hsc.gov.ua/login/ukr'}
+              href="https://exm.hsc.gov.ua/login/ukr"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
