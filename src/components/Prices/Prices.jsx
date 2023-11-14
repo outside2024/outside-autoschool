@@ -10,7 +10,7 @@ import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 import { categoryTerms } from './constants';
 import useWindowSize from '@/hooks/useWindowSize';
 import SliderNavBar from '../SliderNavBar';
-import {scrollTo} from "@/global/helpers/helpers";
+import { scrollTo } from '@/global/helpers/helpers';
 
 const Prices = ({ prices, city }) => {
   const { t } = useTranslation();

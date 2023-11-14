@@ -15,7 +15,7 @@ export const StyledArticle = styled('div')`
         margin-right: -16px;
       }
     }
-    
+
     &Paragraph {
       padding-top: 10px;
       padding-bottom: 5px;

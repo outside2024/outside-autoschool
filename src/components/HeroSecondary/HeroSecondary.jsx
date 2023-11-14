@@ -8,7 +8,6 @@ import Exam from '../Exam';
 import HeroDescription from '../HeroDescription';
 
 const HeroSecondary = ({ city }) => {
-
   const { t } = useTranslation();
 
   return (
@@ -21,9 +20,14 @@ const HeroSecondary = ({ city }) => {
                 <h2 className="typoColorBlack typoTitlePrimary2 gap">{t(city.title)}</h2>
                 {city.phone && <p className="typoTextPrimary">{city.phone}</p>}
                 {city.phone2 && <p className="typoTextPrimary">{city.phone2}</p>}
-                {city.address1 && <p className="typoTextPrimary">{t(city.address1)}</p>}
-                {city.address2 && <p className="typoTextPrimary gap">{t(city.address2)}</p>}
-                <Link href="https://hsc.gov.ua/"  target="_blank" rel="noopener noreferrer nofollow" className="link typoTextPrimary">
+                {city.address1 && <p className="typoTextPrimary">| {t(city.address1)}</p>}
+                {city.address2 && <p className="typoTextPrimary gap">| {t(city.address2)}</p>}
+                <Link
+                  href="https://hsc.gov.ua/"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="link typoTextPrimary"
+                >
                   {t('tests.serviceCenter')}
                   <i className="icon-link " />
                 </Link>
@@ -47,10 +51,6 @@ const HeroSecondary = ({ city }) => {
               <div className="left-container">
                 <h2 className="typoColorBlack typoTitlePrimary gap">{t('tests.title')}</h2>
                 <p className="typoTextPrimary gap">{t('tests.description')}</p>
-                <Link href="/" className="link typoTextPrimary">
-                  <i className="icon-save " />
-                  {t('tests.downloadQuestions')}
-                </Link>
               </div>
 
               <Image

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import moment from "moment/moment";
+import moment from 'moment/moment';
 import CardBlogStyles from '@/components/CardBlog/CardBlog.styles';
 
 const CardBlog = ({ card }) => {

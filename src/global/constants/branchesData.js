@@ -1,11 +1,10 @@
 export const cities = {
   pavlograd: {
     city: 'pavlograd',
-    title: 'Павлоград',
-    name: 'Павлоград',
+    title: 'branches.pavlograd.city',
+    name: 'branches.pavlograd.city',
     src: {
       photo: '/images/branches/pavlograd/hero.jpg',
-      name: 'pavlograd',
     },
     imageGallery: [
       {
@@ -22,12 +21,12 @@ export const cities = {
       },
     ],
     phone: '(096) 551-97-86',
-    address1: '| вул. Центральна, 46',
+    address1: 'branches.pavlograd.branch1.address',
   },
   novomoskovsk: {
     city: 'novomoskovsk',
-    title: 'Новомосковськ',
-    name: 'Новомосковськ',
+    title: 'branches.novomoskovsk.city',
+    name: 'branches.novomoskovsk.city',
     src: {
       photo: '/images/branches/novomoskovsk/hero.jpg',
       name: 'novomoskovsk',
@@ -67,13 +66,13 @@ export const cities = {
       },
     ],
     phone: '(097) 696-72-72',
-    address1: '| вул. Гетьманська 40-А',
-    address2: '| вул. Українська 9-А',
+    address1: 'branches.novomoskovsk.branch1.address',
+    address2: 'branches.novomoskovsk.branch2.address',
   },
   nikopol: {
     city: 'nikopol',
-    title: 'Нікополь',
-    name: 'Нікополь',
+    title: 'branches.nikopol.city',
+    name: 'branches.nikopol.city',
     src: {
       photo: '/images/branches/nikopol/hero.jpg',
       name: 'nikopol',
@@ -105,13 +104,13 @@ export const cities = {
       },
     ],
     phone: '(095) 499-96-60',
-    address1: '| вул. І. Богуна 5',
-    address2: '| вул. Патріотів України 167',
+    address1: 'branches.nikopol.branch1.address',
+    address2: 'branches.nikopol.branch2.address',
   },
   pereshchepyno: {
     city: 'preshchepyno',
-    title: 'Перещепине',
-    name: 'Перещепине',
+    title: 'branches.preshchepyno.city',
+    name: 'branches.preshchepyno.city',
     src: {
       photo: '/images/branches/preshchepyno/hero.jpg',
       name: 'preshchepyno',
@@ -139,12 +138,12 @@ export const cities = {
       },
     ],
     phone: '(098) 203-63-32',
-    address1: '| вул. Шевченка 58',
+    address1: 'branches.preshchepyno.branch1.address',
   },
   kharkiv: {
     city: 'kharkiv',
-    title: 'Харків',
-    name: 'Харків',
+    title: 'branches.kharkiv.city',
+    name: 'branches.kharkiv.city',
     src: {
       photo: '/images/branches/kharkiv/hero.jpg',
       name: 'kharkiv',
@@ -184,12 +183,12 @@ export const cities = {
       },
     ],
     phone: '(097) 585-95-95',
-    address1: '| вул Шота Руставелі 28/1',
+    address1: 'branches.kharkiv.branch1.address',
   },
   kryvyi_rig: {
     city: 'kryvyi_rig',
-    title: 'Кривий Ріг',
-    name: 'Кривий Ріг',
+    title: 'branches.kryvyi_rig.city',
+    name: 'branches.kharkiv.city',
     src: {
       photo: '/images/branches/kryvyi_rig/hero.jpg',
       name: 'kryvyi_rig',
@@ -225,13 +224,13 @@ export const cities = {
       },
     ],
     phone: '(067) 4-999-601',
-    address1: '| пр. Героїв-підпільників, 1а ',
-    address2: '| вул. Недєліна, 28 (Інгулець) ',
+    address1: 'branches.kryvyi_rig.branch1.address',
+    address2: 'branches.kryvyi_rig.branch2.address',
   },
   zaporizhya: {
     city: 'zaporizhya',
-    title: 'Запоріжжя',
-    name: 'Запоріжжя',
+    title: 'branches.zaporizhya.city',
+    name: 'branches.zaporizhya.city',
     src: {
       photo: '/images/branches/zaporizhya/hero.jpg',
       name: 'zaporizhya',
@@ -271,15 +270,14 @@ export const cities = {
       },
     ],
     phone: '(097) 958-95-95',
-    address1: '| вул Фортечна 4а каб 9, 3 поверх',
+    address1: 'branches.zaporizhya.branch1.address',
   },
   chumaky: {
     city: 'chumaky',
-    title: 'смт Чумаки',
-    name: 'смт Чумаки',
+    title: 'branches.chumaky.city',
+    name: 'branches.chumaky.city',
     src: {
       photo: '/images/branches/chumaky//gallery/3.jpg',
-      name: 'chumaky',
     },
     imageGallery: [
       {
@@ -300,12 +298,12 @@ export const cities = {
       },
     ],
     phone: '(050) 952-50-66',
-    address1: '| вул Шкільна 11а',
+    address1: 'branches.chumaky.branch1.address',
   },
   ilarionove: {
     city: 'ilarionove',
-    title: 'Іларіонове',
-    name: 'Іларіонове',
+    title: 'branches.ilarionove.city',
+    name: 'branches.ilarionove.city',
     src: {
       photo: '/images/branches/ilarionove/hero.jpg',
       name: 'ilarionove',
@@ -329,12 +327,12 @@ export const cities = {
       },
     ],
     phone: '(095) 916-87-92',
-    address1: '| вул Робоча 12а',
+    address1: 'branches.ilarionove.branch1.address',
   },
   pidhorodne: {
     city: 'pidhorodne',
-    title: 'Підгородне',
-    name: 'Підгородне',
+    title: 'branches.pidhorodne.city',
+    name: 'branches.pidhorodne.city',
     src: {
       photo: '/images/branches/pidhorodne/hero.jpg',
       name: 'pidhorodne',
@@ -362,12 +360,12 @@ export const cities = {
       },
     ],
     phone: '(097) 696-72-72',
-    address1: '| вул Центральна 25',
+    address1: 'branches.pidhorodne.branch1.address',
   },
   obuhivka: {
     city: 'obuhivka',
-    title: 'смт Обухівка (Кіровськ)',
-    name: 'смт Обухівка (Кіровськ)',
+    title: 'branches.obuhivka.city',
+    name: 'branches.obuhivka.city',
     src: {
       photo: '/images/branches/obuhivka/hero.jpg',
       name: 'obuhivka',
@@ -391,12 +389,12 @@ export const cities = {
       },
     ],
     phone: '(050) 952-50-66',
-    address1: '| вул Центральна 27',
+    address1: 'branches.obuhivka.branch1.address',
   },
   gvardiyske: {
     city: 'gvardiyske',
-    title: 'смт Гвардійське',
-    name: 'смт Гвардійське',
+    title: 'branches.gvardiyske.city',
+    name: 'branches.gvardiyske.city',
     src: {
       photo: '/images/branches/gvardiyske/hero.jpg',
       name: 'gvardiyske',
@@ -428,8 +426,8 @@ export const cities = {
   },
   prydniprovske: {
     city: 'dnipro',
-    title: 'Автошкола в Придніпровську',
-    name: 'Дніпро',
+    title: 'branches.dnipro.prydniprovsk.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/prydniprovsk/hero.jpg',
       name: 'prydniprovsk',
@@ -453,12 +451,12 @@ export const cities = {
       },
     ],
     phone: '(098) 385-78-23',
-    address1: '| вул Центральна 27',
+    address1: 'branches.dnipro.prydniprovsk.address',
   },
   robocha: {
     city: 'dnipro',
-    title: 'Автошкола на Робочій',
-    name: 'Дніпро',
+    title: 'branches.dnipro.robocha.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/robocha/hero.jpg',
       name: 'robocha',
@@ -482,12 +480,12 @@ export const cities = {
       },
     ],
     phone: '(063) 647-10-95',
-    address1: '| вул. Робоча 89',
+    address1: 'branches.dnipro.robocha.address',
   },
   peremoga: {
     city: 'dnipro',
-    title: 'Автошкола на Перемозі',
-    name: 'Дніпро',
+    title: 'branches.dnipro.peremoga.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/peremoga/hero.jpg',
       name: 'peremoga',
@@ -515,12 +513,12 @@ export const cities = {
       },
     ],
     phone: '(098)0-555-999',
-    address1: '| пр. Героїв, 14',
+    address1: 'branches.dnipro.peremoga.address',
   },
   '12kvartal': {
     city: 'dnipro',
-    title: 'Автошкола на 12 Кварталі',
-    name: 'Дніпро',
+    title: 'branches.dnipro.12kvartal.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/12kvartal/hero.jpg',
       name: '12kvartal',
@@ -561,12 +559,12 @@ export const cities = {
     ],
     phone: '(067) 609-75-24',
     phone2: '(093)780-87-59',
-    address1: '| проспект Богдана Хмельницького, 118-д',
+    address1: 'branches.dnipro.12kvartal.address',
   },
   center: {
     city: 'dnipro',
-    title: 'Автошкола в Центрі',
-    name: 'Дніпро',
+    title: 'branches.dnipro.center.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/center/hero.jpg',
       name: 'center',
@@ -582,12 +580,12 @@ export const cities = {
       },
     ],
     phone: '(098)0-555-999',
-    address1: '| вул. Володимира Мономаха, 7',
+    address1: 'branches.dnipro.center.address',
   },
   sloboshanska: {
     city: 'dnipro',
-    title: 'Автошкола на Слобожанському',
-    name: 'Дніпро',
+    title: 'branches.dnipro.slobozhanska.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/slobozhanska/hero.jpg',
       name: 'slobozhanska',
@@ -603,12 +601,12 @@ export const cities = {
       },
     ],
     phone: '(098)0-555-999',
-    address1: '| пр. Слобожанський',
+    address1: 'branches.dnipro.slobozhanska.address',
   },
   berezynka: {
     city: 'dnipro',
-    title: 'Автошкола на тц "Березинський"',
-    name: 'Дніпро',
+    title: 'branches.dnipro.berezynka.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/berezynka/hero.jpg',
       name: 'berezynka',
@@ -628,12 +626,12 @@ export const cities = {
       },
     ],
     phone: '(098)0-555-999 ',
-    address1: '| вул. М.Лисиченко,21',
+    address1: 'branches.dnipro.berezynka.address',
   },
   tytova: {
     city: 'dnipro',
-    title: 'Автошкола на Титова',
-    name: 'Дніпро',
+    title: 'branches.dnipro.tytova.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/tytova/hero.jpg',
       name: 'tytova',
@@ -649,12 +647,12 @@ export const cities = {
       },
     ],
     phone: '(098)0-555-999',
-    address1: '| вул. Богдана Хмельницького, 26А',
+    address1: 'branches.dnipro.tytova.address',
   },
   sovhozna: {
     city: 'dnipro',
-    title: 'Автошкола на Совхозній',
-    name: 'Дніпро',
+    title: 'branches.dnipro.sovhozna.branch_name',
+    name: 'branches.dnipro.city',
     src: {
       photo: '/images/branches/sovhozna/hero.jpg',
       name: 'sovhozna',
@@ -690,6 +688,6 @@ export const cities = {
       },
     ],
     phone: '(067) 609-75-24',
-    address1: '| вул. В.Сухомлинського, 48а',
+    address1: 'branches.dnipro.sovhozna.address',
   },
 };
