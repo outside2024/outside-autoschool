@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {
-  desktopBreakpoint,
   desktopStartBreakpoint,
   tabletStartBreakpoint,
 } from '@/global/constants/contants';
@@ -22,7 +21,7 @@ const SearchBlogStyles = styled.div`
 
   .desktop-container {
     display: none;
-    @media only screen and (min-width: ${desktopBreakpoint}) {
+    @media only screen and (min-width: ${desktopStartBreakpoint}) {
       display: block;
     }
   }
