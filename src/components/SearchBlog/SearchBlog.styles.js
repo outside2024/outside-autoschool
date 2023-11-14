@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-  desktopStartBreakpoint,
-  tabletStartBreakpoint,
-} from '@/global/constants/contants';
+import { desktopStartBreakpoint, tabletStartBreakpoint } from '@/global/constants/contants';
 
 const SearchBlogStyles = styled.div`
   .search-container {
