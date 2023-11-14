@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import theme from '@/styles/theme';
-import { mobileBreakpoint } from '@/global/constants/contants';
+import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants';
 
 export const StyledArticle = styled('div')`
   padding-top: 56px;
@@ -8,6 +8,8 @@ export const StyledArticle = styled('div')`
 
   .article {
     &Img {
+      max-width: 100%;
+      object-fit: contain;
       @media only screen and (max-width: ${mobileBreakpoint}) {
         height: 213px;
         max-width: 320px;
@@ -21,10 +23,14 @@ export const StyledArticle = styled('div')`
       padding-bottom: 5px;
     }
 
+    &List {
+      padding-left: 20px;
+    }
+
     &Container {
       display: flex;
       justify-content: space-between;
-      @media only screen and (max-width: 1388px) {
+      @media only screen and (max-width: ${tabletBreakpoint}) {
         flex-direction: column-reverse;
         gap: 16px;
       }
@@ -33,7 +39,6 @@ export const StyledArticle = styled('div')`
     &Content {
       display: flex;
       flex-direction: column;
-      max-width: 948px;
     }
 
     &Title {
