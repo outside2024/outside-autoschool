@@ -1,7 +1,8 @@
-import { useTranslation } from 'next-i18next';
+import {useTranslation} from 'next-i18next';
 import PropTypes from 'prop-types';
 import HeroStyles from '@/components/Hero/Hero.styles';
-import Button, { ButtonContentTypes, ButtonTypes } from '../Button/Button';
+import Button, {ButtonContentTypes, ButtonTypes} from '../Button/Button';
+import {scrollTo} from "@/global/helpers/helpers";
 
 export const HeroTypes = {
   PRIMARY: 'homePageHero',
@@ -9,8 +10,8 @@ export const HeroTypes = {
   TERTIARY: 'aboutPageHero',
 };
 
-const Hero = ({ heroType }) => {
-  const { t } = useTranslation();
+const Hero = ({heroType}) => {
+  const {t} = useTranslation();
   return (
     <HeroStyles className="contentContainer">
       <div className={`contentWrapper content ${heroType}`}>
@@ -29,6 +30,9 @@ const Hero = ({ heroType }) => {
               btnType={ButtonTypes.PRIMARY}
               contentType={ButtonContentTypes.TEXT}
               content={t(`${heroType}.btn`)}
+              onBtnClick={() => {
+                scrollTo(document, 'form');
+              }}
             />
           </div>
         )}

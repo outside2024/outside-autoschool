@@ -5,9 +5,11 @@ import { mobileBreakpoint, tabletBreakpoint } from '@/global/constants/contants'
 
 export const FromComponentStyled = styled('div')`
   padding-bottom: 66px;
+  padding-top: 40px;
 
   @media only screen and (max-width: ${mobileBreakpoint}) {
     padding-bottom: 24px;
+    padding-top: 24px;
   }
 
   .form {

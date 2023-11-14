@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import moment from "moment/moment";
 import CardBlogStyles from '@/components/CardBlog/CardBlog.styles';
 
 const CardBlog = ({ card }) => {
@@ -7,11 +8,13 @@ const CardBlog = ({ card }) => {
     (res, item) => [...res, ...item.children.map((subItem) => subItem.text)],
     [],
   );
+
+  const date = moment(card.attributes.createdAt).format('YYYY-MM-DD');
   return (
     <CardBlogStyles>
       <Link href={`blog/${card.attributes.slug}`}>
         <div className="border">
-          <p className="typoTextSecondary gap-card">{card.attributes.date}</p>
+          <p className="typoTextSecondary gap-card">{date}</p>
           <h2 className="typoColorBlack typoButtonPrimary eclipse gap-card">
             {card.attributes.title}
           </h2>
@@ -44,7 +47,7 @@ CardBlog.propTypes = {
       ),
       slug: PropTypes.string,
       title: PropTypes.string,
-      date: PropTypes.string,
+      createdAt: PropTypes.string,
       blog_articles: PropTypes.shape({
         data: PropTypes.arrayOf(
           PropTypes.shape({

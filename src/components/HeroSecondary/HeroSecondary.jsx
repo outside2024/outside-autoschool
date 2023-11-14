@@ -8,7 +8,6 @@ import Exam from '../Exam';
 import HeroDescription from '../HeroDescription';
 
 const HeroSecondary = ({ city }) => {
-  // const city = false;
 
   const { t } = useTranslation();
 
@@ -24,7 +23,7 @@ const HeroSecondary = ({ city }) => {
                 {city.phone2 && <p className="typoTextPrimary">{city.phone2}</p>}
                 {city.address1 && <p className="typoTextPrimary">{t(city.address1)}</p>}
                 {city.address2 && <p className="typoTextPrimary gap">{t(city.address2)}</p>}
-                <Link href="/" className="link typoTextPrimary">
+                <Link href="https://hsc.gov.ua/"  target="_blank" rel="noopener noreferrer nofollow" className="link typoTextPrimary">
                   {t('tests.serviceCenter')}
                   <i className="icon-link " />
                 </Link>

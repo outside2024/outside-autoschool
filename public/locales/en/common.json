@@ -311,8 +311,8 @@
     "nothing_was_found": "Nothing was found"
   },
   "footer": {
-    "socials": "Слідкуйте за нашими соцмережами:",
-    "schools_dnipro": "Автошколи в Дніпрі"
+    "socials": "Follow us:",
+    "schools_dnipro": "Autoschools in Dnipro"
   },
   "documents": {
     "title": "Required Documents",
@@ -331,10 +331,10 @@
   },
 
   "discount": {
-    "title": "ДІЮТЬ АКЦІЇ!",
-    "description": "Для активації знижки потрібно при записі в автошколу надати відповідні документи"
+    "title": "PROMOTIONS ARE AVAILABLE!",
+    "description": "To activate the discount, you need to provide the relevant documents when you enroll in a driving school"
   },
-  "search": { "title": "Serch" },
+  "search": { "title": "Search" },
   "prices": {
     "title": "The cost of education",
     "subtitle": "Choose for yourself convenient ONLINE training or training in classes with certified teachers.",

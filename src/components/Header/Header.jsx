@@ -129,7 +129,6 @@ const Header = ({ headerType }) => {
   }, [menuRef, widowSize]);
 
   useEffect(() => {
-    console.log(pathname);
     if (widowSize.width < 1025) {
       setTabletMenuOpen(false);
     } else {

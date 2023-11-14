@@ -10,6 +10,7 @@ import { CurrentCityContext } from '@/layouts/RootLayout/RootLayout';
 import { categoryTerms } from './constants';
 import useWindowSize from '@/hooks/useWindowSize';
 import SliderNavBar from '../SliderNavBar';
+import {scrollTo} from "@/global/helpers/helpers";
 
 const Prices = ({ prices, city }) => {
   const { t } = useTranslation();
@@ -196,7 +197,9 @@ const Prices = ({ prices, city }) => {
                         btnType={ButtonTypes.PRIMARY}
                         contentType={ButtonContentTypes.TEXT}
                         content={t('prices.categoryCard.btn')}
-                        onBtnClick={() => {}}
+                        onBtnClick={() => {
+                          scrollTo(document, 'form');
+                        }}
                       />
                     </div>
                   ))}
@@ -301,7 +304,9 @@ const Prices = ({ prices, city }) => {
                           btnType={ButtonTypes.PRIMARY}
                           contentType={ButtonContentTypes.TEXT}
                           content={t('prices.categoryCard.btn')}
-                          onBtnClick={() => {}}
+                          onBtnClick={() => {
+                            scrollTo(document, 'form');
+                          }}
                         />
                       </div>
                     </SwiperSlide>

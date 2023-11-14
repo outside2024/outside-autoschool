@@ -82,7 +82,7 @@ const FormComponent = () => {
   ];
 
   return (
-    <FromComponentStyled className="contentContainer">
+    <FromComponentStyled className="contentContainer" id="form">
       <div className="contentWrapper">
         <h2 className="typoColorBlack typoTitleSecondary">{t('form.title')}</h2>
         <div className="content">

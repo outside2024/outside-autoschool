@@ -45,7 +45,7 @@ export function formatRichText(data) {
       }
     case 'paragraph':
       return (
-        <p className="typoColorBlack typoSubtitle" key={uuidv4()}>
+        <p className="typoColorBlack typoSubtitle articleParagraph" key={uuidv4()}>
           {data.children.map(formatChild)}
         </p>
       );
