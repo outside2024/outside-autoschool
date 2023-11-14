@@ -12,7 +12,12 @@ const socialIcons = (title) => (
     <div className="footerSocialsText typoFooterSocialsText">{title}</div>
     <div className="footerIcons">
       {socialLinksData.map((social) => (
-        <Link key={uuidv4()} href={social.path} target="_blank" rel="noopener noreferrer nofollow">
+        <Link
+          key={uuidv4()}
+          href={social.path || ''}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
           <i className={`${social.icon} footerIcon`} />
         </Link>
       ))}
@@ -40,7 +45,7 @@ const Footer = () => {
           </div>
           <div className="footerMenu">
             {routesMenu.map((route) => (
-              <Link href={route.path} key={route.path} className="footerRouteNav typoFooterNav">
+              <Link href={route.path || ''} key={uuidv4()} className="footerRouteNav typoFooterNav">
                 {t(`${route.text}`)}
               </Link>
             ))}
@@ -51,8 +56,8 @@ const Footer = () => {
             <div className="footerBranches">
               {routsBranches.map((route) => (
                 <Link
-                  href={route.path}
-                  key={route.path}
+                  href={route.path || ''}
+                  key={uuidv4()}
                   className="footerRoute typoFooterRouteLinks"
                 >
                   {t(`${route.text}`)}
@@ -65,8 +70,8 @@ const Footer = () => {
             <div className="footerBranches">
               {routsDnipro.map((route) => (
                 <Link
-                  href={route.path}
-                  key={route.path}
+                  href={route.path || ''}
+                  key={uuidv4()}
                   className="footerRoute typoFooterRouteLinks"
                 >
                   {t(`${route.text}`)}

@@ -74,7 +74,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
                 }}
               >
                 {branches.map((marker) => (
-                  <MarkerF key={marker.id} position={marker.coordinates} />
+                  <MarkerF key={uuidv4()} position={marker.coordinates} />
                 ))}
               </GoogleMap>
             )}
@@ -92,7 +92,7 @@ const GoogleMapComponent = ({ activeBranch }) => {
               <div className="addressesContainer">
                 {branches?.map((branch, index) => (
                   <div
-                    key={branch.id}
+                    key={uuidv4()}
                     onClick={() => {
                       map.setZoom(15);
                       map.panTo(branch.coordinates);

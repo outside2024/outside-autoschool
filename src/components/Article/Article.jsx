@@ -17,7 +17,7 @@ export function formatChild(child) {
       return <li key={uuidv4()}>{child.children.map(formatChild)}</li>;
     case 'link':
       return (
-        <Link className="articleLink" href={child.url} key={uuidv4()}>
+        <Link className="articleLink" href={child.url || ''} key={uuidv4()}>
           {child.children.map(formatChild)}
         </Link>
       );
@@ -104,7 +104,7 @@ const Article = ({ article, articlesList }) => {
                       <div className="buttonTextPrev typoColorBlack typoArticleBtnText">
                         {t('article.btn_prev_text')}
                       </div>
-                      <Link href={`/blog/${prevArticle.attributes.slug}`}>
+                      <Link href={`/blog/${prevArticle.attributes.slug}` || ''}>
                         <Button
                           btnType="secondary"
                           contentType="icon"
@@ -131,7 +131,7 @@ const Article = ({ article, articlesList }) => {
                       <div className="buttonTextNext typoColorBlack typoArticleBtnText">
                         {t('article.btn_next_text')}
                       </div>
-                      <Link href={`/blog/${nextArticle.attributes.slug}`}>
+                      <Link href={`/blog/${nextArticle.attributes.slug}` || ''}>
                         <Button
                           btnType="secondary"
                           contentType="icon"

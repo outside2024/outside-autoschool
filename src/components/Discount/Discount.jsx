@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import { StyledDiscount } from '@/components/Discount/Discount.styled';
 import SliderNavBar from '@/components/SliderNavBar';
 import { withStrapi } from '@/global/helpers/helpers';
@@ -41,7 +42,7 @@ const Discount = ({ discounts }) => {
             }}
           >
             {discounts.map((discount) => (
-              <SwiperSlide key={discount.id} className="swiperSlide">
+              <SwiperSlide key={uuidv4()} className="swiperSlide">
                 <div>
                   <Image
                     src={withStrapi(discount.attributes.image.data.attributes.url)}

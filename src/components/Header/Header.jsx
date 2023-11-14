@@ -167,7 +167,7 @@ const Header = ({ headerType }) => {
             <nav className="navBlock">
               {routes.map((route) =>
                 route?.url ? (
-                  <Link key={uuidv4()} href={route.url}>
+                  <Link key={uuidv4()} href={route.url || ''}>
                     <p className="typoHeaderLink link linkText">{t(`navigation.${route.name}`)}</p>
                   </Link>
                 ) : (
@@ -199,7 +199,7 @@ const Header = ({ headerType }) => {
                 {socialLinksData.map((socialLink) => (
                   <Link
                     key={uuidv4()}
-                    href={socialLink.path}
+                    href={socialLink.path || ''}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
@@ -281,7 +281,7 @@ const Header = ({ headerType }) => {
                     {socialLinksData.map((socialLink) => (
                       <Link
                         key={uuidv4()}
-                        href={socialLink.path}
+                        href={socialLink.path || ''}
                         target="_blank"
                         rel="noopener noreferrer nofollow"
                       >
@@ -323,7 +323,7 @@ const Header = ({ headerType }) => {
               <nav className="navBlock">
                 {routes.map((route) =>
                   route?.url ? (
-                    <Link key={uuidv4()} href={route.url}>
+                    <Link key={uuidv4()} href={route.url || ''}>
                       <p className="typoHeaderLink link linkText">
                         {t(`navigation.${route.name}`)}
                       </p>
@@ -357,7 +357,7 @@ const Header = ({ headerType }) => {
               <div className="branchesWrapper">
                 {routsBranches.map((branch) =>
                   branch?.path ? (
-                    <Link key={uuidv4()} href={branch.path}>
+                    <Link key={uuidv4()} href={branch.path || ''}>
                       <p className="typoHeaderBranchLink link linkText">{t(branch.text)}</p>
                     </Link>
                   ) : (
@@ -383,7 +383,7 @@ const Header = ({ headerType }) => {
               >
                 <div ref={subBranchesRef} className="subBranchesWrapper">
                   {routsDnipro.map((branch) => (
-                    <Link key={uuidv4()} href={branch.path}>
+                    <Link key={uuidv4()} href={branch.path || ''}>
                       <p className="typoHeaderBranchLink link linkText">{t(branch.text)}</p>
                     </Link>
                   ))}
@@ -438,7 +438,7 @@ const Header = ({ headerType }) => {
                         <nav className="mobileNavBlock">
                           {routes.map((route) =>
                             route?.url ? (
-                              <Link key={uuidv4()} href={route.url}>
+                              <Link key={uuidv4()} href={route.url || ''}>
                                 <p className="typoHeaderLink link linkText mobileNavBlockItem">
                                   {t(`navigation.${route.name}`)}
                                 </p>
@@ -463,7 +463,7 @@ const Header = ({ headerType }) => {
                             {socialLinksData.map((socialLink) => (
                               <Link
                                 key={uuidv4()}
-                                href={socialLink.path}
+                                href={socialLink.path || ''}
                                 target="_blank"
                                 rel="noopener noreferrer nofollow"
                               >
@@ -518,7 +518,7 @@ const Header = ({ headerType }) => {
                         <div className="mobileBranchesWrapper">
                           {routsBranches.map((branch) =>
                             branch?.path ? (
-                              <Link key={uuidv4()} href={branch.path}>
+                              <Link key={uuidv4()} href={branch.path || ''}>
                                 <p className="typoHeaderBranchLink link linkText mobileBranchesItem">
                                   {t(branch.text)}
                                 </p>
@@ -554,7 +554,7 @@ const Header = ({ headerType }) => {
 
                         <div className="mobileNavBlock">
                           {routsDnipro.map((branch) => (
-                            <Link key={uuidv4()} href={branch.path}>
+                            <Link key={uuidv4()} href={branch.path || ''}>
                               <p className="typoHeaderBranchLink link linkText mobileNavBlockItem">
                                 {t(branch.text)}
                               </p>
