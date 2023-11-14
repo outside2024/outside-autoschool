@@ -32,8 +32,6 @@ const SearchBlog = ({ cards }) => {
                 <Link
                   key={uuidv4()}
                   href={`/blog/${item.attributes.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
                 >
                   <li className="typoTextFifth">{item.attributes.title}</li>
                 </Link>
@@ -58,8 +56,6 @@ const SearchBlog = ({ cards }) => {
                   }}
                   key={uuidv4()}
                   href={`/blog/${card.attributes.slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
                 >
                   <li className="typoColorBlack typoTextTertiary eclipse">
                     {card.attributes.title}
