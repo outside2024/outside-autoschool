@@ -29,10 +29,7 @@ const SearchBlog = ({ cards }) => {
             {cards
               .filter((card) => card.attributes.popular)
               .map((item) => (
-                <Link
-                  key={uuidv4()}
-                  href={`/blog/${item.attributes.slug}`}
-                >
+                <Link key={uuidv4()} href={`/blog/${item.attributes.slug}`}>
                   <li className="typoTextFifth">{item.attributes.title}</li>
                 </Link>
               ))}
