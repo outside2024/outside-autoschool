@@ -12,7 +12,7 @@ const CardBlog = ({ card }) => {
   const date = moment(card.attributes.createdAt).format('YYYY-MM-DD');
   return (
     <CardBlogStyles>
-      <Link href={`blog/${card.attributes.slug}`}>
+      <Link href={`blog/${card.attributes.slug}` || ''}>
         <div className="border">
           <p className="typoTextSecondary gap-card">{date}</p>
           <h2 className="typoColorBlack typoButtonPrimary eclipse gap-card">

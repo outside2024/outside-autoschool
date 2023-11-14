@@ -99,7 +99,7 @@ export const StyledHeader = styled('div')`
   }
   .iconSocial {
     font-size: 24px;
-    color: ${({ theme }) => theme.colors.typo.white};
+    color: ${({ theme, $light }) => ($light ? theme.colors.typo.black : theme.colors.typo.white)};
     cursor: pointer;
     &:hover,
     &:focus {

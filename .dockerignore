@@ -5,7 +5,7 @@ scripts
 *Dockerfile*
 *Dockerfile.dev*
 node_modules
-.env
+# .env
 
 cypress/videos/*
 cypress/screenshots/*

@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -34,7 +35,7 @@ const AboutUs = () => {
             }}
           >
             {aboutUsPhotoSlider.map((card) => (
-              <SwiperSlide key={card.id} className="swiperSlide">
+              <SwiperSlide key={uuidv4()} className="swiperSlide">
                 <div>
                   <Image
                     src={card.photo}

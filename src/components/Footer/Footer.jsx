@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { v4 as uuidv4 } from 'uuid';
 import StyledFooter from '@/components/Footer/Footer.styled';
 import companyLogo from '../../../public/Logo.png';
 import { routesMenu, routsBranches, routsDnipro } from '@/global/constants/routes';
@@ -12,8 +13,8 @@ const socialIcons = (title) => (
     <div className="footerIcons">
       {socialLinksData.map((social) => (
         <Link
-          key={social.icon}
-          href={social.path}
+          key={uuidv4()}
+          href={social.path || ''}
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
@@ -44,7 +45,7 @@ const Footer = () => {
           </div>
           <div className="footerMenu">
             {routesMenu.map((route) => (
-              <Link href={route.path} key={route.path} className="footerRouteNav typoFooterNav">
+              <Link href={route.path || ''} key={uuidv4()} className="footerRouteNav typoFooterNav">
                 {t(`${route.text}`)}
               </Link>
             ))}
@@ -55,8 +56,8 @@ const Footer = () => {
             <div className="footerBranches">
               {routsBranches.map((route) => (
                 <Link
-                  href={route.path}
-                  key={route.path}
+                  href={route.path || ''}
+                  key={uuidv4()}
                   className="footerRoute typoFooterRouteLinks"
                 >
                   {t(`${route.text}`)}
@@ -69,8 +70,8 @@ const Footer = () => {
             <div className="footerBranches">
               {routsDnipro.map((route) => (
                 <Link
-                  href={route.path}
-                  key={route.path}
+                  href={route.path || ''}
+                  key={uuidv4()}
                   className="footerRoute typoFooterRouteLinks"
                 >
                   {t(`${route.text}`)}
