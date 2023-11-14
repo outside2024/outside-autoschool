@@ -1,5 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { v4 as uuidv4 } from 'uuid';
 import ExamStyles from '@/components/Exam/Exam.styles';
 import logo from '../../../public/images/exam/logo.jpeg';
 import Button, { ButtonContentTypes, ButtonTypes } from '../Button/Button';
@@ -32,7 +34,7 @@ const Exam = () => {
             </div>
             <Link
               key={uuidv4()}
-              href="https://exm.hsc.gov.ua/login/ukr"
+              href={'https://exm.hsc.gov.ua/login/ukr'}
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
