@@ -326,8 +326,8 @@
     "description": "Award for 3rd place among schools in Ukraine"
   },
   "article": {
-    "btn_prev_text": "назад",
-    "btn_next_text": "вперед"
+    "btn_prev_text": "previous",
+    "btn_next_text": "next"
   },
 
   "discount": {

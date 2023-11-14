@@ -31,7 +31,7 @@ const SearchBlog = ({ cards }) => {
               .map((item) => (
                 <Link
                   key={uuidv4()}
-                  href={`blog/${item.id}`}
+                  href={`${item.attributes.slug}`}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
@@ -57,7 +57,7 @@ const SearchBlog = ({ cards }) => {
                     setSearchValue('');
                   }}
                   key={uuidv4()}
-                  href={`blog/${card.id}`}
+                  href={`${card.attributes.slug}`}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
