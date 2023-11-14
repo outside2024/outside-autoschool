@@ -134,6 +134,7 @@ const Header = ({ headerType }) => {
     } else {
       setShowBranchesBlock(false);
     }
+    // eslint-disable-next-line
   }, [pathname]);
 
   const handleCityChange = (e) => {
