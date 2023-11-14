@@ -4,7 +4,6 @@ import { desktopStartBreakpoint, tabletStartBreakpoint } from '@/global/constant
 const SearchBlogStyles = styled.div`
   .search-container {
     @media only screen and (min-width: ${desktopStartBreakpoint}) {
-      position: relative;
       display: block;
       position: sticky;
       top: 100px;

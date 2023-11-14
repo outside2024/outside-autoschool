@@ -29,12 +29,7 @@ const SearchBlog = ({ cards }) => {
             {cards
               .filter((card) => card.attributes.popular)
               .map((item) => (
-                <Link
-                  key={uuidv4()}
-                  href={`blog/${item.id}` || ''}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
+                <Link key={uuidv4()} href={`/blog/${item.attributes.slug}`}>
                   <li className="typoTextFifth">{item.attributes.title}</li>
                 </Link>
               ))}
@@ -57,9 +52,7 @@ const SearchBlog = ({ cards }) => {
                     setSearchValue('');
                   }}
                   key={uuidv4()}
-                  href={`blog/${card.id}` || ''}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
+                  href={`/blog/${card.attributes.slug}`}
                 >
                   <li className="typoColorBlack typoTextTertiary eclipse">
                     {card.attributes.title}

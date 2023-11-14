@@ -34,7 +34,7 @@ export function formatRichText(data) {
       switch (data.format) {
         case 'unordered':
           return (
-            <ul className="typoSubtitle" key={uuidv4()}>
+            <ul className="typoSubtitle articleList" key={uuidv4()}>
               {data.children.map(formatChild)}
             </ul>
           );
@@ -45,7 +45,7 @@ export function formatRichText(data) {
       }
     case 'paragraph':
       return (
-        <p className="typoColorBlack typoSubtitle" key={uuidv4()}>
+        <p className="typoColorBlack typoSubtitle articleParagraph" key={uuidv4()}>
           {data.children.map(formatChild)}
         </p>
       );

@@ -11,3 +11,10 @@ export const transformPrices = (data) => {
   const newData = Object.fromEntries(mappedResult);
   return newData;
 };
+
+export const scrollTo = (document, id) => {
+  document.getElementById(id).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+};
