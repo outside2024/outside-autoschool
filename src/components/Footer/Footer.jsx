@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
+import { v4 as uuidv4 } from 'uuid';
 import StyledFooter from '@/components/Footer/Footer.styled';
 import companyLogo from '../../../public/Logo.png';
 import { routesMenu, routsBranches, routsDnipro } from '@/global/constants/routes';
@@ -11,12 +12,7 @@ const socialIcons = (title) => (
     <div className="footerSocialsText typoFooterSocialsText">{title}</div>
     <div className="footerIcons">
       {socialLinksData.map((social) => (
-        <Link
-          key={social.icon}
-          href={social.path}
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
+        <Link key={uuidv4()} href={social.path} target="_blank" rel="noopener noreferrer nofollow">
           <i className={`${social.icon} footerIcon`} />
         </Link>
       ))}

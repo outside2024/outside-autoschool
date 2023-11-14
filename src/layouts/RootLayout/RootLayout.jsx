@@ -5,12 +5,12 @@ import Header from '@/components/Header';
 import { HeaderTypes } from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
-const structuredDataLogo = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  url: 'https://outside.dp.ua/',
-  logo: 'https://outside.dp.ua/logo.png',
-};
+// const structuredDataLogo = {
+//   '@context': 'https://schema.org',
+//   '@type': 'Organization',
+//   url: 'https://outside.dp.ua/',
+//   logo: 'https://outside.dp.ua/logo.png',
+// };
 export const CurrentCityContext = createContext(null);
 
 const RootLayout = ({ children, meta, headerType }) => {
@@ -29,15 +29,15 @@ const RootLayout = ({ children, meta, headerType }) => {
         />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta property="og:title" content="АУТСАЙД" />
-        <meta property="og:description" content="Найкраща автошкола в Днепрі." />
+        <meta property="og:description" content="Найкраща автошкола в Дніпрі." />
         <meta property="og:image" content="%PUBLIC_URL%/website_preview.png" />
         {!meta.noindex && <meta name="robots" content="noindex" />}
-        <script
+        {/* <script
           key="structured-data-logo"
           type="application/ld+json"
           // eslint-disable-next-line
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataLogo) }}
-        />
+        /> */}
       </Head>
       <CurrentCityContext.Provider
         value={useMemo(
