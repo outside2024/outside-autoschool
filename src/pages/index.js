@@ -20,7 +20,7 @@ const Home = ({ promotions, prices }) => (
     {prices && <Prices prices={prices} />}
     <Documents />
     <AboutUs />
-    <GoogleMap activeBranch="dnipro" />
+    <GoogleMap />
     <FAQ />
     <FormComponent />
   </RootLayout>
