@@ -109,8 +109,8 @@ export const branchesData = {
       name: 'branches.dnipro.prydniprovsk.branch_name',
       address: 'branches.dnipro.prydniprovsk.address',
       coordinates: {
-        lat: 48.41813155066282,
-        lng: 35.05941914211526,
+        lat: 48.41425401289076,
+        lng: 35.13475413930549,
       },
     },
     {
@@ -118,8 +118,8 @@ export const branchesData = {
       name: 'branches.dnipro.peremoga.branch_name',
       address: 'branches.dnipro.peremoga.address',
       coordinates: {
-        lat: 48.418067465077755,
-        lng: 35.05952643047096,
+        lat: 48.41813155066282,
+        lng: 35.05941914211526,
       },
     },
     {
