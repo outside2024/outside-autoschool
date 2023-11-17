@@ -1,6 +1,6 @@
 export const citiesData = {
   dnipro: {
-    phoneNumbers: ['+38 (098)055-59-99', '+38 (067)609-75-24'],
+    phoneNumbers: ['+38 (098)055-59-99'],
     lat: 48.4647,
     lng: 35.0462,
   },
@@ -82,8 +82,8 @@ export const branchesData = {
       name: 'branches.dnipro.berezynka.branch_name',
       address: 'branches.dnipro.berezynka.address',
       coordinates: {
-        lat: 48.53001555031674,
-        lng: 35.07429871066665,
+        lat: 48.52335416105303,
+        lng: 35.03567657238787,
       },
     },
     {
@@ -91,8 +91,8 @@ export const branchesData = {
       name: 'branches.dnipro.12kvartal.branch_name',
       address: 'branches.dnipro.12kvartal.address',
       coordinates: {
-        lat: 48.428204978684754,
-        lng: 35.012609552987435,
+        lat: 48.40759854918644,
+        lng: 34.99987987889679,
       },
     },
     {
@@ -109,8 +109,8 @@ export const branchesData = {
       name: 'branches.dnipro.prydniprovsk.branch_name',
       address: 'branches.dnipro.prydniprovsk.address',
       coordinates: {
-        lat: 48.41426469462839,
-        lng: 35.13477559716968,
+        lat: 48.41813155066282,
+        lng: 35.05941914211526,
       },
     },
     {
@@ -118,8 +118,8 @@ export const branchesData = {
       name: 'branches.dnipro.peremoga.branch_name',
       address: 'branches.dnipro.peremoga.address',
       coordinates: {
-        lat: 48.47720138118242,
-        lng: 34.91912628182686,
+        lat: 48.418067465077755,
+        lng: 35.05952643047096,
       },
     },
     {
@@ -136,8 +136,8 @@ export const branchesData = {
       name: 'branches.dnipro.sovhozna.branch_name',
       address: 'branches.dnipro.sovhozna.address',
       coordinates: {
-        lat: 48.525907898226464,
-        lng: 35.034695112522726,
+        lat: 48.41813155066282,
+        lng: 35.05941914211526,
       },
     },
     {
@@ -145,8 +145,8 @@ export const branchesData = {
       name: 'branches.dnipro.center.branch_name',
       address: 'branches.dnipro.center.address',
       coordinates: {
-        lat: 48.51580233083259,
-        lng: 35.08345999717568,
+        lat: 48.466514156788165,
+        lng: 35.045180918731845,
       },
     },
   ],
@@ -198,8 +198,8 @@ export const branchesData = {
       name: 'branches.novomoskovsk.branch2.branch_name',
       address: 'branches.novomoskovsk.branch2.address',
       coordinates: {
-        lat: 48.6319108746076,
-        lng: 35.25327372787538,
+        lat: 48.63153758455483,
+        lng: 35.25566031688822,
       },
     },
   ],
@@ -229,8 +229,8 @@ export const branchesData = {
       name: 'branches.nikopol.branch2.branch_name',
       address: 'branches.nikopol.branch2.address',
       coordinates: {
-        lat: 47.56487635808831,
-        lng: 34.40392889897675,
+        lat: 47.58019140642666,
+        lng: 34.40653971303662,
       },
     },
   ],

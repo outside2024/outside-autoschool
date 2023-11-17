@@ -450,7 +450,7 @@ export const cities = {
         name: 'img4',
       },
     ],
-    phone: '(098) 385-78-23',
+    phone: '(098) 0-555-999',
     address1: 'branches.dnipro.prydniprovsk.address',
   },
   robocha: {

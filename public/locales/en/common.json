@@ -37,7 +37,7 @@
     "chooseCity": "Choose a City:"
   },
   "homePageHero": {
-    "title": "AUTSAID Driving School - 15 years of experience and reliability!",
+    "title": "OUTSIDE  Driving School - 15 years of experience and reliability!",
     "description": "Registration for the driving school is available 24/7 by leaving your application in the window. Our manager will contact you for sure.",
     "btn": "Sign Up"
   },
@@ -84,7 +84,7 @@
     }
   },
   "branches": {
-    "title-gallery": "Our Classes and Racetrack",
+    "title-gallery": "Our classes and racetracks",
     "title": "Branches",
     "dnipro": {
       "city": "Dnipro",
