@@ -32,7 +32,7 @@ const HowToGetStarted = () => {
                 className="video"
                 width="588"
                 height="300"
-                src="https://www.youtube.com/embed/at4aAxl9ScQ"
+                src="https://www.youtube.com/embed/9C8kxpR87aA"
                 title={t('howToGetStarted.titleVideo2')}
                 allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
                 frameBorder="0"
