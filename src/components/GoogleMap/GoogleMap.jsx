@@ -84,9 +84,17 @@ const GoogleMapComponent = ({ activeBranch }) => {
               </h2>
               <div className="mobileContainer">
                 {citiesData[currentCity]?.phoneNumbers?.map((number) => (
-                  <div key={uuidv4()} className="mobileNumber">
+                  <a
+                    key={uuidv4()}
+                    className="mobileNumber"
+                    href={`tel:${number
+                      .replaceAll(' ', '')
+                      .replaceAll('(', '')
+                      .replaceAll(')', '')
+                      .replaceAll('-', '')}`}
+                  >
                     {number}
-                  </div>
+                  </a>
                 ))}
               </div>
               <div className="addressesContainer">

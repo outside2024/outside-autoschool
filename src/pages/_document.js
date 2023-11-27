@@ -2,6 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Fragment } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ServerStyleSheet } from 'styled-components';
+import Script from 'next/script';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -40,6 +41,22 @@ export default class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
             rel="stylesheet"
+          />
+          <Script
+            type="text/javascript"
+            id="binotel-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function (d, w, s) {
+              var widgetHash = '0YN6Klj5E79ArQAdWgLZ',
+                bch = d.createElement(s);
+              bch.type = 'text/javascript';
+              bch.async = true;
+              bch.src = '//widgets.binotel.com/chat/widgets/' + widgetHash + '.js';
+              var sn = d.getElementsByTagName(s)[0];
+              sn.parentNode.insertBefore(bch, sn);
+            })(document, window, 'script')`,
+            }}
           />
         </Head>
         <body>

@@ -1,11 +1,11 @@
 export const citiesData = {
   dnipro: {
-    phoneNumbers: ['+38 (098)055-59-99'],
+    phoneNumbers: ['+38 (098) 0-555-999'],
     lat: 48.4647,
     lng: 35.0462,
   },
   gvardiyske: {
-    phoneNumbers: ['+38 (098)385-78-23'],
+    phoneNumbers: ['+38 (098) 385-78-23'],
     lat: 48.73422693884411,
     lng: 35.313429984296214,
   },
